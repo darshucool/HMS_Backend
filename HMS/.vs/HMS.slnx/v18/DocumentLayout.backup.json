@@ -3,12 +3,88 @@
   "WorkspaceRootPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\hms\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|solutionrelative:hms\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{E0886605-7966-0312-E3E9-08A21BD670E1}|src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.api\\hms.modules.identity.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E0886605-7966-0312-E3E9-08A21BD670E1}|src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.api\\hms.modules.identity.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.application\\abstractions\\staffloginrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.application\\abstractions\\staffloginrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0886605-7966-0312-E3E9-08A21BD670E1}|src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.api\\identitymodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0886605-7966-0312-E3E9-08A21BD670E1}|src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.api\\identitymodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDA816D5-47D7-555E-EB21-B57F54D453B8}|src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\HMS.Modules.Identity.Infrastructure.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDA816D5-47D7-555E-EB21-B57F54D453B8}|src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\HMS.Modules.Identity.Infrastructure.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDA816D5-47D7-555E-EB21-B57F54D453B8}|src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\HMS.Modules.Identity.Infrastructure.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.infrastructure\\persistence\\repositories\\staffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDA816D5-47D7-555E-EB21-B57F54D453B8}|src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\HMS.Modules.Identity.Infrastructure.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.infrastructure\\persistence\\repositories\\staffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.application\\commands\\loginstaff\\loginstaffcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.application\\commands\\loginstaff\\loginstaffcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.application\\abstractions\\istaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.application\\abstractions\\istaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.application\\hms.modules.identity.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.application\\hms.modules.identity.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\hms\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|solutionrelative:hms\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\hms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|solutionrelative:hms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0886605-7966-0312-E3E9-08A21BD670E1}|src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.api\\controllers\\hotelauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0886605-7966-0312-E3E9-08A21BD670E1}|src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.api\\controllers\\hotelauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0886605-7966-0312-E3E9-08A21BD670E1}|src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.api\\contracts\\staffloginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E0886605-7966-0312-E3E9-08A21BD670E1}|src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.api\\contracts\\staffloginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDA816D5-47D7-555E-EB21-B57F54D453B8}|src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\HMS.Modules.Identity.Infrastructure.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.infrastructure\\authentication\\stafftokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDA816D5-47D7-555E-EB21-B57F54D453B8}|src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\HMS.Modules.Identity.Infrastructure.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.infrastructure\\authentication\\stafftokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDA816D5-47D7-555E-EB21-B57F54D453B8}|src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\HMS.Modules.Identity.Infrastructure.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.infrastructure\\authentication\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDA816D5-47D7-555E-EB21-B57F54D453B8}|src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\HMS.Modules.Identity.Infrastructure.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.infrastructure\\authentication\\jwtoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.application\\commands\\loginstaff\\loginstaffresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.application\\commands\\loginstaff\\loginstaffresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.application\\commands\\loginstaff\\loginstaffcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.application\\commands\\loginstaff\\loginstaffcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.application\\abstractions\\istafftokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CF8A728-7FEF-0B16-99B5-FF59593D9A75}|src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.application\\abstractions\\istafftokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BE45E73-1EB1-C77A-D497-A02435192E72}|src\\Modules\\Identity\\HMS.Modules.Identity.Domain\\HMS.Modules.Identity.Domain.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.domain\\entities\\staffuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BE45E73-1EB1-C77A-D497-A02435192E72}|src\\Modules\\Identity\\HMS.Modules.Identity.Domain\\HMS.Modules.Identity.Domain.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.domain\\entities\\staffuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\hms\\hms.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|solutionrelative:hms\\hms.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\hms\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|solutionrelative:hms\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +99,274 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "HMS\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Properties\\launchSettings.json",
-              "RelativeToolTip": "HMS\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAYwBwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-15T05:27:19.694Z",
+              "Title": "HMS.Modules.Identity.Api",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAQwBsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-15T08:33:25.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:30:27.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StaffRepository.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Persistence\\Repositories\\StaffRepository.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Persistence\\Repositories\\StaffRepository.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Persistence\\Repositories\\StaffRepository.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Persistence\\Repositories\\StaffRepository.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAYwAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:02:50.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IdentityModule.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\IdentityModule.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\IdentityModule.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\IdentityModule.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\IdentityModule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:06:20.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "StaffLoginRecord.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\StaffLoginRecord.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\StaffLoginRecord.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\StaffLoginRecord.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\StaffLoginRecord.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAIA/wCMAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T07:58:36.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginStaffCommandHandler.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommandHandler.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommandHandler.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommandHandler.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAIAwwCUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:01:37.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\DependencyInjection.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:05:30.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IStaffRepository.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffRepository.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffRepository.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffRepository.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:00:04.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HMS.Modules.Identity.Application",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwBoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-15T08:24:22.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "HMS\\appsettings.Development.json",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\appsettings.Development.json",
+              "RelativeToolTip": "HMS\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-15T08:10:09.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HotelAuthController.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Controllers\\HotelAuthController.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Controllers\\HotelAuthController.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Controllers\\HotelAuthController.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Controllers\\HotelAuthController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAmwE4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:07:23.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StaffLoginRequest.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Contracts\\StaffLoginRequest.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Contracts\\StaffLoginRequest.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Contracts\\StaffLoginRequest.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Contracts\\StaffLoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:06:49.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Program.cs",
               "RelativeDocumentMoniker": "HMS\\Program.cs",
               "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Program.cs",
               "RelativeToolTip": "HMS\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T05:25:39.954Z"
+              "WhenOpened": "2026-09-15T05:25:39.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "StaffTokenService.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\StaffTokenService.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\StaffTokenService.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\StaffTokenService.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\StaffTokenService.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAuwEQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:03:58.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "JwtOptions.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\JwtOptions.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\JwtOptions.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\JwtOptions.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\JwtOptions.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:03:44.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoginStaffResult.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffResult.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffResult.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffResult.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffResult.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwC4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:01:14.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoginStaffCommand.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommand.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommand.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommand.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:00:52.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IStaffTokenService.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffTokenService.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffTokenService.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffTokenService.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffTokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T08:00:23.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "StaffUser.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Domain\\Entities\\StaffUser.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Domain\\Entities\\StaffUser.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Domain\\Entities\\StaffUser.cs",
+              "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Domain\\Entities\\StaffUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T07:57:55.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "HMS.Api",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\HMS.Api.csproj",
+              "RelativeDocumentMoniker": "HMS\\HMS.Api.csproj",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\HMS.Api.csproj",
+              "RelativeToolTip": "HMS\\HMS.Api.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-15T06:03:46.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "HMS\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Properties\\launchSettings.json",
+              "RelativeToolTip": "HMS\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-15T05:27:19.694Z",
+              "EditorCaption": ""
             }
           ]
         }

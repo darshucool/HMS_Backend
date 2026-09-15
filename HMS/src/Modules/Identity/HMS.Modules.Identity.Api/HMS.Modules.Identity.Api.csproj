@@ -1,15 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\HMS.Modules.Identity.Application\HMS.Modules.Identity.Application.csproj" />
-    <ProjectReference Include="..\HMS.Modules.Identity.Infrastructure\HMS.Modules.Identity.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\..\BuildingBlocks\HMS.Contracts\HMS.Contracts.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\HMS.Modules.Identity.Application\HMS.Modules.Identity.Application.csproj" />
+		<ProjectReference Include="..\HMS.Modules.Identity.Infrastructure\HMS.Modules.Identity.Infrastructure.csproj" />
+		<ProjectReference Include="..\..\..\BuildingBlocks\HMS.Contracts\HMS.Contracts.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="14.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Authorization\" />
+		<Folder Include="Endpoints\" />
+	</ItemGroup>
 
 </Project>

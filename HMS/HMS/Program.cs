@@ -1,3 +1,4 @@
+using HMS.Modules.Identity.Api;
 using Scalar.AspNetCore;
 
 namespace HMS
@@ -11,25 +12,18 @@ namespace HMS
             builder.Services.AddControllers();
             builder.Services.AddOpenApi();
 
+            builder.Services.AddIdentityModule(
+                builder.Configuration);
+
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
             {
-                // OpenAPI specification
                 app.MapOpenApi();
-
-                // Interactive API documentation
-                app.MapScalarApiReference(options =>
-                {
-                    options
-                        .WithTitle("Fossyl Hotel Management API")
-                        .WithTheme(ScalarTheme.DeepSpace);
-                });
+                app.MapScalarApiReference();
             }
 
-            // HTTPS is handled by Docker ingress/Kong in production.
-            // app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();
