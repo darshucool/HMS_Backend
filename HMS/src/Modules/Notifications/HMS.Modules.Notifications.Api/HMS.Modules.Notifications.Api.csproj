@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMS.Modules.Notifications.Application\HMS.Modules.Notifications.Application.csproj" />
+    <ProjectReference Include="..\HMS.Modules.Notifications.Infrastructure\HMS.Modules.Notifications.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\HMS.Contracts\HMS.Contracts.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

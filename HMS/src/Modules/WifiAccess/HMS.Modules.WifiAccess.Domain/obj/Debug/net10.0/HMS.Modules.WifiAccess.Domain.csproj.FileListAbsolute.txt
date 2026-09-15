@@ -1,0 +1,16 @@
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\bin\Debug\net10.0\HMS.Modules.WifiAccess.Domain.deps.json
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\bin\Debug\net10.0\HMS.Modules.WifiAccess.Domain.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\bin\Debug\net10.0\HMS.Modules.WifiAccess.Domain.pdb
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\bin\Debug\net10.0\HMS.SharedKernel.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\bin\Debug\net10.0\HMS.SharedKernel.pdb
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\HMS.Modules.WifiAccess.Domain.csproj.AssemblyReference.cache
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\HMS.Modules.WifiAccess.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\HMS.Modules.WifiAccess.Domain.AssemblyInfoInputs.cache
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\HMS.Modules.WifiAccess.Domain.AssemblyInfo.cs
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\HMS.Modules.WifiAccess.Domain.csproj.CoreCompileInputs.cache
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\HMS.Modules.WifiAccess.Domain.sourcelink.json
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\HMS.Modu.4E7D85CC.Up2Date
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\HMS.Modules.WifiAccess.Domain.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\refint\HMS.Modules.WifiAccess.Domain.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\HMS.Modules.WifiAccess.Domain.pdb
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Domain\obj\Debug\net10.0\ref\HMS.Modules.WifiAccess.Domain.dll

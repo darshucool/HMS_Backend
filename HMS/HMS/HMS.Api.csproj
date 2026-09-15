@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>1ae9d830-f50c-47f7-acd7-10dfc6a8ac87</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.24.1-preview.1" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.17.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\BuildingBlocks\HMS.Infrastructure\HMS.Infrastructure.csproj" />
+    <ProjectReference Include="..\src\Modules\Folios\HMS.Modules.Folios.Api\HMS.Modules.Folios.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\FrontDesk\HMS.Modules.FrontDesk.Api\HMS.Modules.FrontDesk.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Guests\HMS.Modules.Guests.Api\HMS.Modules.Guests.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\GuestServices\HMS.Modules.GuestServices.Api\HMS.Modules.GuestServices.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Hotels\HMS.Modules.Hotels.Api\HMS.Modules.Hotels.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Housekeeping\HMS.Modules.Housekeeping.Api\HMS.Modules.Housekeeping.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Identity\HMS.Modules.Identity.Api\HMS.Modules.Identity.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Inventory\HMS.Modules.Inventory.Api\HMS.Modules.Inventory.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Maintenance\HMS.Modules.Maintenance.Api\HMS.Modules.Maintenance.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Notifications\HMS.Modules.Notifications.Api\HMS.Modules.Notifications.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Payments\HMS.Modules.Payments.Api\HMS.Modules.Payments.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\PointOfSale\HMS.Modules.PointOfSale.Api\HMS.Modules.PointOfSale.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Reporting\HMS.Modules.Reporting.Api\HMS.Modules.Reporting.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Reservations\HMS.Modules.Reservations.Api\HMS.Modules.Reservations.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Api\HMS.Modules.WifiAccess.Api.csproj" />
+  </ItemGroup>
+
+</Project>

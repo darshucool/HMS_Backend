@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "HMS.Modules.Housekeeping.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Housekeeping.Domain.dll": {}
+        }
+      },
+      "HMS.SharedKernel/1.0.0": {
+        "runtime": {
+          "HMS.SharedKernel.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HMS.Modules.Housekeeping.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.SharedKernel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMS.Modules.FrontDesk.Application\HMS.Modules.FrontDesk.Application.csproj" />
+    <ProjectReference Include="..\HMS.Modules.FrontDesk.Infrastructure\HMS.Modules.FrontDesk.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\HMS.Contracts\HMS.Contracts.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

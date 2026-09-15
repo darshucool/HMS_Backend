@@ -59,6 +59,923 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "HMS.Application.Abstractions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Application.Abstractions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Application.Abstractions.dll": {}
+        }
+      },
+      "HMS.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/HMS.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Contracts.dll": {}
+        }
+      },
+      "HMS.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Folios.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Folios.Application": "1.0.0",
+          "HMS.Modules.Folios.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Folios.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Folios.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Folios.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Folios.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Folios.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Folios.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Folios.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Folios.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Folios.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Folios.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Folios.Application": "1.0.0",
+          "HMS.Modules.Folios.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Folios.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Folios.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.FrontDesk.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.FrontDesk.Application": "1.0.0",
+          "HMS.Modules.FrontDesk.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.FrontDesk.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.FrontDesk.Api.dll": {}
+        }
+      },
+      "HMS.Modules.FrontDesk.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.FrontDesk.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.FrontDesk.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.FrontDesk.Application.dll": {}
+        }
+      },
+      "HMS.Modules.FrontDesk.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.FrontDesk.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.FrontDesk.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.FrontDesk.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.FrontDesk.Application": "1.0.0",
+          "HMS.Modules.FrontDesk.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.FrontDesk.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.FrontDesk.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Guests.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Guests.Application": "1.0.0",
+          "HMS.Modules.Guests.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Guests.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Guests.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Guests.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Guests.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Guests.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Guests.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Guests.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Guests.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Guests.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Guests.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Guests.Application": "1.0.0",
+          "HMS.Modules.Guests.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Guests.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Guests.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.GuestServices.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.GuestServices.Application": "1.0.0",
+          "HMS.Modules.GuestServices.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.GuestServices.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.GuestServices.Api.dll": {}
+        }
+      },
+      "HMS.Modules.GuestServices.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.GuestServices.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.GuestServices.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.GuestServices.Application.dll": {}
+        }
+      },
+      "HMS.Modules.GuestServices.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.GuestServices.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.GuestServices.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.GuestServices.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.GuestServices.Application": "1.0.0",
+          "HMS.Modules.GuestServices.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.GuestServices.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.GuestServices.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Hotels.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Hotels.Application": "1.0.0",
+          "HMS.Modules.Hotels.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Hotels.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Hotels.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Hotels.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Hotels.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Hotels.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Hotels.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Hotels.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Hotels.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Hotels.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Hotels.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Hotels.Application": "1.0.0",
+          "HMS.Modules.Hotels.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Hotels.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Hotels.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Housekeeping.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Housekeeping.Application": "1.0.0",
+          "HMS.Modules.Housekeeping.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Housekeeping.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Housekeeping.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Housekeeping.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Housekeeping.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Housekeeping.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Housekeeping.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Housekeeping.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Housekeeping.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Housekeeping.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Housekeeping.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Housekeeping.Application": "1.0.0",
+          "HMS.Modules.Housekeeping.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Housekeeping.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Housekeeping.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Identity.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Identity.Application": "1.0.0",
+          "HMS.Modules.Identity.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Identity.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Identity.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Identity.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Identity.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Identity.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Identity.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Identity.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Identity.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Identity.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Identity.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Identity.Application": "1.0.0",
+          "HMS.Modules.Identity.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Identity.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Identity.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Inventory.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Inventory.Application": "1.0.0",
+          "HMS.Modules.Inventory.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Inventory.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Inventory.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Inventory.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Inventory.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Inventory.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Inventory.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Inventory.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Inventory.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Inventory.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Inventory.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Inventory.Application": "1.0.0",
+          "HMS.Modules.Inventory.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Inventory.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Inventory.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Maintenance.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Maintenance.Application": "1.0.0",
+          "HMS.Modules.Maintenance.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Maintenance.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Maintenance.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Maintenance.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Maintenance.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Maintenance.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Maintenance.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Maintenance.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Maintenance.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Maintenance.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Maintenance.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Maintenance.Application": "1.0.0",
+          "HMS.Modules.Maintenance.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Maintenance.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Maintenance.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Notifications.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Notifications.Application": "1.0.0",
+          "HMS.Modules.Notifications.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Notifications.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Notifications.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Notifications.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Notifications.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Notifications.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Notifications.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Notifications.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Notifications.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Notifications.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Notifications.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Notifications.Application": "1.0.0",
+          "HMS.Modules.Notifications.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Notifications.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Notifications.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Payments.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Payments.Application": "1.0.0",
+          "HMS.Modules.Payments.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Payments.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Payments.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Payments.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Payments.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Payments.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Payments.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Payments.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Payments.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Payments.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Payments.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Payments.Application": "1.0.0",
+          "HMS.Modules.Payments.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Payments.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Payments.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.PointOfSale.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.PointOfSale.Application": "1.0.0",
+          "HMS.Modules.PointOfSale.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.PointOfSale.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.PointOfSale.Api.dll": {}
+        }
+      },
+      "HMS.Modules.PointOfSale.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.PointOfSale.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.PointOfSale.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.PointOfSale.Application.dll": {}
+        }
+      },
+      "HMS.Modules.PointOfSale.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.PointOfSale.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.PointOfSale.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.PointOfSale.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.PointOfSale.Application": "1.0.0",
+          "HMS.Modules.PointOfSale.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.PointOfSale.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.PointOfSale.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Reporting.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Reporting.Application": "1.0.0",
+          "HMS.Modules.Reporting.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reporting.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reporting.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Reporting.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Reporting.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reporting.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reporting.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Reporting.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reporting.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reporting.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Reporting.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Reporting.Application": "1.0.0",
+          "HMS.Modules.Reporting.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reporting.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reporting.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Reservations.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Reservations.Application": "1.0.0",
+          "HMS.Modules.Reservations.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reservations.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reservations.Api.dll": {}
+        }
+      },
+      "HMS.Modules.Reservations.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Reservations.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reservations.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reservations.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Reservations.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reservations.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reservations.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Reservations.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Reservations.Application": "1.0.0",
+          "HMS.Modules.Reservations.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reservations.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reservations.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.WifiAccess.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.WifiAccess.Application": "1.0.0",
+          "HMS.Modules.WifiAccess.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.WifiAccess.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.WifiAccess.Api.dll": {}
+        }
+      },
+      "HMS.Modules.WifiAccess.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.WifiAccess.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.WifiAccess.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.WifiAccess.Application.dll": {}
+        }
+      },
+      "HMS.Modules.WifiAccess.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.WifiAccess.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.WifiAccess.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.WifiAccess.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.WifiAccess.Application": "1.0.0",
+          "HMS.Modules.WifiAccess.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.WifiAccess.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.WifiAccess.Infrastructure.dll": {}
+        }
+      },
+      "HMS.SharedKernel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/HMS.SharedKernel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.SharedKernel.dll": {}
+        }
       }
     }
   },
@@ -197,10 +1114,346 @@
         "scalar.aspnetcore.2.17.3.nupkg.sha512",
         "scalar.aspnetcore.nuspec"
       ]
+    },
+    "HMS.Application.Abstractions/1.0.0": {
+      "type": "project",
+      "path": "../src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj",
+      "msbuildProject": "../src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj"
+    },
+    "HMS.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj",
+      "msbuildProject": "../src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj"
+    },
+    "HMS.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj",
+      "msbuildProject": "../src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj"
+    },
+    "HMS.Modules.Folios.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj",
+      "msbuildProject": "../src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj"
+    },
+    "HMS.Modules.Folios.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Folios/HMS.Modules.Folios.Application/HMS.Modules.Folios.Application.csproj",
+      "msbuildProject": "../src/Modules/Folios/HMS.Modules.Folios.Application/HMS.Modules.Folios.Application.csproj"
+    },
+    "HMS.Modules.Folios.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Folios/HMS.Modules.Folios.Domain/HMS.Modules.Folios.Domain.csproj",
+      "msbuildProject": "../src/Modules/Folios/HMS.Modules.Folios.Domain/HMS.Modules.Folios.Domain.csproj"
+    },
+    "HMS.Modules.Folios.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Folios/HMS.Modules.Folios.Infrastructure/HMS.Modules.Folios.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Folios/HMS.Modules.Folios.Infrastructure/HMS.Modules.Folios.Infrastructure.csproj"
+    },
+    "HMS.Modules.FrontDesk.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/FrontDesk/HMS.Modules.FrontDesk.Api/HMS.Modules.FrontDesk.Api.csproj",
+      "msbuildProject": "../src/Modules/FrontDesk/HMS.Modules.FrontDesk.Api/HMS.Modules.FrontDesk.Api.csproj"
+    },
+    "HMS.Modules.FrontDesk.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/FrontDesk/HMS.Modules.FrontDesk.Application/HMS.Modules.FrontDesk.Application.csproj",
+      "msbuildProject": "../src/Modules/FrontDesk/HMS.Modules.FrontDesk.Application/HMS.Modules.FrontDesk.Application.csproj"
+    },
+    "HMS.Modules.FrontDesk.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/FrontDesk/HMS.Modules.FrontDesk.Domain/HMS.Modules.FrontDesk.Domain.csproj",
+      "msbuildProject": "../src/Modules/FrontDesk/HMS.Modules.FrontDesk.Domain/HMS.Modules.FrontDesk.Domain.csproj"
+    },
+    "HMS.Modules.FrontDesk.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/FrontDesk/HMS.Modules.FrontDesk.Infrastructure/HMS.Modules.FrontDesk.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/FrontDesk/HMS.Modules.FrontDesk.Infrastructure/HMS.Modules.FrontDesk.Infrastructure.csproj"
+    },
+    "HMS.Modules.Guests.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Guests/HMS.Modules.Guests.Api/HMS.Modules.Guests.Api.csproj",
+      "msbuildProject": "../src/Modules/Guests/HMS.Modules.Guests.Api/HMS.Modules.Guests.Api.csproj"
+    },
+    "HMS.Modules.Guests.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Guests/HMS.Modules.Guests.Application/HMS.Modules.Guests.Application.csproj",
+      "msbuildProject": "../src/Modules/Guests/HMS.Modules.Guests.Application/HMS.Modules.Guests.Application.csproj"
+    },
+    "HMS.Modules.Guests.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Guests/HMS.Modules.Guests.Domain/HMS.Modules.Guests.Domain.csproj",
+      "msbuildProject": "../src/Modules/Guests/HMS.Modules.Guests.Domain/HMS.Modules.Guests.Domain.csproj"
+    },
+    "HMS.Modules.Guests.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Guests/HMS.Modules.Guests.Infrastructure/HMS.Modules.Guests.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Guests/HMS.Modules.Guests.Infrastructure/HMS.Modules.Guests.Infrastructure.csproj"
+    },
+    "HMS.Modules.GuestServices.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/GuestServices/HMS.Modules.GuestServices.Api/HMS.Modules.GuestServices.Api.csproj",
+      "msbuildProject": "../src/Modules/GuestServices/HMS.Modules.GuestServices.Api/HMS.Modules.GuestServices.Api.csproj"
+    },
+    "HMS.Modules.GuestServices.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/GuestServices/HMS.Modules.GuestServices.Application/HMS.Modules.GuestServices.Application.csproj",
+      "msbuildProject": "../src/Modules/GuestServices/HMS.Modules.GuestServices.Application/HMS.Modules.GuestServices.Application.csproj"
+    },
+    "HMS.Modules.GuestServices.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/GuestServices/HMS.Modules.GuestServices.Domain/HMS.Modules.GuestServices.Domain.csproj",
+      "msbuildProject": "../src/Modules/GuestServices/HMS.Modules.GuestServices.Domain/HMS.Modules.GuestServices.Domain.csproj"
+    },
+    "HMS.Modules.GuestServices.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/GuestServices/HMS.Modules.GuestServices.Infrastructure/HMS.Modules.GuestServices.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/GuestServices/HMS.Modules.GuestServices.Infrastructure/HMS.Modules.GuestServices.Infrastructure.csproj"
+    },
+    "HMS.Modules.Hotels.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Hotels/HMS.Modules.Hotels.Api/HMS.Modules.Hotels.Api.csproj",
+      "msbuildProject": "../src/Modules/Hotels/HMS.Modules.Hotels.Api/HMS.Modules.Hotels.Api.csproj"
+    },
+    "HMS.Modules.Hotels.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj",
+      "msbuildProject": "../src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj"
+    },
+    "HMS.Modules.Hotels.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Hotels/HMS.Modules.Hotels.Domain/HMS.Modules.Hotels.Domain.csproj",
+      "msbuildProject": "../src/Modules/Hotels/HMS.Modules.Hotels.Domain/HMS.Modules.Hotels.Domain.csproj"
+    },
+    "HMS.Modules.Hotels.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Hotels/HMS.Modules.Hotels.Infrastructure/HMS.Modules.Hotels.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Hotels/HMS.Modules.Hotels.Infrastructure/HMS.Modules.Hotels.Infrastructure.csproj"
+    },
+    "HMS.Modules.Housekeeping.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Housekeeping/HMS.Modules.Housekeeping.Api/HMS.Modules.Housekeeping.Api.csproj",
+      "msbuildProject": "../src/Modules/Housekeeping/HMS.Modules.Housekeeping.Api/HMS.Modules.Housekeeping.Api.csproj"
+    },
+    "HMS.Modules.Housekeeping.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Housekeeping/HMS.Modules.Housekeeping.Application/HMS.Modules.Housekeeping.Application.csproj",
+      "msbuildProject": "../src/Modules/Housekeeping/HMS.Modules.Housekeeping.Application/HMS.Modules.Housekeeping.Application.csproj"
+    },
+    "HMS.Modules.Housekeeping.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/HMS.Modules.Housekeeping.Domain.csproj",
+      "msbuildProject": "../src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/HMS.Modules.Housekeeping.Domain.csproj"
+    },
+    "HMS.Modules.Housekeeping.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Housekeeping/HMS.Modules.Housekeeping.Infrastructure/HMS.Modules.Housekeeping.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Housekeeping/HMS.Modules.Housekeeping.Infrastructure/HMS.Modules.Housekeeping.Infrastructure.csproj"
+    },
+    "HMS.Modules.Identity.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Identity/HMS.Modules.Identity.Api/HMS.Modules.Identity.Api.csproj",
+      "msbuildProject": "../src/Modules/Identity/HMS.Modules.Identity.Api/HMS.Modules.Identity.Api.csproj"
+    },
+    "HMS.Modules.Identity.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Identity/HMS.Modules.Identity.Application/HMS.Modules.Identity.Application.csproj",
+      "msbuildProject": "../src/Modules/Identity/HMS.Modules.Identity.Application/HMS.Modules.Identity.Application.csproj"
+    },
+    "HMS.Modules.Identity.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Identity/HMS.Modules.Identity.Domain/HMS.Modules.Identity.Domain.csproj",
+      "msbuildProject": "../src/Modules/Identity/HMS.Modules.Identity.Domain/HMS.Modules.Identity.Domain.csproj"
+    },
+    "HMS.Modules.Identity.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Identity/HMS.Modules.Identity.Infrastructure/HMS.Modules.Identity.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Identity/HMS.Modules.Identity.Infrastructure/HMS.Modules.Identity.Infrastructure.csproj"
+    },
+    "HMS.Modules.Inventory.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Inventory/HMS.Modules.Inventory.Api/HMS.Modules.Inventory.Api.csproj",
+      "msbuildProject": "../src/Modules/Inventory/HMS.Modules.Inventory.Api/HMS.Modules.Inventory.Api.csproj"
+    },
+    "HMS.Modules.Inventory.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Inventory/HMS.Modules.Inventory.Application/HMS.Modules.Inventory.Application.csproj",
+      "msbuildProject": "../src/Modules/Inventory/HMS.Modules.Inventory.Application/HMS.Modules.Inventory.Application.csproj"
+    },
+    "HMS.Modules.Inventory.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Inventory/HMS.Modules.Inventory.Domain/HMS.Modules.Inventory.Domain.csproj",
+      "msbuildProject": "../src/Modules/Inventory/HMS.Modules.Inventory.Domain/HMS.Modules.Inventory.Domain.csproj"
+    },
+    "HMS.Modules.Inventory.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Inventory/HMS.Modules.Inventory.Infrastructure/HMS.Modules.Inventory.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Inventory/HMS.Modules.Inventory.Infrastructure/HMS.Modules.Inventory.Infrastructure.csproj"
+    },
+    "HMS.Modules.Maintenance.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Maintenance/HMS.Modules.Maintenance.Api/HMS.Modules.Maintenance.Api.csproj",
+      "msbuildProject": "../src/Modules/Maintenance/HMS.Modules.Maintenance.Api/HMS.Modules.Maintenance.Api.csproj"
+    },
+    "HMS.Modules.Maintenance.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Maintenance/HMS.Modules.Maintenance.Application/HMS.Modules.Maintenance.Application.csproj",
+      "msbuildProject": "../src/Modules/Maintenance/HMS.Modules.Maintenance.Application/HMS.Modules.Maintenance.Application.csproj"
+    },
+    "HMS.Modules.Maintenance.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/HMS.Modules.Maintenance.Domain.csproj",
+      "msbuildProject": "../src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/HMS.Modules.Maintenance.Domain.csproj"
+    },
+    "HMS.Modules.Maintenance.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Maintenance/HMS.Modules.Maintenance.Infrastructure/HMS.Modules.Maintenance.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Maintenance/HMS.Modules.Maintenance.Infrastructure/HMS.Modules.Maintenance.Infrastructure.csproj"
+    },
+    "HMS.Modules.Notifications.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Notifications/HMS.Modules.Notifications.Api/HMS.Modules.Notifications.Api.csproj",
+      "msbuildProject": "../src/Modules/Notifications/HMS.Modules.Notifications.Api/HMS.Modules.Notifications.Api.csproj"
+    },
+    "HMS.Modules.Notifications.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Notifications/HMS.Modules.Notifications.Application/HMS.Modules.Notifications.Application.csproj",
+      "msbuildProject": "../src/Modules/Notifications/HMS.Modules.Notifications.Application/HMS.Modules.Notifications.Application.csproj"
+    },
+    "HMS.Modules.Notifications.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Notifications/HMS.Modules.Notifications.Domain/HMS.Modules.Notifications.Domain.csproj",
+      "msbuildProject": "../src/Modules/Notifications/HMS.Modules.Notifications.Domain/HMS.Modules.Notifications.Domain.csproj"
+    },
+    "HMS.Modules.Notifications.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Notifications/HMS.Modules.Notifications.Infrastructure/HMS.Modules.Notifications.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Notifications/HMS.Modules.Notifications.Infrastructure/HMS.Modules.Notifications.Infrastructure.csproj"
+    },
+    "HMS.Modules.Payments.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Payments/HMS.Modules.Payments.Api/HMS.Modules.Payments.Api.csproj",
+      "msbuildProject": "../src/Modules/Payments/HMS.Modules.Payments.Api/HMS.Modules.Payments.Api.csproj"
+    },
+    "HMS.Modules.Payments.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Payments/HMS.Modules.Payments.Application/HMS.Modules.Payments.Application.csproj",
+      "msbuildProject": "../src/Modules/Payments/HMS.Modules.Payments.Application/HMS.Modules.Payments.Application.csproj"
+    },
+    "HMS.Modules.Payments.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Payments/HMS.Modules.Payments.Domain/HMS.Modules.Payments.Domain.csproj",
+      "msbuildProject": "../src/Modules/Payments/HMS.Modules.Payments.Domain/HMS.Modules.Payments.Domain.csproj"
+    },
+    "HMS.Modules.Payments.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Payments/HMS.Modules.Payments.Infrastructure/HMS.Modules.Payments.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Payments/HMS.Modules.Payments.Infrastructure/HMS.Modules.Payments.Infrastructure.csproj"
+    },
+    "HMS.Modules.PointOfSale.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/PointOfSale/HMS.Modules.PointOfSale.Api/HMS.Modules.PointOfSale.Api.csproj",
+      "msbuildProject": "../src/Modules/PointOfSale/HMS.Modules.PointOfSale.Api/HMS.Modules.PointOfSale.Api.csproj"
+    },
+    "HMS.Modules.PointOfSale.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/PointOfSale/HMS.Modules.PointOfSale.Application/HMS.Modules.PointOfSale.Application.csproj",
+      "msbuildProject": "../src/Modules/PointOfSale/HMS.Modules.PointOfSale.Application/HMS.Modules.PointOfSale.Application.csproj"
+    },
+    "HMS.Modules.PointOfSale.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/PointOfSale/HMS.Modules.PointOfSale.Domain/HMS.Modules.PointOfSale.Domain.csproj",
+      "msbuildProject": "../src/Modules/PointOfSale/HMS.Modules.PointOfSale.Domain/HMS.Modules.PointOfSale.Domain.csproj"
+    },
+    "HMS.Modules.PointOfSale.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/PointOfSale/HMS.Modules.PointOfSale.Infrastructure/HMS.Modules.PointOfSale.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/PointOfSale/HMS.Modules.PointOfSale.Infrastructure/HMS.Modules.PointOfSale.Infrastructure.csproj"
+    },
+    "HMS.Modules.Reporting.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reporting/HMS.Modules.Reporting.Api/HMS.Modules.Reporting.Api.csproj",
+      "msbuildProject": "../src/Modules/Reporting/HMS.Modules.Reporting.Api/HMS.Modules.Reporting.Api.csproj"
+    },
+    "HMS.Modules.Reporting.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reporting/HMS.Modules.Reporting.Application/HMS.Modules.Reporting.Application.csproj",
+      "msbuildProject": "../src/Modules/Reporting/HMS.Modules.Reporting.Application/HMS.Modules.Reporting.Application.csproj"
+    },
+    "HMS.Modules.Reporting.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reporting/HMS.Modules.Reporting.Domain/HMS.Modules.Reporting.Domain.csproj",
+      "msbuildProject": "../src/Modules/Reporting/HMS.Modules.Reporting.Domain/HMS.Modules.Reporting.Domain.csproj"
+    },
+    "HMS.Modules.Reporting.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reporting/HMS.Modules.Reporting.Infrastructure/HMS.Modules.Reporting.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Reporting/HMS.Modules.Reporting.Infrastructure/HMS.Modules.Reporting.Infrastructure.csproj"
+    },
+    "HMS.Modules.Reservations.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reservations/HMS.Modules.Reservations.Api/HMS.Modules.Reservations.Api.csproj",
+      "msbuildProject": "../src/Modules/Reservations/HMS.Modules.Reservations.Api/HMS.Modules.Reservations.Api.csproj"
+    },
+    "HMS.Modules.Reservations.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reservations/HMS.Modules.Reservations.Application/HMS.Modules.Reservations.Application.csproj",
+      "msbuildProject": "../src/Modules/Reservations/HMS.Modules.Reservations.Application/HMS.Modules.Reservations.Application.csproj"
+    },
+    "HMS.Modules.Reservations.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reservations/HMS.Modules.Reservations.Domain/HMS.Modules.Reservations.Domain.csproj",
+      "msbuildProject": "../src/Modules/Reservations/HMS.Modules.Reservations.Domain/HMS.Modules.Reservations.Domain.csproj"
+    },
+    "HMS.Modules.Reservations.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reservations/HMS.Modules.Reservations.Infrastructure/HMS.Modules.Reservations.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Reservations/HMS.Modules.Reservations.Infrastructure/HMS.Modules.Reservations.Infrastructure.csproj"
+    },
+    "HMS.Modules.WifiAccess.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/HMS.Modules.WifiAccess.Api.csproj",
+      "msbuildProject": "../src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/HMS.Modules.WifiAccess.Api.csproj"
+    },
+    "HMS.Modules.WifiAccess.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/WifiAccess/HMS.Modules.WifiAccess.Application/HMS.Modules.WifiAccess.Application.csproj",
+      "msbuildProject": "../src/Modules/WifiAccess/HMS.Modules.WifiAccess.Application/HMS.Modules.WifiAccess.Application.csproj"
+    },
+    "HMS.Modules.WifiAccess.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/HMS.Modules.WifiAccess.Domain.csproj",
+      "msbuildProject": "../src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/HMS.Modules.WifiAccess.Domain.csproj"
+    },
+    "HMS.Modules.WifiAccess.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/WifiAccess/HMS.Modules.WifiAccess.Infrastructure/HMS.Modules.WifiAccess.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/WifiAccess/HMS.Modules.WifiAccess.Infrastructure/HMS.Modules.WifiAccess.Infrastructure.csproj"
+    },
+    "HMS.SharedKernel/1.0.0": {
+      "type": "project",
+      "path": "../src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
+      "msbuildProject": "../src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "HMS.Infrastructure >= 1.0.0",
+      "HMS.Modules.Folios.Api >= 1.0.0",
+      "HMS.Modules.FrontDesk.Api >= 1.0.0",
+      "HMS.Modules.GuestServices.Api >= 1.0.0",
+      "HMS.Modules.Guests.Api >= 1.0.0",
+      "HMS.Modules.Hotels.Api >= 1.0.0",
+      "HMS.Modules.Housekeeping.Api >= 1.0.0",
+      "HMS.Modules.Identity.Api >= 1.0.0",
+      "HMS.Modules.Inventory.Api >= 1.0.0",
+      "HMS.Modules.Maintenance.Api >= 1.0.0",
+      "HMS.Modules.Notifications.Api >= 1.0.0",
+      "HMS.Modules.Payments.Api >= 1.0.0",
+      "HMS.Modules.PointOfSale.Api >= 1.0.0",
+      "HMS.Modules.Reporting.Api >= 1.0.0",
+      "HMS.Modules.Reservations.Api >= 1.0.0",
+      "HMS.Modules.WifiAccess.Api >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.12",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.24.1-preview.1",
       "Scalar.AspNetCore >= 2.17.3"
@@ -213,9 +1466,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\HMS.csproj",
-      "projectName": "HMS",
-      "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\HMS.csproj",
+      "projectUniqueName": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\HMS.Api.csproj",
+      "projectName": "HMS.Api",
+      "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\HMS.Api.csproj",
       "packagesPath": "C:\\Users\\Darshaka Peramune\\.nuget\\packages\\",
       "outputPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\obj\\",
       "projectStyle": "PackageReference",
@@ -238,7 +1491,56 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Infrastructure\\HMS.Infrastructure.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Infrastructure\\HMS.Infrastructure.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Folios\\HMS.Modules.Folios.Api\\HMS.Modules.Folios.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Folios\\HMS.Modules.Folios.Api\\HMS.Modules.Folios.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\FrontDesk\\HMS.Modules.FrontDesk.Api\\HMS.Modules.FrontDesk.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\FrontDesk\\HMS.Modules.FrontDesk.Api\\HMS.Modules.FrontDesk.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\GuestServices\\HMS.Modules.GuestServices.Api\\HMS.Modules.GuestServices.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\GuestServices\\HMS.Modules.GuestServices.Api\\HMS.Modules.GuestServices.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Guests\\HMS.Modules.Guests.Api\\HMS.Modules.Guests.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Guests\\HMS.Modules.Guests.Api\\HMS.Modules.Guests.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Housekeeping\\HMS.Modules.Housekeeping.Api\\HMS.Modules.Housekeeping.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Housekeeping\\HMS.Modules.Housekeeping.Api\\HMS.Modules.Housekeeping.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Inventory\\HMS.Modules.Inventory.Api\\HMS.Modules.Inventory.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Inventory\\HMS.Modules.Inventory.Api\\HMS.Modules.Inventory.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Maintenance\\HMS.Modules.Maintenance.Api\\HMS.Modules.Maintenance.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Maintenance\\HMS.Modules.Maintenance.Api\\HMS.Modules.Maintenance.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Notifications\\HMS.Modules.Notifications.Api\\HMS.Modules.Notifications.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Notifications\\HMS.Modules.Notifications.Api\\HMS.Modules.Notifications.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Payments\\HMS.Modules.Payments.Api\\HMS.Modules.Payments.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Payments\\HMS.Modules.Payments.Api\\HMS.Modules.Payments.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\PointOfSale\\HMS.Modules.PointOfSale.Api\\HMS.Modules.PointOfSale.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\PointOfSale\\HMS.Modules.PointOfSale.Api\\HMS.Modules.PointOfSale.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Reporting\\HMS.Modules.Reporting.Api\\HMS.Modules.Reporting.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Reporting\\HMS.Modules.Reporting.Api\\HMS.Modules.Reporting.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Reservations\\HMS.Modules.Reservations.Api\\HMS.Modules.Reservations.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Reservations\\HMS.Modules.Reservations.Api\\HMS.Modules.Reservations.Api.csproj"
+            },
+            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\WifiAccess\\HMS.Modules.WifiAccess.Api\\HMS.Modules.WifiAccess.Api.csproj": {
+              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\WifiAccess\\HMS.Modules.WifiAccess.Api\\HMS.Modules.WifiAccess.Api.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

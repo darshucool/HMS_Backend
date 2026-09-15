@@ -1,0 +1,86 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "HMS.Modules.Reporting.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Reporting.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reporting.Application.dll": {}
+        }
+      },
+      "HMS.Application.Abstractions/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Application.Abstractions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Contracts/1.0.0": {
+        "runtime": {
+          "HMS.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reporting.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reporting.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.SharedKernel/1.0.0": {
+        "runtime": {
+          "HMS.SharedKernel.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HMS.Modules.Reporting.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Application.Abstractions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reporting.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.SharedKernel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

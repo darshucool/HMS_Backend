@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMS.Modules.Housekeeping.Application\HMS.Modules.Housekeeping.Application.csproj" />
+    <ProjectReference Include="..\HMS.Modules.Housekeeping.Infrastructure\HMS.Modules.Housekeeping.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\HMS.Contracts\HMS.Contracts.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\bin\Debug\net10.0\HMS.Modules.Notifications.Domain.deps.json
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\bin\Debug\net10.0\HMS.Modules.Notifications.Domain.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\bin\Debug\net10.0\HMS.Modules.Notifications.Domain.pdb
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\bin\Debug\net10.0\HMS.SharedKernel.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\bin\Debug\net10.0\HMS.SharedKernel.pdb
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\HMS.Modules.Notifications.Domain.csproj.AssemblyReference.cache
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\HMS.Modules.Notifications.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\HMS.Modules.Notifications.Domain.AssemblyInfoInputs.cache
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\HMS.Modules.Notifications.Domain.AssemblyInfo.cs
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\HMS.Modules.Notifications.Domain.csproj.CoreCompileInputs.cache
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\HMS.Modules.Notifications.Domain.sourcelink.json
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\HMS.Modu.61D7DCE0.Up2Date
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\HMS.Modules.Notifications.Domain.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\refint\HMS.Modules.Notifications.Domain.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\HMS.Modules.Notifications.Domain.pdb
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Notifications\HMS.Modules.Notifications.Domain\obj\Debug\net10.0\ref\HMS.Modules.Notifications.Domain.dll

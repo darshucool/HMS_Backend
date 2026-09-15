@@ -1,3 +1,107 @@
 <Solution>
-  <Project Path="HMS/HMS.csproj" />
+  <Folder Name="/src/" />
+  <Folder Name="/src/Bootstrapper/">
+    <Project Path="HMS/HMS.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/">
+    <Project Path="src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj" />
+    <Project Path="src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj" />
+    <Project Path="src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj" />
+    <Project Path="src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Folios/">
+    <Project Path="src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj" />
+    <Project Path="src/Modules/Folios/HMS.Modules.Folios.Application/HMS.Modules.Folios.Application.csproj" />
+    <Project Path="src/Modules/Folios/HMS.Modules.Folios.Domain/HMS.Modules.Folios.Domain.csproj" />
+    <Project Path="src/Modules/Folios/HMS.Modules.Folios.Infrastructure/HMS.Modules.Folios.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/FrontDesk/">
+    <Project Path="src/Modules/FrontDesk/HMS.Modules.FrontDesk.Api/HMS.Modules.FrontDesk.Api.csproj" />
+    <Project Path="src/Modules/FrontDesk/HMS.Modules.FrontDesk.Application/HMS.Modules.FrontDesk.Application.csproj" />
+    <Project Path="src/Modules/FrontDesk/HMS.Modules.FrontDesk.Domain/HMS.Modules.FrontDesk.Domain.csproj" />
+    <Project Path="src/Modules/FrontDesk/HMS.Modules.FrontDesk.Infrastructure/HMS.Modules.FrontDesk.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Guests/">
+    <Project Path="src/Modules/Guests/HMS.Modules.Guests.Api/HMS.Modules.Guests.Api.csproj" />
+    <Project Path="src/Modules/Guests/HMS.Modules.Guests.Application/HMS.Modules.Guests.Application.csproj" />
+    <Project Path="src/Modules/Guests/HMS.Modules.Guests.Domain/HMS.Modules.Guests.Domain.csproj" />
+    <Project Path="src/Modules/Guests/HMS.Modules.Guests.Infrastructure/HMS.Modules.Guests.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/GuestServices/">
+    <Project Path="src/Modules/GuestServices/HMS.Modules.GuestServices.Api/HMS.Modules.GuestServices.Api.csproj" />
+    <Project Path="src/Modules/GuestServices/HMS.Modules.GuestServices.Application/HMS.Modules.GuestServices.Application.csproj" />
+    <Project Path="src/Modules/GuestServices/HMS.Modules.GuestServices.Domain/HMS.Modules.GuestServices.Domain.csproj" />
+    <Project Path="src/Modules/GuestServices/HMS.Modules.GuestServices.Infrastructure/HMS.Modules.GuestServices.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Hotels/">
+    <Project Path="src/Modules/Hotels/HMS.Modules.Hotels.Api/HMS.Modules.Hotels.Api.csproj" />
+    <Project Path="src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj" />
+    <Project Path="src/Modules/Hotels/HMS.Modules.Hotels.Domain/HMS.Modules.Hotels.Domain.csproj" />
+    <Project Path="src/Modules/Hotels/HMS.Modules.Hotels.Infrastructure/HMS.Modules.Hotels.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Housekeeping/">
+    <Project Path="src/Modules/Housekeeping/HMS.Modules.Housekeeping.Api/HMS.Modules.Housekeeping.Api.csproj" />
+    <Project Path="src/Modules/Housekeeping/HMS.Modules.Housekeeping.Application/HMS.Modules.Housekeeping.Application.csproj" />
+    <Project Path="src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/HMS.Modules.Housekeeping.Domain.csproj" />
+    <Project Path="src/Modules/Housekeeping/HMS.Modules.Housekeeping.Infrastructure/HMS.Modules.Housekeeping.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Identity/">
+    <Project Path="src/Modules/Identity/HMS.Modules.Identity.Api/HMS.Modules.Identity.Api.csproj" />
+    <Project Path="src/Modules/Identity/HMS.Modules.Identity.Application/HMS.Modules.Identity.Application.csproj" />
+    <Project Path="src/Modules/Identity/HMS.Modules.Identity.Domain/HMS.Modules.Identity.Domain.csproj" />
+    <Project Path="src/Modules/Identity/HMS.Modules.Identity.Infrastructure/HMS.Modules.Identity.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Inventory/">
+    <Project Path="src/Modules/Inventory/HMS.Modules.Inventory.Api/HMS.Modules.Inventory.Api.csproj" />
+    <Project Path="src/Modules/Inventory/HMS.Modules.Inventory.Application/HMS.Modules.Inventory.Application.csproj" />
+    <Project Path="src/Modules/Inventory/HMS.Modules.Inventory.Domain/HMS.Modules.Inventory.Domain.csproj" />
+    <Project Path="src/Modules/Inventory/HMS.Modules.Inventory.Infrastructure/HMS.Modules.Inventory.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Maintenance/">
+    <Project Path="src/Modules/Maintenance/HMS.Modules.Maintenance.Api/HMS.Modules.Maintenance.Api.csproj" />
+    <Project Path="src/Modules/Maintenance/HMS.Modules.Maintenance.Application/HMS.Modules.Maintenance.Application.csproj" />
+    <Project Path="src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/HMS.Modules.Maintenance.Domain.csproj" />
+    <Project Path="src/Modules/Maintenance/HMS.Modules.Maintenance.Infrastructure/HMS.Modules.Maintenance.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Notifications/">
+    <Project Path="src/Modules/Notifications/HMS.Modules.Notifications.Api/HMS.Modules.Notifications.Api.csproj" />
+    <Project Path="src/Modules/Notifications/HMS.Modules.Notifications.Application/HMS.Modules.Notifications.Application.csproj" />
+    <Project Path="src/Modules/Notifications/HMS.Modules.Notifications.Domain/HMS.Modules.Notifications.Domain.csproj" />
+    <Project Path="src/Modules/Notifications/HMS.Modules.Notifications.Infrastructure/HMS.Modules.Notifications.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Payments/">
+    <Project Path="src/Modules/Payments/HMS.Modules.Payments.Api/HMS.Modules.Payments.Api.csproj" />
+    <Project Path="src/Modules/Payments/HMS.Modules.Payments.Application/HMS.Modules.Payments.Application.csproj" />
+    <Project Path="src/Modules/Payments/HMS.Modules.Payments.Domain/HMS.Modules.Payments.Domain.csproj" />
+    <Project Path="src/Modules/Payments/HMS.Modules.Payments.Infrastructure/HMS.Modules.Payments.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/PointOfSale/">
+    <Project Path="src/Modules/PointOfSale/HMS.Modules.PointOfSale.Api/HMS.Modules.PointOfSale.Api.csproj" />
+    <Project Path="src/Modules/PointOfSale/HMS.Modules.PointOfSale.Application/HMS.Modules.PointOfSale.Application.csproj" />
+    <Project Path="src/Modules/PointOfSale/HMS.Modules.PointOfSale.Domain/HMS.Modules.PointOfSale.Domain.csproj" />
+    <Project Path="src/Modules/PointOfSale/HMS.Modules.PointOfSale.Infrastructure/HMS.Modules.PointOfSale.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Reporting/">
+    <Project Path="src/Modules/Reporting/HMS.Modules.Reporting.Api/HMS.Modules.Reporting.Api.csproj" />
+    <Project Path="src/Modules/Reporting/HMS.Modules.Reporting.Application/HMS.Modules.Reporting.Application.csproj" />
+    <Project Path="src/Modules/Reporting/HMS.Modules.Reporting.Domain/HMS.Modules.Reporting.Domain.csproj" />
+    <Project Path="src/Modules/Reporting/HMS.Modules.Reporting.Infrastructure/HMS.Modules.Reporting.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Reservations/">
+    <Project Path="src/Modules/Reservations/HMS.Modules.Reservations.Api/HMS.Modules.Reservations.Api.csproj" />
+    <Project Path="src/Modules/Reservations/HMS.Modules.Reservations.Application/HMS.Modules.Reservations.Application.csproj" />
+    <Project Path="src/Modules/Reservations/HMS.Modules.Reservations.Domain/HMS.Modules.Reservations.Domain.csproj" />
+    <Project Path="src/Modules/Reservations/HMS.Modules.Reservations.Infrastructure/HMS.Modules.Reservations.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/WifiAccess/">
+    <Project Path="src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/HMS.Modules.WifiAccess.Api.csproj" />
+    <Project Path="src/Modules/WifiAccess/HMS.Modules.WifiAccess.Application/HMS.Modules.WifiAccess.Application.csproj" />
+    <Project Path="src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/HMS.Modules.WifiAccess.Domain.csproj" />
+    <Project Path="src/Modules/WifiAccess/HMS.Modules.WifiAccess.Infrastructure/HMS.Modules.WifiAccess.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/HMS.ArchitectureTests/HMS.ArchitectureTests.csproj" />
+    <Project Path="tests/HMS.IntegrationTests/HMS.IntegrationTests.csproj" />
+  </Folder>
 </Solution>

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7E2AD9EC-BA04-4943-8158-988F0D8CB961}|HMS\\HMS.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\hms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2AD9EC-BA04-4943-8158-988F0D8CB961}|HMS\\HMS.csproj|solutionrelative:hms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\hms\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|solutionrelative:hms\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E2AD9EC-BA04-4943-8158-988F0D8CB961}|HMS\\HMS.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\hms\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7E2AD9EC-BA04-4943-8158-988F0D8CB961}|HMS\\HMS.csproj|solutionrelative:hms\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\hms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C957F68F-4E66-122D-3FA1-3AD786BE6762}|HMS\\HMS.Api.csproj|solutionrelative:hms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "HMS\\Properties\\launchSettings.json",
               "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Properties\\launchSettings.json",
               "RelativeToolTip": "HMS\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAYwB8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAYwBwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-09-15T05:27:19.694Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Program.cs",
               "RelativeDocumentMoniker": "HMS\\Program.cs",
               "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Program.cs",
               "RelativeToolTip": "HMS\\Program.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAiwBUAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T05:25:39.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T05:25:39.954Z"
             }
           ]
         }

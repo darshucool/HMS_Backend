@@ -1,0 +1,1200 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "HMS.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Folios.Api": "1.0.0",
+          "HMS.Modules.FrontDesk.Api": "1.0.0",
+          "HMS.Modules.GuestServices.Api": "1.0.0",
+          "HMS.Modules.Guests.Api": "1.0.0",
+          "HMS.Modules.Hotels.Api": "1.0.0",
+          "HMS.Modules.Housekeeping.Api": "1.0.0",
+          "HMS.Modules.Identity.Api": "1.0.0",
+          "HMS.Modules.Inventory.Api": "1.0.0",
+          "HMS.Modules.Maintenance.Api": "1.0.0",
+          "HMS.Modules.Notifications.Api": "1.0.0",
+          "HMS.Modules.Payments.Api": "1.0.0",
+          "HMS.Modules.PointOfSale.Api": "1.0.0",
+          "HMS.Modules.Reporting.Api": "1.0.0",
+          "HMS.Modules.Reservations.Api": "1.0.0",
+          "HMS.Modules.WifiAccess.Api": "1.0.0",
+          "Microsoft.AspNetCore.OpenApi": "10.0.12",
+          "Scalar.AspNetCore": "2.17.3"
+        },
+        "runtime": {
+          "HMS.Api.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi/10.0.12": {
+        "dependencies": {
+          "Microsoft.OpenApi": "2.12.0"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "assemblyVersion": "10.0.12.0",
+            "fileVersion": "10.0.1226.42308"
+          }
+        }
+      },
+      "Microsoft.OpenApi/2.12.0": {
+        "runtime": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "2.12.0.0",
+            "fileVersion": "2.12.0.0"
+          }
+        }
+      },
+      "Scalar.AspNetCore/2.17.3": {
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "assemblyVersion": "2.17.3.0",
+            "fileVersion": "2.17.3.0"
+          }
+        }
+      },
+      "HMS.Application.Abstractions/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Application.Abstractions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Contracts/1.0.0": {
+        "runtime": {
+          "HMS.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Folios.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Folios.Application": "1.0.0",
+          "HMS.Modules.Folios.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Folios.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Folios.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Folios.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Folios.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Folios.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Folios.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Folios.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Folios.Application": "1.0.0",
+          "HMS.Modules.Folios.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Folios.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.FrontDesk.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.FrontDesk.Application": "1.0.0",
+          "HMS.Modules.FrontDesk.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.FrontDesk.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.FrontDesk.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.FrontDesk.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.FrontDesk.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.FrontDesk.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.FrontDesk.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.FrontDesk.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.FrontDesk.Application": "1.0.0",
+          "HMS.Modules.FrontDesk.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.FrontDesk.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Guests.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Guests.Application": "1.0.0",
+          "HMS.Modules.Guests.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Guests.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Guests.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Guests.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Guests.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Guests.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Guests.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Guests.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Guests.Application": "1.0.0",
+          "HMS.Modules.Guests.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Guests.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.GuestServices.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.GuestServices.Application": "1.0.0",
+          "HMS.Modules.GuestServices.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.GuestServices.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.GuestServices.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.GuestServices.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.GuestServices.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.GuestServices.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.GuestServices.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.GuestServices.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.GuestServices.Application": "1.0.0",
+          "HMS.Modules.GuestServices.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.GuestServices.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Hotels.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Hotels.Application": "1.0.0",
+          "HMS.Modules.Hotels.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Hotels.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Hotels.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Hotels.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Hotels.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Hotels.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Hotels.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Hotels.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Hotels.Application": "1.0.0",
+          "HMS.Modules.Hotels.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Hotels.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Housekeeping.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Housekeeping.Application": "1.0.0",
+          "HMS.Modules.Housekeeping.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Housekeeping.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Housekeeping.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Housekeeping.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Housekeeping.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Housekeeping.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Housekeeping.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Housekeeping.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Housekeeping.Application": "1.0.0",
+          "HMS.Modules.Housekeeping.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Housekeeping.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Identity.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Identity.Application": "1.0.0",
+          "HMS.Modules.Identity.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Identity.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Identity.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Identity.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Identity.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Identity.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Identity.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Identity.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Identity.Application": "1.0.0",
+          "HMS.Modules.Identity.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Identity.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Inventory.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Inventory.Application": "1.0.0",
+          "HMS.Modules.Inventory.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Inventory.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Inventory.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Inventory.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Inventory.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Inventory.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Inventory.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Inventory.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Inventory.Application": "1.0.0",
+          "HMS.Modules.Inventory.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Inventory.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Maintenance.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Maintenance.Application": "1.0.0",
+          "HMS.Modules.Maintenance.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Maintenance.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Maintenance.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Maintenance.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Maintenance.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Maintenance.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Maintenance.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Maintenance.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Maintenance.Application": "1.0.0",
+          "HMS.Modules.Maintenance.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Maintenance.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Notifications.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Notifications.Application": "1.0.0",
+          "HMS.Modules.Notifications.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Notifications.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Notifications.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Notifications.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Notifications.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Notifications.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Notifications.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Notifications.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Notifications.Application": "1.0.0",
+          "HMS.Modules.Notifications.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Notifications.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Payments.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Payments.Application": "1.0.0",
+          "HMS.Modules.Payments.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Payments.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Payments.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Payments.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Payments.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Payments.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Payments.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Payments.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Payments.Application": "1.0.0",
+          "HMS.Modules.Payments.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Payments.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.PointOfSale.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.PointOfSale.Application": "1.0.0",
+          "HMS.Modules.PointOfSale.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.PointOfSale.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.PointOfSale.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.PointOfSale.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.PointOfSale.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.PointOfSale.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.PointOfSale.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.PointOfSale.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.PointOfSale.Application": "1.0.0",
+          "HMS.Modules.PointOfSale.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.PointOfSale.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reporting.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Reporting.Application": "1.0.0",
+          "HMS.Modules.Reporting.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reporting.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reporting.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Reporting.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reporting.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reporting.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reporting.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reporting.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Reporting.Application": "1.0.0",
+          "HMS.Modules.Reporting.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reporting.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reservations.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Reservations.Application": "1.0.0",
+          "HMS.Modules.Reservations.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reservations.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reservations.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.Reservations.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reservations.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reservations.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reservations.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reservations.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Reservations.Application": "1.0.0",
+          "HMS.Modules.Reservations.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reservations.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.WifiAccess.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.WifiAccess.Application": "1.0.0",
+          "HMS.Modules.WifiAccess.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.WifiAccess.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.WifiAccess.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Contracts": "1.0.0",
+          "HMS.Modules.WifiAccess.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.WifiAccess.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.WifiAccess.Domain/1.0.0": {
+        "dependencies": {
+          "HMS.SharedKernel": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.WifiAccess.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.WifiAccess.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.WifiAccess.Application": "1.0.0",
+          "HMS.Modules.WifiAccess.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HMS.Modules.WifiAccess.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.SharedKernel/1.0.0": {
+        "runtime": {
+          "HMS.SharedKernel.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HMS.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.OpenApi/10.0.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7RnQ/UKn+kK3JDLmTpW+vVqNErWthGPAVAy1aIiBzv4ucQ6g9NFvOJUuT0PHcpvcJxGVxctMxj6t+NESWMrgHQ==",
+      "path": "microsoft.aspnetcore.openapi/10.0.12",
+      "hashPath": "microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/2.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0xB/be+f6qYOhvQPUrVsLrau+fkowYv6gt9RIkajMhwT7sZnqtcA797yW3bS5kgSje+AQW4xZgyLnW641YFioQ==",
+      "path": "microsoft.openapi/2.12.0",
+      "hashPath": "microsoft.openapi.2.12.0.nupkg.sha512"
+    },
+    "Scalar.AspNetCore/2.17.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TwAf1zy/MH2famozcDqk9+/jD37VAbonRXfnjAso0Q2YKeWtA0kH59WxhuevvAxWDL3jUU3TDpNmUFS2gF9bHw==",
+      "path": "scalar.aspnetcore/2.17.3",
+      "hashPath": "scalar.aspnetcore.2.17.3.nupkg.sha512"
+    },
+    "HMS.Application.Abstractions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Folios.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Folios.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Folios.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Folios.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.FrontDesk.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.FrontDesk.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.FrontDesk.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.FrontDesk.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Guests.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Guests.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Guests.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Guests.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.GuestServices.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.GuestServices.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.GuestServices.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.GuestServices.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Hotels.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Hotels.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Hotels.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Hotels.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Housekeeping.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Housekeeping.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Housekeeping.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Housekeeping.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Identity.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Identity.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Identity.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Identity.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Inventory.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Inventory.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Inventory.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Inventory.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Maintenance.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Maintenance.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Maintenance.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Maintenance.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Notifications.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Notifications.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Notifications.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Notifications.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Payments.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Payments.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Payments.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Payments.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.PointOfSale.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.PointOfSale.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.PointOfSale.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.PointOfSale.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reporting.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reporting.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reporting.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reporting.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reservations.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reservations.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reservations.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reservations.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.WifiAccess.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.WifiAccess.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.WifiAccess.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.WifiAccess.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.SharedKernel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

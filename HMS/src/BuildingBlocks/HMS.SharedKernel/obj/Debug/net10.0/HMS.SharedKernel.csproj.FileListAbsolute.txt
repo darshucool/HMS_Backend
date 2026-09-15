@@ -1,0 +1,12 @@
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\bin\Debug\net10.0\HMS.SharedKernel.deps.json
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\bin\Debug\net10.0\HMS.SharedKernel.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\bin\Debug\net10.0\HMS.SharedKernel.pdb
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\obj\Debug\net10.0\HMS.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\obj\Debug\net10.0\HMS.SharedKernel.AssemblyInfoInputs.cache
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\obj\Debug\net10.0\HMS.SharedKernel.AssemblyInfo.cs
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\obj\Debug\net10.0\HMS.SharedKernel.csproj.CoreCompileInputs.cache
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\obj\Debug\net10.0\HMS.SharedKernel.sourcelink.json
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\obj\Debug\net10.0\HMS.SharedKernel.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\obj\Debug\net10.0\refint\HMS.SharedKernel.dll
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\obj\Debug\net10.0\HMS.SharedKernel.pdb
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\BuildingBlocks\HMS.SharedKernel\obj\Debug\net10.0\ref\HMS.SharedKernel.dll
