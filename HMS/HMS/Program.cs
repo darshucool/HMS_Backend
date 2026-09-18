@@ -1,3 +1,4 @@
+using HMS.Modules.Hotels.Api;
 using HMS.Modules.Identity.Api;
 using Scalar.AspNetCore;
 
@@ -13,6 +14,8 @@ namespace HMS
             builder.Services.AddOpenApi();
 
             builder.Services.AddIdentityModule(
+                builder.Configuration);
+            builder.Services.AddHotelsModule(
                 builder.Configuration);
 
             var app = builder.Build();

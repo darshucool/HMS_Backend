@@ -49,6 +49,18 @@ public sealed record UpdatePropertyRequest(
     string DefaultCurrency,
     PropertyStatus Status);
 
+public sealed record CreateAccommodationTypeRequest(
+    string Code,
+    string Name,
+    UnitKind UnitKind = UnitKind.Room,
+    string? Description = null,
+    int MaxAdults = 1,
+    int MaxChildren = 0,
+    int MaxOccupancy = 1,
+    int DefaultQuantity = 1,
+    decimal BaseRate = 0,
+    int SortOrder = 0);
+
 public sealed record UpdatePropertySettingsRequest(
     TimeOnly CheckInTime,
     TimeOnly CheckOutTime,

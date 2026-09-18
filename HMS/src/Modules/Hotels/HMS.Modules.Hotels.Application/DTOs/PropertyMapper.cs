@@ -1,4 +1,5 @@
 using HMS.Modules.Hotels.Domain.Entities;
+using HMS.Modules.Hotels.Domain.Enums;
 
 namespace HMS.Modules.Hotels.Application.DTOs;
 
@@ -39,5 +40,23 @@ internal static class PropertyMapper
         settings.ServiceChargeRate,
         settings.AllowOverbooking,
         settings.ExtraSettingsJson);
+
+    public static AccommodationTypeDto ToAccommodationTypeDto(
+        Guid propertyUid,
+        AccommodationType item) => new(
+        item.Uid,
+        propertyUid,
+        item.Code,
+        item.Name,
+        item.UnitKind.ToDatabaseValue(),
+        item.Description,
+        item.MaxAdults,
+        item.MaxChildren,
+        item.MaxOccupancy,
+        item.DefaultQuantity,
+        item.BaseRate,
+        item.SortOrder,
+        item.IsActive,
+        item.CreationDate);
 }
 

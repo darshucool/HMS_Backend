@@ -57,5 +57,21 @@ public sealed record MyPropertyDto(
     bool IsDefaultProperty,
     string Status);
 
+public sealed record AccommodationTypeDto(
+    Guid Uid,
+    Guid PropertyUid,
+    string Code,
+    string Name,
+    string UnitKind,
+    string? Description,
+    int MaxAdults,
+    int MaxChildren,
+    int MaxOccupancy,
+    int DefaultQuantity,
+    decimal BaseRate,
+    int SortOrder,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
 public sealed record PagedResult<T>(IReadOnlyList<T> Items, int Page, int PageSize, long TotalCount);
 
