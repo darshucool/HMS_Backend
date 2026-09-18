@@ -1,0 +1,61 @@
+namespace HMS.Modules.Hotels.Application.DTOs;
+
+public sealed record OrganizationDto(
+    Guid Uid,
+    string Code,
+    string Name,
+    string? LegalName,
+    string DefaultCurrency,
+    string Timezone,
+    string Status,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
+public sealed record PropertyDto(
+    Guid Uid,
+    Guid OrganizationUid,
+    string Code,
+    string Name,
+    string Slug,
+    string PropertyType,
+    string? Description,
+    string? AddressLine1,
+    string? AddressLine2,
+    string? City,
+    string? District,
+    string? Province,
+    string? PostalCode,
+    string CountryCode,
+    decimal? Latitude,
+    decimal? Longitude,
+    string? Phone,
+    string? Email,
+    string Timezone,
+    string DefaultCurrency,
+    string Status,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
+public sealed record PropertySettingsDto(
+    Guid PropertyUid,
+    TimeOnly CheckInTime,
+    TimeOnly CheckOutTime,
+    string BookingNumberPrefix,
+    string InvoiceNumberPrefix,
+    decimal TaxRate,
+    decimal ServiceChargeRate,
+    bool AllowOverbooking,
+    string ExtraSettingsJson);
+
+public sealed record MyPropertyDto(
+    Guid Uid,
+    string Code,
+    string Name,
+    string Slug,
+    string PropertyType,
+    string RoleCode,
+    bool IsDefaultProperty,
+    string Status);
+
+public sealed record PagedResult<T>(IReadOnlyList<T> Items, int Page, int PageSize, long TotalCount);
+

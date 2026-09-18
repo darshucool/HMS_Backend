@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HMS.Modules.Reporting.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad53f9d843e5a6f539d264df8002955c62187b85")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f74437dea9ed14dbd960d4b2a218128631b1b73e")]
 [assembly: System.Reflection.AssemblyProductAttribute("HMS.Modules.Reporting.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HMS.Modules.Reporting.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

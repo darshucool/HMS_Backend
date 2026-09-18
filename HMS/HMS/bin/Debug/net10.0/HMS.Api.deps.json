@@ -423,9 +423,10 @@
       },
       "HMS.Modules.Hotels.Api/1.0.0": {
         "dependencies": {
-          "HMS.Contracts": "1.0.0",
           "HMS.Modules.Hotels.Application": "1.0.0",
-          "HMS.Modules.Hotels.Infrastructure": "1.0.0"
+          "HMS.Modules.Hotels.Domain": "1.0.0",
+          "HMS.Modules.Hotels.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
         },
         "runtime": {
           "HMS.Modules.Hotels.Api.dll": {
@@ -437,8 +438,8 @@
       "HMS.Modules.Hotels.Application/1.0.0": {
         "dependencies": {
           "HMS.Application.Abstractions": "1.0.0",
-          "HMS.Contracts": "1.0.0",
-          "HMS.Modules.Hotels.Domain": "1.0.0"
+          "HMS.Modules.Hotels.Domain": "1.0.0",
+          "MediatR": "14.2.0"
         },
         "runtime": {
           "HMS.Modules.Hotels.Application.dll": {
@@ -460,9 +461,11 @@
       },
       "HMS.Modules.Hotels.Infrastructure/1.0.0": {
         "dependencies": {
+          "Dapper": "2.1.86",
           "HMS.Infrastructure": "1.0.0",
           "HMS.Modules.Hotels.Application": "1.0.0",
-          "HMS.Modules.Hotels.Domain": "1.0.0"
+          "HMS.Modules.Hotels.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
         },
         "runtime": {
           "HMS.Modules.Hotels.Infrastructure.dll": {

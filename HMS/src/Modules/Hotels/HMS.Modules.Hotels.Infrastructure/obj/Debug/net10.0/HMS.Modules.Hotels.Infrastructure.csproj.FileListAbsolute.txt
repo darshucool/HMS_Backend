@@ -2,16 +2,14 @@ D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.In
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Modules.Hotels.Infrastructure.dll
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Modules.Hotels.Infrastructure.pdb
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Application.Abstractions.dll
-D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Contracts.dll
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Infrastructure.dll
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Modules.Hotels.Application.dll
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Modules.Hotels.Domain.dll
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.SharedKernel.dll
-D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Modules.Hotels.Domain.pdb
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Modules.Hotels.Application.pdb
+D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Modules.Hotels.Domain.pdb
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Infrastructure.pdb
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Application.Abstractions.pdb
-D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.Contracts.pdb
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\bin\Debug\net10.0\HMS.SharedKernel.pdb
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\obj\Debug\net10.0\HMS.Modules.Hotels.Infrastructure.csproj.AssemblyReference.cache
 D:\PROJECTS\HMS\Backend\HMS_Backend\HMS\src\Modules\Hotels\HMS.Modules.Hotels.Infrastructure\obj\Debug\net10.0\HMS.Modules.Hotels.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig

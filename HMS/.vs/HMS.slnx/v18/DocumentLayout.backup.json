@@ -3,6 +3,85 @@
   "WorkspaceRootPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{737A366C-0407-DDDC-8060-630687C6C064}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.api\\hotelsmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{737A366C-0407-DDDC-8060-630687C6C064}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.api\\hotelsmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.401\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{737A366C-0407-DDDC-8060-630687C6C064}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.api\\controllers\\controllerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{737A366C-0407-DDDC-8060-630687C6C064}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.api\\controllers\\controllerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1790D495-A076-7425-A30B-9CF288BEB1BA}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.domain\\hms.modules.hotels.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1790D495-A076-7425-A30B-9CF288BEB1BA}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.domain\\hms.modules.hotels.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F20190DD-90E4-BA07-0BFF-9A670C6AE6F3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Infrastructure\\HMS.Modules.Hotels.Infrastructure.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.infrastructure\\hms.modules.hotels.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F20190DD-90E4-BA07-0BFF-9A670C6AE6F3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Infrastructure\\HMS.Modules.Hotels.Infrastructure.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.infrastructure\\hms.modules.hotels.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{737A366C-0407-DDDC-8060-630687C6C064}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.api\\hms.modules.hotels.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{737A366C-0407-DDDC-8060-630687C6C064}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.api\\hms.modules.hotels.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.application\\queries\\getpropertysettings\\getpropertysettingsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.application\\queries\\getpropertysettings\\getpropertysettingsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.application\\queries\\getorganizations\\getorganizationsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.application\\queries\\getorganizations\\getorganizationsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.application\\commands\\updateproperty\\updatepropertycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.application\\commands\\updateproperty\\updatepropertycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.application\\queries\\getproperty\\getpropertyquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.application\\queries\\getproperty\\getpropertyquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.application\\queries\\getmyproperties\\getmypropertiesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.application\\queries\\getmyproperties\\getmypropertiesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.application\\commands\\updatepropertysettings\\updatepropertysettingscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.application\\commands\\updatepropertysettings\\updatepropertysettingscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.application\\commands\\createproperty\\createpropertycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.application\\commands\\createproperty\\createpropertycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.application\\commands\\createorganization\\createorganizationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.application\\commands\\createorganization\\createorganizationcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.application\\hms.modules.hotels.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EA71FCE0-67AA-9A57-8958-4B49386DB0C3}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.application\\hms.modules.hotels.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1790D495-A076-7425-A30B-9CF288BEB1BA}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.domain\\entities\\organization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1790D495-A076-7425-A30B-9CF288BEB1BA}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.domain\\entities\\organization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1790D495-A076-7425-A30B-9CF288BEB1BA}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.domain\\entities\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1790D495-A076-7425-A30B-9CF288BEB1BA}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.domain\\entities\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1790D495-A076-7425-A30B-9CF288BEB1BA}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.domain\\entities\\propertysettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1790D495-A076-7425-A30B-9CF288BEB1BA}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.domain\\entities\\propertysettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1790D495-A076-7425-A30B-9CF288BEB1BA}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\hotels\\hms.modules.hotels.domain\\common\\auditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1790D495-A076-7425-A30B-9CF288BEB1BA}|src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj|solutionrelative:src\\modules\\hotels\\hms.modules.hotels.domain\\common\\auditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E0886605-7966-0312-E3E9-08A21BD670E1}|src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj|d:\\projects\\hms\\backend\\hms_backend\\hms\\src\\modules\\identity\\hms.modules.identity.api\\hms.modules.identity.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{E0886605-7966-0312-E3E9-08A21BD670E1}|src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj|solutionrelative:src\\modules\\identity\\hms.modules.identity.api\\hms.modules.identity.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -99,7 +178,265 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HMS.Modules.Identity.Api",
+              "Title": "HotelsModule.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HotelsModule.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HotelsModule.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HotelsModule.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HotelsModule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T09:17:36.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HMS.Modules.Hotels.Domain",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-18T09:09:28.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\DependencyInjection.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T08:42:01.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ControllerExtensions.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\Controllers\\ControllerExtensions.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\Controllers\\ControllerExtensions.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\Controllers\\ControllerExtensions.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\Controllers\\ControllerExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T08:49:32.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.401\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\10.0.401\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "ViewState": "AgIAALAAAAAAAAAAAAApwL0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-09-18T09:08:40.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HMS.Modules.Hotels.Infrastructure",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Infrastructure\\HMS.Modules.Hotels.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Infrastructure\\HMS.Modules.Hotels.Infrastructure.csproj",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Infrastructure\\HMS.Modules.Hotels.Infrastructure.csproj",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Infrastructure\\HMS.Modules.Hotels.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-18T09:09:11.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HMS.Modules.Hotels.Api",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Api\\HMS.Modules.Hotels.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-18T09:08:06.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetPropertySettingsQuery.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetPropertySettings\\GetPropertySettingsQuery.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetPropertySettings\\GetPropertySettingsQuery.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetPropertySettings\\GetPropertySettingsQuery.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetPropertySettings\\GetPropertySettingsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T09:07:35.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetOrganizationsQuery.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetOrganizations\\GetOrganizationsQuery.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetOrganizations\\GetOrganizationsQuery.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetOrganizations\\GetOrganizationsQuery.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetOrganizations\\GetOrganizationsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T09:07:34.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UpdatePropertyCommand.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\UpdateProperty\\UpdatePropertyCommand.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\UpdateProperty\\UpdatePropertyCommand.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\UpdateProperty\\UpdatePropertyCommand.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\UpdateProperty\\UpdatePropertyCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T09:07:34.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GetPropertyQuery.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetProperty\\GetPropertyQuery.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetProperty\\GetPropertyQuery.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetProperty\\GetPropertyQuery.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetProperty\\GetPropertyQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T08:48:30.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UpdatePropertySettingsCommand.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\UpdatePropertySettings\\UpdatePropertySettingsCommand.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\UpdatePropertySettings\\UpdatePropertySettingsCommand.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\UpdatePropertySettings\\UpdatePropertySettingsCommand.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\UpdatePropertySettings\\UpdatePropertySettingsCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T09:07:31.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CreatePropertyCommand.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\CreateProperty\\CreatePropertyCommand.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\CreateProperty\\CreatePropertyCommand.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\CreateProperty\\CreatePropertyCommand.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\CreateProperty\\CreatePropertyCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T09:07:30.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "HMS.Modules.Hotels.Application",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-18T09:07:22.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetMyPropertiesQuery.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetMyProperties\\GetMyPropertiesQuery.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetMyProperties\\GetMyPropertiesQuery.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetMyProperties\\GetMyPropertiesQuery.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Queries\\GetMyProperties\\GetMyPropertiesQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T08:43:56.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CreateOrganizationCommand.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\CreateOrganization\\CreateOrganizationCommand.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\CreateOrganization\\CreateOrganizationCommand.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\CreateOrganization\\CreateOrganizationCommand.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\Commands\\CreateOrganization\\CreateOrganizationCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T08:48:26.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "PropertySettings.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\PropertySettings.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\PropertySettings.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\PropertySettings.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\PropertySettings.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAywAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T08:40:57.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Property.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\Property.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\Property.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\Property.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\Property.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwA4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T08:40:54.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Organization.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\Organization.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\Organization.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\Organization.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Entities\\Organization.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T08:40:46.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AuditableEntity.cs",
+              "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Common\\AuditableEntity.cs",
+              "RelativeDocumentMoniker": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Common\\AuditableEntity.cs",
+              "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Common\\AuditableEntity.cs",
+              "RelativeToolTip": "src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\Common\\AuditableEntity.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-18T08:40:05.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "HMS.Modules.Identity.Api.csproj",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj",
               "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\HMS.Modules.Identity.Api.csproj",
@@ -111,7 +448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 23,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\DependencyInjection.cs",
@@ -119,12 +456,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\DependencyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:30:27.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:30:27.335Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 25,
               "Title": "StaffRepository.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Persistence\\Repositories\\StaffRepository.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Persistence\\Repositories\\StaffRepository.cs",
@@ -132,12 +468,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Persistence\\Repositories\\StaffRepository.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAYwAkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:02:50.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:02:50.385Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 22,
               "Title": "IdentityModule.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\IdentityModule.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\IdentityModule.cs",
@@ -145,12 +480,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\IdentityModule.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:06:20.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:06:20.609Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 21,
               "Title": "StaffLoginRecord.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\StaffLoginRecord.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\StaffLoginRecord.cs",
@@ -158,12 +492,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\StaffLoginRecord.cs",
               "ViewState": "AgIAABkAAAAAAAAAAIA/wCMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T07:58:36.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T07:58:36.378Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 26,
               "Title": "LoginStaffCommandHandler.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommandHandler.cs",
@@ -171,12 +504,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommandHandler.cs",
               "ViewState": "AgIAABUAAAAAAAAAAIAwwCUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:01:37.167Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:01:37.167Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 24,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\DependencyInjection.cs",
@@ -184,12 +516,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\DependencyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:05:30.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:05:30.481Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 27,
               "Title": "IStaffRepository.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffRepository.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffRepository.cs",
@@ -197,13 +528,12 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffRepository.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:00:04.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:00:04.996Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HMS.Modules.Identity.Application",
+              "DocumentIndex": 28,
+              "Title": "HMS.Modules.Identity.Application.csproj",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj",
               "ToolTip": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\HMS.Modules.Identity.Application.csproj",
@@ -215,7 +545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 29,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\appsettings.Development.json",
               "RelativeDocumentMoniker": "HMS\\appsettings.Development.json",
@@ -223,12 +553,11 @@
               "RelativeToolTip": "HMS\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-15T08:10:09.112Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:10:09.112Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 31,
               "Title": "HotelAuthController.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Controllers\\HotelAuthController.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Controllers\\HotelAuthController.cs",
@@ -236,12 +565,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Controllers\\HotelAuthController.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAmwE4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:07:23.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:07:23.806Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 32,
               "Title": "StaffLoginRequest.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Contracts\\StaffLoginRequest.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Contracts\\StaffLoginRequest.cs",
@@ -249,12 +577,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Api\\Contracts\\StaffLoginRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:06:49.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:06:49.106Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 30,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Program.cs",
               "RelativeDocumentMoniker": "HMS\\Program.cs",
@@ -262,12 +589,11 @@
               "RelativeToolTip": "HMS\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T05:25:39.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T05:25:39.954Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 33,
               "Title": "StaffTokenService.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\StaffTokenService.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\StaffTokenService.cs",
@@ -275,12 +601,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\StaffTokenService.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAuwEQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:03:58.906Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:03:58.906Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 34,
               "Title": "JwtOptions.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\JwtOptions.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\JwtOptions.cs",
@@ -288,12 +613,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Infrastructure\\Authentication\\JwtOptions.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:03:44.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:03:44.781Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 35,
               "Title": "LoginStaffResult.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffResult.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffResult.cs",
@@ -301,12 +625,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffResult.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAIwC4AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:01:14.339Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:01:14.339Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 36,
               "Title": "LoginStaffCommand.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommand.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommand.cs",
@@ -314,12 +637,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Commands\\LoginStaff\\LoginStaffCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:00:52.765Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:00:52.765Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 37,
               "Title": "IStaffTokenService.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffTokenService.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffTokenService.cs",
@@ -327,12 +649,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Application\\Abstractions\\IStaffTokenService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T08:00:23.735Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T08:00:23.735Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 38,
               "Title": "StaffUser.cs",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Identity\\HMS.Modules.Identity.Domain\\Entities\\StaffUser.cs",
               "RelativeDocumentMoniker": "src\\Modules\\Identity\\HMS.Modules.Identity.Domain\\Entities\\StaffUser.cs",
@@ -340,12 +661,11 @@
               "RelativeToolTip": "src\\Modules\\Identity\\HMS.Modules.Identity.Domain\\Entities\\StaffUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-15T07:57:55.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T07:57:55.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 39,
               "Title": "HMS.Api",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\HMS.Api.csproj",
               "RelativeDocumentMoniker": "HMS\\HMS.Api.csproj",
@@ -357,7 +677,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 40,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\HMS\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "HMS\\Properties\\launchSettings.json",
@@ -365,8 +685,7 @@
               "RelativeToolTip": "HMS\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-15T05:27:19.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-15T05:27:19.694Z"
             }
           ]
         }

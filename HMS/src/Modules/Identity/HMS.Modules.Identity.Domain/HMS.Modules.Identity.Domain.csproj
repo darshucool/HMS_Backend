@@ -1,11 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <Compile Include="obj\Debug\net10.0\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs" />
-    <Compile Include="obj\Debug\net10.0\HMS.Modules.Identity.Domain.AssemblyInfo.cs" />
-    <Compile Include="obj\Debug\net10.0\HMS.Modules.Identity.Domain.GlobalUsings.g.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="bin\Debug\net10.0\HMS.Modules.Identity.Domain.deps.json" />
     <Content Include="obj\Debug\net10.0\HMS.Modules.Identity.Domain.csproj.FileListAbsolute.txt" />
@@ -13,7 +8,6 @@
     <Content Include="obj\HMS.Modules.Identity.Domain.csproj.nuget.dgspec.json" />
     <Content Include="obj\project.assets.json" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="bin\Debug\net10.0\HMS.Modules.Identity.Domain.dll" />
     <None Include="bin\Debug\net10.0\HMS.Modules.Identity.Domain.pdb" />
@@ -34,11 +28,9 @@
     <None Include="obj\HMS.Modules.Identity.Domain.csproj.nuget.g.targets" />
     <None Include="obj\project.nuget.cache" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\HMS.SharedKernel\HMS.SharedKernel.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Enums\" />
     <Folder Include="Errors\" />
@@ -46,11 +38,9 @@
     <Folder Include="Services\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
 </Project>

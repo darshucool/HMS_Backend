@@ -1,15 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\HMS.Modules.Hotels.Domain\HMS.Modules.Hotels.Domain.csproj" />
-    <ProjectReference Include="..\..\..\BuildingBlocks\HMS.Application.Abstractions\HMS.Application.Abstractions.csproj" />
-    <ProjectReference Include="..\..\..\BuildingBlocks\HMS.Contracts\HMS.Contracts.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\HMS.Modules.Hotels.Domain\HMS.Modules.Hotels.Domain.csproj" />
+		<ProjectReference Include="..\..\..\BuildingBlocks\HMS.Application.Abstractions\HMS.Application.Abstractions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Use the same version as Identity.Application -->
+		<PackageReference Include="MediatR" Version="14.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
+	</ItemGroup>
 
 </Project>

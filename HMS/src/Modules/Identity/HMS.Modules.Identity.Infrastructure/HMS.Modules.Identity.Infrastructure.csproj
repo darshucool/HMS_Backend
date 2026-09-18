@@ -1,11 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <Compile Include="obj\Debug\net10.0\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs" />
-    <Compile Include="obj\Debug\net10.0\HMS.Modules.Identity.Infrastructure.AssemblyInfo.cs" />
-    <Compile Include="obj\Debug\net10.0\HMS.Modules.Identity.Infrastructure.GlobalUsings.g.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="bin\Debug\net10.0\HMS.Modules.Identity.Infrastructure.deps.json" />
     <Content Include="obj\Debug\net10.0\HMS.Modules.Identity.Infrastructure.csproj.FileListAbsolute.txt" />
@@ -13,7 +8,6 @@
     <Content Include="obj\HMS.Modules.Identity.Infrastructure.csproj.nuget.dgspec.json" />
     <Content Include="obj\project.assets.json" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="bin\Debug\net10.0\HMS.Application.Abstractions.dll" />
     <None Include="bin\Debug\net10.0\HMS.Application.Abstractions.pdb" />
@@ -44,20 +38,17 @@
     <None Include="obj\HMS.Modules.Identity.Infrastructure.csproj.nuget.g.targets" />
     <None Include="obj\project.nuget.cache" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\HMS.Modules.Identity.Domain\HMS.Modules.Identity.Domain.csproj" />
     <ProjectReference Include="..\HMS.Modules.Identity.Application\HMS.Modules.Identity.Application.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\HMS.Infrastructure\HMS.Infrastructure.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.86" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.12" />
     <PackageReference Include="Npgsql" Version="10.0.3" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.22.0" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Integrations\" />
     <Folder Include="Persistence\Configurations\" />
@@ -65,11 +56,9 @@
     <Folder Include="Queries\" />
     <Folder Include="Services\" />
   </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
 </Project>

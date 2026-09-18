@@ -1,15 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\HMS.Modules.Hotels.Domain\HMS.Modules.Hotels.Domain.csproj" />
-    <ProjectReference Include="..\HMS.Modules.Hotels.Application\HMS.Modules.Hotels.Application.csproj" />
-    <ProjectReference Include="..\..\..\BuildingBlocks\HMS.Infrastructure\HMS.Infrastructure.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\HMS.Modules.Hotels.Application\HMS.Modules.Hotels.Application.csproj" />
+		<ProjectReference Include="..\HMS.Modules.Hotels.Domain\HMS.Modules.Hotels.Domain.csproj" />
+		<ProjectReference Include="..\..\..\BuildingBlocks\HMS.Infrastructure\HMS.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Dapper" Version="2.1.66" />
+		<PackageReference Include="Npgsql" Version="10.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Integrations\" />
+	  <Folder Include="Persistence\Configurations\" />
+	  <Folder Include="Persistence\Migrations\" />
+	  <Folder Include="Persistence\Repositories\" />
+	  <Folder Include="Queries\" />
+	  <Folder Include="Services\" />
+	</ItemGroup>
 
 </Project>
