@@ -52,6 +52,7 @@ public sealed class CreateAccommodationTypeCommandHandler(
         if (await accommodationTypeRepository.CodeExistsAsync(
                 property.Id,
                 request.Code.Trim().ToUpperInvariant(),
+                excludeUid: null,
                 cancellationToken))
         {
             return HotelResult<AccommodationTypeDto>.Conflict(
@@ -64,6 +65,7 @@ public sealed class CreateAccommodationTypeCommandHandler(
             accommodationType = AccommodationType.Create(
                 property.OrganizationId,
                 property.Id,
+                property.Uid,
                 request.Code,
                 request.Name,
                 request.UnitKind,
@@ -83,6 +85,6 @@ public sealed class CreateAccommodationTypeCommandHandler(
 
         await accommodationTypeRepository.InsertAsync(accommodationType, cancellationToken);
         return HotelResult<AccommodationTypeDto>.Success(
-            PropertyMapper.ToAccommodationTypeDto(property.Uid, accommodationType));
+            PropertyMapper.ToAccommodationTypeDto(accommodationType));
     }
 }

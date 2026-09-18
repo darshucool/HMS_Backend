@@ -61,6 +61,19 @@ public sealed record CreateAccommodationTypeRequest(
     decimal BaseRate = 0,
     int SortOrder = 0);
 
+public sealed record UpdateAccommodationTypeRequest(
+    string Code,
+    string Name,
+    UnitKind UnitKind,
+    string? Description,
+    int MaxAdults,
+    int MaxChildren,
+    int MaxOccupancy,
+    int DefaultQuantity,
+    decimal BaseRate,
+    int SortOrder,
+    bool IsActive);
+
 public sealed record UpdatePropertySettingsRequest(
     TimeOnly CheckInTime,
     TimeOnly CheckOutTime,

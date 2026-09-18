@@ -41,11 +41,9 @@ internal static class PropertyMapper
         settings.AllowOverbooking,
         settings.ExtraSettingsJson);
 
-    public static AccommodationTypeDto ToAccommodationTypeDto(
-        Guid propertyUid,
-        AccommodationType item) => new(
+    public static AccommodationTypeDto ToAccommodationTypeDto(AccommodationType item) => new(
         item.Uid,
-        propertyUid,
+        item.PropertyUid,
         item.Code,
         item.Name,
         item.UnitKind.ToDatabaseValue(),

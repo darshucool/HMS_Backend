@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I6uSHqirIkM=",
+  "dgSpecHash": "NaAHtF4NtnE=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Application.Abstractions\\HMS.Application.Abstractions.csproj",
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

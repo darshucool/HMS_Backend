@@ -9,6 +9,7 @@ public sealed class AccommodationType : AuditableEntity
 
     public long OrganizationId { get; private set; }
     public long PropertyId { get; private set; }
+    public Guid PropertyUid { get; private set; }
     public string Code { get; private set; } = string.Empty;
     public string Name { get; private set; } = string.Empty;
     public UnitKind UnitKind { get; private set; } = UnitKind.Room;
@@ -23,6 +24,7 @@ public sealed class AccommodationType : AuditableEntity
     public static AccommodationType Create(
         long organizationId,
         long propertyId,
+        Guid propertyUid,
         string code,
         string name,
         UnitKind unitKind,
@@ -44,6 +46,7 @@ public sealed class AccommodationType : AuditableEntity
             Uid = Guid.NewGuid(),
             OrganizationId = organizationId,
             PropertyId = propertyId,
+            PropertyUid = propertyUid,
             Code = Required(code, nameof(code), 30).ToUpperInvariant(),
             Name = Required(name, nameof(name), 150),
             UnitKind = unitKind,
@@ -60,11 +63,51 @@ public sealed class AccommodationType : AuditableEntity
         return accommodationType;
     }
 
+    public void Update(
+        string code,
+        string name,
+        UnitKind unitKind,
+        string? description,
+        int maxAdults,
+        int maxChildren,
+        int maxOccupancy,
+        int defaultQuantity,
+        decimal baseRate,
+        int sortOrder,
+        bool isActive,
+        string actorSubject)
+    {
+        ValidateCapacity(maxAdults, maxChildren, maxOccupancy);
+        ValidateQuantity(defaultQuantity);
+        ValidateRate(baseRate);
+
+        Code = Required(code, nameof(code), 30).ToUpperInvariant();
+        Name = Required(name, nameof(name), 150);
+        UnitKind = unitKind;
+        Description = Clean(description);
+        MaxAdults = maxAdults;
+        MaxChildren = maxChildren;
+        MaxOccupancy = maxOccupancy;
+        DefaultQuantity = defaultQuantity;
+        BaseRate = baseRate;
+        SortOrder = sortOrder;
+        IsActive = isActive;
+        MarkModified(actorSubject);
+    }
+
+    public void Archive(string actorSubject)
+    {
+        IsArchived = true;
+        IsActive = false;
+        MarkModified(actorSubject);
+    }
+
     public static AccommodationType Rehydrate(
         long id,
         Guid uid,
         long organizationId,
         long propertyId,
+        Guid propertyUid,
         string code,
         string name,
         UnitKind unitKind,
@@ -87,6 +130,7 @@ public sealed class AccommodationType : AuditableEntity
             Uid = uid,
             OrganizationId = organizationId,
             PropertyId = propertyId,
+            PropertyUid = propertyUid,
             Code = code,
             Name = name,
             UnitKind = unitKind,

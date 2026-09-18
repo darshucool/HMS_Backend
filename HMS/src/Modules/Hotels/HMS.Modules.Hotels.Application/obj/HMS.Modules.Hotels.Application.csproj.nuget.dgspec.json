@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj": {}
+    "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj": {}
   },
   "projects": {
-    "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Application.Abstractions\\HMS.Application.Abstractions.csproj": {
+    "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Application.Abstractions\\HMS.Application.Abstractions.csproj",
+        "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj",
         "projectName": "HMS.Application.Abstractions",
-        "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Application.Abstractions\\HMS.Application.Abstractions.csproj",
-        "packagesPath": "C:\\Users\\Darshaka Peramune\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Application.Abstractions\\obj\\",
+        "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/a440614bc9c0cb1a1d2fa74695c34db3/nuget",
+        "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Darshaka Peramune\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/jananiwithana/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -33,8 +27,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.SharedKernel\\HMS.SharedKernel.csproj": {
-                "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.SharedKernel\\HMS.SharedKernel.csproj"
+              "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj": {
+                "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj"
               }
             }
           }
@@ -49,7 +43,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -71,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -349,28 +343,22 @@
         }
       }
     },
-    "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.SharedKernel\\HMS.SharedKernel.csproj": {
+    "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.SharedKernel\\HMS.SharedKernel.csproj",
+        "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
         "projectName": "HMS.SharedKernel",
-        "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.SharedKernel\\HMS.SharedKernel.csproj",
-        "packagesPath": "C:\\Users\\Darshaka Peramune\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.SharedKernel\\obj\\",
+        "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/a440614bc9c0cb1a1d2fa74695c34db3/nuget",
+        "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Darshaka Peramune\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/jananiwithana/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -390,7 +378,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -412,7 +400,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -690,28 +678,22 @@
         }
       }
     },
-    "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj": {
+    "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj",
+        "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj",
         "projectName": "HMS.Modules.Hotels.Application",
-        "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\HMS.Modules.Hotels.Application.csproj",
-        "packagesPath": "C:\\Users\\Darshaka Peramune\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Application\\obj\\",
+        "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/a440614bc9c0cb1a1d2fa74695c34db3/nuget",
+        "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Darshaka Peramune\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/jananiwithana/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -719,11 +701,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Application.Abstractions\\HMS.Application.Abstractions.csproj": {
-                "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Application.Abstractions\\HMS.Application.Abstractions.csproj"
+              "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj": {
+                "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj"
               },
-              "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj": {
-                "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj"
+              "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Domain/HMS.Modules.Hotels.Domain.csproj": {
+                "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Domain/HMS.Modules.Hotels.Domain.csproj"
               }
             }
           }
@@ -738,7 +720,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -770,7 +752,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1048,28 +1030,22 @@
         }
       }
     },
-    "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj": {
+    "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Domain/HMS.Modules.Hotels.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj",
+        "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Domain/HMS.Modules.Hotels.Domain.csproj",
         "projectName": "HMS.Modules.Hotels.Domain",
-        "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\HMS.Modules.Hotels.Domain.csproj",
-        "packagesPath": "C:\\Users\\Darshaka Peramune\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Hotels\\HMS.Modules.Hotels.Domain\\obj\\",
+        "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Domain/HMS.Modules.Hotels.Domain.csproj",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/a440614bc9c0cb1a1d2fa74695c34db3/nuget",
+        "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Domain/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Darshaka Peramune\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/jananiwithana/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -1077,8 +1053,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.SharedKernel\\HMS.SharedKernel.csproj": {
-                "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.SharedKernel\\HMS.SharedKernel.csproj"
+              "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj": {
+                "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj"
               }
             }
           }
@@ -1093,7 +1069,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.400"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -1115,7 +1091,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
