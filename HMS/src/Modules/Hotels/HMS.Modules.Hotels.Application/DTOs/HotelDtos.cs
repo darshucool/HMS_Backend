@@ -73,5 +73,18 @@ public sealed record AccommodationTypeDto(
     bool IsActive,
     DateTimeOffset CreationDate);
 
+public sealed record AccommodationUnitDto(
+    Guid Uid,
+    Guid PropertyUid,
+    Guid AccommodationTypeUid,
+    string UnitCode,
+    string? UnitName,
+    string? FloorOrArea,
+    string Status,
+    string HousekeepingStatus,
+    string? Notes,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
 public sealed record PagedResult<T>(IReadOnlyList<T> Items, int Page, int PageSize, long TotalCount);
 

@@ -56,5 +56,18 @@ internal static class PropertyMapper
         item.SortOrder,
         item.IsActive,
         item.CreationDate);
+
+    public static AccommodationUnitDto ToAccommodationUnitDto(AccommodationUnit item) => new(
+        item.Uid,
+        item.PropertyUid,
+        item.AccommodationTypeUid,
+        item.UnitCode,
+        item.UnitName,
+        item.FloorOrArea,
+        item.Status.ToDatabaseValue(),
+        item.HousekeepingStatus.ToDatabaseValue(),
+        item.Notes,
+        item.IsActive,
+        item.CreationDate);
 }
 

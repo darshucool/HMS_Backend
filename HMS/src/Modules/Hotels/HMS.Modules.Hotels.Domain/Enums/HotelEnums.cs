@@ -80,3 +80,77 @@ public static class UnitKindMapper
     }
 }
 
+public enum AccommodationUnitStatus
+{
+    Available,
+    Occupied,
+    OutOfService,
+    Maintenance,
+    Inactive
+}
+
+public static class AccommodationUnitStatusMapper
+{
+    public static string ToDatabaseValue(this AccommodationUnitStatus status) => status switch
+    {
+        AccommodationUnitStatus.Available => "AVAILABLE",
+        AccommodationUnitStatus.Occupied => "OCCUPIED",
+        AccommodationUnitStatus.OutOfService => "OUT_OF_SERVICE",
+        AccommodationUnitStatus.Maintenance => "MAINTENANCE",
+        AccommodationUnitStatus.Inactive => "INACTIVE",
+        _ => throw new ArgumentOutOfRangeException(nameof(status), status, "Unsupported unit status.")
+    };
+
+    public static AccommodationUnitStatus FromDatabaseValue(string value)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(value);
+
+        return value.Trim().ToUpperInvariant().Replace("-", "_") switch
+        {
+            "AVAILABLE" => AccommodationUnitStatus.Available,
+            "OCCUPIED" => AccommodationUnitStatus.Occupied,
+            "OUT_OF_SERVICE" or "OUTOFSERVICE" => AccommodationUnitStatus.OutOfService,
+            "MAINTENANCE" => AccommodationUnitStatus.Maintenance,
+            "INACTIVE" => AccommodationUnitStatus.Inactive,
+            _ => throw new ArgumentException($"Unsupported unit status '{value}'.", nameof(value))
+        };
+    }
+}
+
+public enum HousekeepingStatus
+{
+    Clean,
+    Dirty,
+    Inspected,
+    InProgress,
+    NotApplicable
+}
+
+public static class HousekeepingStatusMapper
+{
+    public static string ToDatabaseValue(this HousekeepingStatus status) => status switch
+    {
+        HousekeepingStatus.Clean => "CLEAN",
+        HousekeepingStatus.Dirty => "DIRTY",
+        HousekeepingStatus.Inspected => "INSPECTED",
+        HousekeepingStatus.InProgress => "IN_PROGRESS",
+        HousekeepingStatus.NotApplicable => "NOT_APPLICABLE",
+        _ => throw new ArgumentOutOfRangeException(nameof(status), status, "Unsupported housekeeping status.")
+    };
+
+    public static HousekeepingStatus FromDatabaseValue(string value)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(value);
+
+        return value.Trim().ToUpperInvariant().Replace("-", "_") switch
+        {
+            "CLEAN" => HousekeepingStatus.Clean,
+            "DIRTY" => HousekeepingStatus.Dirty,
+            "INSPECTED" => HousekeepingStatus.Inspected,
+            "IN_PROGRESS" or "INPROGRESS" => HousekeepingStatus.InProgress,
+            "NOT_APPLICABLE" or "NOTAPPLICABLE" => HousekeepingStatus.NotApplicable,
+            _ => throw new ArgumentException($"Unsupported housekeeping status '{value}'.", nameof(value))
+        };
+    }
+}
+

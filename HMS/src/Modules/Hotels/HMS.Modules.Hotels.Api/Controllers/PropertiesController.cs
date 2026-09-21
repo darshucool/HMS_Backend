@@ -1,8 +1,10 @@
 using HMS.Modules.Hotels.Api.Contracts;
 using HMS.Modules.Hotels.Application.Commands.CreateAccommodationType;
+using HMS.Modules.Hotels.Application.Commands.CreateAccommodationUnit;
 using HMS.Modules.Hotels.Application.Commands.UpdateProperty;
 using HMS.Modules.Hotels.Application.Commands.UpdatePropertySettings;
 using HMS.Modules.Hotels.Application.Queries.GetAccommodationTypes;
+using HMS.Modules.Hotels.Application.Queries.GetAccommodationUnits;
 using HMS.Modules.Hotels.Application.Queries.GetProperty;
 using HMS.Modules.Hotels.Application.Queries.GetPropertySettings;
 using MediatR;
@@ -127,6 +129,42 @@ public sealed class PropertiesController(ISender sender) : ControllerBase
             request.DefaultQuantity,
             request.BaseRate,
             request.SortOrder,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return result.IsSuccess
+            ? StatusCode(StatusCodes.Status201Created, result.Value)
+            : this.ToActionResult(result);
+    }
+
+    [HttpGet("{propertyUid:guid}/units")]
+    public async Task<IActionResult> GetUnits(
+        Guid propertyUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new GetAccommodationUnitsQuery(
+            propertyUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return this.ToActionResult(result);
+    }
+
+    [HttpPost("{propertyUid:guid}/units")]
+    public async Task<IActionResult> CreateUnit(
+        Guid propertyUid,
+        [FromBody] CreateAccommodationUnitRequest request,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new CreateAccommodationUnitCommand(
+            propertyUid,
+            request.AccommodationTypeUid,
+            request.UnitCode,
+            request.UnitName,
+            request.FloorOrArea,
+            request.Status,
+            request.HousekeepingStatus,
+            request.Notes,
             User.GetRequiredSubject(),
             User.IsPlatformAdmin()), cancellationToken);
 

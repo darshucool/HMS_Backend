@@ -74,6 +74,25 @@ public sealed record UpdateAccommodationTypeRequest(
     int SortOrder,
     bool IsActive);
 
+public sealed record CreateAccommodationUnitRequest(
+    Guid AccommodationTypeUid,
+    string UnitCode,
+    string? UnitName = null,
+    string? FloorOrArea = null,
+    AccommodationUnitStatus Status = AccommodationUnitStatus.Available,
+    HousekeepingStatus HousekeepingStatus = HousekeepingStatus.Clean,
+    string? Notes = null);
+
+public sealed record UpdateAccommodationUnitRequest(
+    Guid AccommodationTypeUid,
+    string UnitCode,
+    string? UnitName,
+    string? FloorOrArea,
+    AccommodationUnitStatus Status,
+    HousekeepingStatus HousekeepingStatus,
+    string? Notes,
+    bool IsActive);
+
 public sealed record UpdatePropertySettingsRequest(
     TimeOnly CheckInTime,
     TimeOnly CheckOutTime,
