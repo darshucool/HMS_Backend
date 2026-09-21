@@ -69,5 +69,16 @@ internal static class PropertyMapper
         item.Notes,
         item.IsActive,
         item.CreationDate);
+
+    public static UnitBlockDto ToUnitBlockDto(UnitBlock item) => new(
+        item.Uid,
+        item.UnitUid,
+        item.PropertyUid,
+        item.StartDate,
+        item.EndDate,
+        item.BlockType.ToDatabaseValue(),
+        item.Reason,
+        item.IsActive,
+        item.CreationDate);
 }
 

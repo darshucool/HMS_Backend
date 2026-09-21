@@ -86,5 +86,16 @@ public sealed record AccommodationUnitDto(
     bool IsActive,
     DateTimeOffset CreationDate);
 
+public sealed record UnitBlockDto(
+    Guid Uid,
+    Guid UnitUid,
+    Guid PropertyUid,
+    DateOnly StartDate,
+    DateOnly EndDate,
+    string BlockType,
+    string? Reason,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
 public sealed record PagedResult<T>(IReadOnlyList<T> Items, int Page, int PageSize, long TotalCount);
 

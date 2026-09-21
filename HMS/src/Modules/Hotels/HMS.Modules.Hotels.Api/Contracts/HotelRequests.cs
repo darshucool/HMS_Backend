@@ -93,6 +93,12 @@ public sealed record UpdateAccommodationUnitRequest(
     string? Notes,
     bool IsActive);
 
+public sealed record CreateUnitBlockRequest(
+    DateOnly StartDate,
+    DateOnly EndDate,
+    UnitBlockType BlockType,
+    string? Reason = null);
+
 public sealed record UpdatePropertySettingsRequest(
     TimeOnly CheckInTime,
     TimeOnly CheckOutTime,

@@ -154,3 +154,37 @@ public static class HousekeepingStatusMapper
     }
 }
 
+public enum UnitBlockType
+{
+    Maintenance,
+    OwnerUse,
+    Closed,
+    Other
+}
+
+public static class UnitBlockTypeMapper
+{
+    public static string ToDatabaseValue(this UnitBlockType type) => type switch
+    {
+        UnitBlockType.Maintenance => "MAINTENANCE",
+        UnitBlockType.OwnerUse => "OWNER_USE",
+        UnitBlockType.Closed => "CLOSED",
+        UnitBlockType.Other => "OTHER",
+        _ => throw new ArgumentOutOfRangeException(nameof(type), type, "Unsupported block type.")
+    };
+
+    public static UnitBlockType FromDatabaseValue(string value)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(value);
+
+        return value.Trim().ToUpperInvariant().Replace("-", "_") switch
+        {
+            "MAINTENANCE" => UnitBlockType.Maintenance,
+            "OWNER_USE" or "OWNERUSE" => UnitBlockType.OwnerUse,
+            "CLOSED" => UnitBlockType.Closed,
+            "OTHER" => UnitBlockType.Other,
+            _ => throw new ArgumentException($"Unsupported block type '{value}'.", nameof(value))
+        };
+    }
+}
+

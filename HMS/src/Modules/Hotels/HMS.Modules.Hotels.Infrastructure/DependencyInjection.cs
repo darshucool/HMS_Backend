@@ -35,6 +35,10 @@ namespace HMS.Modules.Hotels.Infrastructure
                 IAccommodationUnitRepository,
                 AccommodationUnitRepository>();
 
+            services.AddScoped<
+                IUnitBlockRepository,
+                UnitBlockRepository>();
+
             return services;
         }
     }

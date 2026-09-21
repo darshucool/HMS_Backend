@@ -432,7 +432,7 @@
     ]
   },
   "packageFolders": {
-    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/a440614bc9c0cb1a1d2fa74695c34db3/nuget": {}
+    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/4ce46416dea5d3438f41234f28e9cb5a/nuget": {}
   },
   "project": {
     "version": "1.0.0",
@@ -440,7 +440,7 @@
       "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj",
       "projectName": "HMS.Modules.Hotels.Application",
       "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj",
-      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/a440614bc9c0cb1a1d2fa74695c34db3/nuget",
+      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/4ce46416dea5d3438f41234f28e9cb5a/nuget",
       "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
