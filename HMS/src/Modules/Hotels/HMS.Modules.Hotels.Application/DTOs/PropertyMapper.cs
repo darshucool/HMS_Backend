@@ -57,6 +57,47 @@ internal static class PropertyMapper
         item.IsActive,
         item.CreationDate);
 
+    public static MealPlanDto ToMealPlanDto(MealPlan item) => new(
+        item.Uid,
+        item.PropertyUid,
+        item.Code,
+        item.Name,
+        item.Description,
+        item.IncludesBreakfast,
+        item.IncludesLunch,
+        item.IncludesDinner,
+        item.AllowByo,
+        item.IsActive,
+        item.CreationDate);
+
+    public static RatePlanDto ToRatePlanDto(RatePlan item) => new(
+        item.Uid,
+        item.PropertyUid,
+        item.AccommodationTypeUid,
+        item.MealPlanUid,
+        item.Code,
+        item.Name,
+        item.PricingBasis.ToDatabaseValue(),
+        item.Currency,
+        item.Description,
+        item.IsRefundable,
+        item.IsActive,
+        item.CreationDate);
+
+    public static RatePlanPriceDto ToRatePlanPriceDto(RatePlanPrice item) => new(
+        item.Uid,
+        item.RatePlanUid,
+        item.PropertyUid,
+        item.StartDate,
+        item.EndDate,
+        item.DayOfWeek,
+        item.AdultRate,
+        item.ChildRate,
+        item.UnitRate,
+        item.MinimumStay,
+        item.IsActive,
+        item.CreationDate);
+
     public static AccommodationUnitDto ToAccommodationUnitDto(AccommodationUnit item) => new(
         item.Uid,
         item.PropertyUid,

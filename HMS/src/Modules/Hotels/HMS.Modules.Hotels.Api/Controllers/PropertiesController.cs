@@ -1,13 +1,17 @@
 using HMS.Modules.Hotels.Api.Contracts;
 using HMS.Modules.Hotels.Application.Commands.CreateAccommodationType;
 using HMS.Modules.Hotels.Application.Commands.CreateAccommodationUnit;
+using HMS.Modules.Hotels.Application.Commands.CreateMealPlan;
+using HMS.Modules.Hotels.Application.Commands.CreateRatePlan;
 using HMS.Modules.Hotels.Application.Commands.UpdateProperty;
 using HMS.Modules.Hotels.Application.Commands.UpdatePropertySettings;
 using HMS.Modules.Hotels.Application.Queries.GetAccommodationTypes;
 using HMS.Modules.Hotels.Application.Queries.GetAccommodationUnits;
+using HMS.Modules.Hotels.Application.Queries.GetMealPlans;
 using HMS.Modules.Hotels.Application.Queries.GetProperty;
 using HMS.Modules.Hotels.Application.Queries.GetPropertyAvailability;
 using HMS.Modules.Hotels.Application.Queries.GetPropertySettings;
+using HMS.Modules.Hotels.Application.Queries.GetRatePlans;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -151,6 +155,79 @@ public sealed class PropertiesController(ISender sender) : ControllerBase
             request.DefaultQuantity,
             request.BaseRate,
             request.SortOrder,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return result.IsSuccess
+            ? StatusCode(StatusCodes.Status201Created, result.Value)
+            : this.ToActionResult(result);
+    }
+
+    [HttpGet("{propertyUid:guid}/meal-plans")]
+    public async Task<IActionResult> GetMealPlans(
+        Guid propertyUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new GetMealPlansQuery(
+            propertyUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return this.ToActionResult(result);
+    }
+
+    [HttpPost("{propertyUid:guid}/meal-plans")]
+    public async Task<IActionResult> CreateMealPlan(
+        Guid propertyUid,
+        [FromBody] CreateMealPlanRequest request,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new CreateMealPlanCommand(
+            propertyUid,
+            request.Code,
+            request.Name,
+            request.Description,
+            request.IncludesBreakfast,
+            request.IncludesLunch,
+            request.IncludesDinner,
+            request.AllowByo,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return result.IsSuccess
+            ? StatusCode(StatusCodes.Status201Created, result.Value)
+            : this.ToActionResult(result);
+    }
+
+    [HttpGet("{propertyUid:guid}/rate-plans")]
+    public async Task<IActionResult> GetRatePlans(
+        Guid propertyUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new GetRatePlansQuery(
+            propertyUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return this.ToActionResult(result);
+    }
+
+    [HttpPost("{propertyUid:guid}/rate-plans")]
+    public async Task<IActionResult> CreateRatePlan(
+        Guid propertyUid,
+        [FromBody] CreateRatePlanRequest request,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new CreateRatePlanCommand(
+            propertyUid,
+            request.AccommodationTypeUid,
+            request.MealPlanUid,
+            request.Code,
+            request.Name,
+            request.PricingBasis,
+            request.Currency,
+            request.Description,
+            request.IsRefundable,
             User.GetRequiredSubject(),
             User.IsPlatformAdmin()), cancellationToken);
 

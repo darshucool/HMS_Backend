@@ -188,3 +188,37 @@ public static class UnitBlockTypeMapper
     }
 }
 
+public enum PricingBasis
+{
+    PerRoomPerNight,
+    PerPersonPerNight,
+    PerBedPerNight,
+    FlatPerStay
+}
+
+public static class PricingBasisMapper
+{
+    public static string ToDatabaseValue(this PricingBasis basis) => basis switch
+    {
+        PricingBasis.PerRoomPerNight => "PER_ROOM_PER_NIGHT",
+        PricingBasis.PerPersonPerNight => "PER_PERSON_PER_NIGHT",
+        PricingBasis.PerBedPerNight => "PER_BED_PER_NIGHT",
+        PricingBasis.FlatPerStay => "FLAT_PER_STAY",
+        _ => throw new ArgumentOutOfRangeException(nameof(basis), basis, "Unsupported pricing basis.")
+    };
+
+    public static PricingBasis FromDatabaseValue(string value)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(value);
+
+        return value.Trim().ToUpperInvariant().Replace("-", "_") switch
+        {
+            "PER_ROOM_PER_NIGHT" or "PERROOMPERNIGHT" => PricingBasis.PerRoomPerNight,
+            "PER_PERSON_PER_NIGHT" or "PERPERSONPERNIGHT" => PricingBasis.PerPersonPerNight,
+            "PER_BED_PER_NIGHT" or "PERBEDPERNIGHT" => PricingBasis.PerBedPerNight,
+            "FLAT_PER_STAY" or "FLATPERSTAY" => PricingBasis.FlatPerStay,
+            _ => throw new ArgumentException($"Unsupported pricing basis '{value}'.", nameof(value))
+        };
+    }
+}
+

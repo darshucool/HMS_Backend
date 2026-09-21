@@ -32,6 +32,18 @@ namespace HMS.Modules.Hotels.Infrastructure
                 AccommodationTypeRepository>();
 
             services.AddScoped<
+                IMealPlanRepository,
+                MealPlanRepository>();
+
+            services.AddScoped<
+                IRatePlanRepository,
+                RatePlanRepository>();
+
+            services.AddScoped<
+                IRatePlanPriceRepository,
+                RatePlanPriceRepository>();
+
+            services.AddScoped<
                 IAccommodationUnitRepository,
                 AccommodationUnitRepository>();
 

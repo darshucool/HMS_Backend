@@ -73,6 +73,47 @@ public sealed record AccommodationTypeDto(
     bool IsActive,
     DateTimeOffset CreationDate);
 
+public sealed record MealPlanDto(
+    Guid Uid,
+    Guid PropertyUid,
+    string Code,
+    string Name,
+    string? Description,
+    bool IncludesBreakfast,
+    bool IncludesLunch,
+    bool IncludesDinner,
+    bool AllowByo,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
+public sealed record RatePlanDto(
+    Guid Uid,
+    Guid PropertyUid,
+    Guid AccommodationTypeUid,
+    Guid? MealPlanUid,
+    string Code,
+    string Name,
+    string PricingBasis,
+    string Currency,
+    string? Description,
+    bool IsRefundable,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
+public sealed record RatePlanPriceDto(
+    Guid Uid,
+    Guid RatePlanUid,
+    Guid PropertyUid,
+    DateOnly StartDate,
+    DateOnly EndDate,
+    short? DayOfWeek,
+    decimal? AdultRate,
+    decimal? ChildRate,
+    decimal UnitRate,
+    int MinimumStay,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
 public sealed record AccommodationUnitDto(
     Guid Uid,
     Guid PropertyUid,

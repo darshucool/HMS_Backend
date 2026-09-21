@@ -61,6 +61,34 @@ public sealed record CreateAccommodationTypeRequest(
     decimal BaseRate = 0,
     int SortOrder = 0);
 
+public sealed record CreateMealPlanRequest(
+    string Code,
+    string Name,
+    string? Description = null,
+    bool IncludesBreakfast = false,
+    bool IncludesLunch = false,
+    bool IncludesDinner = false,
+    bool AllowByo = false);
+
+public sealed record CreateRatePlanRequest(
+    Guid AccommodationTypeUid,
+    string Code,
+    string Name,
+    PricingBasis PricingBasis,
+    Guid? MealPlanUid = null,
+    string Currency = "LKR",
+    string? Description = null,
+    bool IsRefundable = true);
+
+public sealed record CreateRatePlanPriceRequest(
+    DateOnly StartDate,
+    DateOnly EndDate,
+    decimal UnitRate,
+    short? DayOfWeek = null,
+    decimal? AdultRate = null,
+    decimal? ChildRate = null,
+    int MinimumStay = 1);
+
 public sealed record UpdateAccommodationTypeRequest(
     string Code,
     string Name,
