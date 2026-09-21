@@ -6,6 +6,7 @@ using HMS.Modules.Hotels.Application.Commands.UpdatePropertySettings;
 using HMS.Modules.Hotels.Application.Queries.GetAccommodationTypes;
 using HMS.Modules.Hotels.Application.Queries.GetAccommodationUnits;
 using HMS.Modules.Hotels.Application.Queries.GetProperty;
+using HMS.Modules.Hotels.Application.Queries.GetPropertyAvailability;
 using HMS.Modules.Hotels.Application.Queries.GetPropertySettings;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -26,6 +27,27 @@ public sealed class PropertiesController(ISender sender) : ControllerBase
     {
         var result = await sender.Send(new GetPropertyQuery(
             propertyUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return this.ToActionResult(result);
+    }
+
+    [HttpGet("{propertyUid:guid}/availability")]
+    public async Task<IActionResult> GetAvailability(
+        Guid propertyUid,
+        [FromQuery] DateOnly checkIn,
+        [FromQuery] DateOnly checkOut,
+        [FromQuery] int adults = 1,
+        [FromQuery] int children = 0,
+        CancellationToken cancellationToken = default)
+    {
+        var result = await sender.Send(new GetPropertyAvailabilityQuery(
+            propertyUid,
+            checkIn,
+            checkOut,
+            adults,
+            children,
             User.GetRequiredSubject(),
             User.IsPlatformAdmin()), cancellationToken);
 

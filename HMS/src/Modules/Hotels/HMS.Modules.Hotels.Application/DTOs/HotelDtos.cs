@@ -97,5 +97,28 @@ public sealed record UnitBlockDto(
     bool IsActive,
     DateTimeOffset CreationDate);
 
+public sealed record PropertyAvailabilityDto(
+    Guid PropertyUid,
+    DateOnly CheckIn,
+    DateOnly CheckOut,
+    int Nights,
+    int Adults,
+    int Children,
+    string Currency,
+    IReadOnlyList<PropertyAvailabilityItemDto> Items);
+
+public sealed record PropertyAvailabilityItemDto(
+    Guid AccommodationTypeUid,
+    string Code,
+    string Name,
+    string UnitKind,
+    int MaxAdults,
+    int MaxChildren,
+    int MaxOccupancy,
+    int AvailableUnits,
+    int TotalUnits,
+    decimal BaseRate,
+    decimal EstimatedTotal);
+
 public sealed record PagedResult<T>(IReadOnlyList<T> Items, int Page, int PageSize, long TotalCount);
 
