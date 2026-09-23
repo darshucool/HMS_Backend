@@ -25,4 +25,25 @@ internal static class GuestMapper
         item.Notes,
         item.IsActive,
         item.CreationDate);
+
+    public static GuestDocumentDto ToDto(GuestDocument item) => new(
+        item.Uid,
+        item.GuestUid,
+        item.DocumentType.ToDatabaseValue(),
+        item.DocumentNumber,
+        item.IssuingCountry,
+        item.IssuedDate,
+        item.ExpiryDate,
+        item.FileUrl,
+        item.IsVerified,
+        item.CreationDate);
+
+    public static GuestPreferenceDto ToDto(GuestPreference item) => new(
+        item.Uid,
+        item.GuestUid,
+        item.PreferenceType.ToDatabaseValue(),
+        item.PreferenceKey,
+        item.PreferenceValue,
+        item.Notes,
+        item.CreationDate);
 }

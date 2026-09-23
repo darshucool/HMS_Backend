@@ -68,4 +68,42 @@ public sealed class PropertyAccessRepository(IGuestsDbConnectionFactory connecti
             },
             cancellationToken: cancellationToken));
     }
+
+    public async Task<bool> HasAccessToOrganizationAsync(
+        string actorSubject,
+        long organizationId,
+        bool requireManager,
+        CancellationToken cancellationToken)
+    {
+        const string sql = """
+            SELECT EXISTS
+            (
+                SELECT 1
+                FROM hotel.app_users u
+                JOIN hotel.user_property_access upa ON upa.user_id = u.id
+                WHERE u.auth_subject = @ActorSubject
+                  AND upa.organization_id = @OrganizationId
+                  AND u.is_active = true
+                  AND u.is_archived = false
+                  AND upa.is_active = true
+                  AND upa.is_archived = false
+                  AND
+                  (
+                      @RequireManager = false
+                      OR upa.role_code IN ('PROPERTY_ADMIN', 'MANAGER', 'PLATFORM_ADMIN')
+                  )
+            );
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        return await connection.ExecuteScalarAsync<bool>(new CommandDefinition(
+            sql,
+            new
+            {
+                ActorSubject = actorSubject,
+                OrganizationId = organizationId,
+                RequireManager = requireManager
+            },
+            cancellationToken: cancellationToken));
+    }
 }

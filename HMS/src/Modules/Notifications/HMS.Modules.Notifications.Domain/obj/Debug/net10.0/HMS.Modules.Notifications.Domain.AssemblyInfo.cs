@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HMS.Modules.Notifications.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f861bef390c022301ee2a36f93943625beb2899b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ebb925cd90a6e64e8550a43d9fdb84e9814c8b0")]
 [assembly: System.Reflection.AssemblyProductAttribute("HMS.Modules.Notifications.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HMS.Modules.Notifications.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

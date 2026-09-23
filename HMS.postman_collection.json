@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "7c2b8d9a-5e21-4b6e-9d34-hotel-management-api",
     "name": "HMS Backend API",
-    "description": "Postman collection for implemented HMS Backend APIs only.\n\nBase URL: http://localhost:5094\n\nAuth: most routes need a Bearer token from Staff Login. Create organization/property require a PLATFORM_ADMIN token.\n\nEnums are sent as numbers (ASP.NET default):\n- PropertyType: Hotel=0, Guesthouse=1, Villa=2, Apartment=3, Hostel=4, Homestay=5, Resort=6, Campsite=7, Lodge=8, Bungalow=9, Other=10\n- PropertyStatus: Draft=0, Active=1, Suspended=2, Closed=3\n- UnitKind: Room=0, Villa=1, Apartment=2, Cabin=3, Tent=4, DormBed=5, Cottage=6, EntireProperty=7, Other=8\n- AccommodationUnitStatus: Available=0, Occupied=1, OutOfService=2, Maintenance=3, Inactive=4\n- HousekeepingStatus: Clean=0, Dirty=1, Inspected=2, InProgress=3, NotApplicable=4\n- UnitBlockType: Maintenance=0, OwnerUse=1, Closed=2, Other=3\n- PricingBasis: PerRoomPerNight=0, PerPersonPerNight=1, PerBedPerNight=2, FlatPerStay=3\n- GuestType: Individual=0, Couple=1, Family=2, Group=3, Corporate=4, TravelAgent=5\n- dayOfWeek: Sunday=0 through Saturday=6, or null for all days",
+    "description": "Postman collection for implemented HMS Backend APIs only.\n\nBase URL: http://localhost:5094\n\nAuth: most routes need a Bearer token from Staff Login. Create organization/property require a PLATFORM_ADMIN token.\n\nEnums are sent as numbers (ASP.NET default):\n- PropertyType: Hotel=0, Guesthouse=1, Villa=2, Apartment=3, Hostel=4, Homestay=5, Resort=6, Campsite=7, Lodge=8, Bungalow=9, Other=10\n- PropertyStatus: Draft=0, Active=1, Suspended=2, Closed=3\n- UnitKind: Room=0, Villa=1, Apartment=2, Cabin=3, Tent=4, DormBed=5, Cottage=6, EntireProperty=7, Other=8\n- AccommodationUnitStatus: Available=0, Occupied=1, OutOfService=2, Maintenance=3, Inactive=4\n- HousekeepingStatus: Clean=0, Dirty=1, Inspected=2, InProgress=3, NotApplicable=4\n- UnitBlockType: Maintenance=0, OwnerUse=1, Closed=2, Other=3\n- PricingBasis: PerRoomPerNight=0, PerPersonPerNight=1, PerBedPerNight=2, FlatPerStay=3\n- GuestType: Individual=0, Couple=1, Family=2, Group=3, Corporate=4, TravelAgent=5\n- DocumentType: Nic=0, Passport=1, DrivingLicence=2, Other=3\n- PreferenceType: Room=0, Dietary=1, Accessibility=2, Communication=3, Other=4\n- dayOfWeek: Sunday=0 through Saturday=6, or null for all days",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
@@ -879,6 +879,120 @@
               }
             }
           ]
+        },
+        {
+          "name": "Get Guest",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "guests", "{{guestUid}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Guest",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"Nimal Perera\",\n  \"firstName\": \"Nimal\",\n  \"lastName\": \"Perera\",\n  \"title\": \"Mr\",\n  \"guestType\": 0,\n  \"phone\": \"+94771234567\",\n  \"alternatePhone\": null,\n  \"email\": \"nimal@example.com\",\n  \"nationalityCode\": \"LK\",\n  \"dateOfBirth\": \"1990-05-12\",\n  \"preferredLanguage\": \"en\",\n  \"address\": \"Colombo\",\n  \"city\": \"Colombo\",\n  \"countryCode\": \"LK\",\n  \"notes\": null,\n  \"isActive\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "guests", "{{guestUid}}"]
+            },
+            "description": "Requires manager access to a property in the guest's organization."
+          }
+        },
+        {
+          "name": "Search Guests",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/guests/search?phone=&name=Nimal&email=",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "guests", "search"],
+              "query": [
+                {
+                  "key": "phone",
+                  "value": ""
+                },
+                {
+                  "key": "name",
+                  "value": "Nimal"
+                },
+                {
+                  "key": "email",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "At least one of phone, name, or email is required."
+          }
+        },
+        {
+          "name": "Add Guest Document",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentType\": 0,\n  \"documentNumber\": \"123456789V\",\n  \"issuingCountry\": \"LK\",\n  \"issuedDate\": \"2018-01-15\",\n  \"expiryDate\": \"2028-01-15\",\n  \"fileUrl\": null\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}/documents",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "guests", "{{guestUid}}", "documents"]
+            },
+            "description": "documentType 0 = NIC. Number must be unique per organization and type."
+          }
+        },
+        {
+          "name": "Add Guest Preference",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"preferenceType\": 0,\n  \"preferenceKey\": \"FLOOR\",\n  \"preferenceValue\": \"HIGH\",\n  \"notes\": \"Prefers a quiet high floor\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}/preferences",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "guests", "{{guestUid}}", "preferences"]
+            },
+            "description": "preferenceType 0 = Room. Requires hotel.guest_preferences (run 003_guest_preferences.sql if the original schema is already applied)."
+          }
+        },
+        {
+          "name": "Get Guest Booking History",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}/booking-history",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "guests", "{{guestUid}}", "booking-history"]
+            }
+          }
         }
       ]
     }

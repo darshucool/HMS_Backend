@@ -20,3 +20,39 @@ public sealed record GuestDto(
     string? Notes,
     bool IsActive,
     DateTimeOffset CreationDate);
+
+public sealed record GuestDocumentDto(
+    Guid Uid,
+    Guid GuestUid,
+    string DocumentType,
+    string DocumentNumber,
+    string? IssuingCountry,
+    DateOnly? IssuedDate,
+    DateOnly? ExpiryDate,
+    string? FileUrl,
+    bool IsVerified,
+    DateTimeOffset CreationDate);
+
+public sealed record GuestPreferenceDto(
+    Guid Uid,
+    Guid GuestUid,
+    string PreferenceType,
+    string PreferenceKey,
+    string PreferenceValue,
+    string? Notes,
+    DateTimeOffset CreationDate);
+
+public sealed record GuestBookingHistoryDto(
+    Guid BookingUid,
+    string BookingNumber,
+    Guid PropertyUid,
+    string PropertyName,
+    string Status,
+    DateOnly CheckInDate,
+    DateOnly CheckOutDate,
+    int Adults,
+    int Children,
+    decimal? QuotedTotal,
+    string Currency,
+    bool IsLeadGuest,
+    DateTimeOffset CreationDate);

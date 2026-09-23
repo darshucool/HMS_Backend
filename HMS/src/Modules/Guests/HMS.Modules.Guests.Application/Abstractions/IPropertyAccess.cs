@@ -15,4 +15,9 @@ public interface IPropertyAccess
         Guid propertyUid,
         bool requireManager,
         CancellationToken cancellationToken);
+    Task<bool> HasAccessToOrganizationAsync(
+        string actorSubject,
+        long organizationId,
+        bool requireManager,
+        CancellationToken cancellationToken);
 }

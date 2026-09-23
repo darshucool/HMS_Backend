@@ -15,6 +15,8 @@ public static class DependencyInjection
         services.AddSingleton<IGuestsDbConnectionFactory, GuestsDbConnectionFactory>();
         services.AddScoped<IPropertyAccess, PropertyAccessRepository>();
         services.AddScoped<IGuestRepository, GuestRepository>();
+        services.AddScoped<IGuestDocumentRepository, GuestDocumentRepository>();
+        services.AddScoped<IGuestPreferenceRepository, GuestPreferenceRepository>();
 
         return services;
     }

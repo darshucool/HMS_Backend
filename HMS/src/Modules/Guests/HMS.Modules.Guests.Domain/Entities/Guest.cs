@@ -82,6 +82,55 @@ public sealed class Guest : AuditableEntity
         return guest;
     }
 
+    public void Update(
+        GuestType guestType,
+        string? title,
+        string? firstName,
+        string? lastName,
+        string? displayName,
+        string? phone,
+        string? alternatePhone,
+        string? email,
+        string? nationalityCode,
+        DateOnly? dateOfBirth,
+        string? preferredLanguage,
+        string? address,
+        string? city,
+        string? countryCode,
+        string? notes,
+        bool isActive,
+        string actorSubject)
+    {
+        var cleanedFirstName = Optional(firstName, nameof(firstName), 100);
+        var cleanedLastName = Optional(lastName, nameof(lastName), 100);
+        var resolvedDisplayName = Optional(displayName, nameof(displayName), 200)
+            ?? BuildDisplayName(cleanedFirstName, cleanedLastName);
+
+        if (resolvedDisplayName is null)
+            throw new ArgumentException("Display name or first/last name is required.", nameof(displayName));
+
+        if (dateOfBirth > DateOnly.FromDateTime(DateTime.UtcNow))
+            throw new ArgumentException("Date of birth cannot be in the future.", nameof(dateOfBirth));
+
+        GuestType = guestType;
+        Title = Optional(title, nameof(title), 20);
+        FirstName = cleanedFirstName;
+        LastName = cleanedLastName;
+        DisplayName = resolvedDisplayName;
+        Phone = Optional(phone, nameof(phone), 30);
+        AlternatePhone = Optional(alternatePhone, nameof(alternatePhone), 30);
+        Email = OptionalEmail(email);
+        NationalityCode = OptionalCountryCode(nationalityCode, nameof(nationalityCode));
+        DateOfBirth = dateOfBirth;
+        PreferredLanguage = Optional(preferredLanguage, nameof(preferredLanguage), 10);
+        Address = Optional(address, nameof(address), 2000);
+        City = Optional(city, nameof(city), 100);
+        CountryCode = OptionalCountryCode(countryCode, nameof(countryCode));
+        Notes = Optional(notes, nameof(notes), 4000);
+        IsActive = isActive;
+        MarkModified(actorSubject);
+    }
+
     public static Guest Rehydrate(
         long id,
         Guid uid,
