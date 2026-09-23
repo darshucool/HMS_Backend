@@ -95,6 +95,15 @@ namespace HMS.Modules.Identity.Application.Commands.LoginStaff
                 return InvalidCredentials();
             }
 
+            if (request.RequiredRoles is { Count: > 0 } &&
+                !staff.Roles.Any(role =>
+                    request.RequiredRoles.Contains(role, StringComparer.OrdinalIgnoreCase)))
+            {
+                return LoginStaffResult.Failure(
+                    "invalid_credentials",
+                    "This account cannot sign in with this login.");
+            }
+
             await _staffRepository.RecordSuccessfulLoginAsync(
                 staff.StaffUid,
                 cancellationToken);

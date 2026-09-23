@@ -18,6 +18,8 @@ namespace HMS.Modules.Identity.Domain.Entities
 
         public string? Email { get; private set; }
 
+        public string? NormalizedEmail { get; private set; }
+
         public string FirstName { get; private set; } = string.Empty;
 
         public string? LastName { get; private set; }
@@ -53,14 +55,20 @@ namespace HMS.Modules.Identity.Domain.Entities
             string? lastName,
             string? email)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(username);
+            ArgumentException.ThrowIfNullOrWhiteSpace(firstName);
+
+            var cleanedEmail = string.IsNullOrWhiteSpace(email) ? null : email.Trim();
+
             return new StaffUser
             {
                 Uid = Guid.NewGuid(),
                 Username = username.Trim(),
                 NormalizedUsername = Normalize(username),
                 FirstName = firstName.Trim(),
-                LastName = lastName?.Trim(),
-                Email = email?.Trim(),
+                LastName = string.IsNullOrWhiteSpace(lastName) ? null : lastName.Trim(),
+                Email = cleanedEmail,
+                NormalizedEmail = cleanedEmail?.ToUpperInvariant(),
                 IsActive = true
             };
         }

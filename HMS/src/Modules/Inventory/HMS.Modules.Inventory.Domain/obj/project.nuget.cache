@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qg6p5HmEWLI=",
+  "dgSpecHash": "t/xv+w0BxkE=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Inventory\\HMS.Modules.Inventory.Domain\\HMS.Modules.Inventory.Domain.csproj",
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Domain/HMS.Modules.Inventory.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

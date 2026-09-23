@@ -13,25 +13,25 @@ public sealed class AccommodationUnitRepository(IHotelsDbConnectionFactory conne
     {
         const string sql = """
             SELECT
-                u.id                    AS Id,
-                u.uid                   AS Uid,
-                u.organization_id       AS OrganizationId,
-                u.property_id           AS PropertyId,
-                p.uid                   AS PropertyUid,
-                u.accommodation_type_id AS AccommodationTypeId,
-                at.uid                  AS AccommodationTypeUid,
-                u.unit_code             AS UnitCode,
-                u.unit_name             AS UnitName,
-                u.floor_or_area         AS FloorOrArea,
-                u.status                AS Status,
-                u.housekeeping_status   AS HousekeepingStatus,
-                u.notes                 AS Notes,
-                u.is_active             AS IsActive,
-                u.is_archived           AS IsArchived,
-                u.creation_date         AS CreationDate,
-                u.created_by            AS CreatedBy,
-                u.modified_date         AS ModifiedDate,
-                u.modified_by           AS ModifiedBy
+                u.id                    AS "Id",
+                u.uid                   AS "Uid",
+                u.organization_id       AS "OrganizationId",
+                u.property_id           AS "PropertyId",
+                p.uid                   AS "PropertyUid",
+                u.accommodation_type_id AS "AccommodationTypeId",
+                at.uid                  AS "AccommodationTypeUid",
+                u.unit_code             AS "UnitCode",
+                u.unit_name             AS "UnitName",
+                u.floor_or_area         AS "FloorOrArea",
+                u.status                AS "Status",
+                u.housekeeping_status   AS "HousekeepingStatus",
+                u.notes                 AS "Notes",
+                u.is_active             AS "IsActive",
+                u.is_archived           AS "IsArchived",
+                u.creation_date         AS "CreationDate",
+                u.created_by            AS "CreatedBy",
+                u.modified_date         AS "ModifiedDate",
+                u.modified_by           AS "ModifiedBy"
             FROM hotel.accommodation_units u
             JOIN hotel.properties p ON p.id = u.property_id
             JOIN hotel.accommodation_types at ON at.id = u.accommodation_type_id
@@ -129,17 +129,17 @@ public sealed class AccommodationUnitRepository(IHotelsDbConnectionFactory conne
     {
         const string sql = """
             SELECT
-                u.uid                   AS Uid,
-                p.uid                   AS PropertyUid,
-                at.uid                  AS AccommodationTypeUid,
-                u.unit_code             AS UnitCode,
-                u.unit_name             AS UnitName,
-                u.floor_or_area         AS FloorOrArea,
-                u.status                AS Status,
-                u.housekeeping_status   AS HousekeepingStatus,
-                u.notes                 AS Notes,
-                u.is_active             AS IsActive,
-                u.creation_date         AS CreationDate
+                u.uid                   AS "Uid",
+                p.uid                   AS "PropertyUid",
+                at.uid                  AS "AccommodationTypeUid",
+                u.unit_code             AS "UnitCode",
+                u.unit_name             AS "UnitName",
+                u.floor_or_area         AS "FloorOrArea",
+                u.status                AS "Status",
+                u.housekeeping_status   AS "HousekeepingStatus",
+                u.notes                 AS "Notes",
+                u.is_active             AS "IsActive",
+                u.creation_date         AS "CreationDate"
             FROM hotel.accommodation_units u
             JOIN hotel.properties p ON p.id = u.property_id
             JOIN hotel.accommodation_types at ON at.id = u.accommodation_type_id
@@ -149,12 +149,12 @@ public sealed class AccommodationUnitRepository(IHotelsDbConnectionFactory conne
             """;
 
         await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
-        var items = await connection.QueryAsync<AccommodationUnitDto>(new CommandDefinition(
+        var rows = await connection.QueryAsync<AccommodationUnitListRow>(new CommandDefinition(
             sql,
             new { PropertyUid = propertyUid },
             cancellationToken: cancellationToken));
 
-        return items.AsList();
+        return rows.Select(ToDto).ToList();
     }
 
     private static object ToWriteParameters(AccommodationUnit unit) => new
@@ -193,29 +193,67 @@ public sealed class AccommodationUnitRepository(IHotelsDbConnectionFactory conne
         row.Notes,
         row.IsActive,
         row.IsArchived,
-        row.CreationDate,
+        ToDateTimeOffset(row.CreationDate),
         row.CreatedBy,
-        row.ModifiedDate,
+        ToDateTimeOffset(row.ModifiedDate),
         row.ModifiedBy);
 
-    private sealed record AccommodationUnitRow(
-        long Id,
-        Guid Uid,
-        long OrganizationId,
-        long PropertyId,
-        Guid PropertyUid,
-        long AccommodationTypeId,
-        Guid AccommodationTypeUid,
-        string UnitCode,
-        string? UnitName,
-        string? FloorOrArea,
-        string Status,
-        string HousekeepingStatus,
-        string? Notes,
-        bool IsActive,
-        bool IsArchived,
-        DateTimeOffset CreationDate,
-        string? CreatedBy,
-        DateTimeOffset? ModifiedDate,
-        string? ModifiedBy);
+    private static AccommodationUnitDto ToDto(AccommodationUnitListRow row) => new(
+        row.Uid,
+        row.PropertyUid,
+        row.AccommodationTypeUid,
+        row.UnitCode,
+        row.UnitName,
+        row.FloorOrArea,
+        row.Status,
+        row.HousekeepingStatus,
+        row.Notes,
+        row.IsActive,
+        ToDateTimeOffset(row.CreationDate));
+
+    private static DateTimeOffset ToDateTimeOffset(DateTime value) =>
+        value.Kind == DateTimeKind.Unspecified
+            ? new DateTimeOffset(DateTime.SpecifyKind(value, DateTimeKind.Utc))
+            : new DateTimeOffset(value);
+
+    private static DateTimeOffset? ToDateTimeOffset(DateTime? value) =>
+        value is null ? null : ToDateTimeOffset(value.Value);
+
+    private sealed class AccommodationUnitRow
+    {
+        public long Id { get; init; }
+        public Guid Uid { get; init; }
+        public long OrganizationId { get; init; }
+        public long PropertyId { get; init; }
+        public Guid PropertyUid { get; init; }
+        public long AccommodationTypeId { get; init; }
+        public Guid AccommodationTypeUid { get; init; }
+        public string UnitCode { get; init; } = string.Empty;
+        public string? UnitName { get; init; }
+        public string? FloorOrArea { get; init; }
+        public string Status { get; init; } = string.Empty;
+        public string HousekeepingStatus { get; init; } = string.Empty;
+        public string? Notes { get; init; }
+        public bool IsActive { get; init; }
+        public bool IsArchived { get; init; }
+        public DateTime CreationDate { get; init; }
+        public string? CreatedBy { get; init; }
+        public DateTime? ModifiedDate { get; init; }
+        public string? ModifiedBy { get; init; }
+    }
+
+    private sealed class AccommodationUnitListRow
+    {
+        public Guid Uid { get; init; }
+        public Guid PropertyUid { get; init; }
+        public Guid AccommodationTypeUid { get; init; }
+        public string UnitCode { get; init; } = string.Empty;
+        public string? UnitName { get; init; }
+        public string? FloorOrArea { get; init; }
+        public string Status { get; init; } = string.Empty;
+        public string HousekeepingStatus { get; init; } = string.Empty;
+        public string? Notes { get; init; }
+        public bool IsActive { get; init; }
+        public DateTime CreationDate { get; init; }
+    }
 }

@@ -17,3 +17,16 @@ D:/PROJECTS/HMS/Backend/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Main
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/HMS.Modules.Maintenance.Domain.dll
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/refint/HMS.Modules.Maintenance.Domain.dll
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/HMS.Modules.Maintenance.Domain.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/bin/Debug/net10.0/HMS.Modules.Maintenance.Domain.deps.json
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/bin/Debug/net10.0/HMS.Modules.Maintenance.Domain.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/bin/Debug/net10.0/HMS.Modules.Maintenance.Domain.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/bin/Debug/net10.0/HMS.SharedKernel.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/bin/Debug/net10.0/HMS.SharedKernel.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/HMS.Modules.Maintenance.Domain.csproj.AssemblyReference.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/HMS.Modules.Maintenance.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/HMS.Modules.Maintenance.Domain.AssemblyInfoInputs.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/HMS.Modules.Maintenance.Domain.AssemblyInfo.cs
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/HMS.Modules.Maintenance.Domain.csproj.CoreCompileInputs.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/HMS.Modules.Maintenance.Domain.sourcelink.json
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/HMS.Modu.5073C5B6.Up2Date
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/Debug/net10.0/ref/HMS.Modules.Maintenance.Domain.dll

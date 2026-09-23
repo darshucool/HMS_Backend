@@ -12,24 +12,24 @@ public sealed class MealPlanRepository(IHotelsDbConnectionFactory connectionFact
     {
         const string sql = """
             SELECT
-                mp.id                   AS Id,
-                mp.uid                  AS Uid,
-                mp.organization_id      AS OrganizationId,
-                mp.property_id          AS PropertyId,
-                p.uid                   AS PropertyUid,
-                mp.code                 AS Code,
-                mp.name                 AS Name,
-                mp.description          AS Description,
-                mp.includes_breakfast   AS IncludesBreakfast,
-                mp.includes_lunch       AS IncludesLunch,
-                mp.includes_dinner      AS IncludesDinner,
-                mp.allow_byo            AS AllowByo,
-                mp.is_active            AS IsActive,
-                mp.is_archived          AS IsArchived,
-                mp.creation_date        AS CreationDate,
-                mp.created_by           AS CreatedBy,
-                mp.modified_date        AS ModifiedDate,
-                mp.modified_by          AS ModifiedBy
+                mp.id                   AS "Id",
+                mp.uid                  AS "Uid",
+                mp.organization_id      AS "OrganizationId",
+                mp.property_id          AS "PropertyId",
+                p.uid                   AS "PropertyUid",
+                mp.code                 AS "Code",
+                mp.name                 AS "Name",
+                mp.description          AS "Description",
+                mp.includes_breakfast   AS "IncludesBreakfast",
+                mp.includes_lunch       AS "IncludesLunch",
+                mp.includes_dinner      AS "IncludesDinner",
+                mp.allow_byo            AS "AllowByo",
+                mp.is_active            AS "IsActive",
+                mp.is_archived          AS "IsArchived",
+                mp.creation_date        AS "CreationDate",
+                mp.created_by           AS "CreatedBy",
+                mp.modified_date        AS "ModifiedDate",
+                mp.modified_by          AS "ModifiedBy"
             FROM hotel.meal_plans mp
             JOIN hotel.properties p ON p.id = mp.property_id
             WHERE mp.uid = @Uid;
@@ -110,17 +110,17 @@ public sealed class MealPlanRepository(IHotelsDbConnectionFactory connectionFact
     {
         const string sql = """
             SELECT
-                mp.uid                  AS Uid,
-                p.uid                   AS PropertyUid,
-                mp.code                AS Code,
-                mp.name                AS Name,
-                mp.description         AS Description,
-                mp.includes_breakfast  AS IncludesBreakfast,
-                mp.includes_lunch      AS IncludesLunch,
-                mp.includes_dinner     AS IncludesDinner,
-                mp.allow_byo           AS AllowByo,
-                mp.is_active           AS IsActive,
-                mp.creation_date       AS CreationDate
+                mp.uid                  AS "Uid",
+                p.uid                   AS "PropertyUid",
+                mp.code                 AS "Code",
+                mp.name                 AS "Name",
+                mp.description          AS "Description",
+                mp.includes_breakfast   AS "IncludesBreakfast",
+                mp.includes_lunch       AS "IncludesLunch",
+                mp.includes_dinner      AS "IncludesDinner",
+                mp.allow_byo            AS "AllowByo",
+                mp.is_active            AS "IsActive",
+                mp.creation_date        AS "CreationDate"
             FROM hotel.meal_plans mp
             JOIN hotel.properties p ON p.id = mp.property_id
             WHERE p.uid = @PropertyUid
@@ -129,12 +129,12 @@ public sealed class MealPlanRepository(IHotelsDbConnectionFactory connectionFact
             """;
 
         await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
-        var items = await connection.QueryAsync<MealPlanDto>(new CommandDefinition(
+        var rows = await connection.QueryAsync<MealPlanListRow>(new CommandDefinition(
             sql,
             new { PropertyUid = propertyUid },
             cancellationToken: cancellationToken));
 
-        return items.AsList();
+        return rows.Select(ToDto).ToList();
     }
 
     private static MealPlan ToDomain(MealPlanRow row) => MealPlan.Rehydrate(
@@ -152,28 +152,66 @@ public sealed class MealPlanRepository(IHotelsDbConnectionFactory connectionFact
         row.AllowByo,
         row.IsActive,
         row.IsArchived,
-        row.CreationDate,
+        ToDateTimeOffset(row.CreationDate),
         row.CreatedBy,
-        row.ModifiedDate,
+        ToDateTimeOffset(row.ModifiedDate),
         row.ModifiedBy);
 
-    private sealed record MealPlanRow(
-        long Id,
-        Guid Uid,
-        long OrganizationId,
-        long PropertyId,
-        Guid PropertyUid,
-        string Code,
-        string Name,
-        string? Description,
-        bool IncludesBreakfast,
-        bool IncludesLunch,
-        bool IncludesDinner,
-        bool AllowByo,
-        bool IsActive,
-        bool IsArchived,
-        DateTimeOffset CreationDate,
-        string? CreatedBy,
-        DateTimeOffset? ModifiedDate,
-        string? ModifiedBy);
+    private static MealPlanDto ToDto(MealPlanListRow row) => new(
+        row.Uid,
+        row.PropertyUid,
+        row.Code,
+        row.Name,
+        row.Description,
+        row.IncludesBreakfast,
+        row.IncludesLunch,
+        row.IncludesDinner,
+        row.AllowByo,
+        row.IsActive,
+        ToDateTimeOffset(row.CreationDate));
+
+    private static DateTimeOffset ToDateTimeOffset(DateTime value) =>
+        value.Kind == DateTimeKind.Unspecified
+            ? new DateTimeOffset(DateTime.SpecifyKind(value, DateTimeKind.Utc))
+            : new DateTimeOffset(value);
+
+    private static DateTimeOffset? ToDateTimeOffset(DateTime? value) =>
+        value is null ? null : ToDateTimeOffset(value.Value);
+
+    private sealed class MealPlanRow
+    {
+        public long Id { get; init; }
+        public Guid Uid { get; init; }
+        public long OrganizationId { get; init; }
+        public long PropertyId { get; init; }
+        public Guid PropertyUid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string? Description { get; init; }
+        public bool IncludesBreakfast { get; init; }
+        public bool IncludesLunch { get; init; }
+        public bool IncludesDinner { get; init; }
+        public bool AllowByo { get; init; }
+        public bool IsActive { get; init; }
+        public bool IsArchived { get; init; }
+        public DateTime CreationDate { get; init; }
+        public string? CreatedBy { get; init; }
+        public DateTime? ModifiedDate { get; init; }
+        public string? ModifiedBy { get; init; }
+    }
+
+    private sealed class MealPlanListRow
+    {
+        public Guid Uid { get; init; }
+        public Guid PropertyUid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string? Description { get; init; }
+        public bool IncludesBreakfast { get; init; }
+        public bool IncludesLunch { get; init; }
+        public bool IncludesDinner { get; init; }
+        public bool AllowByo { get; init; }
+        public bool IsActive { get; init; }
+        public DateTime CreationDate { get; init; }
+    }
 }

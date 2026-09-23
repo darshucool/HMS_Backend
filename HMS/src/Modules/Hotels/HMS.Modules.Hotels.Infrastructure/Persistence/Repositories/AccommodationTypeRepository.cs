@@ -13,27 +13,27 @@ public sealed class AccommodationTypeRepository(IHotelsDbConnectionFactory conne
     {
         const string sql = """
             SELECT
-                at.id                   AS Id,
-                at.uid                  AS Uid,
-                at.organization_id      AS OrganizationId,
-                at.property_id          AS PropertyId,
-                p.uid                   AS PropertyUid,
-                at.code                 AS Code,
-                at.name                 AS Name,
-                at.unit_kind            AS UnitKind,
-                at.description          AS Description,
-                at.max_adults           AS MaxAdults,
-                at.max_children         AS MaxChildren,
-                at.max_occupancy        AS MaxOccupancy,
-                at.default_quantity     AS DefaultQuantity,
-                at.base_rate            AS BaseRate,
-                at.sort_order           AS SortOrder,
-                at.is_active            AS IsActive,
-                at.is_archived          AS IsArchived,
-                at.creation_date        AS CreationDate,
-                at.created_by           AS CreatedBy,
-                at.modified_date        AS ModifiedDate,
-                at.modified_by          AS ModifiedBy
+                at.id                   AS "Id",
+                at.uid                  AS "Uid",
+                at.organization_id      AS "OrganizationId",
+                at.property_id          AS "PropertyId",
+                p.uid                   AS "PropertyUid",
+                at.code                 AS "Code",
+                at.name                 AS "Name",
+                at.unit_kind            AS "UnitKind",
+                at.description          AS "Description",
+                at.max_adults           AS "MaxAdults",
+                at.max_children         AS "MaxChildren",
+                at.max_occupancy        AS "MaxOccupancy",
+                at.default_quantity     AS "DefaultQuantity",
+                at.base_rate            AS "BaseRate",
+                at.sort_order           AS "SortOrder",
+                at.is_active            AS "IsActive",
+                at.is_archived          AS "IsArchived",
+                at.creation_date        AS "CreationDate",
+                at.created_by           AS "CreatedBy",
+                at.modified_date        AS "ModifiedDate",
+                at.modified_by          AS "ModifiedBy"
             FROM hotel.accommodation_types at
             JOIN hotel.properties p ON p.id = at.property_id
             WHERE at.uid = @Uid;
@@ -192,20 +192,20 @@ public sealed class AccommodationTypeRepository(IHotelsDbConnectionFactory conne
     {
         const string sql = """
             SELECT
-                at.uid                  AS Uid,
-                p.uid                   AS PropertyUid,
-                at.code                 AS Code,
-                at.name                 AS Name,
-                at.unit_kind            AS UnitKind,
-                at.description          AS Description,
-                at.max_adults           AS MaxAdults,
-                at.max_children         AS MaxChildren,
-                at.max_occupancy        AS MaxOccupancy,
-                at.default_quantity     AS DefaultQuantity,
-                at.base_rate            AS BaseRate,
-                at.sort_order           AS SortOrder,
-                at.is_active            AS IsActive,
-                at.creation_date        AS CreationDate
+                at.uid                  AS "Uid",
+                p.uid                   AS "PropertyUid",
+                at.code                 AS "Code",
+                at.name                 AS "Name",
+                at.unit_kind            AS "UnitKind",
+                at.description          AS "Description",
+                at.max_adults           AS "MaxAdults",
+                at.max_children         AS "MaxChildren",
+                at.max_occupancy        AS "MaxOccupancy",
+                at.default_quantity     AS "DefaultQuantity",
+                at.base_rate            AS "BaseRate",
+                at.sort_order           AS "SortOrder",
+                at.is_active            AS "IsActive",
+                at.creation_date        AS "CreationDate"
             FROM hotel.accommodation_types at
             JOIN hotel.properties p ON p.id = at.property_id
             WHERE p.uid = @PropertyUid
@@ -214,12 +214,12 @@ public sealed class AccommodationTypeRepository(IHotelsDbConnectionFactory conne
             """;
 
         await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
-        var items = await connection.QueryAsync<AccommodationTypeDto>(new CommandDefinition(
+        var rows = await connection.QueryAsync<AccommodationTypeListRow>(new CommandDefinition(
             sql,
             new { PropertyUid = propertyUid },
             cancellationToken: cancellationToken));
 
-        return items.AsList();
+        return rows.Select(ToDto).ToList();
     }
 
     private static AccommodationType ToDomain(AccommodationTypeRow row) => AccommodationType.Rehydrate(
@@ -240,31 +240,75 @@ public sealed class AccommodationTypeRepository(IHotelsDbConnectionFactory conne
         row.SortOrder,
         row.IsActive,
         row.IsArchived,
-        row.CreationDate,
+        ToDateTimeOffset(row.CreationDate),
         row.CreatedBy,
-        row.ModifiedDate,
+        ToDateTimeOffset(row.ModifiedDate),
         row.ModifiedBy);
 
-    private sealed record AccommodationTypeRow(
-        long Id,
-        Guid Uid,
-        long OrganizationId,
-        long PropertyId,
-        Guid PropertyUid,
-        string Code,
-        string Name,
-        string UnitKind,
-        string? Description,
-        int MaxAdults,
-        int MaxChildren,
-        int MaxOccupancy,
-        int DefaultQuantity,
-        decimal BaseRate,
-        int SortOrder,
-        bool IsActive,
-        bool IsArchived,
-        DateTimeOffset CreationDate,
-        string? CreatedBy,
-        DateTimeOffset? ModifiedDate,
-        string? ModifiedBy);
+    private static AccommodationTypeDto ToDto(AccommodationTypeListRow row) => new(
+        row.Uid,
+        row.PropertyUid,
+        row.Code,
+        row.Name,
+        row.UnitKind,
+        row.Description,
+        row.MaxAdults,
+        row.MaxChildren,
+        row.MaxOccupancy,
+        row.DefaultQuantity,
+        row.BaseRate,
+        row.SortOrder,
+        row.IsActive,
+        ToDateTimeOffset(row.CreationDate));
+
+    private static DateTimeOffset ToDateTimeOffset(DateTime value) =>
+        value.Kind == DateTimeKind.Unspecified
+            ? new DateTimeOffset(DateTime.SpecifyKind(value, DateTimeKind.Utc))
+            : new DateTimeOffset(value);
+
+    private static DateTimeOffset? ToDateTimeOffset(DateTime? value) =>
+        value is null ? null : ToDateTimeOffset(value.Value);
+
+    private sealed class AccommodationTypeRow
+    {
+        public long Id { get; init; }
+        public Guid Uid { get; init; }
+        public long OrganizationId { get; init; }
+        public long PropertyId { get; init; }
+        public Guid PropertyUid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string UnitKind { get; init; } = string.Empty;
+        public string? Description { get; init; }
+        public int MaxAdults { get; init; }
+        public int MaxChildren { get; init; }
+        public int MaxOccupancy { get; init; }
+        public int DefaultQuantity { get; init; }
+        public decimal BaseRate { get; init; }
+        public int SortOrder { get; init; }
+        public bool IsActive { get; init; }
+        public bool IsArchived { get; init; }
+        public DateTime CreationDate { get; init; }
+        public string? CreatedBy { get; init; }
+        public DateTime? ModifiedDate { get; init; }
+        public string? ModifiedBy { get; init; }
+    }
+
+    private sealed class AccommodationTypeListRow
+    {
+        public Guid Uid { get; init; }
+        public Guid PropertyUid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string UnitKind { get; init; } = string.Empty;
+        public string? Description { get; init; }
+        public int MaxAdults { get; init; }
+        public int MaxChildren { get; init; }
+        public int MaxOccupancy { get; init; }
+        public int DefaultQuantity { get; init; }
+        public decimal BaseRate { get; init; }
+        public int SortOrder { get; init; }
+        public bool IsActive { get; init; }
+        public DateTime CreationDate { get; init; }
+    }
 }

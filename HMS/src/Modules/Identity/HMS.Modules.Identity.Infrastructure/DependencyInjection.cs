@@ -68,7 +68,15 @@ public static class DependencyInjection
                     };
             });
 
-        services.AddAuthorization();
+        services.Configure<JwtOptions>(jwtSection);
+
+        services.AddAuthorization(options =>
+        {
+            options.AddPolicy(
+                "PlatformAdmin",
+                policy => policy.RequireRole("PLATFORM_ADMIN"));
+        });
+
         services.AddSingleton(TimeProvider.System);
 
         services.AddScoped<

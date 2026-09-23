@@ -17,3 +17,16 @@ D:/PROJECTS/HMS/Backend/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Hou
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/HMS.Modules.Housekeeping.Domain.dll
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/refint/HMS.Modules.Housekeeping.Domain.dll
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/HMS.Modules.Housekeeping.Domain.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/bin/Debug/net10.0/HMS.Modules.Housekeeping.Domain.deps.json
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/bin/Debug/net10.0/HMS.Modules.Housekeeping.Domain.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/bin/Debug/net10.0/HMS.Modules.Housekeeping.Domain.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/bin/Debug/net10.0/HMS.SharedKernel.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/bin/Debug/net10.0/HMS.SharedKernel.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/HMS.Modules.Housekeeping.Domain.csproj.AssemblyReference.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/HMS.Modules.Housekeeping.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/HMS.Modules.Housekeeping.Domain.AssemblyInfoInputs.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/HMS.Modules.Housekeeping.Domain.AssemblyInfo.cs
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/HMS.Modules.Housekeeping.Domain.csproj.CoreCompileInputs.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/HMS.Modules.Housekeeping.Domain.sourcelink.json
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/HMS.Modu.88DFFBE6.Up2Date
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/Debug/net10.0/ref/HMS.Modules.Housekeeping.Domain.dll

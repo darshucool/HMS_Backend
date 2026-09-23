@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LFTGW6UFc1Y=",
+  "dgSpecHash": "37X4T56aPBY=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Reporting\\HMS.Modules.Reporting.Infrastructure\\HMS.Modules.Reporting.Infrastructure.csproj",
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Infrastructure/HMS.Modules.Reporting.Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

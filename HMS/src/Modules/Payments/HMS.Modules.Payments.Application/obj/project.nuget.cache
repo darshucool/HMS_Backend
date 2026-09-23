@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UVW+kJiHnqw=",
+  "dgSpecHash": "vyPhXAXRq2Q=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Payments\\HMS.Modules.Payments.Application\\HMS.Modules.Payments.Application.csproj",
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Application/HMS.Modules.Payments.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "S2VkgKm5bnA=",
+  "dgSpecHash": "+zgBqvA9LbM=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Guests\\HMS.Modules.Guests.Infrastructure\\HMS.Modules.Guests.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Infrastructure/HMS.Modules.Guests.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "/Users/jananiwithana/.nuget/packages/dapper/2.1.86/dapper.2.1.86.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/mediatr/14.2.0/mediatr.14.2.0.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.0/microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.0/microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.0/microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/microsoft.extensions.primitives/10.0.0/microsoft.extensions.primitives.10.0.0.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/microsoft.identitymodel.abstractions/8.14.0/microsoft.identitymodel.abstractions.8.14.0.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.14.0/microsoft.identitymodel.jsonwebtokens.8.14.0.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/microsoft.identitymodel.logging/8.14.0/microsoft.identitymodel.logging.8.14.0.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/microsoft.identitymodel.tokens/8.14.0/microsoft.identitymodel.tokens.8.14.0.nupkg.sha512",
+    "/Users/jananiwithana/.nuget/packages/npgsql/10.0.3/npgsql.10.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

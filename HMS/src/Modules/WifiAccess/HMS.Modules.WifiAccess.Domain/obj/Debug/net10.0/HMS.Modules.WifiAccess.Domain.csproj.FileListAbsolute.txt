@@ -17,3 +17,16 @@ D:/PROJECTS/HMS/Backend/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiA
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/HMS.Modules.WifiAccess.Domain.dll
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/refint/HMS.Modules.WifiAccess.Domain.dll
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/HMS.Modules.WifiAccess.Domain.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/bin/Debug/net10.0/HMS.Modules.WifiAccess.Domain.deps.json
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/bin/Debug/net10.0/HMS.Modules.WifiAccess.Domain.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/bin/Debug/net10.0/HMS.Modules.WifiAccess.Domain.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/bin/Debug/net10.0/HMS.SharedKernel.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/bin/Debug/net10.0/HMS.SharedKernel.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/HMS.Modules.WifiAccess.Domain.csproj.AssemblyReference.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/HMS.Modules.WifiAccess.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/HMS.Modules.WifiAccess.Domain.AssemblyInfoInputs.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/HMS.Modules.WifiAccess.Domain.AssemblyInfo.cs
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/HMS.Modules.WifiAccess.Domain.csproj.CoreCompileInputs.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/HMS.Modules.WifiAccess.Domain.sourcelink.json
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/HMS.Modu.4E7D85CC.Up2Date
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/Debug/net10.0/ref/HMS.Modules.WifiAccess.Domain.dll

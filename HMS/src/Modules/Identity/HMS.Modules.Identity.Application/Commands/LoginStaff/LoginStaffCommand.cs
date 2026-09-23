@@ -8,6 +8,7 @@ namespace HMS.Modules.Identity.Application.Commands.LoginStaff
     public sealed record LoginStaffCommand(
     Guid PropertyUid,
     string Username,
-    string Password
+    string Password,
+    IReadOnlyList<string>? RequiredRoles = null
 ) : IRequest<LoginStaffResult>;
 }

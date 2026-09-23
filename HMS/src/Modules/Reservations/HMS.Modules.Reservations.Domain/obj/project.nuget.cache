@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jcp5C/IPKYg=",
+  "dgSpecHash": "Vgb4+2p9rQw=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Reservations\\HMS.Modules.Reservations.Domain\\HMS.Modules.Reservations.Domain.csproj",
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Domain/HMS.Modules.Reservations.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

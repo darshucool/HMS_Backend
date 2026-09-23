@@ -30,20 +30,20 @@ public sealed class OrganizationRepository(IHotelsDbConnectionFactory connection
     {
         const string sql = """
             SELECT
-                id                  AS Id,
-                uid                 AS Uid,
-                code                AS Code,
-                name                AS Name,
-                legal_name          AS LegalName,
-                default_currency    AS DefaultCurrency,
-                timezone            AS Timezone,
-                status              AS Status,
-                is_active           AS IsActive,
-                is_archived         AS IsArchived,
-                creation_date       AS CreationDate,
-                created_by          AS CreatedBy,
-                modified_date       AS ModifiedDate,
-                modified_by         AS ModifiedBy
+                id                  AS "Id",
+                uid                 AS "Uid",
+                code                AS "Code",
+                name                AS "Name",
+                legal_name          AS "LegalName",
+                default_currency    AS "DefaultCurrency",
+                timezone            AS "Timezone",
+                status              AS "Status",
+                is_active           AS "IsActive",
+                is_archived         AS "IsArchived",
+                creation_date       AS "CreationDate",
+                created_by          AS "CreatedBy",
+                modified_date       AS "ModifiedDate",
+                modified_by         AS "ModifiedBy"
             FROM hotel.organizations
             WHERE uid = @Uid;
             """;
@@ -98,15 +98,15 @@ public sealed class OrganizationRepository(IHotelsDbConnectionFactory connection
     {
         const string sql = """
             SELECT
-                uid                 AS Uid,
-                code                AS Code,
-                name                AS Name,
-                legal_name          AS LegalName,
-                default_currency    AS DefaultCurrency,
-                timezone            AS Timezone,
-                status              AS Status,
-                is_active           AS IsActive,
-                creation_date       AS CreationDate
+                uid                 AS "Uid",
+                code                AS "Code",
+                name                AS "Name",
+                legal_name          AS "LegalName",
+                default_currency    AS "DefaultCurrency",
+                timezone            AS "Timezone",
+                status              AS "Status",
+                is_active           AS "IsActive",
+                creation_date       AS "CreationDate"
             FROM hotel.organizations
             WHERE is_archived = false
               AND (@Search IS NULL
@@ -136,9 +136,9 @@ public sealed class OrganizationRepository(IHotelsDbConnectionFactory connection
         using var result = await connection.QueryMultipleAsync(
             new CommandDefinition(sql, parameters, cancellationToken: cancellationToken));
 
-        var items = (await result.ReadAsync<OrganizationDto>()).AsList();
+        var rows = (await result.ReadAsync<OrganizationListRow>()).AsList();
         var totalCount = await result.ReadSingleAsync<long>();
-        return (items, totalCount);
+        return (rows.Select(ToDto).ToList(), totalCount);
     }
 
     private static Organization ToDomain(OrganizationRow row) => Organization.Rehydrate(
@@ -152,25 +152,59 @@ public sealed class OrganizationRepository(IHotelsDbConnectionFactory connection
         Enum.Parse<OrganizationStatus>(row.Status, true),
         row.IsActive,
         row.IsArchived,
-        row.CreationDate,
+        ToDateTimeOffset(row.CreationDate),
         row.CreatedBy,
-        row.ModifiedDate,
+        ToDateTimeOffset(row.ModifiedDate),
         row.ModifiedBy);
 
-    private sealed record OrganizationRow(
-        long Id,
-        Guid Uid,
-        string Code,
-        string Name,
-        string? LegalName,
-        string DefaultCurrency,
-        string Timezone,
-        string Status,
-        bool IsActive,
-        bool IsArchived,
-        DateTimeOffset CreationDate,
-        string? CreatedBy,
-        DateTimeOffset? ModifiedDate,
-        string? ModifiedBy);
+    private static OrganizationDto ToDto(OrganizationListRow row) => new(
+        row.Uid,
+        row.Code,
+        row.Name,
+        row.LegalName,
+        row.DefaultCurrency,
+        row.Timezone,
+        row.Status,
+        row.IsActive,
+        ToDateTimeOffset(row.CreationDate));
+
+    private static DateTimeOffset ToDateTimeOffset(DateTime value) =>
+        value.Kind == DateTimeKind.Unspecified
+            ? new DateTimeOffset(DateTime.SpecifyKind(value, DateTimeKind.Utc))
+            : new DateTimeOffset(value);
+
+    private static DateTimeOffset? ToDateTimeOffset(DateTime? value) =>
+        value is null ? null : ToDateTimeOffset(value.Value);
+
+    private sealed class OrganizationRow
+    {
+        public long Id { get; init; }
+        public Guid Uid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string? LegalName { get; init; }
+        public string DefaultCurrency { get; init; } = string.Empty;
+        public string Timezone { get; init; } = string.Empty;
+        public string Status { get; init; } = string.Empty;
+        public bool IsActive { get; init; }
+        public bool IsArchived { get; init; }
+        public DateTime CreationDate { get; init; }
+        public string? CreatedBy { get; init; }
+        public DateTime? ModifiedDate { get; init; }
+        public string? ModifiedBy { get; init; }
+    }
+
+    private sealed class OrganizationListRow
+    {
+        public Guid Uid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string? LegalName { get; init; }
+        public string DefaultCurrency { get; init; } = string.Empty;
+        public string Timezone { get; init; } = string.Empty;
+        public string Status { get; init; } = string.Empty;
+        public bool IsActive { get; init; }
+        public DateTime CreationDate { get; init; }
+    }
 }
 

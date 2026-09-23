@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MjAVTEed5Ng=",
+  "dgSpecHash": "hcG6tm3pYXM=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\PointOfSale\\HMS.Modules.PointOfSale.Infrastructure\\HMS.Modules.PointOfSale.Infrastructure.csproj",
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Infrastructure/HMS.Modules.PointOfSale.Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

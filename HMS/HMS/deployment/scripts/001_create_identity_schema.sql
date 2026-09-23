@@ -121,6 +121,7 @@ CREATE INDEX IF NOT EXISTS ix_staff_refresh_token_token_hash
 
 INSERT INTO identity.staff_role(code, name, description)
 VALUES
+    ('PLATFORM_ADMIN', 'Platform Administrator', 'Full platform super-admin access'),
     ('HOTEL_ADMIN', 'Hotel Administrator', 'Full hotel administration access'),
     ('FRONT_DESK', 'Front Desk', 'Reservation, check-in and checkout access'),
     ('MANAGER', 'Hotel Manager', 'Hotel operational management access'),

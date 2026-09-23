@@ -10,7 +10,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
         "projectName": "HMS.SharedKernel",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
-        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/4ce46416dea5d3438f41234f28e9cb5a/nuget",
+        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [

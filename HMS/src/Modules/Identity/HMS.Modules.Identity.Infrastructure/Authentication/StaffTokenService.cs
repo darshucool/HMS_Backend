@@ -26,13 +26,17 @@ namespace HMS.Modules.Identity.Infrastructure.Authentication
                 currentTime.AddMinutes(_options.AccessTokenMinutes);
 
             var claims = new List<Claim>
-        {
-            new(JwtRegisteredClaimNames.Sub, staff.StaffUid.ToString()),
-            new(JwtRegisteredClaimNames.UniqueName, staff.Username),
-            new("staff_uid", staff.StaffUid.ToString()),
-            new("property_uid", staff.PropertyUid.ToString()),
-            new("full_name", staff.FullName)
-        };
+            {
+                new(JwtRegisteredClaimNames.Sub, staff.StaffUid.ToString()),
+                new(JwtRegisteredClaimNames.UniqueName, staff.Username),
+                new("staff_uid", staff.StaffUid.ToString()),
+                new("full_name", staff.FullName)
+            };
+
+            if (staff.PropertyUid != Guid.Empty)
+            {
+                claims.Add(new Claim("property_uid", staff.PropertyUid.ToString()));
+            }
 
             if (!string.IsNullOrWhiteSpace(staff.Email))
             {
@@ -45,6 +49,7 @@ namespace HMS.Modules.Identity.Infrastructure.Authentication
             foreach (var role in staff.Roles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
+                claims.Add(new Claim("role", role));
             }
 
             var key = new SymmetricSecurityKey(

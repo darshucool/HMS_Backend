@@ -12,23 +12,23 @@ public sealed class UnitBlockRepository(IHotelsDbConnectionFactory connectionFac
     {
         const string sql = """
             SELECT
-                b.id                    AS Id,
-                b.uid                   AS Uid,
-                b.organization_id       AS OrganizationId,
-                b.property_id           AS PropertyId,
-                p.uid                   AS PropertyUid,
-                b.unit_id               AS UnitId,
-                u.uid                   AS UnitUid,
-                b.start_date            AS StartDate,
-                b.end_date              AS EndDate,
-                b.block_type            AS BlockType,
-                b.reason                AS Reason,
-                b.is_active             AS IsActive,
-                b.is_archived           AS IsArchived,
-                b.creation_date         AS CreationDate,
-                b.created_by            AS CreatedBy,
-                b.modified_date         AS ModifiedDate,
-                b.modified_by           AS ModifiedBy
+                b.id                    AS "Id",
+                b.uid                   AS "Uid",
+                b.organization_id       AS "OrganizationId",
+                b.property_id           AS "PropertyId",
+                p.uid                   AS "PropertyUid",
+                b.unit_id               AS "UnitId",
+                u.uid                   AS "UnitUid",
+                b.start_date            AS "StartDate",
+                b.end_date              AS "EndDate",
+                b.block_type            AS "BlockType",
+                b.reason                AS "Reason",
+                b.is_active             AS "IsActive",
+                b.is_archived           AS "IsArchived",
+                b.creation_date         AS "CreationDate",
+                b.created_by            AS "CreatedBy",
+                b.modified_date         AS "ModifiedDate",
+                b.modified_by           AS "ModifiedBy"
             FROM hotel.unit_blocks b
             JOIN hotel.properties p ON p.id = b.property_id
             JOIN hotel.accommodation_units u ON u.id = b.unit_id
@@ -142,27 +142,37 @@ public sealed class UnitBlockRepository(IHotelsDbConnectionFactory connectionFac
         row.Reason,
         row.IsActive,
         row.IsArchived,
-        row.CreationDate,
+        ToDateTimeOffset(row.CreationDate),
         row.CreatedBy,
-        row.ModifiedDate,
+        ToDateTimeOffset(row.ModifiedDate),
         row.ModifiedBy);
 
-    private sealed record UnitBlockRow(
-        long Id,
-        Guid Uid,
-        long OrganizationId,
-        long PropertyId,
-        Guid PropertyUid,
-        long UnitId,
-        Guid UnitUid,
-        DateOnly StartDate,
-        DateOnly EndDate,
-        string BlockType,
-        string? Reason,
-        bool IsActive,
-        bool IsArchived,
-        DateTimeOffset CreationDate,
-        string? CreatedBy,
-        DateTimeOffset? ModifiedDate,
-        string? ModifiedBy);
+    private static DateTimeOffset ToDateTimeOffset(DateTime value) =>
+        value.Kind == DateTimeKind.Unspecified
+            ? new DateTimeOffset(DateTime.SpecifyKind(value, DateTimeKind.Utc))
+            : new DateTimeOffset(value);
+
+    private static DateTimeOffset? ToDateTimeOffset(DateTime? value) =>
+        value is null ? null : ToDateTimeOffset(value.Value);
+
+    private sealed class UnitBlockRow
+    {
+        public long Id { get; init; }
+        public Guid Uid { get; init; }
+        public long OrganizationId { get; init; }
+        public long PropertyId { get; init; }
+        public Guid PropertyUid { get; init; }
+        public long UnitId { get; init; }
+        public Guid UnitUid { get; init; }
+        public DateOnly StartDate { get; init; }
+        public DateOnly EndDate { get; init; }
+        public string BlockType { get; init; } = string.Empty;
+        public string? Reason { get; init; }
+        public bool IsActive { get; init; }
+        public bool IsArchived { get; init; }
+        public DateTime CreationDate { get; init; }
+        public string? CreatedBy { get; init; }
+        public DateTime? ModifiedDate { get; init; }
+        public string? ModifiedBy { get; init; }
+    }
 }

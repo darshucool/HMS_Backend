@@ -17,3 +17,16 @@ D:/PROJECTS/HMS/Backend/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Do
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/HMS.Modules.Folios.Domain.dll
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/refint/HMS.Modules.Folios.Domain.dll
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/HMS.Modules.Folios.Domain.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/bin/Debug/net10.0/HMS.Modules.Folios.Domain.deps.json
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/bin/Debug/net10.0/HMS.Modules.Folios.Domain.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/bin/Debug/net10.0/HMS.Modules.Folios.Domain.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/bin/Debug/net10.0/HMS.SharedKernel.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/bin/Debug/net10.0/HMS.SharedKernel.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/HMS.Modules.Folios.Domain.csproj.AssemblyReference.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/HMS.Modules.Folios.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/HMS.Modules.Folios.Domain.AssemblyInfoInputs.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/HMS.Modules.Folios.Domain.AssemblyInfo.cs
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/HMS.Modules.Folios.Domain.csproj.CoreCompileInputs.cache
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/HMS.Modules.Folios.Domain.sourcelink.json
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/HMS.Modu.08B90D86.Up2Date
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/Debug/net10.0/ref/HMS.Modules.Folios.Domain.dll
