@@ -1,3 +1,4 @@
+using HMS.Modules.Booking.Api;
 using HMS.Modules.Guests.Api;
 using HMS.Modules.Hotels.Api;
 using HMS.Modules.Identity.Api;
@@ -19,6 +20,8 @@ namespace HMS
             builder.Services.AddHotelsModule(
                 builder.Configuration);
             builder.Services.AddGuestsModule(
+                builder.Configuration);
+            builder.Services.AddBookingModule(
                 builder.Configuration);
 
             var app = builder.Build();

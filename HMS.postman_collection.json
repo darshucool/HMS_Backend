@@ -70,6 +70,16 @@
       "key": "guestUid",
       "value": "",
       "type": "string"
+    },
+    {
+      "key": "bookingUid",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "bookingUnitUid",
+      "value": "",
+      "type": "string"
     }
   ],
   "auth": {
@@ -1105,6 +1115,143 @@
               "host": ["{{baseUrl}}"],
               "path": ["api", "v1", "guests", "{{guestUid}}", "booking-history"]
             }
+          }
+        }
+      ]
+    },
+    {
+      "name": "09 - Property Bookings",
+      "description": "Property bookings. Requires property access. Creating a booking requires manager access.",
+      "item": [
+        {
+          "name": "Get Property Bookings",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/bookings",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "bookings"]
+            }
+          }
+        },
+        {
+          "name": "Create Booking",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"leadGuestUid\": \"{{guestUid}}\",\n  \"bookingSource\": 3,\n  \"checkInDate\": \"2026-10-01\",\n  \"checkOutDate\": \"2026-10-03\",\n  \"adults\": 2,\n  \"children\": 0,\n  \"infants\": 0,\n  \"currency\": \"LKR\",\n  \"specialRequests\": \"Late arrival\",\n  \"units\": [\n    {\n      \"accommodationTypeUid\": \"{{accommodationTypeUid}}\",\n      \"unitUid\": \"{{unitUid}}\",\n      \"pricingBasis\": 0,\n      \"unitRate\": 25000,\n      \"adults\": 2,\n      \"children\": 0,\n      \"unitQuantity\": 1,\n      \"guestCount\": 2\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/bookings",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "bookings"]
+            },
+            "description": "bookingSource Direct=3. pricingBasis PerRoomPerNight=0. unitUid is optional. Status is PENDING. Requires manager access."
+          }
+        }
+      ]
+    },
+    {
+      "name": "10 - Booking",
+      "item": [
+        {
+          "name": "Get Booking",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Booking",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"leadGuestUid\": \"{{guestUid}}\",\n  \"bookingSource\": 3,\n  \"status\": 3,\n  \"checkInDate\": \"2026-10-01\",\n  \"checkOutDate\": \"2026-10-04\",\n  \"adults\": 2,\n  \"children\": 0,\n  \"infants\": 0,\n  \"currency\": \"LKR\",\n  \"discountAmount\": 0,\n  \"taxAmount\": 0,\n  \"serviceCharge\": 0,\n  \"quotedTotal\": 75000,\n  \"specialRequests\": \"Late arrival\",\n  \"cancellationReason\": null\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}"]
+            },
+            "description": "status Confirmed=3, CheckedIn=4, CheckedOut=5, Cancelled=7. Cancellation requires cancellationReason. Status changes are written to booking_status_history. Requires manager access."
+          }
+        },
+        {
+          "name": "Confirm Booking",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/confirm",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "confirm"]
+            },
+            "description": "Sets status to CONFIRMED and marks held units as CONFIRMED. Requires manager access. Inquiry, pending, and tentative bookings can be confirmed."
+          }
+        },
+        {
+          "name": "Check In Booking",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/check-in",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "check-in"]
+            },
+            "description": "Only a CONFIRMED booking can be checked in. Sets status CHECKED_IN, stores checked_in_at on the booking and its guests, and sets unit allocation to CHECKED_IN. Requires manager access."
+          }
+        },
+        {
+          "name": "Check Out Booking",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/check-out",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "check-out"]
+            },
+            "description": "Only a CHECKED_IN booking can be checked out. Sets status CHECKED_OUT, stores checked_out_at on the booking and its guests, and releases the units. Requires manager access."
+          }
+        },
+        {
+          "name": "Assign Booking Unit",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bookingUnitUid\": \"{{bookingUnitUid}}\",\n  \"unitUid\": \"{{unitUid}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/assign-unit",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "assign-unit"]
+            },
+            "description": "Assigns a physical unit to one booking unit line. The unit must match the line's accommodation type. Overlapping active bookings return a conflict. Allocation stays HELD, CONFIRMED, or CHECKED_IN based on the booking status. Requires manager access."
+          }
+        },
+        {
+          "name": "Cancel Booking",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reason\": \"Guest requested cancellation\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/cancel",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "cancel"]
+            },
+            "description": "Sets status to CANCELLED, stores the reason, and releases held or confirmed units. Requires manager access."
           }
         }
       ]
