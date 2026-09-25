@@ -1124,6 +1124,23 @@
       "description": "Property bookings. Requires property access. Creating a booking requires manager access.",
       "item": [
         {
+          "name": "Get Booking Calendar",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/booking-calendar?from=2026-10-01&to=2026-10-31",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "booking-calendar"],
+              "query": [
+                { "key": "from", "value": "2026-10-01" },
+                { "key": "to", "value": "2026-10-31" },
+                { "key": "accommodationTypeUid", "value": "{{accommodationTypeUid}}", "disabled": true }
+              ]
+            },
+            "description": "Returns each unit with overlapping BOOKING and BLOCK segments. from is inclusive and to is exclusive. Optional accommodationTypeUid filters the units. Range cannot exceed 366 days."
+          }
+        },
+        {
           "name": "Get Property Bookings",
           "request": {
             "method": "GET",
@@ -1238,6 +1255,47 @@
           }
         },
         {
+          "name": "Add Booking Guest",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"guestUid\": \"{{guestUid}}\",\n  \"bookingUnitUid\": null,\n  \"isLeadGuest\": false\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/guests",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "guests"]
+            },
+            "description": "Adds an existing organization guest to the booking. bookingUnitUid is optional. isLeadGuest true replaces the current lead guest. Requires manager access."
+          }
+        },
+        {
+          "name": "Remove Booking Guest",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/guests/{{guestUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "guests", "{{guestUid}}"]
+            },
+            "description": "Archives the guest on this booking. The lead guest cannot be removed until another lead is assigned. Returns 204. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Booking History",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/history",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "history"]
+            },
+            "description": "Returns the created event plus every row in booking_status_history, oldest first. Anyone with property access can call it."
+          }
+        },
+        {
           "name": "Cancel Booking",
           "request": {
             "method": "POST",
@@ -1252,6 +1310,175 @@
               "path": ["api", "v1", "bookings", "{{bookingUid}}", "cancel"]
             },
             "description": "Sets status to CANCELLED, stores the reason, and releases held or confirmed units. Requires manager access."
+          }
+        }
+      ]
+    },
+    {
+      "name": "11 - Finance",
+      "item": [
+        {
+          "name": "Get Property Expenses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "expenses"]
+            }
+          }
+        },
+        {
+          "name": "Create Expense",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expenseCategoryUid\": \"{{expenseCategoryUid}}\",\n  \"supplierUid\": null,\n  \"bookingUid\": null,\n  \"expenseDate\": \"2026-10-05\",\n  \"description\": \"Kitchen supplies\",\n  \"amount\": 4500,\n  \"currency\": \"LKR\",\n  \"paymentMethod\": 0,\n  \"referenceNumber\": \"EXP-1001\",\n  \"notes\": null\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/expenses",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "expenses"]
+            },
+            "description": "paymentMethod Cash=0, BankTransfer=1, Card=2, Cheque=3, Other=4. Category and optional supplier must belong to the property organization. Optional booking must belong to the property. Amount must be greater than zero. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Expense",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/expenses/{{expenseUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "expenses", "{{expenseUid}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Expense",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expenseCategoryUid\": \"{{expenseCategoryUid}}\",\n  \"supplierUid\": null,\n  \"bookingUid\": null,\n  \"expenseDate\": \"2026-10-06\",\n  \"description\": \"Kitchen supplies\",\n  \"amount\": 5200,\n  \"currency\": \"LKR\",\n  \"paymentMethod\": 1,\n  \"referenceNumber\": \"EXP-1001\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/expenses/{{expenseUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "expenses", "{{expenseUid}}"]
+            },
+            "description": "Requires manager access. Category, supplier, and booking rules match create."
+          }
+        },
+        {
+          "name": "Delete Expense",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/expenses/{{expenseUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "expenses", "{{expenseUid}}"]
+            },
+            "description": "Archives the expense. Returns 204. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Property Utility Bills",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/utility-bills",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "utility-bills"]
+            }
+          }
+        },
+        {
+          "name": "Create Utility Bill",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"utilityTypeUid\": \"{{utilityTypeUid}}\",\n  \"periodStart\": \"2026-09-01\",\n  \"periodEnd\": \"2026-09-30\",\n  \"previousReading\": 1200,\n  \"currentReading\": 1350,\n  \"amount\": 8500,\n  \"currency\": \"LKR\",\n  \"dueDate\": \"2026-10-15\",\n  \"referenceNumber\": \"CEB-0926\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/utility-bills",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "utility-bills"]
+            },
+            "description": "Utility type must belong to the property organization. periodEnd must be on or after periodStart. Amount cannot be negative. If both readings are sent, units used is current minus previous. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Utility Bill",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/utility-bills/{{utilityBillUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "utility-bills", "{{utilityBillUid}}"]
+            }
+          }
+        },
+        {
+          "name": "Update Utility Bill",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"utilityTypeUid\": \"{{utilityTypeUid}}\",\n  \"periodStart\": \"2026-09-01\",\n  \"periodEnd\": \"2026-09-30\",\n  \"previousReading\": 1200,\n  \"currentReading\": 1400,\n  \"amount\": 9200,\n  \"currency\": \"LKR\",\n  \"dueDate\": \"2026-10-15\",\n  \"paidAt\": \"2026-10-10T09:00:00Z\",\n  \"referenceNumber\": \"CEB-0926\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/utility-bills/{{utilityBillUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "utility-bills", "{{utilityBillUid}}"]
+            },
+            "description": "Requires manager access. Same period, reading, and amount rules as create. Utility type must belong to the bill's organization."
+          }
+        },
+        {
+          "name": "Get Property Other Income",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/other-income",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "other-income"]
+            }
+          }
+        },
+        {
+          "name": "Create Other Income",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"incomeCategoryUid\": \"{{incomeCategoryUid}}\",\n  \"bookingUid\": null,\n  \"incomeDate\": \"2026-10-05\",\n  \"description\": \"Laundry service\",\n  \"amount\": 2500,\n  \"currency\": \"LKR\",\n  \"paymentMethod\": 0,\n  \"referenceNumber\": \"INC-1001\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/other-income",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "other-income"]
+            },
+            "description": "Income category must belong to the property organization. Optional booking must belong to the property. Amount must be greater than zero. paymentMethod Cash=0, BankTransfer=1, Card=2, Cheque=3, Other=4. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Property Expense Categories",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/expense-categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "expense-categories"]
+            },
+            "description": "Returns the organization expense categories for the property. Use uid as expenseCategoryUid when creating an expense."
           }
         }
       ]

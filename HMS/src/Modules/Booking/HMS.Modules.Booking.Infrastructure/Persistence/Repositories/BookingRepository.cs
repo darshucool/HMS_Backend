@@ -330,6 +330,134 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         return rows.Select(ToDto).ToList();
     }
 
+    public async Task<BookingCalendarDto> GetBookingCalendarAsync(
+        long propertyId,
+        Guid propertyUid,
+        DateOnly from,
+        DateOnly to,
+        long? accommodationTypeId,
+        CancellationToken cancellationToken)
+    {
+        const string unitsSql = """
+            SELECT
+                u.id            AS "UnitId",
+                u.uid           AS "UnitUid",
+                u.unit_code     AS "UnitCode",
+                u.unit_name     AS "UnitName",
+                at.uid          AS "AccommodationTypeUid",
+                at.name         AS "AccommodationTypeName"
+            FROM hotel.accommodation_units u
+            JOIN hotel.accommodation_types at ON at.id = u.accommodation_type_id
+            WHERE u.property_id = @PropertyId
+              AND u.is_archived = false
+              AND (@AccommodationTypeId IS NULL OR u.accommodation_type_id = @AccommodationTypeId)
+            ORDER BY at.sort_order, at.name, u.unit_code;
+            """;
+
+        const string bookingsSql = """
+            SELECT
+                u.uid                       AS "UnitUid",
+                b.uid                       AS "BookingUid",
+                b.booking_number            AS "BookingNumber",
+                COALESCE(g.display_name, b.booking_number) AS "Label",
+                b.status                    AS "Status",
+                bu.check_in_date            AS "StartDate",
+                bu.check_out_date           AS "EndDate"
+            FROM hotel.booking_units bu
+            JOIN hotel.bookings b ON b.id = bu.booking_id
+            JOIN hotel.accommodation_units u ON u.id = bu.unit_id
+            LEFT JOIN hotel.guests g ON g.id = b.lead_guest_id
+            WHERE bu.property_id = @PropertyId
+              AND bu.unit_id IS NOT NULL
+              AND bu.is_archived = false
+              AND b.is_archived = false
+              AND bu.allocation_status IN ('HELD', 'CONFIRMED', 'CHECKED_IN')
+              AND bu.check_in_date < @To
+              AND bu.check_out_date > @From
+              AND (@AccommodationTypeId IS NULL OR bu.accommodation_type_id = @AccommodationTypeId);
+            """;
+
+        const string blocksSql = """
+            SELECT
+                u.uid           AS "UnitUid",
+                COALESCE(ub.reason, ub.block_type) AS "Label",
+                ub.block_type   AS "Status",
+                ub.start_date   AS "StartDate",
+                ub.end_date     AS "EndDate"
+            FROM hotel.unit_blocks ub
+            JOIN hotel.accommodation_units u ON u.id = ub.unit_id
+            WHERE ub.property_id = @PropertyId
+              AND ub.is_archived = false
+              AND ub.is_active = true
+              AND ub.start_date < @To
+              AND ub.end_date > @From
+              AND (@AccommodationTypeId IS NULL OR u.accommodation_type_id = @AccommodationTypeId);
+            """;
+
+        var parameters = new
+        {
+            PropertyId = propertyId,
+            From = from,
+            To = to,
+            AccommodationTypeId = accommodationTypeId
+        };
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        var units = (await connection.QueryAsync<CalendarUnitRow>(
+            new CommandDefinition(unitsSql, parameters, cancellationToken: cancellationToken))).AsList();
+        var bookings = (await connection.QueryAsync<CalendarBookingRow>(
+            new CommandDefinition(bookingsSql, parameters, cancellationToken: cancellationToken))).AsList();
+        var blocks = (await connection.QueryAsync<CalendarBlockRow>(
+            new CommandDefinition(blocksSql, parameters, cancellationToken: cancellationToken))).AsList();
+
+        var segmentsByUnit = units.ToDictionary(unit => unit.UnitUid, _ => new List<BookingCalendarSegmentDto>());
+
+        foreach (var booking in bookings)
+        {
+            if (!segmentsByUnit.TryGetValue(booking.UnitUid, out var segments))
+                continue;
+
+            segments.Add(new BookingCalendarSegmentDto(
+                "BOOKING",
+                booking.BookingUid,
+                booking.BookingNumber,
+                booking.Label,
+                booking.Status,
+                booking.StartDate,
+                booking.EndDate));
+        }
+
+        foreach (var block in blocks)
+        {
+            if (!segmentsByUnit.TryGetValue(block.UnitUid, out var segments))
+                continue;
+
+            segments.Add(new BookingCalendarSegmentDto(
+                "BLOCK",
+                null,
+                null,
+                block.Label,
+                block.Status,
+                block.StartDate,
+                block.EndDate));
+        }
+
+        return new BookingCalendarDto(
+            propertyUid,
+            from,
+            to,
+            units.Select(unit => new BookingCalendarUnitDto(
+                unit.UnitUid,
+                unit.UnitCode,
+                unit.UnitName,
+                unit.AccommodationTypeUid,
+                unit.AccommodationTypeName,
+                segmentsByUnit[unit.UnitUid]
+                    .OrderBy(segment => segment.StartDate)
+                    .ThenBy(segment => segment.SegmentType)
+                    .ToList())).ToList());
+    }
+
     public async Task<HotelBooking?> GetByUidAsync(Guid bookingUid, CancellationToken cancellationToken)
     {
         const string sql = """
@@ -559,6 +687,207 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         {
             throw new InvalidOperationException("The selected unit is already booked for these dates.");
         }
+    }
+
+    public async Task<BookingGuestDto> AddGuestAsync(
+        HotelBooking booking,
+        Guid guestUid,
+        long guestId,
+        long? bookingUnitId,
+        bool isLeadGuest,
+        string actorSubject,
+        CancellationToken cancellationToken)
+    {
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        await using var transaction = await connection.BeginTransactionAsync(cancellationToken);
+
+        var existing = await connection.ExecuteScalarAsync<bool>(new CommandDefinition(
+            """
+            SELECT EXISTS
+            (
+                SELECT 1
+                FROM hotel.booking_guests
+                WHERE booking_id = @BookingId
+                  AND guest_id = @GuestId
+                  AND is_archived = false
+            );
+            """,
+            new { BookingId = booking.Id, GuestId = guestId },
+            transaction,
+            cancellationToken: cancellationToken));
+
+        if (existing)
+            throw new InvalidOperationException("This guest is already on the booking.");
+
+        var displayName = await connection.ExecuteScalarAsync<string>(new CommandDefinition(
+            """
+            SELECT display_name
+            FROM hotel.guests
+            WHERE id = @GuestId;
+            """,
+            new { GuestId = guestId },
+            transaction,
+            cancellationToken: cancellationToken));
+
+        var now = DateTimeOffset.UtcNow;
+        if (isLeadGuest)
+        {
+            await connection.ExecuteAsync(new CommandDefinition(
+                """
+                UPDATE hotel.booking_guests
+                SET is_lead_guest = false,
+                    modified_date = @ModifiedDate,
+                    modified_by = @ModifiedBy
+                WHERE booking_id = @BookingId
+                  AND is_lead_guest = true;
+
+                UPDATE hotel.bookings
+                SET lead_guest_id = @GuestId,
+                    modified_date = @ModifiedDate,
+                    modified_by = @ModifiedBy
+                WHERE id = @BookingId;
+                """,
+                new
+                {
+                    BookingId = booking.Id,
+                    GuestId = guestId,
+                    ModifiedDate = now,
+                    ModifiedBy = actorSubject
+                },
+                transaction,
+                cancellationToken: cancellationToken));
+        }
+
+        await connection.ExecuteAsync(new CommandDefinition(
+            """
+            INSERT INTO hotel.booking_guests
+            (
+                uid, organization_id, property_id, booking_id, booking_unit_id, guest_id,
+                is_lead_guest, checked_in_at, is_active, is_archived, creation_date, created_by
+            )
+            VALUES
+            (
+                @Uid, @OrganizationId, @PropertyId, @BookingId, @BookingUnitId, @GuestId,
+                @IsLeadGuest, @CheckedInAt, true, false, @CreationDate, @CreatedBy
+            )
+            ON CONFLICT (booking_id, guest_id) DO UPDATE
+            SET is_archived = false,
+                is_active = true,
+                is_lead_guest = EXCLUDED.is_lead_guest,
+                booking_unit_id = EXCLUDED.booking_unit_id,
+                checked_in_at = COALESCE(hotel.booking_guests.checked_in_at, EXCLUDED.checked_in_at),
+                modified_date = EXCLUDED.creation_date,
+                modified_by = EXCLUDED.created_by
+            WHERE hotel.booking_guests.is_archived = true;
+            """,
+            new
+            {
+                Uid = Guid.NewGuid(),
+                booking.OrganizationId,
+                booking.PropertyId,
+                BookingId = booking.Id,
+                BookingUnitId = bookingUnitId,
+                GuestId = guestId,
+                IsLeadGuest = isLeadGuest,
+                CheckedInAt = booking.Status == BookingStatus.CheckedIn ? now : (DateTimeOffset?)null,
+                CreationDate = now,
+                CreatedBy = actorSubject
+            },
+            transaction,
+            cancellationToken: cancellationToken));
+
+        await transaction.CommitAsync(cancellationToken);
+        return new BookingGuestDto(guestUid, displayName ?? string.Empty, isLeadGuest);
+    }
+
+    public async Task<BookingGuestContext?> GetBookingGuestAsync(
+        long bookingId,
+        long guestId,
+        CancellationToken cancellationToken)
+    {
+        const string sql = """
+            SELECT
+                id              AS "Id",
+                organization_id AS "OrganizationId",
+                booking_id      AS "BookingId",
+                guest_id        AS "GuestId",
+                booking_unit_id AS "BookingUnitId",
+                is_lead_guest   AS "IsLeadGuest"
+            FROM hotel.booking_guests
+            WHERE booking_id = @BookingId
+              AND guest_id = @GuestId
+              AND is_archived = false;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        return await connection.QuerySingleOrDefaultAsync<BookingGuestContext>(
+            new CommandDefinition(
+                sql,
+                new { BookingId = bookingId, GuestId = guestId },
+                cancellationToken: cancellationToken));
+    }
+
+    public async Task RemoveGuestAsync(
+        long bookingGuestId,
+        string actorSubject,
+        CancellationToken cancellationToken)
+    {
+        const string sql = """
+            UPDATE hotel.booking_guests
+            SET is_active = false,
+                is_archived = true,
+                is_lead_guest = false,
+                checked_out_at = CASE
+                    WHEN checked_in_at IS NOT NULL AND checked_out_at IS NULL
+                    THEN CURRENT_TIMESTAMP
+                    ELSE checked_out_at
+                END,
+                modified_date = CURRENT_TIMESTAMP,
+                modified_by = @ActorSubject
+            WHERE id = @BookingGuestId
+              AND is_archived = false
+              AND is_lead_guest = false;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        var updated = await connection.ExecuteAsync(new CommandDefinition(
+            sql,
+            new { BookingGuestId = bookingGuestId, ActorSubject = actorSubject },
+            cancellationToken: cancellationToken));
+
+        if (updated == 0)
+            throw new InvalidOperationException("The lead guest cannot be removed. Assign a new lead guest first.");
+    }
+
+    public async Task<IReadOnlyList<BookingStatusHistoryDto>> GetStatusHistoryAsync(
+        long bookingId,
+        CancellationToken cancellationToken)
+    {
+        const string sql = """
+            SELECT
+                uid         AS "Uid",
+                old_status  AS "OldStatus",
+                new_status  AS "NewStatus",
+                reason      AS "Reason",
+                changed_at  AS "ChangedAt",
+                changed_by  AS "ChangedBy"
+            FROM hotel.booking_status_history
+            WHERE booking_id = @BookingId
+              AND is_archived = false
+            ORDER BY changed_at, id;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        var rows = await connection.QueryAsync<BookingStatusHistoryRow>(
+            new CommandDefinition(sql, new { BookingId = bookingId }, cancellationToken: cancellationToken));
+
+        return rows.Select(row => new BookingStatusHistoryDto(
+            row.Uid,
+            row.OldStatus,
+            row.NewStatus,
+            row.Reason,
+            ToDateTimeOffset(row.ChangedAt),
+            row.ChangedBy)).ToList();
     }
 
     public async Task UpdateAsync(HotelBooking booking, CancellationToken cancellationToken)
@@ -963,5 +1292,45 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         public Guid GuestUid { get; init; }
         public string DisplayName { get; init; } = string.Empty;
         public bool IsLeadGuest { get; init; }
+    }
+
+    private sealed class BookingStatusHistoryRow
+    {
+        public Guid Uid { get; init; }
+        public string? OldStatus { get; init; }
+        public string NewStatus { get; init; } = string.Empty;
+        public string? Reason { get; init; }
+        public DateTime ChangedAt { get; init; }
+        public string? ChangedBy { get; init; }
+    }
+
+    private sealed class CalendarUnitRow
+    {
+        public long UnitId { get; init; }
+        public Guid UnitUid { get; init; }
+        public string UnitCode { get; init; } = string.Empty;
+        public string? UnitName { get; init; }
+        public Guid AccommodationTypeUid { get; init; }
+        public string AccommodationTypeName { get; init; } = string.Empty;
+    }
+
+    private sealed class CalendarBookingRow
+    {
+        public Guid UnitUid { get; init; }
+        public Guid BookingUid { get; init; }
+        public string BookingNumber { get; init; } = string.Empty;
+        public string? Label { get; init; }
+        public string Status { get; init; } = string.Empty;
+        public DateOnly StartDate { get; init; }
+        public DateOnly EndDate { get; init; }
+    }
+
+    private sealed class CalendarBlockRow
+    {
+        public Guid UnitUid { get; init; }
+        public string? Label { get; init; }
+        public string Status { get; init; } = string.Empty;
+        public DateOnly StartDate { get; init; }
+        public DateOnly EndDate { get; init; }
     }
 }

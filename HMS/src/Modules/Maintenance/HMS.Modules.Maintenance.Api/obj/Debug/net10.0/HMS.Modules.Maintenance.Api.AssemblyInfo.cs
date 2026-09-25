@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HMS.Modules.Maintenance.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4790b4dd73b755d95e71e4f44dc359e18f27d47b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+232c12dd0998e897f3bddb15421734ea2d2d88d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("HMS.Modules.Maintenance.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HMS.Modules.Maintenance.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

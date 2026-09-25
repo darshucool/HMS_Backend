@@ -1,10 +1,14 @@
 using HMS.Modules.Booking.Api.Contracts;
+using HMS.Modules.Booking.Application.Commands.AddBookingGuest;
 using HMS.Modules.Booking.Application.Commands.AssignBookingUnit;
 using HMS.Modules.Booking.Application.Commands.ChangeBookingStatus;
+using HMS.Modules.Booking.Application.Commands.RemoveBookingGuest;
 using HMS.Modules.Booking.Application.Commands.UpdateBooking;
 using HMS.Modules.Booking.Application.Queries.GetBooking;
+using HMS.Modules.Booking.Application.Queries.GetBookingHistory;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HMS.Modules.Booking.Api.Controllers;
@@ -124,6 +128,55 @@ public sealed class BookingsController(ISender sender) : ControllerBase
             bookingUid,
             request.BookingUnitUid,
             request.UnitUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return this.ToActionResult(result);
+    }
+
+    [HttpPost("{bookingUid:guid}/guests")]
+    public async Task<IActionResult> AddGuest(
+        Guid bookingUid,
+        [FromBody] AddBookingGuestRequest request,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new AddBookingGuestCommand(
+            bookingUid,
+            request.GuestUid,
+            request.BookingUnitUid,
+            request.IsLeadGuest,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return result.IsSuccess
+            ? StatusCode(StatusCodes.Status201Created, result.Value)
+            : this.ToActionResult(result);
+    }
+
+    [HttpDelete("{bookingUid:guid}/guests/{guestUid:guid}")]
+    public async Task<IActionResult> RemoveGuest(
+        Guid bookingUid,
+        Guid guestUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new RemoveBookingGuestCommand(
+            bookingUid,
+            guestUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return result.IsSuccess
+            ? NoContent()
+            : this.ToActionResult(result);
+    }
+
+    [HttpGet("{bookingUid:guid}/history")]
+    public async Task<IActionResult> GetHistory(
+        Guid bookingUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new GetBookingHistoryQuery(
+            bookingUid,
             User.GetRequiredSubject(),
             User.IsPlatformAdmin()), cancellationToken);
 

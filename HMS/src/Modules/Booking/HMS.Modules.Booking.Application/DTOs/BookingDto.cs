@@ -39,6 +39,22 @@ public sealed record BookingGuestDto(
     string DisplayName,
     bool IsLeadGuest);
 
+public sealed record BookingStatusHistoryDto(
+    Guid Uid,
+    string? OldStatus,
+    string NewStatus,
+    string? Reason,
+    DateTimeOffset ChangedAt,
+    string? ChangedBy);
+
+public sealed record BookingHistoryDto(
+    Guid BookingUid,
+    string BookingNumber,
+    string CurrentStatus,
+    DateTimeOffset CreatedAt,
+    string? CreatedBy,
+    IReadOnlyList<BookingStatusHistoryDto> StatusChanges);
+
 public sealed record BookingDetailDto(
     Guid Uid,
     Guid PropertyUid,
@@ -71,3 +87,4 @@ public sealed record BookingDetailDto(
     DateTimeOffset CreationDate,
     IReadOnlyList<BookingUnitDto> Units,
     IReadOnlyList<BookingGuestDto> Guests);
+

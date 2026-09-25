@@ -60,6 +60,10 @@ public sealed record UpdateBookingRequest(
 public sealed record CancelBookingRequest(string Reason);
 
 public sealed record AssignBookingUnitRequest(
-    Guid BookingUnitUid, 
-    Guid UnitUid
-);
+    Guid BookingUnitUid,
+    Guid UnitUid);
+
+public sealed record AddBookingGuestRequest(
+    Guid GuestUid,
+    Guid? BookingUnitUid = null,
+    bool IsLeadGuest = false);

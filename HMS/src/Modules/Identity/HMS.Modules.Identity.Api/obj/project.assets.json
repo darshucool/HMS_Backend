@@ -655,7 +655,7 @@
     ]
   },
   "packageFolders": {
-    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b112b426419afa88b3a3f18618ba4ade/nuget": {}
+    "/Users/jananiwithana/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -663,7 +663,7 @@
       "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Api/HMS.Modules.Identity.Api.csproj",
       "projectName": "HMS.Modules.Identity.Api",
       "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Api/HMS.Modules.Identity.Api.csproj",
-      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b112b426419afa88b3a3f18618ba4ade/nuget",
+      "packagesPath": "/Users/jananiwithana/.nuget/packages/",
       "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [

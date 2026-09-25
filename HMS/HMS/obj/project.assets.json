@@ -300,6 +300,123 @@
           "bin/placeholder/HMS.Infrastructure.dll": {}
         }
       },
+      "HMS.Modules.Booking.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Booking.Application": "1.0.0",
+          "HMS.Modules.Booking.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Booking.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Booking.Api.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "HMS.Modules.Booking.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Modules.Booking.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Booking.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Booking.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Booking.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/HMS.Modules.Booking.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Booking.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Booking.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Booking.Application": "1.0.0",
+          "HMS.Modules.Booking.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Booking.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Booking.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Finance.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Finance.Application": "1.0.0",
+          "HMS.Modules.Finance.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Finance.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Finance.Api.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "HMS.Modules.Finance.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Finance.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Finance.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Finance.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Finance.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/HMS.Modules.Finance.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Finance.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Finance.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Finance.Application": "1.0.0",
+          "HMS.Modules.Finance.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Finance.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Finance.Infrastructure.dll": {}
+        }
+      },
       "HMS.Modules.Folios.Api/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -1662,6 +1779,46 @@
       "path": "../src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj",
       "msbuildProject": "../src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj"
     },
+    "HMS.Modules.Booking.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Booking/HMS.Modules.Booking.Api/HMS.Modules.Booking.Api.csproj",
+      "msbuildProject": "../src/Modules/Booking/HMS.Modules.Booking.Api/HMS.Modules.Booking.Api.csproj"
+    },
+    "HMS.Modules.Booking.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Booking/HMS.Modules.Booking.Application/HMS.Modules.Booking.Application.csproj",
+      "msbuildProject": "../src/Modules/Booking/HMS.Modules.Booking.Application/HMS.Modules.Booking.Application.csproj"
+    },
+    "HMS.Modules.Booking.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Booking/HMS.Modules.Booking.Domain/HMS.Modules.Booking.Domain.csproj",
+      "msbuildProject": "../src/Modules/Booking/HMS.Modules.Booking.Domain/HMS.Modules.Booking.Domain.csproj"
+    },
+    "HMS.Modules.Booking.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Booking/HMS.Modules.Booking.Infrastructure/HMS.Modules.Booking.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Booking/HMS.Modules.Booking.Infrastructure/HMS.Modules.Booking.Infrastructure.csproj"
+    },
+    "HMS.Modules.Finance.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Finance/HMS.Modules.Finance.Api/HMS.Modules.Finance.Api.csproj",
+      "msbuildProject": "../src/Modules/Finance/HMS.Modules.Finance.Api/HMS.Modules.Finance.Api.csproj"
+    },
+    "HMS.Modules.Finance.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Finance/HMS.Modules.Finance.Application/HMS.Modules.Finance.Application.csproj",
+      "msbuildProject": "../src/Modules/Finance/HMS.Modules.Finance.Application/HMS.Modules.Finance.Application.csproj"
+    },
+    "HMS.Modules.Finance.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Finance/HMS.Modules.Finance.Domain/HMS.Modules.Finance.Domain.csproj",
+      "msbuildProject": "../src/Modules/Finance/HMS.Modules.Finance.Domain/HMS.Modules.Finance.Domain.csproj"
+    },
+    "HMS.Modules.Finance.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Finance/HMS.Modules.Finance.Infrastructure/HMS.Modules.Finance.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Finance/HMS.Modules.Finance.Infrastructure/HMS.Modules.Finance.Infrastructure.csproj"
+    },
     "HMS.Modules.Folios.Api/1.0.0": {
       "type": "project",
       "path": "../src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj",
@@ -1971,6 +2128,8 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "HMS.Infrastructure >= 1.0.0",
+      "HMS.Modules.Booking.Api >= 1.0.0",
+      "HMS.Modules.Finance.Api >= 1.0.0",
       "HMS.Modules.Folios.Api >= 1.0.0",
       "HMS.Modules.FrontDesk.Api >= 1.0.0",
       "HMS.Modules.GuestServices.Api >= 1.0.0",
@@ -2019,6 +2178,12 @@
           "projectReferences": {
             "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj": {
               "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj"
+            },
+            "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Api/HMS.Modules.Booking.Api.csproj": {
+              "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Api/HMS.Modules.Booking.Api.csproj"
+            },
+            "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Api/HMS.Modules.Finance.Api.csproj": {
+              "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Api/HMS.Modules.Finance.Api.csproj"
             },
             "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj": {
               "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj"

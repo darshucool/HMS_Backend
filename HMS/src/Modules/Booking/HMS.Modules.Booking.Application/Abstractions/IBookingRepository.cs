@@ -37,6 +37,20 @@ public sealed record BookingUnitLine(
     decimal TotalAmount,
     string? Notes);
 
+public sealed record BookingGuestLine(
+    Guid GuestUid,
+    long GuestId,
+    long? BookingUnitId,
+    bool IsLeadGuest);
+
+public sealed record BookingGuestContext(
+    long Id,
+    long OrganizationId,
+    long BookingId,
+    long GuestId,
+    long? BookingUnitId,
+    bool IsLeadGuest);   
+
 public interface IPropertyBookingAccess
 {
     Task<PropertyBookingContext?> GetByUidAsync(Guid propertyUid, CancellationToken cancellationToken);
@@ -57,7 +71,7 @@ public interface IBookingRepository
     Task<AccommodationTypeBookingContext?> GetAccommodationTypeAsync(
         Guid accommodationTypeUid,
         long propertyId,
-        CancellationToken cancellationToken);
+        CancellationToken cancellationToken);    
     Task<long?> GetUnitIdAsync(
         Guid unitUid,
         long propertyId,
@@ -69,6 +83,10 @@ public interface IBookingRepository
         long bookingId,
         Guid bookingUnitUid,
         CancellationToken cancellationToken);
+    Task<BookingGuestContext?> GetBookingGuestAsync(
+        long bookingId,
+        long guestId,
+        CancellationToken cancellationToken);    
     Task InsertAsync(
         BookingEntity booking,
         IReadOnlyList<BookingUnitLine> units,
@@ -76,6 +94,13 @@ public interface IBookingRepository
     Task<IReadOnlyList<DTOs.BookingDto>> GetByPropertyUidAsync(
         Guid propertyUid,
         CancellationToken cancellationToken);
+    Task<BookingCalendarDto> GetBookingCalendarAsync(
+        long propertyId,
+        Guid propertyUid,
+        DateOnly from,
+        DateOnly to,
+        long? accommodationTypeId,
+        CancellationToken cancellationToken);    
     Task<BookingEntity?> GetByUidAsync(Guid bookingUid, CancellationToken cancellationToken);
     Task<DTOs.BookingDetailDto?> GetDetailByUidAsync(Guid bookingUid, CancellationToken cancellationToken);
     Task UpdateAsync(BookingEntity booking, CancellationToken cancellationToken);
@@ -85,5 +110,20 @@ public interface IBookingRepository
         string allocationStatus,
         DateTimeOffset modifiedDate,
         string? modifiedBy,
+        CancellationToken cancellationToken);
+    Task<BookingGuestDto> AddGuestAsync(
+        BookingEntity booking,
+        Guid guestUid,
+        long guestId,
+        long? bookingUnitId,
+        bool isLeadGuest,
+        string actorSubject,
+        CancellationToken cancellationToken);
+    Task RemoveGuestAsync(
+        long bookingGuestId,
+        string actorSubject,
+        CancellationToken cancellationToken);
+    Task<IReadOnlyList<BookingStatusHistoryDto>> GetStatusHistoryAsync(
+        long bookingId,
         CancellationToken cancellationToken);
 }
