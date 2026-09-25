@@ -46,7 +46,7 @@
     ]
   },
   "packageFolders": {
-    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/36e04a6142adc3de7053ccda44c2d2ab/nuget": {}
+    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b112b426419afa88b3a3f18618ba4ade/nuget": {}
   },
   "project": {
     "version": "1.0.0",
@@ -54,7 +54,7 @@
       "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj",
       "projectName": "HMS.Infrastructure",
       "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj",
-      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/36e04a6142adc3de7053ccda44c2d2ab/nuget",
+      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b112b426419afa88b3a3f18618ba4ade/nuget",
       "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [

@@ -10,7 +10,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj",
         "projectName": "HMS.Application.Abstractions",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj",
-        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/36e04a6142adc3de7053ccda44c2d2ab/nuget",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b112b426419afa88b3a3f18618ba4ade/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -349,7 +349,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj",
         "projectName": "HMS.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj",
-        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/36e04a6142adc3de7053ccda44c2d2ab/nuget",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b112b426419afa88b3a3f18618ba4ade/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -691,7 +691,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
         "projectName": "HMS.SharedKernel",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
-        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/36e04a6142adc3de7053ccda44c2d2ab/nuget",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b112b426419afa88b3a3f18618ba4ade/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [

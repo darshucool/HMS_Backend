@@ -17,6 +17,11 @@
       "type": "string"
     },
     {
+      "key": "refreshToken",
+      "value": "",
+      "type": "string"
+    },
+    {
       "key": "organizationUid",
       "value": "",
       "type": "string"
@@ -107,6 +112,44 @@
                   "const json = pm.response.json();",
                   "if (json.accessToken) {",
                   "    pm.collectionVariables.set('token', json.accessToken);",
+                  "}",
+                  "if (json.refreshToken) {",
+                  "    pm.collectionVariables.set('refreshToken', json.refreshToken);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Refresh Session",
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/hotel/auth/refresh-token",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "hotel", "auth", "refresh-token"]
+            },
+            "description": "Same endpoint for SuperAdmin, admin, and staff. Send the refreshToken from any login. Returns a new access token and a new refresh token. The previous refresh token is revoked. Call this when the access token expires."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.accessToken) {",
+                  "    pm.collectionVariables.set('token', json.accessToken);",
+                  "}",
+                  "if (json.refreshToken) {",
+                  "    pm.collectionVariables.set('refreshToken', json.refreshToken);",
                   "}"
                 ]
               }
@@ -202,6 +245,9 @@
                   "if (json.accessToken) {",
                   "    pm.collectionVariables.set('token', json.accessToken);",
                   "}",
+                  "if (json.refreshToken) {",
+                  "    pm.collectionVariables.set('refreshToken', json.refreshToken);",
+                  "}",
                   "if (json.propertyUid && json.propertyUid !== '00000000-0000-0000-0000-000000000000') {",
                   "    pm.collectionVariables.set('propertyUid', json.propertyUid);",
                   "}",
@@ -276,6 +322,9 @@
                   "const json = pm.response.json();",
                   "if (json.accessToken) {",
                   "    pm.collectionVariables.set('token', json.accessToken);",
+                  "}",
+                  "if (json.refreshToken) {",
+                  "    pm.collectionVariables.set('refreshToken', json.refreshToken);",
                   "}",
                   "if (json.propertyUid && json.propertyUid !== '00000000-0000-0000-0000-000000000000') {",
                   "    pm.collectionVariables.set('propertyUid', json.propertyUid);",
