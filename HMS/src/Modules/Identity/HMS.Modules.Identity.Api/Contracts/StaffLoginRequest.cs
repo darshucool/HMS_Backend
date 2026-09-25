@@ -1,11 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace HMS.Modules.Identity.Api.Contracts;
 
-namespace HMS.Modules.Identity.Api.Contracts
-{
-    public sealed record StaffLoginRequest(
-     Guid PropertyUid,
-     string Username,
-     string Password);
-}
+public sealed record SuperAdminLoginRequest(
+    string Email,
+    string Password);
+
+public sealed record StaffLoginRequest(
+    string Email,
+    string Password,
+    Guid? PropertyUid = null);
+
+public sealed record InvitePropertyAdminRequest(
+    Guid PropertyUid,
+    string Email,
+    string FirstName,
+    string? LastName = null);
+
+public sealed record ResetAdminCredentialsRequest(
+    string Password);
+
+public sealed record RegisterAdminRequest(
+    Guid PropertyUid,
+    string Email,
+    string Password,
+    string FirstName,
+    string? LastName = null);
+
+public sealed record RegisterStaffRequest(
+    Guid PropertyUid,
+    string Email,
+    string Password,
+    string FirstName,
+    string? LastName = null,
+    string Role = "FRONT_DESK");

@@ -27,6 +27,34 @@ namespace HMS.Modules.Hotels.Infrastructure
                 IPropertyRepository,
                 PropertyRepository>();
 
+            services.AddScoped<
+                IAccommodationTypeRepository,
+                AccommodationTypeRepository>();
+
+            services.AddScoped<
+                IMealPlanRepository,
+                MealPlanRepository>();
+
+            services.AddScoped<
+                IRatePlanRepository,
+                RatePlanRepository>();
+
+            services.AddScoped<
+                IRatePlanPriceRepository,
+                RatePlanPriceRepository>();
+
+            services.AddScoped<
+                IAccommodationUnitRepository,
+                AccommodationUnitRepository>();
+
+            services.AddScoped<
+                IUnitBlockRepository,
+                UnitBlockRepository>();
+
+            services.AddScoped<
+                IPropertyAvailabilityRepository,
+                PropertyAvailabilityRepository>();
+
             return services;
         }
     }

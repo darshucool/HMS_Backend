@@ -80,31 +80,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Darshaka Peramune\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/jananiwithana/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Housekeeping\\HMS.Modules.Housekeeping.Application\\HMS.Modules.Housekeeping.Application.csproj",
+      "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Application/HMS.Modules.Housekeeping.Application.csproj",
       "projectName": "HMS.Modules.Housekeeping.Application",
-      "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Housekeeping\\HMS.Modules.Housekeeping.Application\\HMS.Modules.Housekeeping.Application.csproj",
-      "packagesPath": "C:\\Users\\Darshaka Peramune\\.nuget\\packages\\",
-      "outputPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Housekeeping\\HMS.Modules.Housekeeping.Application\\obj\\",
+      "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Application/HMS.Modules.Housekeeping.Application.csproj",
+      "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+      "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Application/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Darshaka Peramune\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/jananiwithana/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -112,14 +105,14 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Application.Abstractions\\HMS.Application.Abstractions.csproj": {
-              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Application.Abstractions\\HMS.Application.Abstractions.csproj"
+            "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj": {
+              "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj"
             },
-            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Contracts\\HMS.Contracts.csproj": {
-              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\BuildingBlocks\\HMS.Contracts\\HMS.Contracts.csproj"
+            "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj": {
+              "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj"
             },
-            "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Housekeeping\\HMS.Modules.Housekeeping.Domain\\HMS.Modules.Housekeeping.Domain.csproj": {
-              "projectPath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Housekeeping\\HMS.Modules.Housekeeping.Domain\\HMS.Modules.Housekeeping.Domain.csproj"
+            "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/HMS.Modules.Housekeeping.Domain.csproj": {
+              "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/HMS.Modules.Housekeeping.Domain.csproj"
             }
           }
         }
@@ -134,7 +127,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.400"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
@@ -156,7 +149,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.302/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

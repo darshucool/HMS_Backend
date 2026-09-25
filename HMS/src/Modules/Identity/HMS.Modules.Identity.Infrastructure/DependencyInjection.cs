@@ -2,6 +2,7 @@
 using HMS.Modules.Identity.Application.Abstractions;
 using HMS.Modules.Identity.Infrastructure.Authentication;
 using HMS.Modules.Identity.Infrastructure.Persistence.Repositories;
+using HMS.Modules.Identity.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -68,7 +69,15 @@ public static class DependencyInjection
                     };
             });
 
-        services.AddAuthorization();
+        services.Configure<JwtOptions>(jwtSection);
+
+        services.AddAuthorization(options =>
+        {
+            options.AddPolicy(
+                "PlatformAdmin",
+                policy => policy.RequireRole("PLATFORM_ADMIN"));
+        });
+
         services.AddSingleton(TimeProvider.System);
 
         services.AddScoped<
@@ -82,6 +91,8 @@ public static class DependencyInjection
         services.AddScoped<
             IPasswordHasher<StaffLoginRecord>,
             PasswordHasher<StaffLoginRecord>>();
+
+        services.AddScoped<IEmailSender, EmailSender>();
 
         return services;
     }

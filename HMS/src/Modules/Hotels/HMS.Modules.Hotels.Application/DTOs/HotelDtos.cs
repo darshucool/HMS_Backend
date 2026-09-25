@@ -57,5 +57,109 @@ public sealed record MyPropertyDto(
     bool IsDefaultProperty,
     string Status);
 
+public sealed record AccommodationTypeDto(
+    Guid Uid,
+    Guid PropertyUid,
+    string Code,
+    string Name,
+    string UnitKind,
+    string? Description,
+    int MaxAdults,
+    int MaxChildren,
+    int MaxOccupancy,
+    int DefaultQuantity,
+    decimal BaseRate,
+    int SortOrder,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
+public sealed record MealPlanDto(
+    Guid Uid,
+    Guid PropertyUid,
+    string Code,
+    string Name,
+    string? Description,
+    bool IncludesBreakfast,
+    bool IncludesLunch,
+    bool IncludesDinner,
+    bool AllowByo,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
+public sealed record RatePlanDto(
+    Guid Uid,
+    Guid PropertyUid,
+    Guid AccommodationTypeUid,
+    Guid? MealPlanUid,
+    string Code,
+    string Name,
+    string PricingBasis,
+    string Currency,
+    string? Description,
+    bool IsRefundable,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
+public sealed record RatePlanPriceDto(
+    Guid Uid,
+    Guid RatePlanUid,
+    Guid PropertyUid,
+    DateOnly StartDate,
+    DateOnly EndDate,
+    short? DayOfWeek,
+    decimal? AdultRate,
+    decimal? ChildRate,
+    decimal UnitRate,
+    int MinimumStay,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
+public sealed record AccommodationUnitDto(
+    Guid Uid,
+    Guid PropertyUid,
+    Guid AccommodationTypeUid,
+    string UnitCode,
+    string? UnitName,
+    string? FloorOrArea,
+    string Status,
+    string HousekeepingStatus,
+    string? Notes,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
+public sealed record UnitBlockDto(
+    Guid Uid,
+    Guid UnitUid,
+    Guid PropertyUid,
+    DateOnly StartDate,
+    DateOnly EndDate,
+    string BlockType,
+    string? Reason,
+    bool IsActive,
+    DateTimeOffset CreationDate);
+
+public sealed record PropertyAvailabilityDto(
+    Guid PropertyUid,
+    DateOnly CheckIn,
+    DateOnly CheckOut,
+    int Nights,
+    int Adults,
+    int Children,
+    string Currency,
+    IReadOnlyList<PropertyAvailabilityItemDto> Items);
+
+public sealed record PropertyAvailabilityItemDto(
+    Guid AccommodationTypeUid,
+    string Code,
+    string Name,
+    string UnitKind,
+    int MaxAdults,
+    int MaxChildren,
+    int MaxOccupancy,
+    int AvailableUnits,
+    int TotalUnits,
+    decimal BaseRate,
+    decimal EstimatedTotal);
+
 public sealed record PagedResult<T>(IReadOnlyList<T> Items, int Page, int PageSize, long TotalCount);
 

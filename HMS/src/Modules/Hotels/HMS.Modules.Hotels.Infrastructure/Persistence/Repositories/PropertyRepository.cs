@@ -13,35 +13,35 @@ public sealed class PropertyRepository(IHotelsDbConnectionFactory connectionFact
     {
         const string sql = """
             SELECT
-                p.id                    AS Id,
-                p.uid                   AS Uid,
-                p.organization_id       AS OrganizationId,
-                o.uid                   AS OrganizationUid,
-                p.code                  AS Code,
-                p.name                  AS Name,
-                p.slug                  AS Slug,
-                p.property_type         AS PropertyType,
-                p.description           AS Description,
-                p.address_line1         AS AddressLine1,
-                p.address_line2         AS AddressLine2,
-                p.city                  AS City,
-                p.district              AS District,
-                p.province              AS Province,
-                p.postal_code           AS PostalCode,
-                p.country_code          AS CountryCode,
-                p.latitude              AS Latitude,
-                p.longitude             AS Longitude,
-                p.phone                 AS Phone,
-                p.email                 AS Email,
-                p.timezone              AS Timezone,
-                p.default_currency      AS DefaultCurrency,
-                p.status                AS Status,
-                p.is_active             AS IsActive,
-                p.is_archived           AS IsArchived,
-                p.creation_date         AS CreationDate,
-                p.created_by            AS CreatedBy,
-                p.modified_date         AS ModifiedDate,
-                p.modified_by           AS ModifiedBy
+                p.id                    AS "Id",
+                p.uid                   AS "Uid",
+                p.organization_id       AS "OrganizationId",
+                o.uid                   AS "OrganizationUid",
+                p.code                  AS "Code",
+                p.name                  AS "Name",
+                p.slug                  AS "Slug",
+                p.property_type         AS "PropertyType",
+                p.description           AS "Description",
+                p.address_line1         AS "AddressLine1",
+                p.address_line2         AS "AddressLine2",
+                p.city                  AS "City",
+                p.district              AS "District",
+                p.province              AS "Province",
+                p.postal_code           AS "PostalCode",
+                p.country_code          AS "CountryCode",
+                p.latitude              AS "Latitude",
+                p.longitude             AS "Longitude",
+                p.phone                 AS "Phone",
+                p.email                 AS "Email",
+                p.timezone              AS "Timezone",
+                p.default_currency      AS "DefaultCurrency",
+                p.status                AS "Status",
+                p.is_active             AS "IsActive",
+                p.is_archived           AS "IsArchived",
+                p.creation_date         AS "CreationDate",
+                p.created_by            AS "CreatedBy",
+                p.modified_date         AS "ModifiedDate",
+                p.modified_by           AS "ModifiedBy"
             FROM hotel.properties p
             JOIN hotel.organizations o ON o.id = p.organization_id
             WHERE p.uid = @PropertyUid;
@@ -60,24 +60,24 @@ public sealed class PropertyRepository(IHotelsDbConnectionFactory connectionFact
     {
         const string sql = """
             SELECT
-                ps.id                       AS Id,
-                ps.uid                      AS Uid,
-                ps.organization_id          AS OrganizationId,
-                ps.property_id              AS PropertyId,
-                ps.check_in_time             AS CheckInTime,
-                ps.check_out_time            AS CheckOutTime,
-                ps.booking_number_prefix     AS BookingNumberPrefix,
-                ps.invoice_number_prefix     AS InvoiceNumberPrefix,
-                ps.tax_rate                  AS TaxRate,
-                ps.service_charge_rate       AS ServiceChargeRate,
-                ps.allow_overbooking         AS AllowOverbooking,
-                ps.extra_settings::text      AS ExtraSettingsJson,
-                ps.is_active                 AS IsActive,
-                ps.is_archived               AS IsArchived,
-                ps.creation_date             AS CreationDate,
-                ps.created_by                AS CreatedBy,
-                ps.modified_date             AS ModifiedDate,
-                ps.modified_by               AS ModifiedBy
+                ps.id                       AS "Id" ,
+                ps.uid                      AS "Uid",
+                ps.organization_id          AS "OrganizationId",
+                ps.property_id              AS "PropertyId",
+                ps.check_in_time             AS "CheckInTime",
+                ps.check_out_time            AS "CheckOutTime",
+                ps.booking_number_prefix     AS "BookingNumberPrefix",
+                ps.invoice_number_prefix     AS "InvoiceNumberPrefix",
+                ps.tax_rate                  AS "TaxRate",
+                ps.service_charge_rate       AS "ServiceChargeRate",
+                ps.allow_overbooking         AS "AllowOverbooking",
+                ps.extra_settings::text      AS "ExtraSettingsJson",
+                ps.is_active                 AS "IsActive",
+                ps.is_archived               AS "IsArchived",
+                ps.creation_date             AS "CreationDate",
+                ps.created_by                AS "CreatedBy",
+                ps.modified_date             AS "ModifiedDate",
+                ps.modified_by               AS "ModifiedBy"
             FROM hotel.property_settings ps
             JOIN hotel.properties p ON p.id = ps.property_id
             WHERE p.uid = @PropertyUid
@@ -103,9 +103,9 @@ public sealed class PropertyRepository(IHotelsDbConnectionFactory connectionFact
             row.ExtraSettingsJson,
             row.IsActive,
             row.IsArchived,
-            row.CreationDate,
+            ToDateTimeOffset(row.CreationDate),
             row.CreatedBy,
-            row.ModifiedDate,
+            ToDateTimeOffset(row.ModifiedDate),
             row.ModifiedBy);
     }
 
@@ -439,6 +439,51 @@ public sealed class PropertyRepository(IHotelsDbConnectionFactory connectionFact
         return items.AsList();
     }
 
+    public async Task<IReadOnlyList<PropertyDto>> GetByOrganizationUidAsync(
+        Guid organizationUid,
+        CancellationToken cancellationToken)
+    {
+        const string sql = """
+            SELECT
+                p.uid                   AS "Uid",
+                o.uid                   AS "OrganizationUid",
+                p.code                  AS "Code",
+                p.name                  AS "Name",
+                p.slug                  AS "Slug",
+                p.property_type         AS "PropertyType",
+                p.description           AS "Description",
+                p.address_line1         AS "AddressLine1",
+                p.address_line2         AS "AddressLine2",
+                p.city                  AS "City",
+                p.district              AS "District",
+                p.province              AS "Province",
+                p.postal_code           AS "PostalCode",
+                p.country_code          AS "CountryCode",
+                p.latitude              AS "Latitude",
+                p.longitude             AS "Longitude",
+                p.phone                 AS "Phone",
+                p.email                 AS "Email",
+                p.timezone              AS "Timezone",
+                p.default_currency      AS "DefaultCurrency",
+                p.status                AS "Status",
+                p.is_active             AS "IsActive",
+                p.creation_date         AS "CreationDate"
+            FROM hotel.properties p
+            JOIN hotel.organizations o ON o.id = p.organization_id
+            WHERE o.uid = @OrganizationUid
+              AND p.is_archived = false
+            ORDER BY p.name;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        var rows = await connection.QueryAsync<PropertyListRow>(new CommandDefinition(
+            sql,
+            new { OrganizationUid = organizationUid },
+            cancellationToken: cancellationToken));
+
+        return rows.Select(ToDto).ToList();
+    }
+
     private static Property ToDomain(PropertyRow row) => Property.Rehydrate(
         row.Id,
         row.Uid,
@@ -465,60 +510,124 @@ public sealed class PropertyRepository(IHotelsDbConnectionFactory connectionFact
         Enum.Parse<PropertyStatus>(row.Status, true),
         row.IsActive,
         row.IsArchived,
-        row.CreationDate,
+        ToDateTimeOffset(row.CreationDate),
         row.CreatedBy,
-        row.ModifiedDate,
+        ToDateTimeOffset(row.ModifiedDate),
         row.ModifiedBy);
 
-    private sealed record PropertyRow(
-        long Id,
-        Guid Uid,
-        long OrganizationId,
-        Guid OrganizationUid,
-        string Code,
-        string Name,
-        string Slug,
-        string PropertyType,
-        string? Description,
-        string? AddressLine1,
-        string? AddressLine2,
-        string? City,
-        string? District,
-        string? Province,
-        string? PostalCode,
-        string CountryCode,
-        decimal? Latitude,
-        decimal? Longitude,
-        string? Phone,
-        string? Email,
-        string Timezone,
-        string DefaultCurrency,
-        string Status,
-        bool IsActive,
-        bool IsArchived,
-        DateTimeOffset CreationDate,
-        string? CreatedBy,
-        DateTimeOffset? ModifiedDate,
-        string? ModifiedBy);
+    private static PropertyDto ToDto(PropertyListRow row) => new(
+        row.Uid,
+        row.OrganizationUid,
+        row.Code,
+        row.Name,
+        row.Slug,
+        row.PropertyType,
+        row.Description,
+        row.AddressLine1,
+        row.AddressLine2,
+        row.City,
+        row.District,
+        row.Province,
+        row.PostalCode,
+        row.CountryCode,
+        row.Latitude,
+        row.Longitude,
+        row.Phone,
+        row.Email,
+        row.Timezone,
+        row.DefaultCurrency,
+        row.Status,
+        row.IsActive,
+        ToDateTimeOffset(row.CreationDate));
 
-    private sealed record PropertySettingsRow(
-        long Id,
-        Guid Uid,
-        long OrganizationId,
-        long PropertyId,
-        TimeOnly CheckInTime,
-        TimeOnly CheckOutTime,
-        string BookingNumberPrefix,
-        string InvoiceNumberPrefix,
-        decimal TaxRate,
-        decimal ServiceChargeRate,
-        bool AllowOverbooking,
-        string ExtraSettingsJson,
-        bool IsActive,
-        bool IsArchived,
-        DateTimeOffset CreationDate,
-        string? CreatedBy,
-        DateTimeOffset? ModifiedDate,
-        string? ModifiedBy);
+    private static DateTimeOffset ToDateTimeOffset(DateTime value) =>
+        value.Kind == DateTimeKind.Unspecified
+            ? new DateTimeOffset(DateTime.SpecifyKind(value, DateTimeKind.Utc))
+            : new DateTimeOffset(value);
+
+    private static DateTimeOffset? ToDateTimeOffset(DateTime? value) =>
+        value is null ? null : ToDateTimeOffset(value.Value);
+
+    private sealed class PropertyRow
+    {
+        public long Id { get; init; }
+        public Guid Uid { get; init; }
+        public long OrganizationId { get; init; }
+        public Guid OrganizationUid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string Slug { get; init; } = string.Empty;
+        public string PropertyType { get; init; } = string.Empty;
+        public string? Description { get; init; }
+        public string? AddressLine1 { get; init; }
+        public string? AddressLine2 { get; init; }
+        public string? City { get; init; }
+        public string? District { get; init; }
+        public string? Province { get; init; }
+        public string? PostalCode { get; init; }
+        public string CountryCode { get; init; } = string.Empty;
+        public decimal? Latitude { get; init; }
+        public decimal? Longitude { get; init; }
+        public string? Phone { get; init; }
+        public string? Email { get; init; }
+        public string Timezone { get; init; } = string.Empty;
+        public string DefaultCurrency { get; init; } = string.Empty;
+        public string Status { get; init; } = string.Empty;
+        public bool IsActive { get; init; }
+        public bool IsArchived { get; init; }
+        public DateTime CreationDate { get; init; }
+        public string? CreatedBy { get; init; }
+        public DateTime? ModifiedDate { get; init; }
+        public string? ModifiedBy { get; init; }
+    }
+
+    private sealed class PropertySettingsRow
+    {
+        public long Id { get; init; }
+        public Guid Uid { get; init; }
+        public long OrganizationId { get; init; }
+        public long PropertyId { get; init; }
+        public TimeOnly CheckInTime { get; init; }
+        public TimeOnly CheckOutTime { get; init; }
+        public string BookingNumberPrefix { get; init; } = string.Empty;
+        public string InvoiceNumberPrefix { get; init; } = string.Empty;
+        public decimal TaxRate { get; init; }
+        public decimal ServiceChargeRate { get; init; }
+        public bool AllowOverbooking { get; init; }
+        public string ExtraSettingsJson { get; init; } = string.Empty;
+        public bool IsActive { get; init; }
+        public bool IsArchived { get; init; }
+        public DateTime CreationDate { get; init; }
+        public string? CreatedBy { get; init; }
+        public DateTime? ModifiedDate { get; init; }
+        public string? ModifiedBy { get; init; }
+    }
+
+    private sealed class PropertyListRow
+    {
+        public Guid Uid { get; init; }
+        public Guid OrganizationUid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string Slug { get; init; } = string.Empty;
+        public string PropertyType { get; init; } = string.Empty;
+        public string? Description { get; init; }
+        public string? AddressLine1 { get; init; }
+        public string? AddressLine2 { get; init; }
+        public string? City { get; init; }
+        public string? District { get; init; }
+        public string? Province { get; init; }
+        public string? PostalCode { get; init; }
+        public string CountryCode { get; init; } = string.Empty;
+        public decimal? Latitude { get; init; }
+        public decimal? Longitude { get; init; }
+        public string? Phone { get; init; }
+        public string? Email { get; init; }
+        public string Timezone { get; init; } = string.Empty;
+        public string DefaultCurrency { get; init; } = string.Empty;
+        public string Status { get; init; } = string.Empty;
+        public bool IsActive { get; init; }
+        public DateTime CreationDate { get; init; }
+    }
 }
 

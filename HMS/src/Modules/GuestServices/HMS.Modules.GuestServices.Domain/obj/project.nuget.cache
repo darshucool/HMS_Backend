@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4rHi3+tuT6g=",
+  "dgSpecHash": "qwd+4jIrr04=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\GuestServices\\HMS.Modules.GuestServices.Domain\\HMS.Modules.GuestServices.Domain.csproj",
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Domain/HMS.Modules.GuestServices.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QfZMSLW9fO8=",
+  "dgSpecHash": "wme0sk5dALk=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Housekeeping\\HMS.Modules.Housekeeping.Domain\\HMS.Modules.Housekeeping.Domain.csproj",
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/HMS.Modules.Housekeeping.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

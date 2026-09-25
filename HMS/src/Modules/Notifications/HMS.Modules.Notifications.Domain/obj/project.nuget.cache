@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ghOTv7cUGoM=",
+  "dgSpecHash": "61YIu8HWAKs=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\Notifications\\HMS.Modules.Notifications.Domain\\HMS.Modules.Notifications.Domain.csproj",
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Domain/HMS.Modules.Notifications.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

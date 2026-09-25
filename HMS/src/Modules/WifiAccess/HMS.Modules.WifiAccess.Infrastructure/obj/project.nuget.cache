@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZzPA6bBAf18=",
+  "dgSpecHash": "UI5Kws6FdBw=",
   "success": true,
-  "projectFilePath": "D:\\PROJECTS\\HMS\\Backend\\HMS_Backend\\HMS\\src\\Modules\\WifiAccess\\HMS.Modules.WifiAccess.Infrastructure\\HMS.Modules.WifiAccess.Infrastructure.csproj",
+  "projectFilePath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Infrastructure/HMS.Modules.WifiAccess.Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
