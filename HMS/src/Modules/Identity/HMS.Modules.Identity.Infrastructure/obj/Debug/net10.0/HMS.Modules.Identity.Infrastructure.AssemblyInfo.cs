@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HMS.Modules.Identity.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eac0c0cf26650b55c6bde7daeca1509a82db476f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+232c12dd0998e897f3bddb15421734ea2d2d88d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("HMS.Modules.Identity.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HMS.Modules.Identity.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

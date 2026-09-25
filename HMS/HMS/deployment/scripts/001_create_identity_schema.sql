@@ -92,17 +92,14 @@ CREATE TABLE IF NOT EXISTS identity.staff_refresh_token
 (
     uid                UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     staff_uid          UUID NOT NULL,
-    property_uid       UUID NOT NULL,
-    token_hash         VARCHAR(500) NOT NULL,
+    property_uid       UUID NULL,
+    token_hash         VARCHAR(128) NOT NULL,
     expires_at_utc     TIMESTAMPTZ NOT NULL,
     revoked_at_utc     TIMESTAMPTZ NULL,
     created_at_utc     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     created_ip_address VARCHAR(100),
 
-    CONSTRAINT fk_staff_refresh_token_staff
-        FOREIGN KEY (staff_uid)
-        REFERENCES identity.staff_user(uid)
-        ON DELETE CASCADE
+    CONSTRAINT uq_staff_refresh_token_hash UNIQUE (token_hash)
 );
 
 

@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\BuildingBlocks\HMS.Infrastructure\HMS.Infrastructure.csproj" />
+    <ProjectReference Include="..\src\Modules\Booking\HMS.Modules.Booking.Api\HMS.Modules.Booking.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Finance\HMS.Modules.Finance.Api\HMS.Modules.Finance.Api.csproj" />
     <ProjectReference Include="..\src\Modules\Folios\HMS.Modules.Folios.Api\HMS.Modules.Folios.Api.csproj" />
     <ProjectReference Include="..\src\Modules\FrontDesk\HMS.Modules.FrontDesk.Api\HMS.Modules.FrontDesk.Api.csproj" />
     <ProjectReference Include="..\src\Modules\Guests\HMS.Modules.Guests.Api\HMS.Modules.Guests.Api.csproj" />

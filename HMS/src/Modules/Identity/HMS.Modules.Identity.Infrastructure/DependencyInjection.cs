@@ -88,6 +88,8 @@ public static class DependencyInjection
             IStaffTokenService,
             StaffTokenService>();
 
+        services.AddScoped<IRefreshTokenStore, RefreshTokenStore>();
+
         services.AddScoped<
             IPasswordHasher<StaffLoginRecord>,
             PasswordHasher<StaffLoginRecord>>();
