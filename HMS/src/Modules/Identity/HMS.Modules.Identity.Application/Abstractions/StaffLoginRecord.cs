@@ -11,6 +11,8 @@ namespace HMS.Modules.Identity.Application.Abstractions
 
         public Guid PropertyUid { get; init; }
 
+        public Guid[] PropertyUids { get; init; } = [];
+
         public string Username { get; init; } = string.Empty;
 
         public string? Email { get; init; }

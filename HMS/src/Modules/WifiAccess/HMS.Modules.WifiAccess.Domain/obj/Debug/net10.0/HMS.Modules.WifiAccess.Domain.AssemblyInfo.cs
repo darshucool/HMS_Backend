@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HMS.Modules.WifiAccess.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ebb925cd90a6e64e8550a43d9fdb84e9814c8b0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eac0c0cf26650b55c6bde7daeca1509a82db476f")]
 [assembly: System.Reflection.AssemblyProductAttribute("HMS.Modules.WifiAccess.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HMS.Modules.WifiAccess.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

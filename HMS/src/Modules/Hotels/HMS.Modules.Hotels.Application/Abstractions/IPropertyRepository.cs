@@ -20,5 +20,8 @@ public interface IPropertyRepository
     Task<IReadOnlyList<MyPropertyDto>> GetMyPropertiesAsync(
         string actorSubject,
         CancellationToken cancellationToken);
+    Task<IReadOnlyList<PropertyDto>> GetByOrganizationUidAsync(
+        Guid organizationUid,
+        CancellationToken cancellationToken);
 }
 

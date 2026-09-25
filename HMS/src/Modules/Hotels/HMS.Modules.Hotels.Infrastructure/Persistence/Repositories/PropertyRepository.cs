@@ -439,6 +439,51 @@ public sealed class PropertyRepository(IHotelsDbConnectionFactory connectionFact
         return items.AsList();
     }
 
+    public async Task<IReadOnlyList<PropertyDto>> GetByOrganizationUidAsync(
+        Guid organizationUid,
+        CancellationToken cancellationToken)
+    {
+        const string sql = """
+            SELECT
+                p.uid                   AS "Uid",
+                o.uid                   AS "OrganizationUid",
+                p.code                  AS "Code",
+                p.name                  AS "Name",
+                p.slug                  AS "Slug",
+                p.property_type         AS "PropertyType",
+                p.description           AS "Description",
+                p.address_line1         AS "AddressLine1",
+                p.address_line2         AS "AddressLine2",
+                p.city                  AS "City",
+                p.district              AS "District",
+                p.province              AS "Province",
+                p.postal_code           AS "PostalCode",
+                p.country_code          AS "CountryCode",
+                p.latitude              AS "Latitude",
+                p.longitude             AS "Longitude",
+                p.phone                 AS "Phone",
+                p.email                 AS "Email",
+                p.timezone              AS "Timezone",
+                p.default_currency      AS "DefaultCurrency",
+                p.status                AS "Status",
+                p.is_active             AS "IsActive",
+                p.creation_date         AS "CreationDate"
+            FROM hotel.properties p
+            JOIN hotel.organizations o ON o.id = p.organization_id
+            WHERE o.uid = @OrganizationUid
+              AND p.is_archived = false
+            ORDER BY p.name;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        var rows = await connection.QueryAsync<PropertyListRow>(new CommandDefinition(
+            sql,
+            new { OrganizationUid = organizationUid },
+            cancellationToken: cancellationToken));
+
+        return rows.Select(ToDto).ToList();
+    }
+
     private static Property ToDomain(PropertyRow row) => Property.Rehydrate(
         row.Id,
         row.Uid,
@@ -469,6 +514,31 @@ public sealed class PropertyRepository(IHotelsDbConnectionFactory connectionFact
         row.CreatedBy,
         ToDateTimeOffset(row.ModifiedDate),
         row.ModifiedBy);
+
+    private static PropertyDto ToDto(PropertyListRow row) => new(
+        row.Uid,
+        row.OrganizationUid,
+        row.Code,
+        row.Name,
+        row.Slug,
+        row.PropertyType,
+        row.Description,
+        row.AddressLine1,
+        row.AddressLine2,
+        row.City,
+        row.District,
+        row.Province,
+        row.PostalCode,
+        row.CountryCode,
+        row.Latitude,
+        row.Longitude,
+        row.Phone,
+        row.Email,
+        row.Timezone,
+        row.DefaultCurrency,
+        row.Status,
+        row.IsActive,
+        ToDateTimeOffset(row.CreationDate));
 
     private static DateTimeOffset ToDateTimeOffset(DateTime value) =>
         value.Kind == DateTimeKind.Unspecified
@@ -531,6 +601,33 @@ public sealed class PropertyRepository(IHotelsDbConnectionFactory connectionFact
         public string? CreatedBy { get; init; }
         public DateTime? ModifiedDate { get; init; }
         public string? ModifiedBy { get; init; }
+    }
+
+    private sealed class PropertyListRow
+    {
+        public Guid Uid { get; init; }
+        public Guid OrganizationUid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string Slug { get; init; } = string.Empty;
+        public string PropertyType { get; init; } = string.Empty;
+        public string? Description { get; init; }
+        public string? AddressLine1 { get; init; }
+        public string? AddressLine2 { get; init; }
+        public string? City { get; init; }
+        public string? District { get; init; }
+        public string? Province { get; init; }
+        public string? PostalCode { get; init; }
+        public string CountryCode { get; init; } = string.Empty;
+        public decimal? Latitude { get; init; }
+        public decimal? Longitude { get; init; }
+        public string? Phone { get; init; }
+        public string? Email { get; init; }
+        public string Timezone { get; init; } = string.Empty;
+        public string DefaultCurrency { get; init; } = string.Empty;
+        public string Status { get; init; } = string.Empty;
+        public bool IsActive { get; init; }
+        public DateTime CreationDate { get; init; }
     }
 }
 

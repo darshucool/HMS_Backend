@@ -32,13 +32,13 @@ internal sealed class RegisterStaffCommandHandler(
         }
 
         if (request.PropertyUid == Guid.Empty ||
-            string.IsNullOrWhiteSpace(request.Username) ||
+            string.IsNullOrWhiteSpace(request.Email) ||
             string.IsNullOrWhiteSpace(request.Password) ||
             string.IsNullOrWhiteSpace(request.FirstName))
         {
             return RegisterStaffResult.Failure(
                 "validation_error",
-                "Property, username, password and first name are required.");
+                "Property, email, password and first name are required.");
         }
 
         if (request.Password.Trim().Length < 8)
@@ -72,14 +72,6 @@ internal sealed class RegisterStaffCommandHandler(
                 "Only the platform super admin can register hotel admins.");
         }
 
-        if (!isAdminRole &&
-            !IdentityRoles.StaffRegisterRoles.Contains(roleCode, StringComparer.OrdinalIgnoreCase))
-        {
-            return RegisterStaffResult.Failure(
-                "validation_error",
-                "The selected staff role is not allowed.");
-        }
-
         var property = await staffRepository.GetPropertyByUidAsync(
             request.PropertyUid,
             cancellationToken);
@@ -87,37 +79,24 @@ internal sealed class RegisterStaffCommandHandler(
         if (property is null || property.IsArchived)
             return RegisterStaffResult.Failure("not_found", "Property was not found.");
 
-        if (!await staffRepository.RoleExistsAsync(roleCode, cancellationToken))
-        {
-            return RegisterStaffResult.Failure(
-                "validation_error",
-                $"Role '{roleCode}' is not configured.");
-        }
+        await staffRepository.EnsureRoleExistsAsync(
+            roleCode,
+            roleCode.Replace('_', ' '),
+            null,
+            cancellationToken);
 
-        var normalizedUsername = request.Username.Trim().ToUpperInvariant();
-        if (await staffRepository.UsernameExistsAsync(normalizedUsername, cancellationToken))
+        var normalizedEmail = request.Email.Trim().ToUpperInvariant();
+        if (await staffRepository.EmailExistsAsync(normalizedEmail, cancellationToken))
         {
             return RegisterStaffResult.Failure(
                 "conflict",
-                "This username is already taken.");
-        }
-
-        if (!string.IsNullOrWhiteSpace(request.Email))
-        {
-            var normalizedEmail = request.Email.Trim().ToUpperInvariant();
-            if (await staffRepository.EmailExistsAsync(normalizedEmail, cancellationToken))
-            {
-                return RegisterStaffResult.Failure(
-                    "conflict",
-                    "This email is already taken.");
-            }
+                "This email is already taken.");
         }
 
         StaffUser staff;
         try
         {
             staff = StaffUser.Create(
-                request.Username,
                 request.FirstName,
                 request.LastName,
                 request.Email);
@@ -148,7 +127,6 @@ internal sealed class RegisterStaffCommandHandler(
         return RegisterStaffResult.Success(new RegisterStaffResponse(
             staff.Uid,
             request.PropertyUid,
-            staff.Username,
             staff.FullName,
             staff.Email,
             roleCode));

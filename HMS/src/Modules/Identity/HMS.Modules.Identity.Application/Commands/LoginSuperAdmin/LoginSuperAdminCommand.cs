@@ -6,7 +6,7 @@ using MediatR;
 namespace HMS.Modules.Identity.Application.Commands.LoginSuperAdmin;
 
 public sealed record LoginSuperAdminCommand(
-    string Username,
+    string Email,
     string Password) : IRequest<LoginStaffResult>;
 
 internal sealed class LoginSuperAdminCommandHandler(
@@ -18,19 +18,19 @@ internal sealed class LoginSuperAdminCommandHandler(
         LoginSuperAdminCommand request,
         CancellationToken cancellationToken)
     {
-        if (string.IsNullOrWhiteSpace(request.Username) ||
+        if (string.IsNullOrWhiteSpace(request.Email) ||
             string.IsNullOrWhiteSpace(request.Password))
         {
             return Task.FromResult(LoginStaffResult.Failure(
                 "validation_error",
-                "Username and password are required."));
+                "Email and password are required."));
         }
 
-        if (!SuperAdminCredentials.Matches(request.Username, request.Password))
+        if (!SuperAdminCredentials.Matches(request.Email, request.Password))
         {
             return Task.FromResult(LoginStaffResult.Failure(
                 "invalid_credentials",
-                "Invalid username or password."));
+                "Invalid email or password."));
         }
 
         var currentTime = timeProvider.GetUtcNow();
@@ -38,7 +38,7 @@ internal sealed class LoginSuperAdminCommandHandler(
         {
             StaffUid = SuperAdminCredentials.StaffUid,
             PropertyUid = Guid.Empty,
-            Username = SuperAdminCredentials.Username,
+            Username = SuperAdminCredentials.Email,
             Email = SuperAdminCredentials.Email,
             FirstName = SuperAdminCredentials.FirstName,
             LastName = SuperAdminCredentials.LastName,
@@ -53,9 +53,9 @@ internal sealed class LoginSuperAdminCommandHandler(
             new StaffLoginResponse(
                 staff.StaffUid,
                 staff.PropertyUid,
-                staff.Username,
+                [],
+                staff.Email ?? SuperAdminCredentials.Email,
                 staff.FullName,
-                staff.Email,
                 staff.Roles,
                 token.AccessToken,
                 token.ExpiresAtUtc)));

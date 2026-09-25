@@ -28,7 +28,7 @@ namespace HMS.Modules.Identity.Infrastructure.Authentication
             var claims = new List<Claim>
             {
                 new(JwtRegisteredClaimNames.Sub, staff.StaffUid.ToString()),
-                new(JwtRegisteredClaimNames.UniqueName, staff.Username),
+                new(JwtRegisteredClaimNames.UniqueName, staff.Email ?? staff.Username),
                 new("staff_uid", staff.StaffUid.ToString()),
                 new("full_name", staff.FullName)
             };
@@ -36,6 +36,11 @@ namespace HMS.Modules.Identity.Infrastructure.Authentication
             if (staff.PropertyUid != Guid.Empty)
             {
                 claims.Add(new Claim("property_uid", staff.PropertyUid.ToString()));
+            }
+
+            foreach (var propertyUid in staff.PropertyUids.Distinct())
+            {
+                claims.Add(new Claim("property_uids", propertyUid.ToString()));
             }
 
             if (!string.IsNullOrWhiteSpace(staff.Email))

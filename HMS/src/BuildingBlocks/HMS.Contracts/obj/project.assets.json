@@ -8,7 +8,7 @@
     "net10.0": []
   },
   "packageFolders": {
-    "/Users/jananiwithana/.nuget/packages/": {}
+    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/36e04a6142adc3de7053ccda44c2d2ab/nuget": {}
   },
   "project": {
     "version": "1.0.0",
@@ -16,7 +16,7 @@
       "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj",
       "projectName": "HMS.Contracts",
       "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj",
-      "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/36e04a6142adc3de7053ccda44c2d2ab/nuget",
       "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [

@@ -1,15 +1,13 @@
-using HMS.Modules.Identity.Application.Commands.LoginStaff;
 using MediatR;
 
 namespace HMS.Modules.Identity.Application.Commands.RegisterStaff;
 
 public sealed record RegisterStaffCommand(
     Guid PropertyUid,
-    string Username,
     string Password,
     string FirstName,
     string? LastName,
-    string? Email,
+    string Email,
     string RoleCode,
     string ActorSubject,
     Guid? ActorStaffUid,
@@ -41,7 +39,9 @@ public sealed record RegisterStaffResult
 public sealed record RegisterStaffResponse(
     Guid StaffUid,
     Guid PropertyUid,
-    string Username,
     string FullName,
     string? Email,
-    string Role);
+    string Role,
+    bool EmailSent = false,
+    string? TemporaryPassword = null,
+    string? EmailDetail = null);

@@ -2,6 +2,7 @@
 using HMS.Modules.Identity.Application.Abstractions;
 using HMS.Modules.Identity.Infrastructure.Authentication;
 using HMS.Modules.Identity.Infrastructure.Persistence.Repositories;
+using HMS.Modules.Identity.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -90,6 +91,8 @@ public static class DependencyInjection
         services.AddScoped<
             IPasswordHasher<StaffLoginRecord>,
             PasswordHasher<StaffLoginRecord>>();
+
+        services.AddScoped<IEmailSender, EmailSender>();
 
         return services;
     }

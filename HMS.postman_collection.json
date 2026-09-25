@@ -89,14 +89,14 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"username\": \"superadmin\",\n  \"password\": \"SuperAdmin@123\"\n}"
+              "raw": "{\n  \"email\": \"superadmin@hms.local\",\n  \"password\": \"SuperAdmin@123\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/super-admin/login",
               "host": ["{{baseUrl}}"],
               "path": ["api", "hotel", "auth", "super-admin", "login"]
             },
-            "description": "Dummy platform super admin. Username: superadmin / Password: SuperAdmin@123. Returns PLATFORM_ADMIN JWT. No database user."
+            "description": "Dummy platform super admin. Email: superadmin@hms.local / Password: SuperAdmin@123. Returns PLATFORM_ADMIN JWT. No database user."
           },
           "event": [
             {
@@ -114,20 +114,51 @@
           ]
         },
         {
+          "name": "Invite Property Admin",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"propertyUid\": \"{{propertyUid}}\",\n  \"email\": \"admin@abchotels.com\",\n  \"firstName\": \"Hotel\",\n  \"lastName\": \"Admin\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/hotel/auth/admin/invite",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "hotel", "auth", "admin", "invite"]
+            },
+            "description": "Requires PLATFORM_ADMIN. Creates or reuses the admin for this property (login is email + password). Emails the Admin Login URL, email, temporary password, and instructions to reset password after first login. Email cannot be changed later.\n\nIf SMTP fails, response includes emailSent=false and temporaryPassword."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.staffUid) {",
+                  "    pm.collectionVariables.set('staffUid', json.staffUid);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
           "name": "Register Admin",
           "request": {
             "method": "POST",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"propertyUid\": \"{{propertyUid}}\",\n  \"username\": \"hoteladmin\",\n  \"password\": \"Admin@123\",\n  \"firstName\": \"Hotel\",\n  \"lastName\": \"Admin\",\n  \"email\": \"admin@abchotels.com\"\n}"
+              "raw": "{\n  \"propertyUid\": \"{{propertyUid}}\",\n  \"email\": \"admin@abchotels.com\",\n  \"password\": \"Admin@123\",\n  \"firstName\": \"Hotel\",\n  \"lastName\": \"Admin\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/admin/register",
               "host": ["{{baseUrl}}"],
               "path": ["api", "hotel", "auth", "admin", "register"]
             },
-            "description": "Requires PLATFORM_ADMIN token. Creates HOTEL_ADMIN for the property."
+            "description": "Requires PLATFORM_ADMIN token. Creates HOTEL_ADMIN for the property. Login uses email + password (no username)."
           },
           "event": [
             {
@@ -152,14 +183,14 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"propertyUid\": \"{{propertyUid}}\",\n  \"username\": \"hoteladmin\",\n  \"password\": \"Admin@123\"\n}"
+              "raw": "{\n  \"email\": \"admin@abchotels.com\",\n  \"password\": \"Admin@123\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/admin/login",
               "host": ["{{baseUrl}}"],
               "path": ["api", "hotel", "auth", "admin", "login"]
             },
-            "description": "Hotel admin / manager login. Requires propertyUid."
+            "description": "Hotel admin / manager login with email + password. propertyUid is optional. Response includes propertyUids. After first invite login, call Reset Admin Password."
           },
           "event": [
             {
@@ -174,6 +205,9 @@
                   "if (json.propertyUid && json.propertyUid !== '00000000-0000-0000-0000-000000000000') {",
                   "    pm.collectionVariables.set('propertyUid', json.propertyUid);",
                   "}",
+                  "if (json.propertyUids && json.propertyUids.length) {",
+                  "    pm.collectionVariables.set('propertyUid', json.propertyUids[0]);",
+                  "}",
                   "if (json.staffUid) {",
                   "    pm.collectionVariables.set('staffUid', json.staffUid);",
                   "}"
@@ -183,13 +217,30 @@
           ]
         },
         {
+          "name": "Reset Admin Password",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"password\": \"Admin@12345\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/hotel/auth/admin/credentials",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "hotel", "auth", "admin", "credentials"]
+            },
+            "description": "Requires HOTEL_ADMIN / MANAGER token. Resets password only. Email cannot be changed. staffUid stays the same."
+          }
+        },
+        {
           "name": "Register Staff",
           "request": {
             "method": "POST",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"propertyUid\": \"{{propertyUid}}\",\n  \"username\": \"frontdesk\",\n  \"password\": \"Staff@123\",\n  \"firstName\": \"Front\",\n  \"lastName\": \"Desk\",\n  \"email\": \"desk@abchotels.com\",\n  \"role\": \"FRONT_DESK\"\n}"
+              "raw": "{\n  \"propertyUid\": \"{{propertyUid}}\",\n  \"email\": \"desk@abchotels.com\",\n  \"password\": \"Staff@123\",\n  \"firstName\": \"Front\",\n  \"lastName\": \"Desk\",\n  \"role\": \"FRONT_DESK\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/staff/register",
@@ -207,14 +258,14 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"propertyUid\": \"{{propertyUid}}\",\n  \"username\": \"frontdesk\",\n  \"password\": \"Staff@123\"\n}"
+              "raw": "{\n  \"email\": \"desk@abchotels.com\",\n  \"password\": \"Staff@123\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/staff/login",
               "host": ["{{baseUrl}}"],
               "path": ["api", "hotel", "auth", "staff", "login"]
             },
-            "description": "Operational staff login. Also available at POST /api/hotel/auth/login."
+            "description": "Operational staff login with email + password. Also available at POST /api/hotel/auth/login. propertyUid is optional."
           },
           "event": [
             {
@@ -321,7 +372,20 @@
     },
     {
       "name": "03 - Properties",
+      "description": "Properties belong under organizations. Only PLATFORM_ADMIN (SuperAdmin) can create or list organization properties.",
       "item": [
+        {
+          "name": "List Organization Properties",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/organizations/{{organizationUid}}/properties",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "organizations", "{{organizationUid}}", "properties"]
+            },
+            "description": "Requires PLATFORM_ADMIN. Lists all non-archived properties for the organization."
+          }
+        },
         {
           "name": "Create Property",
           "request": {

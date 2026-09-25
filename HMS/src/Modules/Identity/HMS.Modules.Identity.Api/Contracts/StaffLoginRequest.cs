@@ -1,27 +1,34 @@
 ﻿namespace HMS.Modules.Identity.Api.Contracts;
 
 public sealed record SuperAdminLoginRequest(
-    string Username,
+    string Email,
     string Password);
 
 public sealed record StaffLoginRequest(
+    string Email,
+    string Password,
+    Guid? PropertyUid = null);
+
+public sealed record InvitePropertyAdminRequest(
     Guid PropertyUid,
-    string Username,
+    string Email,
+    string FirstName,
+    string? LastName = null);
+
+public sealed record ResetAdminCredentialsRequest(
     string Password);
 
 public sealed record RegisterAdminRequest(
     Guid PropertyUid,
-    string Username,
+    string Email,
     string Password,
     string FirstName,
-    string? LastName = null,
-    string? Email = null);
+    string? LastName = null);
 
 public sealed record RegisterStaffRequest(
     Guid PropertyUid,
-    string Username,
+    string Email,
     string Password,
     string FirstName,
     string? LastName = null,
-    string? Email = null,
     string Role = "FRONT_DESK");

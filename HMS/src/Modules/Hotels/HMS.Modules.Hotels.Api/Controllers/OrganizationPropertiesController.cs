@@ -1,6 +1,7 @@
 using HMS.Modules.Hotels.Api.Authorization;
 using HMS.Modules.Hotels.Api.Contracts;
 using HMS.Modules.Hotels.Application.Commands.CreateProperty;
+using HMS.Modules.Hotels.Application.Queries.GetOrganizationProperties;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -13,6 +14,18 @@ namespace HMS.Modules.Hotels.Api.Controllers;
 [Authorize(Policy = HotelsPolicies.PlatformAdmin)]
 public sealed class OrganizationPropertiesController(ISender sender) : ControllerBase
 {
+    [HttpGet]
+    public async Task<IActionResult> GetAll(
+        Guid organizationUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(
+            new GetOrganizationPropertiesQuery(organizationUid),
+            cancellationToken);
+
+        return this.ToActionResult(result);
+    }
+
     [HttpPost]
     public async Task<IActionResult> Create(
         Guid organizationUid,
