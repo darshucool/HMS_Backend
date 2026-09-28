@@ -10,7 +10,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj",
         "projectName": "HMS.Application.Abstractions",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/ef93b263af09f825a47fb447c6dd4ccb/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -349,7 +349,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj",
         "projectName": "HMS.Contracts",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/ef93b263af09f825a47fb447c6dd4ccb/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -684,7 +684,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
         "projectName": "HMS.SharedKernel",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/ef93b263af09f825a47fb447c6dd4ccb/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -1019,7 +1019,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Application/HMS.Modules.Payments.Application.csproj",
         "projectName": "HMS.Modules.Payments.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Application/HMS.Modules.Payments.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/ef93b263af09f825a47fb447c6dd4ccb/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -1064,6 +1064,16 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[14.2.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -1364,7 +1374,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Domain/HMS.Modules.Payments.Domain.csproj",
         "projectName": "HMS.Modules.Payments.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Domain/HMS.Modules.Payments.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/ef93b263af09f825a47fb447c6dd4ccb/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [

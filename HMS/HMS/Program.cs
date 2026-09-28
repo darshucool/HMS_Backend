@@ -3,6 +3,7 @@ using HMS.Modules.Finance.Api;
 using HMS.Modules.Guests.Api;
 using HMS.Modules.Hotels.Api;
 using HMS.Modules.Identity.Api;
+using HMS.Modules.Payments.Api;
 using Scalar.AspNetCore;
 
 namespace HMS
@@ -25,6 +26,8 @@ namespace HMS
             builder.Services.AddBookingModule(
                 builder.Configuration);
             builder.Services.AddFinanceModule(
+                builder.Configuration);
+            builder.Services.AddPaymentsModule(
                 builder.Configuration);
 
             var app = builder.Build();

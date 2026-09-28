@@ -835,7 +835,8 @@
         "dependencies": {
           "HMS.Contracts": "1.0.0",
           "HMS.Modules.Payments.Application": "1.0.0",
-          "HMS.Modules.Payments.Infrastructure": "1.0.0"
+          "HMS.Modules.Payments.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
         },
         "runtime": {
           "HMS.Modules.Payments.Api.dll": {
@@ -848,7 +849,8 @@
         "dependencies": {
           "HMS.Application.Abstractions": "1.0.0",
           "HMS.Contracts": "1.0.0",
-          "HMS.Modules.Payments.Domain": "1.0.0"
+          "HMS.Modules.Payments.Domain": "1.0.0",
+          "MediatR": "14.2.0"
         },
         "runtime": {
           "HMS.Modules.Payments.Application.dll": {
@@ -870,9 +872,11 @@
       },
       "HMS.Modules.Payments.Infrastructure/1.0.0": {
         "dependencies": {
+          "Dapper": "2.1.86",
           "HMS.Infrastructure": "1.0.0",
           "HMS.Modules.Payments.Application": "1.0.0",
-          "HMS.Modules.Payments.Domain": "1.0.0"
+          "HMS.Modules.Payments.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
         },
         "runtime": {
           "HMS.Modules.Payments.Infrastructure.dll": {

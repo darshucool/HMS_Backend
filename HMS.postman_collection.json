@@ -80,6 +80,21 @@
       "key": "bookingUnitUid",
       "value": "",
       "type": "string"
+    },
+    {
+      "key": "chargeTypeUid",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "chargeUid",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "paymentUid",
+      "value": "",
+      "type": "string"
     }
   ],
   "auth": {
@@ -1293,6 +1308,158 @@
               "path": ["api", "v1", "bookings", "{{bookingUid}}", "history"]
             },
             "description": "Returns the created event plus every row in booking_status_history, oldest first. Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Get Booking Financial Summary",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/financial-summary",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "financial-summary"]
+            },
+            "description": "Reads hotel.vw_booking_financial_summary. totalBookingValue is room revenue plus extra charges, minus the booking discount, plus tax and service charge. outstandingBalance is totalBookingValue minus completed payments plus completed refunds. Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Get Booking Invoice",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/invoice",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "invoice"]
+            },
+            "description": "Builds an invoice from the financial summary, property, lead guest, active room lines, charges, payments, and refunds. invoiceNumber is {invoiceNumberPrefix}-{bookingNumber}. Totals match the financial summary. Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Get Booking Charges",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/charges",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "charges"]
+            },
+            "description": "Lists active charges for the booking. Total is stored by the database as round((quantity * unit_price) - discount + tax, 2). Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Create Booking Charge",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.uid) pm.collectionVariables.set('chargeUid', json.uid);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"chargeTypeUid\": \"{{chargeTypeUid}}\",\n  \"bookingUnitUid\": null,\n  \"description\": \"Mini bar\",\n  \"quantity\": 2,\n  \"unitPrice\": 1500,\n  \"discountAmount\": 0,\n  \"taxAmount\": 0,\n  \"notes\": \"Room 12\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/charges",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "charges"]
+            },
+            "description": "Adds a charge. chargeTypeUid must be an active booking_charge_types row for the same property. Total amount is generated and cannot be sent. Requires manager access."
+          }
+        },
+        {
+          "name": "Update Booking Charge",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"chargeTypeUid\": \"{{chargeTypeUid}}\",\n  \"description\": \"Mini bar\",\n  \"quantity\": 1,\n  \"unitPrice\": 1500,\n  \"discountAmount\": 0,\n  \"taxAmount\": 150\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/booking-charges/{{chargeUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "booking-charges", "{{chargeUid}}"]
+            },
+            "description": "Updates an active charge. Requires manager access."
+          }
+        },
+        {
+          "name": "Delete Booking Charge",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/booking-charges/{{chargeUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "booking-charges", "{{chargeUid}}"]
+            },
+            "description": "Archives the charge. Returns 204. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Booking Payments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/payments",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "payments"]
+            },
+            "description": "Lists active payments. paymentMethod: CASH, BANK_TRANSFER, CARD, ONLINE_GATEWAY, CHEQUE, OTHER. paymentType: DEPOSIT, PAYMENT, ADJUSTMENT. Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Create Booking Payment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.uid) pm.collectionVariables.set('paymentUid', json.uid);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"paymentMethod\": 0,\n  \"paymentType\": 1,\n  \"amount\": 5000,\n  \"currency\": \"LKR\",\n  \"status\": 1,\n  \"referenceNumber\": \"RCPT-1001\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/payments",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "bookings", "{{bookingUid}}", "payments"]
+            },
+            "description": "Adds a payment. Enums are numbers: method Cash=0, BankTransfer=1, Card=2, OnlineGateway=3, Cheque=4, Other=5. Type Deposit=0, Payment=1, Adjustment=2. Status Pending=0, Completed=1, Failed=2, Cancelled=3. Requires manager access."
+          }
+        },
+        {
+          "name": "Refund Booking Payment",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 1000,\n  \"reason\": \"Overpayment\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/booking-payments/{{paymentUid}}/refund",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "booking-payments", "{{paymentUid}}", "refund"]
+            },
+            "description": "Refunds a completed payment. Amount cannot exceed the remaining balance after pending and completed refunds. Returns 201. Requires manager access."
           }
         },
         {
