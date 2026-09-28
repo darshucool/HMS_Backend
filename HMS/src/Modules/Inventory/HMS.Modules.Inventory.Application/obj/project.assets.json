@@ -80,7 +80,7 @@
     ]
   },
   "packageFolders": {
-    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/ef93b263af09f825a47fb447c6dd4ccb/nuget": {}
+    "/Users/jananiwithana/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -88,7 +88,7 @@
       "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Application/HMS.Modules.Inventory.Application.csproj",
       "projectName": "HMS.Modules.Inventory.Application",
       "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Application/HMS.Modules.Inventory.Application.csproj",
-      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/ef93b263af09f825a47fb447c6dd4ccb/nuget",
+      "packagesPath": "/Users/jananiwithana/.nuget/packages/",
       "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Application/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
