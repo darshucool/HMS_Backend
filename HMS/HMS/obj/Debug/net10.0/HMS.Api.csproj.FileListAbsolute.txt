@@ -367,3 +367,11 @@ D:/PROJECTS/HMS/Backend/HMS_Backend/HMS/HMS/obj/Debug/net10.0/ref/HMS.Api.dll
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Finance.Application.pdb
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Finance.Domain.pdb
 /Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Finance.Infrastructure.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Reports.Api.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Reports.Application.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Reports.Domain.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Reports.Infrastructure.dll
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Reports.Api.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Reports.Application.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Reports.Domain.pdb
+/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/bin/Debug/net10.0/HMS.Modules.Reports.Infrastructure.pdb

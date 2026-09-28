@@ -114,17 +114,32 @@
         {
           "name": "Super Admin Login",
           "request": {
-            "auth": { "type": "noauth" },
+            "auth": {
+              "type": "noauth"
+            },
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"email\": \"superadmin@hms.local\",\n  \"password\": \"SuperAdmin@123\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/super-admin/login",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "hotel", "auth", "super-admin", "login"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hotel",
+                "auth",
+                "super-admin",
+                "login"
+              ]
             },
             "description": "Dummy platform super admin. Email: superadmin@hms.local / Password: SuperAdmin@123. Returns PLATFORM_ADMIN JWT. No database user."
           },
@@ -149,17 +164,31 @@
         {
           "name": "Refresh Session",
           "request": {
-            "auth": { "type": "noauth" },
+            "auth": {
+              "type": "noauth"
+            },
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"refreshToken\": \"{{refreshToken}}\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/refresh-token",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "hotel", "auth", "refresh-token"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hotel",
+                "auth",
+                "refresh-token"
+              ]
             },
             "description": "Same endpoint for SuperAdmin, admin, and staff. Send the refreshToken from any login. Returns a new access token and a new refresh token. The previous refresh token is revoked. Call this when the access token expires."
           },
@@ -185,15 +214,28 @@
           "name": "Invite Property Admin",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"propertyUid\": \"{{propertyUid}}\",\n  \"email\": \"admin@abchotels.com\",\n  \"firstName\": \"Hotel\",\n  \"lastName\": \"Admin\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/admin/invite",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "hotel", "auth", "admin", "invite"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hotel",
+                "auth",
+                "admin",
+                "invite"
+              ]
             },
             "description": "Requires PLATFORM_ADMIN. Creates or reuses the admin for this property (login is email + password). Emails the Admin Login URL, email, temporary password, and instructions to reset password after first login. Email cannot be changed later.\n\nIf SMTP fails, response includes emailSent=false and temporaryPassword."
           },
@@ -216,15 +258,28 @@
           "name": "Register Admin",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"propertyUid\": \"{{propertyUid}}\",\n  \"email\": \"admin@abchotels.com\",\n  \"password\": \"Admin@123\",\n  \"firstName\": \"Hotel\",\n  \"lastName\": \"Admin\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/admin/register",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "hotel", "auth", "admin", "register"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hotel",
+                "auth",
+                "admin",
+                "register"
+              ]
             },
             "description": "Requires PLATFORM_ADMIN token. Creates HOTEL_ADMIN for the property. Login uses email + password (no username)."
           },
@@ -246,17 +301,32 @@
         {
           "name": "Admin Login",
           "request": {
-            "auth": { "type": "noauth" },
+            "auth": {
+              "type": "noauth"
+            },
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"email\": \"admin@abchotels.com\",\n  \"password\": \"Admin@123\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/admin/login",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "hotel", "auth", "admin", "login"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hotel",
+                "auth",
+                "admin",
+                "login"
+              ]
             },
             "description": "Hotel admin / manager login with email + password. propertyUid is optional. Response includes propertyUids. After first invite login, call Reset Admin Password."
           },
@@ -291,15 +361,28 @@
           "name": "Reset Admin Password",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"password\": \"Admin@12345\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/admin/credentials",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "hotel", "auth", "admin", "credentials"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hotel",
+                "auth",
+                "admin",
+                "credentials"
+              ]
             },
             "description": "Requires HOTEL_ADMIN / MANAGER token. Resets password only. Email cannot be changed. staffUid stays the same."
           }
@@ -308,15 +391,28 @@
           "name": "Register Staff",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"propertyUid\": \"{{propertyUid}}\",\n  \"email\": \"desk@abchotels.com\",\n  \"password\": \"Staff@123\",\n  \"firstName\": \"Front\",\n  \"lastName\": \"Desk\",\n  \"role\": \"FRONT_DESK\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/staff/register",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "hotel", "auth", "staff", "register"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hotel",
+                "auth",
+                "staff",
+                "register"
+              ]
             },
             "description": "Requires PLATFORM_ADMIN or HOTEL_ADMIN token. Allowed roles: FRONT_DESK, HOUSEKEEPING, RESTAURANT, BAR, CASHIER."
           }
@@ -324,17 +420,32 @@
         {
           "name": "Staff Login",
           "request": {
-            "auth": { "type": "noauth" },
+            "auth": {
+              "type": "noauth"
+            },
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"email\": \"desk@abchotels.com\",\n  \"password\": \"Staff@123\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/hotel/auth/staff/login",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "hotel", "auth", "staff", "login"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "hotel",
+                "auth",
+                "staff",
+                "login"
+              ]
             },
             "description": "Operational staff login with email + password. Also available at POST /api/hotel/auth/login. propertyUid is optional."
           },
@@ -368,8 +479,15 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/me/properties",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "me", "properties"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "me",
+                "properties"
+              ]
             },
             "description": "Lists properties the signed-in staff user can access."
           }
@@ -396,8 +514,15 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/platform/organizations",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "platform", "organizations"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "platform",
+                "organizations"
+              ]
             },
             "description": "POST /api/v1/platform/organizations. code and name are required."
           },
@@ -422,8 +547,15 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/platform/organizations?page=1&pageSize=20",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "platform", "organizations"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "platform",
+                "organizations"
+              ],
               "query": [
                 {
                   "key": "page",
@@ -454,8 +586,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/organizations/{{organizationUid}}/properties",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "organizations", "{{organizationUid}}", "properties"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "organizations",
+                "{{organizationUid}}",
+                "properties"
+              ]
             },
             "description": "Requires PLATFORM_ADMIN. Lists all non-archived properties for the organization."
           }
@@ -476,8 +616,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/organizations/{{organizationUid}}/properties",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "organizations", "{{organizationUid}}", "properties"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "organizations",
+                "{{organizationUid}}",
+                "properties"
+              ]
             },
             "description": "Requires PLATFORM_ADMIN. propertyType 0 = Hotel."
           },
@@ -502,8 +650,15 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}"
+              ]
             }
           }
         },
@@ -523,8 +678,15 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}"
+              ]
             },
             "description": "status 1 = Active. Requires manager access or PLATFORM_ADMIN."
           }
@@ -535,8 +697,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/settings",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "settings"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "settings"
+              ]
             }
           }
         },
@@ -556,8 +726,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/settings",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "settings"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "settings"
+              ]
             }
           }
         },
@@ -567,8 +745,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/availability?checkIn=2026-10-01&checkOut=2026-10-03&adults=2&children=0",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "availability"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "availability"
+              ],
               "query": [
                 {
                   "key": "checkIn",
@@ -601,8 +787,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/accommodation-types",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "accommodation-types"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "accommodation-types"
+              ]
             }
           }
         },
@@ -622,8 +816,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/accommodation-types",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "accommodation-types"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "accommodation-types"
+              ]
             },
             "description": "unitKind 0 = Room. Requires manager access."
           },
@@ -648,8 +850,15 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/accommodation-types/{{accommodationTypeUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "accommodation-types", "{{accommodationTypeUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "accommodation-types",
+                "{{accommodationTypeUid}}"
+              ]
             }
           }
         },
@@ -669,8 +878,15 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/accommodation-types/{{accommodationTypeUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "accommodation-types", "{{accommodationTypeUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "accommodation-types",
+                "{{accommodationTypeUid}}"
+              ]
             }
           }
         },
@@ -680,8 +896,15 @@
             "method": "DELETE",
             "url": {
               "raw": "{{baseUrl}}/api/v1/accommodation-types/{{accommodationTypeUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "accommodation-types", "{{accommodationTypeUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "accommodation-types",
+                "{{accommodationTypeUid}}"
+              ]
             },
             "description": "Soft-archives the accommodation type. Returns 204."
           }
@@ -697,8 +920,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/units",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "units"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "units"
+              ]
             }
           }
         },
@@ -718,8 +949,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/units",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "units"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "units"
+              ]
             },
             "description": "status 0 = Available, housekeepingStatus 0 = Clean."
           },
@@ -744,8 +983,15 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/units/{{unitUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "units", "{{unitUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "units",
+                "{{unitUid}}"
+              ]
             }
           }
         },
@@ -765,8 +1011,15 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/units/{{unitUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "units", "{{unitUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "units",
+                "{{unitUid}}"
+              ]
             }
           }
         },
@@ -786,8 +1039,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/units/{{unitUid}}/blocks",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "units", "{{unitUid}}", "blocks"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "units",
+                "{{unitUid}}",
+                "blocks"
+              ]
             },
             "description": "blockType 0 = Maintenance. endDate must be after startDate."
           },
@@ -812,8 +1073,15 @@
             "method": "DELETE",
             "url": {
               "raw": "{{baseUrl}}/api/v1/unit-blocks/{{unitBlockUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "unit-blocks", "{{unitBlockUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "unit-blocks",
+                "{{unitBlockUid}}"
+              ]
             },
             "description": "Soft-archives the block. Returns 204."
           }
@@ -829,8 +1097,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/meal-plans",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "meal-plans"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "meal-plans"
+              ]
             }
           }
         },
@@ -850,8 +1126,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/meal-plans",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "meal-plans"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "meal-plans"
+              ]
             }
           },
           "event": [
@@ -880,8 +1164,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/rate-plans",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "rate-plans"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "rate-plans"
+              ]
             }
           }
         },
@@ -901,8 +1193,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/rate-plans",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "rate-plans"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "rate-plans"
+              ]
             },
             "description": "pricingBasis 0 = PerRoomPerNight. mealPlanUid is optional; set null if unused."
           },
@@ -937,8 +1237,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/rate-plans/{{ratePlanUid}}/prices",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "rate-plans", "{{ratePlanUid}}", "prices"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "rate-plans",
+                "{{ratePlanUid}}",
+                "prices"
+              ]
             },
             "description": "endDate must be on or after startDate. dayOfWeek 0-6 or null. unitRate >= 0, minimumStay > 0."
           },
@@ -969,8 +1277,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/guests",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "guests"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "guests"
+              ],
               "query": [
                 {
                   "key": "search",
@@ -998,8 +1314,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/guests",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "guests"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "guests"
+              ]
             },
             "description": "guestType 0 = Individual. displayName is required unless first/last name can be combined. Requires manager access."
           },
@@ -1024,8 +1348,15 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "guests", "{{guestUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "guests",
+                "{{guestUid}}"
+              ]
             }
           }
         },
@@ -1045,8 +1376,15 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "guests", "{{guestUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "guests",
+                "{{guestUid}}"
+              ]
             },
             "description": "Requires manager access to a property in the guest's organization."
           }
@@ -1057,8 +1395,15 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/guests/search?phone=&name=Nimal&email=",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "guests", "search"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "guests",
+                "search"
+              ],
               "query": [
                 {
                   "key": "phone",
@@ -1093,8 +1438,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}/documents",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "guests", "{{guestUid}}", "documents"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "guests",
+                "{{guestUid}}",
+                "documents"
+              ]
             },
             "description": "documentType 0 = NIC. Number must be unique per organization and type."
           }
@@ -1115,8 +1468,16 @@
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}/preferences",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "guests", "{{guestUid}}", "preferences"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "guests",
+                "{{guestUid}}",
+                "preferences"
+              ]
             },
             "description": "preferenceType 0 = Room. Requires hotel.guest_preferences (run 003_guest_preferences.sql if the original schema is already applied)."
           }
@@ -1127,8 +1488,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}/booking-history",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "guests", "{{guestUid}}", "booking-history"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "guests",
+                "{{guestUid}}",
+                "booking-history"
+              ]
             }
           }
         }
@@ -1144,12 +1513,30 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/booking-calendar?from=2026-10-01&to=2026-10-31",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "booking-calendar"],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "booking-calendar"
+              ],
               "query": [
-                { "key": "from", "value": "2026-10-01" },
-                { "key": "to", "value": "2026-10-31" },
-                { "key": "accommodationTypeUid", "value": "{{accommodationTypeUid}}", "disabled": true }
+                {
+                  "key": "from",
+                  "value": "2026-10-01"
+                },
+                {
+                  "key": "to",
+                  "value": "2026-10-31"
+                },
+                {
+                  "key": "accommodationTypeUid",
+                  "value": "{{accommodationTypeUid}}",
+                  "disabled": true
+                }
               ]
             },
             "description": "Returns each unit with overlapping BOOKING and BLOCK segments. from is inclusive and to is exclusive. Optional accommodationTypeUid filters the units. Range cannot exceed 366 days."
@@ -1161,8 +1548,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/bookings",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "bookings"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "bookings"
+              ]
             }
           }
         },
@@ -1170,15 +1565,28 @@
           "name": "Create Booking",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"leadGuestUid\": \"{{guestUid}}\",\n  \"bookingSource\": 3,\n  \"checkInDate\": \"2026-10-01\",\n  \"checkOutDate\": \"2026-10-03\",\n  \"adults\": 2,\n  \"children\": 0,\n  \"infants\": 0,\n  \"currency\": \"LKR\",\n  \"specialRequests\": \"Late arrival\",\n  \"units\": [\n    {\n      \"accommodationTypeUid\": \"{{accommodationTypeUid}}\",\n      \"unitUid\": \"{{unitUid}}\",\n      \"pricingBasis\": 0,\n      \"unitRate\": 25000,\n      \"adults\": 2,\n      \"children\": 0,\n      \"unitQuantity\": 1,\n      \"guestCount\": 2\n    }\n  ]\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/bookings",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "bookings"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "bookings"
+              ]
             },
             "description": "bookingSource Direct=3. pricingBasis PerRoomPerNight=0. unitUid is optional. Status is PENDING. Requires manager access."
           }
@@ -1194,8 +1602,15 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}"
+              ]
             }
           }
         },
@@ -1203,15 +1618,27 @@
           "name": "Update Booking",
           "request": {
             "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"leadGuestUid\": \"{{guestUid}}\",\n  \"bookingSource\": 3,\n  \"status\": 3,\n  \"checkInDate\": \"2026-10-01\",\n  \"checkOutDate\": \"2026-10-04\",\n  \"adults\": 2,\n  \"children\": 0,\n  \"infants\": 0,\n  \"currency\": \"LKR\",\n  \"discountAmount\": 0,\n  \"taxAmount\": 0,\n  \"serviceCharge\": 0,\n  \"quotedTotal\": 75000,\n  \"specialRequests\": \"Late arrival\",\n  \"cancellationReason\": null\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}"
+              ]
             },
             "description": "status Confirmed=3, CheckedIn=4, CheckedOut=5, Cancelled=7. Cancellation requires cancellationReason. Status changes are written to booking_status_history. Requires manager access."
           }
@@ -1222,8 +1649,16 @@
             "method": "POST",
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/confirm",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "confirm"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "confirm"
+              ]
             },
             "description": "Sets status to CONFIRMED and marks held units as CONFIRMED. Requires manager access. Inquiry, pending, and tentative bookings can be confirmed."
           }
@@ -1234,8 +1669,16 @@
             "method": "POST",
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/check-in",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "check-in"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "check-in"
+              ]
             },
             "description": "Only a CONFIRMED booking can be checked in. Sets status CHECKED_IN, stores checked_in_at on the booking and its guests, and sets unit allocation to CHECKED_IN. Requires manager access."
           }
@@ -1246,8 +1689,16 @@
             "method": "POST",
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/check-out",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "check-out"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "check-out"
+              ]
             },
             "description": "Only a CHECKED_IN booking can be checked out. Sets status CHECKED_OUT, stores checked_out_at on the booking and its guests, and releases the units. Requires manager access."
           }
@@ -1256,15 +1707,28 @@
           "name": "Assign Booking Unit",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"bookingUnitUid\": \"{{bookingUnitUid}}\",\n  \"unitUid\": \"{{unitUid}}\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/assign-unit",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "assign-unit"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "assign-unit"
+              ]
             },
             "description": "Assigns a physical unit to one booking unit line. The unit must match the line's accommodation type. Overlapping active bookings return a conflict. Allocation stays HELD, CONFIRMED, or CHECKED_IN based on the booking status. Requires manager access."
           }
@@ -1273,15 +1737,28 @@
           "name": "Add Booking Guest",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"guestUid\": \"{{guestUid}}\",\n  \"bookingUnitUid\": null,\n  \"isLeadGuest\": false\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/guests",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "guests"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "guests"
+              ]
             },
             "description": "Adds an existing organization guest to the booking. bookingUnitUid is optional. isLeadGuest true replaces the current lead guest. Requires manager access."
           }
@@ -1292,8 +1769,17 @@
             "method": "DELETE",
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/guests/{{guestUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "guests", "{{guestUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "guests",
+                "{{guestUid}}"
+              ]
             },
             "description": "Archives the guest on this booking. The lead guest cannot be removed until another lead is assigned. Returns 204. Requires manager access."
           }
@@ -1304,20 +1790,357 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/history",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "history"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "history"
+              ]
             },
             "description": "Returns the created event plus every row in booking_status_history, oldest first. Anyone with property access can call it."
           }
         },
+        {
+          "name": "Cancel Booking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reason\": \"Guest requested cancellation\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/cancel",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "cancel"
+              ]
+            },
+            "description": "Sets status to CANCELLED, stores the reason, and releases held or confirmed units. Requires manager access."
+          }
+        }
+      ]
+    },
+    {
+      "name": "11 - Finance",
+      "item": [
+        {
+          "name": "Get Property Expenses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/expenses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "expenses"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Expense",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expenseCategoryUid\": \"{{expenseCategoryUid}}\",\n  \"supplierUid\": null,\n  \"bookingUid\": null,\n  \"expenseDate\": \"2026-10-05\",\n  \"description\": \"Kitchen supplies\",\n  \"amount\": 4500,\n  \"currency\": \"LKR\",\n  \"paymentMethod\": 0,\n  \"referenceNumber\": \"EXP-1001\",\n  \"notes\": null\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/expenses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "expenses"
+              ]
+            },
+            "description": "paymentMethod Cash=0, BankTransfer=1, Card=2, Cheque=3, Other=4. Category and optional supplier must belong to the property organization. Optional booking must belong to the property. Amount must be greater than zero. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Expense",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/expenses/{{expenseUid}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "expenses",
+                "{{expenseUid}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Expense",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expenseCategoryUid\": \"{{expenseCategoryUid}}\",\n  \"supplierUid\": null,\n  \"bookingUid\": null,\n  \"expenseDate\": \"2026-10-06\",\n  \"description\": \"Kitchen supplies\",\n  \"amount\": 5200,\n  \"currency\": \"LKR\",\n  \"paymentMethod\": 1,\n  \"referenceNumber\": \"EXP-1001\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/expenses/{{expenseUid}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "expenses",
+                "{{expenseUid}}"
+              ]
+            },
+            "description": "Requires manager access. Category, supplier, and booking rules match create."
+          }
+        },
+        {
+          "name": "Delete Expense",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/expenses/{{expenseUid}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "expenses",
+                "{{expenseUid}}"
+              ]
+            },
+            "description": "Archives the expense. Returns 204. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Property Utility Bills",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/utility-bills",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "utility-bills"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Utility Bill",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"utilityTypeUid\": \"{{utilityTypeUid}}\",\n  \"periodStart\": \"2026-09-01\",\n  \"periodEnd\": \"2026-09-30\",\n  \"previousReading\": 1200,\n  \"currentReading\": 1350,\n  \"amount\": 8500,\n  \"currency\": \"LKR\",\n  \"dueDate\": \"2026-10-15\",\n  \"referenceNumber\": \"CEB-0926\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/utility-bills",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "utility-bills"
+              ]
+            },
+            "description": "Utility type must belong to the property organization. periodEnd must be on or after periodStart. Amount cannot be negative. If both readings are sent, units used is current minus previous. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Utility Bill",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/utility-bills/{{utilityBillUid}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "utility-bills",
+                "{{utilityBillUid}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Utility Bill",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"utilityTypeUid\": \"{{utilityTypeUid}}\",\n  \"periodStart\": \"2026-09-01\",\n  \"periodEnd\": \"2026-09-30\",\n  \"previousReading\": 1200,\n  \"currentReading\": 1400,\n  \"amount\": 9200,\n  \"currency\": \"LKR\",\n  \"dueDate\": \"2026-10-15\",\n  \"paidAt\": \"2026-10-10T09:00:00Z\",\n  \"referenceNumber\": \"CEB-0926\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/utility-bills/{{utilityBillUid}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "utility-bills",
+                "{{utilityBillUid}}"
+              ]
+            },
+            "description": "Requires manager access. Same period, reading, and amount rules as create. Utility type must belong to the bill's organization."
+          }
+        },
+        {
+          "name": "Get Property Other Income",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/other-income",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "other-income"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Other Income",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"incomeCategoryUid\": \"{{incomeCategoryUid}}\",\n  \"bookingUid\": null,\n  \"incomeDate\": \"2026-10-05\",\n  \"description\": \"Laundry service\",\n  \"amount\": 2500,\n  \"currency\": \"LKR\",\n  \"paymentMethod\": 0,\n  \"referenceNumber\": \"INC-1001\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/other-income",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "other-income"
+              ]
+            },
+            "description": "Income category must belong to the property organization. Optional booking must belong to the property. Amount must be greater than zero. paymentMethod Cash=0, BankTransfer=1, Card=2, Cheque=3, Other=4. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Property Expense Categories",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/expense-categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "expense-categories"
+              ]
+            },
+            "description": "Returns the organization expense categories for the property. Use uid as expenseCategoryUid when creating an expense."
+          }
+        }
+      ]
+    },
+    {
+      "name": "12 - Payments",
+      "description": "Booking charges, payments, refunds, financial summary, and invoice. Implemented in the Payments module.",
+      "item": [
         {
           "name": "Get Booking Financial Summary",
           "request": {
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/financial-summary",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "financial-summary"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "financial-summary"
+              ]
             },
             "description": "Reads hotel.vw_booking_financial_summary. totalBookingValue is room revenue plus extra charges, minus the booking discount, plus tax and service charge. outstandingBalance is totalBookingValue minus completed payments plus completed refunds. Anyone with property access can call it."
           }
@@ -1328,8 +2151,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/invoice",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "invoice"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "invoice"
+              ]
             },
             "description": "Builds an invoice from the financial summary, property, lead guest, active room lines, charges, payments, and refunds. invoiceNumber is {invoiceNumberPrefix}-{bookingNumber}. Totals match the financial summary. Anyone with property access can call it."
           }
@@ -1340,8 +2171,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/charges",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "charges"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "charges"
+              ]
             },
             "description": "Lists active charges for the booking. Total is stored by the database as round((quantity * unit_price) - discount + tax, 2). Anyone with property access can call it."
           }
@@ -1362,15 +2201,28 @@
           ],
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"chargeTypeUid\": \"{{chargeTypeUid}}\",\n  \"bookingUnitUid\": null,\n  \"description\": \"Mini bar\",\n  \"quantity\": 2,\n  \"unitPrice\": 1500,\n  \"discountAmount\": 0,\n  \"taxAmount\": 0,\n  \"notes\": \"Room 12\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/charges",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "charges"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "charges"
+              ]
             },
             "description": "Adds a charge. chargeTypeUid must be an active booking_charge_types row for the same property. Total amount is generated and cannot be sent. Requires manager access."
           }
@@ -1379,15 +2231,27 @@
           "name": "Update Booking Charge",
           "request": {
             "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"chargeTypeUid\": \"{{chargeTypeUid}}\",\n  \"description\": \"Mini bar\",\n  \"quantity\": 1,\n  \"unitPrice\": 1500,\n  \"discountAmount\": 0,\n  \"taxAmount\": 150\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/booking-charges/{{chargeUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "booking-charges", "{{chargeUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "booking-charges",
+                "{{chargeUid}}"
+              ]
             },
             "description": "Updates an active charge. Requires manager access."
           }
@@ -1398,8 +2262,15 @@
             "method": "DELETE",
             "url": {
               "raw": "{{baseUrl}}/api/v1/booking-charges/{{chargeUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "booking-charges", "{{chargeUid}}"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "booking-charges",
+                "{{chargeUid}}"
+              ]
             },
             "description": "Archives the charge. Returns 204. Requires manager access."
           }
@@ -1410,8 +2281,16 @@
             "method": "GET",
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/payments",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "payments"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "payments"
+              ]
             },
             "description": "Lists active payments. paymentMethod: CASH, BANK_TRANSFER, CARD, ONLINE_GATEWAY, CHEQUE, OTHER. paymentType: DEPOSIT, PAYMENT, ADJUSTMENT. Anyone with property access can call it."
           }
@@ -1432,15 +2311,28 @@
           ],
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"paymentMethod\": 0,\n  \"paymentType\": 1,\n  \"amount\": 5000,\n  \"currency\": \"LKR\",\n  \"status\": 1,\n  \"referenceNumber\": \"RCPT-1001\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/payments",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "payments"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                "{{bookingUid}}",
+                "payments"
+              ]
             },
             "description": "Adds a payment. Enums are numbers: method Cash=0, BankTransfer=1, Card=2, OnlineGateway=3, Cheque=4, Other=5. Type Deposit=0, Payment=1, Adjustment=2. Status Pending=0, Completed=1, Failed=2, Cancelled=3. Requires manager access."
           }
@@ -1449,203 +2341,265 @@
           "name": "Refund Booking Payment",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"amount\": 1000,\n  \"reason\": \"Overpayment\"\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/booking-payments/{{paymentUid}}/refund",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "booking-payments", "{{paymentUid}}", "refund"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "booking-payments",
+                "{{paymentUid}}",
+                "refund"
+              ]
             },
             "description": "Refunds a completed payment. Amount cannot exceed the remaining balance after pending and completed refunds. Returns 201. Requires manager access."
-          }
-        },
-        {
-          "name": "Cancel Booking",
-          "request": {
-            "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"reason\": \"Guest requested cancellation\"\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}/cancel",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "bookings", "{{bookingUid}}", "cancel"]
-            },
-            "description": "Sets status to CANCELLED, stores the reason, and releases held or confirmed units. Requires manager access."
           }
         }
       ]
     },
     {
-      "name": "11 - Finance",
+      "name": "13 - Reports",
+      "description": "Property reports from the Reports module.",
       "item": [
         {
-          "name": "Get Property Expenses",
+          "name": "Get Monthly Property Summary",
           "request": {
             "method": "GET",
             "url": {
-              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/expenses",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "expenses"]
-            }
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/reports/monthly-summary?year=2026&month=8",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "reports",
+                "monthly-summary"
+              ],
+              "query": [
+                {
+                  "key": "year",
+                  "value": "2026"
+                },
+                {
+                  "key": "month",
+                  "value": "8"
+                }
+              ]
+            },
+            "description": "Reads hotel.vw_monthly_property_summary for the first day of the given month. Booking income includes confirmed, checked-in, checked-out, and completed bookings by check-in month. Staff and utility costs come from their own tables; other expenses exclude STAFF and UTILITY groups. A month with no activity returns zeros. Anyone with property access can call it."
           }
         },
         {
-          "name": "Create Expense",
-          "request": {
-            "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"expenseCategoryUid\": \"{{expenseCategoryUid}}\",\n  \"supplierUid\": null,\n  \"bookingUid\": null,\n  \"expenseDate\": \"2026-10-05\",\n  \"description\": \"Kitchen supplies\",\n  \"amount\": 4500,\n  \"currency\": \"LKR\",\n  \"paymentMethod\": 0,\n  \"referenceNumber\": \"EXP-1001\",\n  \"notes\": null\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/expenses",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "expenses"]
-            },
-            "description": "paymentMethod Cash=0, BankTransfer=1, Card=2, Cheque=3, Other=4. Category and optional supplier must belong to the property organization. Optional booking must belong to the property. Amount must be greater than zero. Requires manager access."
-          }
-        },
-        {
-          "name": "Get Expense",
-          "request": {
-            "method": "GET",
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/expenses/{{expenseUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "expenses", "{{expenseUid}}"]
-            }
-          }
-        },
-        {
-          "name": "Update Expense",
-          "request": {
-            "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"expenseCategoryUid\": \"{{expenseCategoryUid}}\",\n  \"supplierUid\": null,\n  \"bookingUid\": null,\n  \"expenseDate\": \"2026-10-06\",\n  \"description\": \"Kitchen supplies\",\n  \"amount\": 5200,\n  \"currency\": \"LKR\",\n  \"paymentMethod\": 1,\n  \"referenceNumber\": \"EXP-1001\"\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/expenses/{{expenseUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "expenses", "{{expenseUid}}"]
-            },
-            "description": "Requires manager access. Category, supplier, and booking rules match create."
-          }
-        },
-        {
-          "name": "Delete Expense",
-          "request": {
-            "method": "DELETE",
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/expenses/{{expenseUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "expenses", "{{expenseUid}}"]
-            },
-            "description": "Archives the expense. Returns 204. Requires manager access."
-          }
-        },
-        {
-          "name": "Get Property Utility Bills",
+          "name": "Get Booking Revenue",
           "request": {
             "method": "GET",
             "url": {
-              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/utility-bills",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "utility-bills"]
-            }
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/reports/booking-revenue",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "reports",
+                "booking-revenue"
+              ]
+            },
+            "description": "Lists active bookings from hotel.vw_booking_financial_summary, newest check-in first. totalBookingValue is room revenue plus extra charges, minus the booking discount, plus tax and service charge. paymentsReceived and refundsPaid count completed rows only. Anyone with property access can call it."
           }
         },
         {
-          "name": "Create Utility Bill",
-          "request": {
-            "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"utilityTypeUid\": \"{{utilityTypeUid}}\",\n  \"periodStart\": \"2026-09-01\",\n  \"periodEnd\": \"2026-09-30\",\n  \"previousReading\": 1200,\n  \"currentReading\": 1350,\n  \"amount\": 8500,\n  \"currency\": \"LKR\",\n  \"dueDate\": \"2026-10-15\",\n  \"referenceNumber\": \"CEB-0926\"\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/utility-bills",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "utility-bills"]
-            },
-            "description": "Utility type must belong to the property organization. periodEnd must be on or after periodStart. Amount cannot be negative. If both readings are sent, units used is current minus previous. Requires manager access."
-          }
-        },
-        {
-          "name": "Get Utility Bill",
+          "name": "Get Booking Profitability",
           "request": {
             "method": "GET",
             "url": {
-              "raw": "{{baseUrl}}/api/v1/utility-bills/{{utilityBillUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "utility-bills", "{{utilityBillUid}}"]
-            }
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/reports/booking-profitability",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "reports",
+                "booking-profitability"
+              ]
+            },
+            "description": "Lists hotel.vw_booking_profitability for the property, newest check-in first. estimatedProfit is total booking value minus direct expenses and allocated overhead. profitPerGuestNight is null when there are no adults or children, or no nights. Anyone with property access can call it."
           }
         },
         {
-          "name": "Update Utility Bill",
-          "request": {
-            "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"utilityTypeUid\": \"{{utilityTypeUid}}\",\n  \"periodStart\": \"2026-09-01\",\n  \"periodEnd\": \"2026-09-30\",\n  \"previousReading\": 1200,\n  \"currentReading\": 1400,\n  \"amount\": 9200,\n  \"currency\": \"LKR\",\n  \"dueDate\": \"2026-10-15\",\n  \"paidAt\": \"2026-10-10T09:00:00Z\",\n  \"referenceNumber\": \"CEB-0926\"\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/utility-bills/{{utilityBillUid}}",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "utility-bills", "{{utilityBillUid}}"]
-            },
-            "description": "Requires manager access. Same period, reading, and amount rules as create. Utility type must belong to the bill's organization."
-          }
-        },
-        {
-          "name": "Get Property Other Income",
+          "name": "Get Guest Profitability",
           "request": {
             "method": "GET",
             "url": {
-              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/other-income",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "other-income"]
-            }
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/reports/guest-profitability",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "reports",
+                "guest-profitability"
+              ]
+            },
+            "description": "Sums booking profitability by lead guest. A booking is counted once, on its lead guest. Anyone with property access can call it."
           }
         },
         {
-          "name": "Create Other Income",
-          "request": {
-            "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"incomeCategoryUid\": \"{{incomeCategoryUid}}\",\n  \"bookingUid\": null,\n  \"incomeDate\": \"2026-10-05\",\n  \"description\": \"Laundry service\",\n  \"amount\": 2500,\n  \"currency\": \"LKR\",\n  \"paymentMethod\": 0,\n  \"referenceNumber\": \"INC-1001\"\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/other-income",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "other-income"]
-            },
-            "description": "Income category must belong to the property organization. Optional booking must belong to the property. Amount must be greater than zero. paymentMethod Cash=0, BankTransfer=1, Card=2, Cheque=3, Other=4. Requires manager access."
-          }
-        },
-        {
-          "name": "Get Property Expense Categories",
+          "name": "Get Occupancy",
           "request": {
             "method": "GET",
             "url": {
-              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/expense-categories",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "v1", "properties", "{{propertyUid}}", "expense-categories"]
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/reports/occupancy",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "reports",
+                "occupancy"
+              ]
             },
-            "description": "Returns the organization expense categories for the property. Use uid as expenseCategoryUid when creating an expense."
+            "description": "Lists guest stays from hotel.vw_guest_booking_history, newest check-in first. Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Get Payment Summary",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/reports/payment-summary?year=2026&month=8",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "reports",
+                "payment-summary"
+              ],
+              "query": [
+                {
+                  "key": "year",
+                  "value": "2026"
+                },
+                {
+                  "key": "month",
+                  "value": "8"
+                }
+              ]
+            },
+            "description": "Reads hotel.vw_payment_method_summary for completed payments in the given month. One row per payment method and currency. Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Get Outstanding Balances",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/reports/outstanding-balances",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "reports",
+                "outstanding-balances"
+              ]
+            },
+            "description": "Lists bookings from hotel.vw_booking_financial_summary whose outstanding balance is greater than zero. Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Get Expense Report",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/reports/expenses?year=2026&month=8",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "reports",
+                "expenses"
+              ],
+              "query": [
+                {
+                  "key": "year",
+                  "value": "2026"
+                },
+                {
+                  "key": "month",
+                  "value": "8"
+                }
+              ]
+            },
+            "description": "Staff, utility, and general expenses for the month from hotel.vw_monthly_property_summary. A month with no activity returns zeros. Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Get Utility Report",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/reports/utilities?year=2026&month=8",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "properties",
+                "{{propertyUid}}",
+                "reports",
+                "utilities"
+              ],
+              "query": [
+                {
+                  "key": "year",
+                  "value": "2026"
+                },
+                {
+                  "key": "month",
+                  "value": "8"
+                }
+              ]
+            },
+            "description": "Reads hotel.vw_monthly_utility_summary for the given month, one row per utility type. Anyone with property access can call it."
           }
         }
       ]

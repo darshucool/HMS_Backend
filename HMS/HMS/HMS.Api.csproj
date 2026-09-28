@@ -31,6 +31,7 @@
     <ProjectReference Include="..\src\Modules\Payments\HMS.Modules.Payments.Api\HMS.Modules.Payments.Api.csproj" />
     <ProjectReference Include="..\src\Modules\PointOfSale\HMS.Modules.PointOfSale.Api\HMS.Modules.PointOfSale.Api.csproj" />
     <ProjectReference Include="..\src\Modules\Reporting\HMS.Modules.Reporting.Api\HMS.Modules.Reporting.Api.csproj" />
+    <ProjectReference Include="..\src\Modules\Reports\HMS.Modules.Reports.Api\HMS.Modules.Reports.Api.csproj" />
     <ProjectReference Include="..\src\Modules\Reservations\HMS.Modules.Reservations.Api\HMS.Modules.Reservations.Api.csproj" />
     <ProjectReference Include="..\src\Modules\WifiAccess\HMS.Modules.WifiAccess.Api\HMS.Modules.WifiAccess.Api.csproj" />
   </ItemGroup>

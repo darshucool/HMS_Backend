@@ -24,6 +24,7 @@
           "HMS.Modules.Payments.Api": "1.0.0",
           "HMS.Modules.PointOfSale.Api": "1.0.0",
           "HMS.Modules.Reporting.Api": "1.0.0",
+          "HMS.Modules.Reports.Api": "1.0.0",
           "HMS.Modules.Reservations.Api": "1.0.0",
           "HMS.Modules.WifiAccess.Api": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.12",
@@ -985,6 +986,53 @@
           }
         }
       },
+      "HMS.Modules.Reports.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Modules.Reports.Application": "1.0.0",
+          "HMS.Modules.Reports.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reports.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reports.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Modules.Reports.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reports.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reports.Domain/1.0.0": {
+        "runtime": {
+          "HMS.Modules.Reports.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reports.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Reports.Application": "1.0.0",
+          "HMS.Modules.Reports.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "runtime": {
+          "HMS.Modules.Reports.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "HMS.Modules.Reservations.Api/1.0.0": {
         "dependencies": {
           "HMS.Contracts": "1.0.0",
@@ -1524,6 +1572,26 @@
       "sha512": ""
     },
     "HMS.Modules.Reporting.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reports.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reports.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reports.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reports.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

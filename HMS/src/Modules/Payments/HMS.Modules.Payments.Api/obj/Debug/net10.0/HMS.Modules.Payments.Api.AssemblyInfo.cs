@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HMS.Modules.Payments.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3f6c876d9b96ca64f83b1504c36dd6e45fbcab8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6dabd35da1417e98816148851e65c0ecd617a7d0")]
 [assembly: System.Reflection.AssemblyProductAttribute("HMS.Modules.Payments.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HMS.Modules.Payments.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
