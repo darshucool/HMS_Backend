@@ -1,6 +1,10 @@
+using HMS.Modules.Booking.Api;
+using HMS.Modules.Finance.Api;
 using HMS.Modules.Guests.Api;
 using HMS.Modules.Hotels.Api;
 using HMS.Modules.Identity.Api;
+using HMS.Modules.Payments.Api;
+using HMS.Modules.Reports.Api;
 using Scalar.AspNetCore;
 
 namespace HMS
@@ -19,6 +23,14 @@ namespace HMS
             builder.Services.AddHotelsModule(
                 builder.Configuration);
             builder.Services.AddGuestsModule(
+                builder.Configuration);
+            builder.Services.AddBookingModule(
+                builder.Configuration);
+            builder.Services.AddFinanceModule(
+                builder.Configuration);
+            builder.Services.AddPaymentsModule(
+                builder.Configuration);
+            builder.Services.AddReportsModule(
                 builder.Configuration);
 
             var app = builder.Build();

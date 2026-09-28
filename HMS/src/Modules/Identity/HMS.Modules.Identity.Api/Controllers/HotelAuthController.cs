@@ -4,6 +4,7 @@ using HMS.Modules.Identity.Application.Authentication;
 using HMS.Modules.Identity.Application.Commands.InvitePropertyAdmin;
 using HMS.Modules.Identity.Application.Commands.LoginStaff;
 using HMS.Modules.Identity.Application.Commands.LoginSuperAdmin;
+using HMS.Modules.Identity.Application.Commands.RefreshSession;
 using HMS.Modules.Identity.Application.Commands.RegisterStaff;
 using HMS.Modules.Identity.Application.Commands.ResetAdminCredentials;
 using MediatR;
@@ -31,6 +32,26 @@ public sealed class HotelAuthController(
     {
         var result = await sender.Send(
             new LoginSuperAdminCommand(request.Email, request.Password),
+            cancellationToken);
+
+        return this.ToAuthResult(
+            result.IsSuccessful,
+            result.Data,
+            result.ErrorCode,
+            result.ErrorMessage);
+    }
+
+    [AllowAnonymous]
+    [HttpPost("refresh-token")]
+    [ProducesResponseType(typeof(StaffLoginResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    public async Task<IActionResult> RefreshToken(
+        [FromBody] RefreshTokenRequest request,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(
+            new RefreshSessionCommand(request.RefreshToken),
             cancellationToken);
 
         return this.ToAuthResult(

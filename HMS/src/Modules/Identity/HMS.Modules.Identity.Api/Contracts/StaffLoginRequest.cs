@@ -18,6 +18,9 @@ public sealed record InvitePropertyAdminRequest(
 public sealed record ResetAdminCredentialsRequest(
     string Password);
 
+public sealed record RefreshTokenRequest(
+    string RefreshToken);
+
 public sealed record RegisterAdminRequest(
     Guid PropertyUid,
     string Email,

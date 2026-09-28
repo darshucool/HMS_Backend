@@ -11,26 +11,27 @@ public sealed record LoginSuperAdminCommand(
 
 internal sealed class LoginSuperAdminCommandHandler(
     IStaffTokenService tokenService,
+    IRefreshTokenStore refreshTokenStore,
     TimeProvider timeProvider)
     : IRequestHandler<LoginSuperAdminCommand, LoginStaffResult>
 {
-    public Task<LoginStaffResult> Handle(
+    public async Task<LoginStaffResult> Handle(
         LoginSuperAdminCommand request,
         CancellationToken cancellationToken)
     {
         if (string.IsNullOrWhiteSpace(request.Email) ||
             string.IsNullOrWhiteSpace(request.Password))
         {
-            return Task.FromResult(LoginStaffResult.Failure(
+            return LoginStaffResult.Failure(
                 "validation_error",
-                "Email and password are required."));
+                "Email and password are required.");
         }
 
         if (!SuperAdminCredentials.Matches(request.Email, request.Password))
         {
-            return Task.FromResult(LoginStaffResult.Failure(
+            return LoginStaffResult.Failure(
                 "invalid_credentials",
-                "Invalid email or password."));
+                "Invalid email or password.");
         }
 
         var currentTime = timeProvider.GetUtcNow();
@@ -48,8 +49,13 @@ internal sealed class LoginSuperAdminCommandHandler(
         };
 
         var token = tokenService.Generate(staff, currentTime);
+        var refreshToken = await refreshTokenStore.IssueAsync(
+            staff.StaffUid,
+            null,
+            currentTime,
+            cancellationToken);
 
-        return Task.FromResult(LoginStaffResult.Success(
+        return LoginStaffResult.Success(
             new StaffLoginResponse(
                 staff.StaffUid,
                 staff.PropertyUid,
@@ -58,6 +64,8 @@ internal sealed class LoginSuperAdminCommandHandler(
                 staff.FullName,
                 staff.Roles,
                 token.AccessToken,
-                token.ExpiresAtUtc)));
+                token.ExpiresAtUtc,
+                refreshToken.RefreshToken,
+                refreshToken.ExpiresAtUtc));
     }
 }
