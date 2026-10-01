@@ -70,12 +70,29 @@ public sealed record CreateMealPlanRequest(
     bool IncludesDinner = false,
     bool AllowByo = false);
 
+public sealed record UpdateMealPlanRequest(
+    string Code,
+    string Name,
+    string? Description = null,
+    bool IncludesBreakfast = false,
+    bool IncludesLunch = false,
+    bool IncludesDinner = false,
+    bool AllowByo = false);
+
 public sealed record CreateRatePlanRequest(
     Guid AccommodationTypeUid,
     string Code,
     string Name,
     PricingBasis PricingBasis,
     Guid? MealPlanUid = null,
+    string Currency = "LKR",
+    string? Description = null,
+    bool IsRefundable = true);
+
+public sealed record UpdateRatePlanRequest(
+    string Code,
+    string Name,
+    PricingBasis PricingBasis,
     string Currency = "LKR",
     string? Description = null,
     bool IsRefundable = true);

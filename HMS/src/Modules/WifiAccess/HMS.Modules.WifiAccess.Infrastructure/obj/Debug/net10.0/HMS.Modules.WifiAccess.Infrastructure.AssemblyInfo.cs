@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HMS.Modules.WifiAccess.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcd0b83cb8f57d7c36d4b957ccd21d098e3ebe85")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb56d52776272e9998c5923d06ae9ee5cd352d5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("HMS.Modules.WifiAccess.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HMS.Modules.WifiAccess.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

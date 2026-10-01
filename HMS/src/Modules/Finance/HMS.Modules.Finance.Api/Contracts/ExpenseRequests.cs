@@ -2,6 +2,12 @@ using HMS.Modules.Finance.Domain.Enums;
 
 namespace HMS.Modules.Finance.Api.Contracts;
 
+public sealed record CreateExpenseCategoryRequest(
+    string Code,
+    string Name,
+    ExpenseGroup ExpenseGroup,
+    Guid? ParentUid = null);
+
 public sealed record CreateExpenseRequest(
     Guid ExpenseCategoryUid,
     DateOnly ExpenseDate,

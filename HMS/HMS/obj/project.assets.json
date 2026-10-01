@@ -1316,6 +1316,64 @@
           "bin/placeholder/HMS.Modules.Reservations.Infrastructure.dll": {}
         }
       },
+      "HMS.Modules.Staff.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Staff.Application": "1.0.0",
+          "HMS.Modules.Staff.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Staff.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Staff.Api.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "HMS.Modules.Staff.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Staff.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Staff.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Staff.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Staff.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/HMS.Modules.Staff.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Staff.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Staff.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Staff.Application": "1.0.0",
+          "HMS.Modules.Staff.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Staff.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Staff.Infrastructure.dll": {}
+        }
+      },
       "HMS.Modules.WifiAccess.Api/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -2184,6 +2242,26 @@
       "path": "../src/Modules/Reservations/HMS.Modules.Reservations.Infrastructure/HMS.Modules.Reservations.Infrastructure.csproj",
       "msbuildProject": "../src/Modules/Reservations/HMS.Modules.Reservations.Infrastructure/HMS.Modules.Reservations.Infrastructure.csproj"
     },
+    "HMS.Modules.Staff.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Staff/HMS.Modules.Staff.Api/HMS.Modules.Staff.Api.csproj",
+      "msbuildProject": "../src/Modules/Staff/HMS.Modules.Staff.Api/HMS.Modules.Staff.Api.csproj"
+    },
+    "HMS.Modules.Staff.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Staff/HMS.Modules.Staff.Application/HMS.Modules.Staff.Application.csproj",
+      "msbuildProject": "../src/Modules/Staff/HMS.Modules.Staff.Application/HMS.Modules.Staff.Application.csproj"
+    },
+    "HMS.Modules.Staff.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Staff/HMS.Modules.Staff.Domain/HMS.Modules.Staff.Domain.csproj",
+      "msbuildProject": "../src/Modules/Staff/HMS.Modules.Staff.Domain/HMS.Modules.Staff.Domain.csproj"
+    },
+    "HMS.Modules.Staff.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Staff/HMS.Modules.Staff.Infrastructure/HMS.Modules.Staff.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Staff/HMS.Modules.Staff.Infrastructure/HMS.Modules.Staff.Infrastructure.csproj"
+    },
     "HMS.Modules.WifiAccess.Api/1.0.0": {
       "type": "project",
       "path": "../src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/HMS.Modules.WifiAccess.Api.csproj",
@@ -2230,6 +2308,7 @@
       "HMS.Modules.Reporting.Api >= 1.0.0",
       "HMS.Modules.Reports.Api >= 1.0.0",
       "HMS.Modules.Reservations.Api >= 1.0.0",
+      "HMS.Modules.Staff.Api >= 1.0.0",
       "HMS.Modules.WifiAccess.Api >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.12",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.24.1-preview.1",
@@ -2315,6 +2394,9 @@
             },
             "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Api/HMS.Modules.Reservations.Api.csproj": {
               "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Api/HMS.Modules.Reservations.Api.csproj"
+            },
+            "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Api/HMS.Modules.Staff.Api.csproj": {
+              "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Api/HMS.Modules.Staff.Api.csproj"
             },
             "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/HMS.Modules.WifiAccess.Api.csproj": {
               "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/HMS.Modules.WifiAccess.Api.csproj"

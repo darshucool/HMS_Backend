@@ -666,6 +666,270 @@ namespace HMS.Modules.Identity.Infrastructure.Persistence.Repositories
                 cancellationToken: cancellationToken));
         }
 
+        public async Task<IReadOnlyList<PropertyAdminRecord>> GetPropertyAdminsAsync(
+            Guid propertyUid,
+            CancellationToken cancellationToken)
+        {
+            const string sql = """
+                SELECT
+                    su.uid              AS "AdminId",
+                    sp.property_uid     AS "PropertyUid",
+                    su.email            AS "Email",
+                    su.first_name       AS "FirstName",
+                    su.last_name        AS "LastName",
+                    (su.is_active AND sp.is_active) AS "IsActive",
+                    sp.assigned_at_utc  AS "AssignedAt"
+                FROM identity.staff_user su
+                JOIN identity.staff_property sp ON sp.staff_uid = su.uid
+                JOIN identity.staff_user_role sur ON sur.staff_property_uid = sp.uid
+                JOIN identity.staff_role sr ON sr.uid = sur.role_uid
+                WHERE sp.property_uid = @PropertyUid
+                  AND sr.code = 'HOTEL_ADMIN'
+                ORDER BY su.first_name, su.email;
+                """;
+
+            await using var connection = await _dataSource.OpenConnectionAsync(cancellationToken);
+            var rows = await connection.QueryAsync<PropertyAdminRow>(
+                new CommandDefinition(sql, new { PropertyUid = propertyUid }, cancellationToken: cancellationToken));
+            return rows.Select(ToAdmin).ToList();
+        }
+
+        public async Task<PropertyAdminRecord?> GetPropertyAdminAsync(
+            Guid propertyUid,
+            Guid adminId,
+            CancellationToken cancellationToken)
+        {
+            const string sql = """
+                SELECT
+                    su.uid              AS "AdminId",
+                    sp.property_uid     AS "PropertyUid",
+                    su.email            AS "Email",
+                    su.first_name       AS "FirstName",
+                    su.last_name        AS "LastName",
+                    (su.is_active AND sp.is_active) AS "IsActive",
+                    sp.assigned_at_utc  AS "AssignedAt"
+                FROM identity.staff_user su
+                JOIN identity.staff_property sp ON sp.staff_uid = su.uid
+                JOIN identity.staff_user_role sur ON sur.staff_property_uid = sp.uid
+                JOIN identity.staff_role sr ON sr.uid = sur.role_uid
+                WHERE sp.property_uid = @PropertyUid
+                  AND su.uid = @AdminId
+                  AND sr.code = 'HOTEL_ADMIN';
+                """;
+
+            await using var connection = await _dataSource.OpenConnectionAsync(cancellationToken);
+            var row = await connection.QuerySingleOrDefaultAsync<PropertyAdminRow>(
+                new CommandDefinition(
+                    sql,
+                    new { PropertyUid = propertyUid, AdminId = adminId },
+                    cancellationToken: cancellationToken));
+            return row is null ? null : ToAdmin(row);
+        }
+
+        public async Task<bool> UpdatePropertyAdminAsync(
+            Guid propertyUid,
+            Guid adminId,
+            string firstName,
+            string? lastName,
+            bool isActive,
+            CancellationToken cancellationToken)
+        {
+            await using var connection = await _dataSource.OpenConnectionAsync(cancellationToken);
+            var updated = await connection.ExecuteAsync(new CommandDefinition(
+                """
+                UPDATE identity.staff_user
+                SET first_name = @FirstName,
+                    last_name = @LastName,
+                    is_active = @IsActive,
+                    updated_at_utc = NOW()
+                WHERE uid = @AdminId
+                  AND EXISTS
+                  (
+                      SELECT 1
+                      FROM identity.staff_property sp
+                      JOIN identity.staff_user_role sur ON sur.staff_property_uid = sp.uid
+                      JOIN identity.staff_role sr ON sr.uid = sur.role_uid
+                      WHERE sp.staff_uid = identity.staff_user.uid
+                        AND sp.property_uid = @PropertyUid
+                        AND sr.code = 'HOTEL_ADMIN'
+                  );
+                """,
+                new
+                {
+                    PropertyUid = propertyUid,
+                    AdminId = adminId,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    IsActive = isActive
+                },
+                cancellationToken: cancellationToken));
+
+            if (updated == 0)
+                return false;
+
+            await connection.ExecuteAsync(new CommandDefinition(
+                """
+                UPDATE identity.staff_property
+                SET is_active = @IsActive
+                WHERE staff_uid = @AdminId
+                  AND property_uid = @PropertyUid;
+
+                UPDATE hotel.app_users
+                SET first_name = @FirstName,
+                    last_name = @LastName,
+                    is_active = @IsActive,
+                    status = CASE WHEN @IsActive THEN 'ACTIVE' ELSE 'DISABLED' END,
+                    modified_date = NOW()
+                WHERE auth_subject = @AdminId::text;
+
+                UPDATE hotel.user_property_access upa
+                SET is_active = @IsActive,
+                    modified_date = NOW()
+                FROM hotel.app_users u
+                JOIN hotel.properties p ON p.uid = @PropertyUid
+                WHERE upa.user_id = u.id
+                  AND upa.property_id = p.id
+                  AND u.auth_subject = @AdminId::text
+                  AND upa.role_code = 'PROPERTY_ADMIN';
+                """,
+                new
+                {
+                    PropertyUid = propertyUid,
+                    AdminId = adminId,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    IsActive = isActive
+                },
+                cancellationToken: cancellationToken));
+
+            return true;
+        }
+
+        public async Task<bool> RemovePropertyAdminAsync(
+            Guid propertyUid,
+            Guid adminId,
+            CancellationToken cancellationToken)
+        {
+            const string existsSql = """
+                SELECT EXISTS
+                (
+                    SELECT 1
+                    FROM identity.staff_property sp
+                    JOIN identity.staff_user_role sur ON sur.staff_property_uid = sp.uid
+                    JOIN identity.staff_role sr ON sr.uid = sur.role_uid
+                    WHERE sp.staff_uid = @AdminId
+                      AND sp.property_uid = @PropertyUid
+                      AND sr.code = 'HOTEL_ADMIN'
+                );
+                """;
+
+            await using var connection = await _dataSource.OpenConnectionAsync(cancellationToken);
+            await using var transaction = await connection.BeginTransactionAsync(cancellationToken);
+
+            var exists = await connection.ExecuteScalarAsync<bool>(new CommandDefinition(
+                existsSql,
+                new { PropertyUid = propertyUid, AdminId = adminId },
+                transaction,
+                cancellationToken: cancellationToken));
+
+            if (!exists)
+            {
+                await transaction.RollbackAsync(cancellationToken);
+                return false;
+            }
+
+            await connection.ExecuteAsync(new CommandDefinition(
+                """
+                DELETE FROM identity.staff_user_role sur
+                USING identity.staff_property sp, identity.staff_role sr
+                WHERE sur.staff_property_uid = sp.uid
+                  AND sur.role_uid = sr.uid
+                  AND sp.staff_uid = @AdminId
+                  AND sp.property_uid = @PropertyUid
+                  AND sr.code = 'HOTEL_ADMIN';
+
+                DELETE FROM identity.staff_property sp
+                WHERE sp.staff_uid = @AdminId
+                  AND sp.property_uid = @PropertyUid
+                  AND NOT EXISTS
+                  (
+                      SELECT 1
+                      FROM identity.staff_user_role sur
+                      WHERE sur.staff_property_uid = sp.uid
+                  );
+
+                DELETE FROM hotel.user_property_access upa
+                USING hotel.app_users u, hotel.properties p
+                WHERE upa.user_id = u.id
+                  AND upa.property_id = p.id
+                  AND p.uid = @PropertyUid
+                  AND u.auth_subject = @AdminId::text
+                  AND upa.role_code = 'PROPERTY_ADMIN';
+                """,
+                new { PropertyUid = propertyUid, AdminId = adminId },
+                transaction,
+                cancellationToken: cancellationToken));
+
+            var remainingProperties = await connection.ExecuteScalarAsync<int>(new CommandDefinition(
+                """
+                SELECT COUNT(*)
+                FROM identity.staff_property
+                WHERE staff_uid = @AdminId;
+                """,
+                new { AdminId = adminId },
+                transaction,
+                cancellationToken: cancellationToken));
+
+            if (remainingProperties == 0)
+            {
+                await connection.ExecuteAsync(new CommandDefinition(
+                    """
+                    DELETE FROM identity.staff_refresh_token
+                    WHERE staff_uid = @AdminId;
+
+                    DELETE FROM identity.staff_user
+                    WHERE uid = @AdminId;
+
+                    DELETE FROM hotel.app_users u
+                    WHERE u.auth_subject = @AdminId::text
+                      AND NOT EXISTS
+                      (
+                          SELECT 1
+                          FROM hotel.user_property_access upa
+                          WHERE upa.user_id = u.id
+                      );
+                    """,
+                    new { AdminId = adminId },
+                    transaction,
+                    cancellationToken: cancellationToken));
+            }
+
+            await transaction.CommitAsync(cancellationToken);
+            return true;
+        }
+
+        private static PropertyAdminRecord ToAdmin(PropertyAdminRow row) => new(
+            row.AdminId,
+            row.PropertyUid,
+            row.Email,
+            row.FirstName,
+            row.LastName,
+            row.IsActive,
+            row.AssignedAt.Kind == DateTimeKind.Unspecified
+                ? new DateTimeOffset(DateTime.SpecifyKind(row.AssignedAt, DateTimeKind.Utc))
+                : new DateTimeOffset(row.AssignedAt));
+
+        private sealed class PropertyAdminRow
+        {
+            public Guid AdminId { get; init; }
+            public Guid PropertyUid { get; init; }
+            public string? Email { get; init; }
+            public string FirstName { get; init; } = string.Empty;
+            public string? LastName { get; init; }
+            public bool IsActive { get; init; }
+            public DateTime AssignedAt { get; init; }
+        }
+
         private sealed class StaffLoginRow
         {
             public Guid StaffUid { get; init; }

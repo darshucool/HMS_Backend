@@ -117,7 +117,7 @@ internal sealed class InvitePropertyAdminCommandHandler(
         }
 
         var loginUrl = string.IsNullOrWhiteSpace(request.AdminLoginUrl)
-            ? "http://localhost:3000/admin/login"
+            ? "http://localhost:5174/login"
             : request.AdminLoginUrl.Trim();
 
         var emailResult = await emailSender.SendAsync(

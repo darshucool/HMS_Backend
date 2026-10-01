@@ -45,6 +45,7 @@ public sealed class MealPlanRepository(IHotelsDbConnectionFactory connectionFact
     public async Task<bool> CodeExistsAsync(
         long propertyId,
         string code,
+        Guid? excludeUid,
         CancellationToken cancellationToken)
     {
         const string sql = """
@@ -54,13 +55,19 @@ public sealed class MealPlanRepository(IHotelsDbConnectionFactory connectionFact
                 FROM hotel.meal_plans
                 WHERE property_id = @PropertyId
                   AND code = @Code
+                  AND (@ExcludeUid IS NULL OR uid <> @ExcludeUid)
             );
             """;
 
         await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
         return await connection.ExecuteScalarAsync<bool>(new CommandDefinition(
             sql,
-            new { PropertyId = propertyId, Code = code.Trim().ToUpperInvariant() },
+            new
+            {
+                PropertyId = propertyId,
+                Code = code.Trim().ToUpperInvariant(),
+                ExcludeUid = excludeUid
+            },
             cancellationToken: cancellationToken));
     }
 
@@ -100,6 +107,66 @@ public sealed class MealPlanRepository(IHotelsDbConnectionFactory connectionFact
                 mealPlan.IsArchived,
                 mealPlan.CreationDate,
                 mealPlan.CreatedBy
+            },
+            cancellationToken: cancellationToken));
+    }
+
+    public async Task UpdateAsync(MealPlan mealPlan, CancellationToken cancellationToken)
+    {
+        const string sql = """
+            UPDATE hotel.meal_plans
+            SET code = @Code,
+                name = @Name,
+                description = @Description,
+                includes_breakfast = @IncludesBreakfast,
+                includes_lunch = @IncludesLunch,
+                includes_dinner = @IncludesDinner,
+                allow_byo = @AllowByo,
+                modified_date = @ModifiedDate,
+                modified_by = @ModifiedBy
+            WHERE id = @Id
+              AND is_archived = false;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        await connection.ExecuteAsync(new CommandDefinition(
+            sql,
+            new
+            {
+                mealPlan.Id,
+                mealPlan.Code,
+                mealPlan.Name,
+                mealPlan.Description,
+                mealPlan.IncludesBreakfast,
+                mealPlan.IncludesLunch,
+                mealPlan.IncludesDinner,
+                mealPlan.AllowByo,
+                mealPlan.ModifiedDate,
+                mealPlan.ModifiedBy
+            },
+            cancellationToken: cancellationToken));
+    }
+
+    public async Task ArchiveAsync(MealPlan mealPlan, CancellationToken cancellationToken)
+    {
+        const string sql = """
+            UPDATE hotel.meal_plans
+            SET is_active = false,
+                is_archived = true,
+                modified_date = @ModifiedDate,
+                modified_by = @ModifiedBy
+            WHERE id = @Id
+              AND is_archived = false;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        await connection.ExecuteAsync(new CommandDefinition(
+            sql,
+            new
+            {
+                mealPlan.Id,
+                mealPlan.ModifiedDate,
+                mealPlan.ModifiedBy
             },
             cancellationToken: cancellationToken));
     }

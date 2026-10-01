@@ -75,6 +75,7 @@ public sealed class CreateRatePlanCommandHandler(
         if (await ratePlanRepository.CodeExistsAsync(
                 property.Id,
                 request.Code.Trim().ToUpperInvariant(),
+                null,
                 cancellationToken))
         {
             return HotelResult<RatePlanDto>.Conflict(

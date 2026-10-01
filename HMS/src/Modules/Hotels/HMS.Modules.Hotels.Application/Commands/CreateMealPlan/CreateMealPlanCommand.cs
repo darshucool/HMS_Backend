@@ -48,6 +48,7 @@ public sealed class CreateMealPlanCommandHandler(
         if (await mealPlanRepository.CodeExistsAsync(
                 property.Id,
                 request.Code.Trim().ToUpperInvariant(),
+                null,
                 cancellationToken))
         {
             return HotelResult<MealPlanDto>.Conflict(

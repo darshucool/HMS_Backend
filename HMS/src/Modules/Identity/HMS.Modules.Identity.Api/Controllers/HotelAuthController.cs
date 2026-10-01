@@ -120,7 +120,7 @@ public sealed class HotelAuthController(
                 request.FirstName,
                 request.LastName,
                 User.GetStaffUid(),
-                configuration["App:AdminLoginUrl"] ?? "http://localhost:3000/admin/login"),
+                configuration["App:AdminLoginUrl"] ?? "http://localhost:5174/login"),
             cancellationToken);
 
         return ToRegisterResult(result);
