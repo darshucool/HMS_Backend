@@ -27,6 +27,7 @@ public sealed record UpdateBookingCommand(
     string? InternalNotes,
     string? ExternalReference,
     string? CancellationReason,
+    string? GuestType,
     string ActorSubject,
     bool IsPlatformAdmin) : IRequest<BookingResult<BookingDetailDto>>;
 
@@ -60,6 +61,13 @@ public sealed class UpdateBookingCommandHandler(
         if (guest.OrganizationId != booking.OrganizationId)
             return BookingResult<BookingDetailDto>.Validation(
                 "Lead guest does not belong to this booking's organization.");
+
+        if (!string.IsNullOrWhiteSpace(request.GuestType) &&
+            !BookingGuestType.TryParse(request.GuestType, out _))
+        {
+            return BookingResult<BookingDetailDto>.Validation(
+                "Guest type must be Single, Couple, Family, Group, Corporate, or Travel Agent.");
+        }
 
         try
         {
@@ -98,6 +106,16 @@ public sealed class UpdateBookingCommandHandler(
         catch (InvalidOperationException exception)
         {
             return BookingResult<BookingDetailDto>.Conflict(exception.Message);
+        }
+
+        if (!string.IsNullOrWhiteSpace(request.GuestType) &&
+            BookingGuestType.TryParse(request.GuestType, out var guestType))
+        {
+            await bookingRepository.UpdateGuestTypeAsync(
+                guest.Id,
+                guestType,
+                request.ActorSubject,
+                cancellationToken);
         }
 
         var detail = await bookingRepository.GetDetailByUidAsync(request.BookingUid, cancellationToken);

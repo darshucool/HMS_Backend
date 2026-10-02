@@ -15,6 +15,7 @@ public static class DependencyInjection
         services.AddSingleton<IStaffDbConnectionFactory, StaffDbConnectionFactory>();
         services.AddScoped<IStaffPropertyAccess, StaffPropertyAccessRepository>();
         services.AddScoped<IStaffRepository, StaffRepository>();
+        services.AddScoped<IStaffRoleRepository, StaffRoleRepository>();
         return services;
     }
 }

@@ -34,6 +34,7 @@ public sealed record CreateBookingRequest(
     string? SpecialRequests = null,
     string? InternalNotes = null,
     string? ExternalReference = null,
+    string? GuestType = null,
     IReadOnlyList<CreateBookingUnitRequest>? Units = null);
 
 public sealed record UpdateBookingRequest(
@@ -55,7 +56,8 @@ public sealed record UpdateBookingRequest(
     string? SpecialRequests = null,
     string? InternalNotes = null,
     string? ExternalReference = null,
-    string? CancellationReason = null);
+    string? CancellationReason = null,
+    string? GuestType = null);
 
 public sealed record CancelBookingRequest(string Reason);
 

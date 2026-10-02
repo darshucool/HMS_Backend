@@ -200,6 +200,25 @@ public async Task UpdateAsync(UtilityBillEntity bill, CancellationToken cancella
         cancellationToken: cancellationToken));
 }
 
+public async Task DeleteAsync(long utilityBillId, string actorSubject, CancellationToken cancellationToken)
+{
+    const string sql = """
+        UPDATE hotel.utility_bills
+        SET is_active = false,
+            is_archived = true,
+            modified_date = CURRENT_TIMESTAMP,
+            modified_by = @ActorSubject
+        WHERE id = @UtilityBillId
+          AND is_archived = false;
+        """;
+
+    await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+    await connection.ExecuteAsync(new CommandDefinition(
+        sql,
+        new { UtilityBillId = utilityBillId, ActorSubject = actorSubject },
+        cancellationToken: cancellationToken));
+}
+
 private static UtilityBillEntity ToDomain(UtilityBillHeaderRow row) => UtilityBillEntity.Rehydrate(
     row.Id, row.Uid, row.OrganizationId, row.PropertyId, row.PropertyUid,
     row.UtilityTypeId, row.UtilityTypeUid, row.PeriodStart, row.PeriodEnd,

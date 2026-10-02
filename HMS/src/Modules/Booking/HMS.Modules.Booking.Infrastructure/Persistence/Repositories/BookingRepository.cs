@@ -1,5 +1,6 @@
 using Dapper;
 using HMS.Modules.Booking.Application.Abstractions;
+using HMS.Modules.Booking.Application.Common;
 using HMS.Modules.Booking.Application.DTOs;
 using HMS.Modules.Booking.Domain.Enums;
 using HotelBooking = HMS.Modules.Booking.Domain.Entities.Booking;
@@ -314,10 +315,57 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 rtrim(b.currency)       AS "Currency",
                 b.quoted_total          AS "QuotedTotal",
                 b.special_requests      AS "SpecialRequests",
-                b.creation_date         AS "CreationDate"
+                b.creation_date         AS "CreationDate",
+                g.guest_type            AS "GuestType",
+                g.phone                 AS "ContactNumber",
+                summary.booking_type    AS "BookingType",
+                summary.room_rate       AS "RoomRatePerNight",
+                COALESCE(f.room_revenue, 0) AS "TotalRoomRevenue",
+                pay.payment_method      AS "PaymentMethod",
+                COALESCE(charges.cooking_charges, 0) AS "CookingCharges",
+                COALESCE(charges.extra_charges, 0) AS "ExtraCharges",
+                COALESCE(f.total_booking_value, 0) AS "TotalBookingValue"
             FROM hotel.bookings b
             JOIN hotel.properties p ON p.id = b.property_id
             LEFT JOIN hotel.guests g ON g.id = b.lead_guest_id
+            LEFT JOIN hotel.vw_booking_financial_summary f ON f.booking_id = b.id
+            LEFT JOIN LATERAL (
+                SELECT
+                    bu.unit_rate AS room_rate,
+                    CASE
+                        WHEN mp.allow_byo THEN 'BYO'
+                        WHEN mp.includes_breakfast AND mp.includes_lunch AND mp.includes_dinner THEN 'FULL_BOARD'
+                        WHEN (mp.includes_breakfast::int + mp.includes_lunch::int + mp.includes_dinner::int) = 2 THEN 'HALF_BOARD'
+                        WHEN mp.id IS NOT NULL THEN mp.name
+                        ELSE NULL
+                    END AS booking_type
+                FROM hotel.booking_units bu
+                LEFT JOIN hotel.meal_plans mp ON mp.id = bu.meal_plan_id
+                WHERE bu.booking_id = b.id
+                  AND bu.is_archived = false
+                  AND bu.allocation_status <> 'CANCELLED'
+                ORDER BY bu.id
+                LIMIT 1
+            ) summary ON true
+            LEFT JOIN LATERAL (
+                SELECT
+                    COALESCE(SUM(c.total_amount) FILTER (WHERE ct.category = 'COOKING'), 0) AS cooking_charges,
+                    COALESCE(SUM(c.total_amount) FILTER (WHERE ct.category <> 'COOKING'), 0) AS extra_charges
+                FROM hotel.booking_charges c
+                JOIN hotel.booking_charge_types ct ON ct.id = c.charge_type_id
+                WHERE c.booking_id = b.id
+                  AND c.is_archived = false
+                  AND c.is_active = true
+            ) charges ON true
+            LEFT JOIN LATERAL (
+                SELECT payment_method
+                FROM hotel.booking_payments
+                WHERE booking_id = b.id
+                  AND is_archived = false
+                  AND status = 'COMPLETED'
+                ORDER BY paid_at DESC
+                LIMIT 1
+            ) pay ON true
             WHERE p.uid = @PropertyUid
               AND b.is_archived = false
             ORDER BY b.check_in_date DESC, b.creation_date DESC;
@@ -571,12 +619,15 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
             cancellationToken: cancellationToken))).AsList();
 
         var nights = booking.CheckOutDate.DayNumber - booking.CheckInDate.DayNumber;
+        var summary = await GetSummaryAsync(connection, booking.Id, cancellationToken)
+            ?? EmptySummary(booking, guestName);
         return new BookingDetailDto(
             booking.Uid,
             booking.PropertyUid,
             booking.BookingNumber,
             booking.LeadGuestUid,
             guestName,
+            summary.GuestType,
             booking.BookingSource.ToDatabaseValue(),
             booking.ExternalReference,
             booking.Status.ToDatabaseValue(),
@@ -618,7 +669,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
             guests.Select(guest => new BookingGuestDto(
                 guest.GuestUid,
                 guest.DisplayName,
-                guest.IsLeadGuest)).ToList());
+                guest.IsLeadGuest)).ToList(),
+            summary);
     }
 
     public async Task<BookingUnitContext?> GetBookingUnitAsync(
@@ -1144,12 +1196,35 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         }
     }
 
+    public async Task UpdateGuestTypeAsync(
+        long guestId,
+        string guestType,
+        string actorSubject,
+        CancellationToken cancellationToken)
+    {
+        const string sql = """
+            UPDATE hotel.guests
+            SET guest_type = @GuestType,
+                modified_date = CURRENT_TIMESTAMP,
+                modified_by = @ActorSubject
+            WHERE id = @GuestId
+              AND is_archived = false;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        await connection.ExecuteAsync(new CommandDefinition(
+            sql,
+            new { GuestId = guestId, GuestType = guestType, ActorSubject = actorSubject },
+            cancellationToken: cancellationToken));
+    }
+
     private static BookingDto ToDto(BookingListRow row) => new(
         row.Uid,
         row.PropertyUid,
         row.BookingNumber,
         row.LeadGuestUid,
         row.LeadGuestName,
+        BookingGuestType.ToDisplay(row.GuestType),
         row.BookingSource,
         row.Status,
         row.CheckInDate,
@@ -1161,7 +1236,122 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         row.Currency,
         row.QuotedTotal,
         row.SpecialRequests,
-        ToDateTimeOffset(row.CreationDate));
+        ToDateTimeOffset(row.CreationDate),
+        ToSummary(row));
+
+    private async Task<BookingSummaryDto?> GetSummaryAsync(
+        Npgsql.NpgsqlConnection connection,
+        long bookingId,
+        CancellationToken cancellationToken)
+    {
+        const string sql = """
+            SELECT
+                g.display_name          AS "LeadGuestName",
+                g.guest_type            AS "GuestType",
+                g.phone                 AS "ContactNumber",
+                b.check_in_date         AS "CheckInDate",
+                b.check_out_date        AS "CheckOutDate",
+                b.number_of_nights      AS "Nights",
+                b.adults                AS "Adults",
+                b.children              AS "Children",
+                b.infants               AS "Infants",
+                b.special_requests      AS "SpecialRequests",
+                summary.booking_type    AS "BookingType",
+                summary.room_rate       AS "RoomRatePerNight",
+                COALESCE(f.room_revenue, 0) AS "TotalRoomRevenue",
+                pay.payment_method      AS "PaymentMethod",
+                COALESCE(charges.cooking_charges, 0) AS "CookingCharges",
+                COALESCE(charges.extra_charges, 0) AS "ExtraCharges",
+                COALESCE(f.total_booking_value, 0) AS "TotalBookingValue"
+            FROM hotel.bookings b
+            LEFT JOIN hotel.guests g ON g.id = b.lead_guest_id
+            LEFT JOIN hotel.vw_booking_financial_summary f ON f.booking_id = b.id
+            LEFT JOIN LATERAL (
+                SELECT
+                    bu.unit_rate AS room_rate,
+                    CASE
+                        WHEN mp.allow_byo THEN 'BYO'
+                        WHEN mp.includes_breakfast AND mp.includes_lunch AND mp.includes_dinner THEN 'FULL_BOARD'
+                        WHEN (mp.includes_breakfast::int + mp.includes_lunch::int + mp.includes_dinner::int) = 2 THEN 'HALF_BOARD'
+                        WHEN mp.id IS NOT NULL THEN mp.name
+                        ELSE NULL
+                    END AS booking_type
+                FROM hotel.booking_units bu
+                LEFT JOIN hotel.meal_plans mp ON mp.id = bu.meal_plan_id
+                WHERE bu.booking_id = b.id
+                  AND bu.is_archived = false
+                  AND bu.allocation_status <> 'CANCELLED'
+                ORDER BY bu.id
+                LIMIT 1
+            ) summary ON true
+            LEFT JOIN LATERAL (
+                SELECT
+                    COALESCE(SUM(c.total_amount) FILTER (WHERE ct.category = 'COOKING'), 0) AS cooking_charges,
+                    COALESCE(SUM(c.total_amount) FILTER (WHERE ct.category <> 'COOKING'), 0) AS extra_charges
+                FROM hotel.booking_charges c
+                JOIN hotel.booking_charge_types ct ON ct.id = c.charge_type_id
+                WHERE c.booking_id = b.id
+                  AND c.is_archived = false
+                  AND c.is_active = true
+            ) charges ON true
+            LEFT JOIN LATERAL (
+                SELECT payment_method
+                FROM hotel.booking_payments
+                WHERE booking_id = b.id
+                  AND is_archived = false
+                  AND status = 'COMPLETED'
+                ORDER BY paid_at DESC
+                LIMIT 1
+            ) pay ON true
+            WHERE b.id = @BookingId;
+            """;
+
+        var row = await connection.QuerySingleOrDefaultAsync<BookingListRow>(
+            new CommandDefinition(sql, new { BookingId = bookingId }, cancellationToken: cancellationToken));
+        return row is null ? null : ToSummary(row);
+    }
+
+    private static BookingSummaryDto ToSummary(BookingListRow row)
+    {
+        var people = row.Adults + row.Children + row.Infants;
+        return new BookingSummaryDto(
+            row.LeadGuestName,
+            BookingGuestType.ToDisplay(row.GuestType),
+            row.ContactNumber,
+            row.CheckInDate,
+            row.CheckOutDate,
+            people,
+            row.Nights,
+            row.BookingType,
+            row.RoomRatePerNight,
+            row.TotalRoomRevenue,
+            row.PaymentMethod,
+            row.CookingCharges,
+            row.ExtraCharges,
+            row.TotalBookingValue,
+            people > 0 ? Math.Round(row.TotalBookingValue / people, 2) : null,
+            row.SpecialRequests);
+    }
+
+    private static BookingSummaryDto EmptySummary(HotelBooking booking, string? guestName) => new(
+        guestName,
+        null,
+        null,
+        booking.CheckInDate,
+        booking.CheckOutDate,
+        booking.Adults + booking.Children + booking.Infants,
+        booking.CheckOutDate.DayNumber - booking.CheckInDate.DayNumber,
+        null,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        booking.SpecialRequests);
+
+    private static string? ToGuestType(string? guestType) => BookingGuestType.ToDisplay(guestType);
 
     private static DateTimeOffset ToDateTimeOffset(DateTime value) =>
         value.Kind == DateTimeKind.Unspecified
@@ -1187,6 +1377,15 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         public decimal? QuotedTotal { get; init; }
         public string? SpecialRequests { get; init; }
         public DateTime CreationDate { get; init; }
+        public string? GuestType { get; init; }
+        public string? ContactNumber { get; init; }
+        public string? BookingType { get; init; }
+        public decimal? RoomRatePerNight { get; init; }
+        public decimal TotalRoomRevenue { get; init; }
+        public string? PaymentMethod { get; init; }
+        public decimal CookingCharges { get; init; }
+        public decimal ExtraCharges { get; init; }
+        public decimal TotalBookingValue { get; init; }
     }
 
     private static DateTimeOffset? ToDateTimeOffset(DateTime? value) =>

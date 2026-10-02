@@ -58,6 +58,7 @@ public sealed class BookingsController(ISender sender) : ControllerBase
             request.InternalNotes,
             request.ExternalReference,
             request.CancellationReason,
+            request.GuestType,
             User.GetRequiredSubject(),
             User.IsPlatformAdmin()), cancellationToken);
 

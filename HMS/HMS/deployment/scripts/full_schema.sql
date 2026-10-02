@@ -378,6 +378,7 @@ CREATE TABLE hotel.guests
     preferred_language  varchar(10),
     address             text,
     city                varchar(100),
+    identity_number     varchar(100),
     country_code        char(2),
     notes               text,
     is_active           boolean NOT NULL DEFAULT true,

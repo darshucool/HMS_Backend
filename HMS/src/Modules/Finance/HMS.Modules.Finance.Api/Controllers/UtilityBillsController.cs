@@ -1,4 +1,5 @@
 using HMS.Modules.Finance.Api.Contracts;
+using HMS.Modules.Finance.Application.Commands.DeleteUtilityBill;
 using HMS.Modules.Finance.Application.Commands.UpdateUtilityBill;
 using HMS.Modules.Finance.Application.Queries.GetUtilityBill;
 using MediatR;
@@ -47,5 +48,18 @@ public sealed class UtilityBillsController(ISender sender) : ControllerBase
             User.IsPlatformAdmin()), cancellationToken);
 
         return this.ToActionResult(result);
+    }
+
+    [HttpDelete("{utilityBillUid:guid}")]
+    public async Task<IActionResult> Delete(
+        Guid utilityBillUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new DeleteUtilityBillCommand(
+            utilityBillUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return result.IsSuccess ? NoContent() : this.ToActionResult(result);
     }
 }

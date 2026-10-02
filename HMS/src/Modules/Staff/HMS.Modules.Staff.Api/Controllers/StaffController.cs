@@ -1,8 +1,11 @@
 using HMS.Modules.Staff.Api.Contracts;
 using HMS.Modules.Staff.Application.Commands.CreateStaffPayment;
+using HMS.Modules.Staff.Application.Commands.CreateStaffRole;
 using HMS.Modules.Staff.Application.Commands.CreateStaffWorkLog;
+using HMS.Modules.Staff.Application.Commands.DeleteStaffRole;
 using HMS.Modules.Staff.Application.Commands.UpdateStaffMember;
 using HMS.Modules.Staff.Application.Queries.GetStaffMember;
+using HMS.Modules.Staff.Application.Queries.GetStaffRoles;
 using HMS.Modules.Staff.Application.Queries.GetStaffWorkLogs;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -16,6 +19,53 @@ namespace HMS.Modules.Staff.Api.Controllers;
 [Authorize]
 public sealed class StaffController(ISender sender) : ControllerBase
 {
+    [HttpPost("/api/v1/properties/{propertyUid:guid}/staff-roles")]
+    public async Task<IActionResult> CreateRole(
+        Guid propertyUid,
+        [FromBody] CreateStaffRoleRequest request,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new CreateStaffRoleCommand(
+            propertyUid,
+            request.Name,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return result.IsSuccess
+            ? StatusCode(StatusCodes.Status201Created, result.Value)
+            : this.ToActionResult(result);
+    }
+
+    [HttpGet("/api/v1/properties/{propertyUid:guid}/staff-roles")]
+    public async Task<IActionResult> GetRoles(
+        Guid propertyUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new GetStaffRolesQuery(
+            propertyUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return this.ToActionResult(result);
+    }
+
+    [HttpDelete("/api/v1/properties/{propertyUid:guid}/staff-roles/{staffRoleUid:guid}")]
+    public async Task<IActionResult> DeleteRole(
+        Guid propertyUid,
+        Guid staffRoleUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new DeleteStaffRoleCommand(
+            propertyUid,
+            staffRoleUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return result.IsSuccess
+            ? NoContent()
+            : this.ToActionResult(result);
+    }
+
     [HttpGet("{staffUid:guid}")]
     public async Task<IActionResult> Get(
         Guid staffUid,

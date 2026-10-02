@@ -24,6 +24,7 @@ public sealed record CreateGuestCommand(
     string? City,
     string? CountryCode,
     string? Notes,
+    string? IdentityNumber,
     string ActorSubject,
     bool IsPlatformAdmin) : IRequest<GuestResult<GuestDto>>;
 
@@ -72,6 +73,7 @@ public sealed class CreateGuestCommandHandler(
                 request.City,
                 request.CountryCode,
                 request.Notes,
+                request.IdentityNumber,
                 request.ActorSubject);
         }
         catch (ArgumentException exception)

@@ -70,6 +70,7 @@ public sealed class GuestsController(ISender sender) : ControllerBase
             request.City,
             request.CountryCode,
             request.Notes,
+            request.IdentityNumber,
             request.IsActive,
             User.GetRequiredSubject(),
             User.IsPlatformAdmin()), cancellationToken);

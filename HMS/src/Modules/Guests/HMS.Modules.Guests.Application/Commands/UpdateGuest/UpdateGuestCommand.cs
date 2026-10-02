@@ -23,6 +23,7 @@ public sealed record UpdateGuestCommand(
     string? City,
     string? CountryCode,
     string? Notes,
+    string? IdentityNumber,
     bool IsActive,
     string ActorSubject,
     bool IsPlatformAdmin) : IRequest<GuestResult<GuestDto>>;
@@ -68,6 +69,7 @@ public sealed class UpdateGuestCommandHandler(
                 request.City,
                 request.CountryCode,
                 request.Notes,
+                request.IdentityNumber,
                 request.IsActive,
                 request.ActorSubject);
         }

@@ -19,7 +19,8 @@ public sealed record GuestDto(
     string? CountryCode,
     string? Notes,
     bool IsActive,
-    DateTimeOffset CreationDate);
+    DateTimeOffset CreationDate,
+    string? IdentityNumber);
 
 public sealed record GuestDocumentDto(
     Guid Uid,

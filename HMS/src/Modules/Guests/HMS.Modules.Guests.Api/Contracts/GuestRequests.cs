@@ -17,7 +17,8 @@ public sealed record CreateGuestRequest(
     string? Address = null,
     string? City = null,
     string? CountryCode = null,
-    string? Notes = null);
+    string? Notes = null,
+    string? IdentityNumber = null);
 
 public sealed record UpdateGuestRequest(
     string? DisplayName = null,
@@ -35,7 +36,8 @@ public sealed record UpdateGuestRequest(
     string? City = null,
     string? CountryCode = null,
     string? Notes = null,
-    bool IsActive = true);
+    bool IsActive = true,
+    string? IdentityNumber = null);
 
 public sealed record CreateGuestDocumentRequest(
     string DocumentNumber,

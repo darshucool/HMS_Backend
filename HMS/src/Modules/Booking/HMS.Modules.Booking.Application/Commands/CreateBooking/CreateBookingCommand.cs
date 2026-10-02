@@ -40,6 +40,7 @@ public sealed record CreateBookingCommand(
     string? SpecialRequests,
     string? InternalNotes,
     string? ExternalReference,
+    string? GuestType,
     IReadOnlyList<CreateBookingUnit> Units,
     string ActorSubject,
     bool IsPlatformAdmin) : IRequest<BookingResult<BookingDto>>;
@@ -73,6 +74,13 @@ public sealed class CreateBookingCommandHandler(
 
         if (guest.OrganizationId != property.OrganizationId)
             return BookingResult<BookingDto>.Validation("Lead guest does not belong to this property's organization.");
+
+        if (!string.IsNullOrWhiteSpace(request.GuestType) &&
+            !BookingGuestType.TryParse(request.GuestType, out _))
+        {
+            return BookingResult<BookingDto>.Validation(
+                "Guest type must be Single, Couple, Family, Group, Corporate, or Travel Agent.");
+        }
 
         var nights = request.CheckOutDate.DayNumber - request.CheckInDate.DayNumber;
         var lines = new List<BookingUnitLine>();
@@ -201,23 +209,39 @@ public sealed class CreateBookingCommandHandler(
             return BookingResult<BookingDto>.Conflict(exception.Message);
         }
 
+        if (!string.IsNullOrWhiteSpace(request.GuestType) &&
+            BookingGuestType.TryParse(request.GuestType, out var guestType))
+        {
+            await bookingRepository.UpdateGuestTypeAsync(
+                guest.Id,
+                guestType,
+                request.ActorSubject,
+                cancellationToken);
+        }
+
+        var created = await bookingRepository.GetDetailByUidAsync(booking.Uid, cancellationToken);
+        if (created is null)
+            return BookingResult<BookingDto>.NotFound("Booking was not found.");
+
         return BookingResult<BookingDto>.Success(new BookingDto(
-            booking.Uid,
-            booking.PropertyUid,
-            booking.BookingNumber,
-            booking.LeadGuestUid,
-            null,
-            booking.BookingSource.ToDatabaseValue(),
-            "PENDING",
-            booking.CheckInDate,
-            booking.CheckOutDate,
-            nights,
-            booking.Adults,
-            booking.Children,
-            booking.Infants,
-            booking.Currency,
-            booking.QuotedTotal,
-            booking.SpecialRequests,
-            booking.CreationDate));
+            created.Uid,
+            created.PropertyUid,
+            created.BookingNumber,
+            created.LeadGuestUid,
+            created.LeadGuestName,
+            created.GuestType,
+            created.BookingSource,
+            created.Status,
+            created.CheckInDate,
+            created.CheckOutDate,
+            created.Nights,
+            created.Adults,
+            created.Children,
+            created.Infants,
+            created.Currency,
+            created.QuotedTotal,
+            created.SpecialRequests,
+            created.CreationDate,
+            created.Summary));
     }
 }

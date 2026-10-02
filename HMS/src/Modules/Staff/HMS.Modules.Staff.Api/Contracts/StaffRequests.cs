@@ -2,6 +2,8 @@ using HMS.Modules.Staff.Domain.Enums;
 
 namespace HMS.Modules.Staff.Api.Contracts;
 
+public sealed record CreateStaffRoleRequest(string Name);
+
 public sealed record UpsertStaffMemberRequest(
     Guid StaffRoleUid,
     string EmployeeNumber,

@@ -21,6 +21,7 @@ public sealed class Guest : AuditableEntity
     public DateOnly? DateOfBirth { get; private set; }
     public string? PreferredLanguage { get; private set; }
     public string? Address { get; private set; }
+    public string? IdentityNumber { get; private set; }
     public string? City { get; private set; }
     public string? CountryCode { get; private set; }
     public string? Notes { get; private set; }
@@ -43,6 +44,7 @@ public sealed class Guest : AuditableEntity
         string? city,
         string? countryCode,
         string? notes,
+        string? identityNumber,
         string actorSubject)
     {
         var cleanedFirstName = Optional(firstName, nameof(firstName), 100);
@@ -75,7 +77,8 @@ public sealed class Guest : AuditableEntity
             Address = Optional(address, nameof(address), 2000),
             City = Optional(city, nameof(city), 100),
             CountryCode = OptionalCountryCode(countryCode, nameof(countryCode)),
-            Notes = Optional(notes, nameof(notes), 4000)
+            Notes = Optional(notes, nameof(notes), 4000),
+            IdentityNumber = Optional(identityNumber, nameof(identityNumber), 100)
         };
 
         guest.MarkCreated(actorSubject);
@@ -98,6 +101,7 @@ public sealed class Guest : AuditableEntity
         string? city,
         string? countryCode,
         string? notes,
+        string? identityNumber,
         bool isActive,
         string actorSubject)
     {
@@ -127,6 +131,7 @@ public sealed class Guest : AuditableEntity
         City = Optional(city, nameof(city), 100);
         CountryCode = OptionalCountryCode(countryCode, nameof(countryCode));
         Notes = Optional(notes, nameof(notes), 4000);
+        IdentityNumber = Optional(identityNumber, nameof(identityNumber), 100);
         IsActive = isActive;
         MarkModified(actorSubject);
     }
@@ -151,6 +156,7 @@ public sealed class Guest : AuditableEntity
         string? city,
         string? countryCode,
         string? notes,
+        string? identityNumber,
         bool isActive,
         bool isArchived,
         DateTimeOffset creationDate,
@@ -178,6 +184,7 @@ public sealed class Guest : AuditableEntity
             City = city,
             CountryCode = countryCode,
             Notes = notes,
+            IdentityNumber = identityNumber,
             IsActive = isActive,
             IsArchived = isArchived,
             CreationDate = creationDate,

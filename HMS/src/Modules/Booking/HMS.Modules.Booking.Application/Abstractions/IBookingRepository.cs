@@ -104,6 +104,11 @@ public interface IBookingRepository
     Task<BookingEntity?> GetByUidAsync(Guid bookingUid, CancellationToken cancellationToken);
     Task<DTOs.BookingDetailDto?> GetDetailByUidAsync(Guid bookingUid, CancellationToken cancellationToken);
     Task UpdateAsync(BookingEntity booking, CancellationToken cancellationToken);
+    Task UpdateGuestTypeAsync(
+        long guestId,
+        string guestType,
+        string actorSubject,
+        CancellationToken cancellationToken);
     Task AssignUnitAsync(
         long bookingUnitId,
         long unitId,

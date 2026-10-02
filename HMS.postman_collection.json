@@ -1553,7 +1553,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"displayName\": \"Nimal Perera\",\n  \"firstName\": \"Nimal\",\n  \"lastName\": \"Perera\",\n  \"title\": \"Mr\",\n  \"guestType\": 0,\n  \"phone\": \"+94771234567\",\n  \"alternatePhone\": null,\n  \"email\": \"nimal@example.com\",\n  \"nationalityCode\": \"LK\",\n  \"dateOfBirth\": \"1990-05-12\",\n  \"preferredLanguage\": \"en\",\n  \"address\": \"Colombo\",\n  \"city\": \"Colombo\",\n  \"countryCode\": \"LK\",\n  \"notes\": null\n}"
+              "raw": "{\n  \"displayName\": \"Nimal Perera\",\n  \"firstName\": \"Nimal\",\n  \"lastName\": \"Perera\",\n  \"title\": \"Mr\",\n  \"guestType\": 0,\n  \"phone\": \"+94771234567\",\n  \"email\": \"nimal@example.com\",\n  \"nationalityCode\": \"LK\",\n  \"countryCode\": \"LK\",\n  \"identityNumber\": \"199012345678\",\n  \"notes\": null\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/guests",
@@ -1568,7 +1568,7 @@
                 "guests"
               ]
             },
-            "description": "guestType 0 = Individual. displayName is required unless first/last name can be combined. Requires manager access."
+            "description": "guestType 0 = Individual. identityNumber is the guest NIC or passport number, stored as a string on the guest. displayName is required unless first/last name can be combined. Requires manager access."
           },
           "event": [
             {
@@ -1615,7 +1615,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"displayName\": \"Nimal Perera\",\n  \"firstName\": \"Nimal\",\n  \"lastName\": \"Perera\",\n  \"title\": \"Mr\",\n  \"guestType\": 0,\n  \"phone\": \"+94771234567\",\n  \"alternatePhone\": null,\n  \"email\": \"nimal@example.com\",\n  \"nationalityCode\": \"LK\",\n  \"dateOfBirth\": \"1990-05-12\",\n  \"preferredLanguage\": \"en\",\n  \"address\": \"Colombo\",\n  \"city\": \"Colombo\",\n  \"countryCode\": \"LK\",\n  \"notes\": null,\n  \"isActive\": true\n}"
+              "raw": "{\n  \"displayName\": \"Nimal Perera\",\n  \"firstName\": \"Nimal\",\n  \"lastName\": \"Perera\",\n  \"guestType\": 0,\n  \"phone\": \"+94771234567\",\n  \"identityNumber\": \"199012345678\",\n  \"isActive\": true\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/guests/{{guestUid}}",
@@ -1801,7 +1801,8 @@
                 "{{propertyUid}}",
                 "bookings"
               ]
-            }
+            },
+            "description": "Lists bookings for the property, newest check-in first. guestType and summary.guestType are strings: Single, Couple, Family, Group, Corporate, or Travel Agent. summary also includes contactNumber, dates, numberOfPeople, nights, bookingType, roomRatePerNight, totalRoomRevenue, paymentMethod, cookingCharges, extraCharges, totalBookingValue, averagePerPerson, and notes."
           }
         },
         {
@@ -1816,7 +1817,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"leadGuestUid\": \"{{guestUid}}\",\n  \"bookingSource\": 3,\n  \"checkInDate\": \"2026-10-01\",\n  \"checkOutDate\": \"2026-10-03\",\n  \"adults\": 2,\n  \"children\": 0,\n  \"infants\": 0,\n  \"currency\": \"LKR\",\n  \"specialRequests\": \"Late arrival\",\n  \"units\": [\n    {\n      \"accommodationTypeUid\": \"{{accommodationTypeUid}}\",\n      \"unitUid\": \"{{unitUid}}\",\n      \"pricingBasis\": 0,\n      \"unitRate\": 25000,\n      \"adults\": 2,\n      \"children\": 0,\n      \"unitQuantity\": 1,\n      \"guestCount\": 2\n    }\n  ]\n}"
+              "raw": "{\n  \"leadGuestUid\": \"{{guestUid}}\",\n  \"guestType\": \"Couple\",\n  \"bookingSource\": 3,\n  \"checkInDate\": \"2026-10-01\",\n  \"checkOutDate\": \"2026-10-03\",\n  \"adults\": 2,\n  \"children\": 0,\n  \"infants\": 0,\n  \"currency\": \"LKR\",\n  \"specialRequests\": \"Late arrival\",\n  \"units\": [\n    {\n      \"accommodationTypeUid\": \"{{accommodationTypeUid}}\",\n      \"unitUid\": \"{{unitUid}}\",\n      \"pricingBasis\": 0,\n      \"unitRate\": 25000,\n      \"adults\": 2,\n      \"children\": 0,\n      \"unitQuantity\": 1,\n      \"guestCount\": 2\n    }\n  ]\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/bookings",
@@ -1831,7 +1832,7 @@
                 "bookings"
               ]
             },
-            "description": "bookingSource Direct=3. pricingBasis PerRoomPerNight=0. unitUid is optional. Status is PENDING. Requires manager access."
+            "description": "bookingSource Direct=3. guestType is a string: Single, Couple, Family, Group, Corporate, or Travel Agent. It is saved on the lead guest. pricingBasis PerRoomPerNight=0. unitUid is optional. Status is PENDING. Requires manager access."
           }
         }
       ]
@@ -1854,7 +1855,8 @@
                 "bookings",
                 "{{bookingUid}}"
               ]
-            }
+            },
+            "description": "Returns the booking with guestType as a string (Single, Couple, Family, Group, Corporate, or Travel Agent), plus rooms, guests, and summary."
           }
         },
         {
@@ -1869,7 +1871,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"leadGuestUid\": \"{{guestUid}}\",\n  \"bookingSource\": 3,\n  \"status\": 3,\n  \"checkInDate\": \"2026-10-01\",\n  \"checkOutDate\": \"2026-10-04\",\n  \"adults\": 2,\n  \"children\": 0,\n  \"infants\": 0,\n  \"currency\": \"LKR\",\n  \"discountAmount\": 0,\n  \"taxAmount\": 0,\n  \"serviceCharge\": 0,\n  \"quotedTotal\": 75000,\n  \"specialRequests\": \"Late arrival\",\n  \"cancellationReason\": null\n}"
+              "raw": "{\n  \"leadGuestUid\": \"{{guestUid}}\",\n  \"guestType\": \"Family\",\n  \"bookingSource\": 3,\n  \"status\": 3,\n  \"checkInDate\": \"2026-10-01\",\n  \"checkOutDate\": \"2026-10-04\",\n  \"adults\": 2,\n  \"children\": 0,\n  \"infants\": 0,\n  \"currency\": \"LKR\",\n  \"discountAmount\": 0,\n  \"taxAmount\": 0,\n  \"serviceCharge\": 0,\n  \"quotedTotal\": 75000,\n  \"specialRequests\": \"Late arrival\",\n  \"cancellationReason\": null\n}"
             },
             "url": {
               "raw": "{{baseUrl}}/api/v1/bookings/{{bookingUid}}",
@@ -1883,7 +1885,7 @@
                 "{{bookingUid}}"
               ]
             },
-            "description": "status Confirmed=3, CheckedIn=4, CheckedOut=5, Cancelled=7. Cancellation requires cancellationReason. Status changes are written to booking_status_history. Requires manager access."
+            "description": "status Confirmed=3, CheckedIn=4, CheckedOut=5, Cancelled=7. guestType is a string: Single, Couple, Family, Group, Corporate, or Travel Agent. Cancellation requires cancellationReason. Status changes are written to booking_status_history. Requires manager access."
           }
         },
         {
@@ -2237,7 +2239,7 @@
           }
         },
         {
-          "name": "Create Utility Type - Electricity",
+          "name": "Create Utility Type",
           "request": {
             "method": "POST",
             "header": [
@@ -2263,7 +2265,7 @@
                 "utility-types"
               ]
             },
-            "description": "Creates an organization utility type. Requires manager access. Electricity saves uid as utilityTypeUid for Create Utility Bill."
+            "description": "Creates an organization utility type. code must be unique for the organization. For non-metered types such as Internet, send unitOfMeasure as null and isMetered as false. Saves uid as utilityTypeUid for Create Utility Bill. Requires manager access."
           },
           "event": [
             {
@@ -2277,96 +2279,6 @@
               }
             }
           ]
-        },
-        {
-          "name": "Create Utility Type - Water",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"code\": \"WATER\",\n  \"name\": \"Water\",\n  \"unitOfMeasure\": \"m3\",\n  \"isMetered\": true\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/utility-types",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "v1",
-                "properties",
-                "{{propertyUid}}",
-                "utility-types"
-              ]
-            },
-            "description": "Creates an organization utility type. Requires manager access."
-          }
-        },
-        {
-          "name": "Create Utility Type - Gas",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"code\": \"GAS\",\n  \"name\": \"Gas\",\n  \"unitOfMeasure\": \"kg\",\n  \"isMetered\": true\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/utility-types",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "v1",
-                "properties",
-                "{{propertyUid}}",
-                "utility-types"
-              ]
-            },
-            "description": "Creates an organization utility type. Requires manager access."
-          }
-        },
-        {
-          "name": "Create Utility Type - Internet",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"code\": \"INTERNET\",\n  \"name\": \"Internet\",\n  \"unitOfMeasure\": null,\n  \"isMetered\": false\n}"
-            },
-            "url": {
-              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/utility-types",
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "path": [
-                "api",
-                "v1",
-                "properties",
-                "{{propertyUid}}",
-                "utility-types"
-              ]
-            },
-            "description": "Creates an organization utility type. Requires manager access."
-          }
         },
         {
           "name": "Get Utility Type",
@@ -2515,6 +2427,18 @@
               ]
             },
             "description": "Requires manager access. Same period, reading, and amount rules as create. Utility type must belong to the bill's organization."
+          }
+        },
+        {
+          "name": "Delete Utility Bill",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/utility-bills/{{utilityBillUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "utility-bills", "{{utilityBillUid}}"]
+            },
+            "description": "Archives the utility bill. Returns 204. Requires manager access."
           }
         },
         {
@@ -3135,6 +3059,59 @@
               ]
             },
             "description": "Lists active staff for the property. Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Create Staff Role",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const json = pm.response.json();",
+                  "if (json.id) pm.collectionVariables.set('staffRoleUid', json.id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Front Desk\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/staff-roles",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "staff-roles"]
+            },
+            "description": "Creates a staff role for the property organization. Body is only the role name. Response is id and name. Saves id as staffRoleUid for Create Staff Member. Requires manager access."
+          }
+        },
+        {
+          "name": "Get Staff Roles",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/staff-roles",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "staff-roles"]
+            },
+            "description": "Lists active staff roles for the property organization. Each item is id and name. Anyone with property access can call it."
+          }
+        },
+        {
+          "name": "Delete Staff Role",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/properties/{{propertyUid}}/staff-roles/{{staffRoleUid}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "properties", "{{propertyUid}}", "staff-roles", "{{staffRoleUid}}"]
+            },
+            "description": "Archives the role. Returns 204. Refused while staff members still use it. Requires manager access."
           }
         },
         {

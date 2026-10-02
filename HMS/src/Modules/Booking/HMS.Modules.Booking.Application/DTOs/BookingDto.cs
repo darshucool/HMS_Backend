@@ -6,6 +6,7 @@ public sealed record BookingDto(
     string BookingNumber,
     Guid? LeadGuestUid,
     string? LeadGuestName,
+    string? GuestType,
     string BookingSource,
     string Status,
     DateOnly CheckInDate,
@@ -17,7 +18,8 @@ public sealed record BookingDto(
     string Currency,
     decimal? QuotedTotal,
     string? SpecialRequests,
-    DateTimeOffset CreationDate);
+    DateTimeOffset CreationDate,
+    BookingSummaryDto Summary);
 
 public sealed record BookingUnitDto(
     Guid Uid,
@@ -61,6 +63,7 @@ public sealed record BookingDetailDto(
     string BookingNumber,
     Guid? LeadGuestUid,
     string? LeadGuestName,
+    string? GuestType,
     string BookingSource,
     string? ExternalReference,
     string Status,
@@ -86,5 +89,24 @@ public sealed record BookingDetailDto(
     DateTimeOffset? CancelledAt,
     DateTimeOffset CreationDate,
     IReadOnlyList<BookingUnitDto> Units,
-    IReadOnlyList<BookingGuestDto> Guests);
+    IReadOnlyList<BookingGuestDto> Guests,
+    BookingSummaryDto Summary);
+
+public sealed record BookingSummaryDto(
+    string? GuestName,
+    string? GuestType,
+    string? ContactNumber,
+    DateOnly CheckInDate,
+    DateOnly CheckOutDate,
+    int NumberOfPeople,
+    int Nights,
+    string? BookingType,
+    decimal? RoomRatePerNight,
+    decimal TotalRoomRevenue,
+    string? PaymentMethod,
+    decimal CookingCharges,
+    decimal ExtraCharges,
+    decimal TotalBookingValue,
+    decimal? AveragePerPerson,
+    string? Notes);
 

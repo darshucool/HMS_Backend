@@ -50,6 +50,7 @@ public sealed class PropertyBookingsController(ISender sender) : ControllerBase
             request.SpecialRequests,
             request.InternalNotes,
             request.ExternalReference,
+            request.GuestType,
             request.Units?.Select(unit => new CreateBookingUnit(
                 unit.AccommodationTypeUid,
                 unit.PricingBasis,

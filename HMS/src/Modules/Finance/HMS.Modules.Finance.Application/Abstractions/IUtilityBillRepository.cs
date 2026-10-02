@@ -20,4 +20,5 @@ public interface IUtilityBillRepository
     Task<UtilityBillEntity?> GetByUidAsync(Guid utilityBillUid, CancellationToken cancellationToken);
     Task<UtilityBillDto?> GetDetailByUidAsync(Guid utilityBillUid, CancellationToken cancellationToken);
     Task UpdateAsync(UtilityBillEntity bill, CancellationToken cancellationToken);
+    Task DeleteAsync(long utilityBillId, string actorSubject, CancellationToken cancellationToken);
 }
