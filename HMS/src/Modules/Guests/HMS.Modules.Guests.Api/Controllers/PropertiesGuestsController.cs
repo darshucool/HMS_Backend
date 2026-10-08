@@ -51,6 +51,7 @@ public sealed class PropertiesGuestsController(ISender sender) : ControllerBase
             request.City,
             request.CountryCode,
             request.Notes,
+            request.IdentityNumber,
             User.GetRequiredSubject(),
             User.IsPlatformAdmin()), cancellationToken);
 

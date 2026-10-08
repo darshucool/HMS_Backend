@@ -7,6 +7,7 @@ namespace HMS.Modules.Identity.Application.Commands.LoginStaff;
 internal sealed class LoginStaffCommandHandler(
     IStaffRepository staffRepository,
     IStaffTokenService tokenService,
+    IRefreshTokenStore refreshTokenStore,
     IPasswordHasher<StaffLoginRecord> passwordHasher,
     TimeProvider timeProvider)
     : IRequestHandler<LoginStaffCommand, LoginStaffResult>
@@ -86,6 +87,11 @@ internal sealed class LoginStaffCommandHandler(
             cancellationToken);
 
         var token = tokenService.Generate(staff, currentTime);
+        var refreshToken = await refreshTokenStore.IssueAsync(
+            staff.StaffUid,
+            staff.PropertyUid == Guid.Empty ? null : staff.PropertyUid,
+            currentTime,
+            cancellationToken);
 
         return LoginStaffResult.Success(
             new StaffLoginResponse(
@@ -96,7 +102,9 @@ internal sealed class LoginStaffCommandHandler(
                 staff.FullName,
                 staff.Roles,
                 token.AccessToken,
-                token.ExpiresAtUtc));
+                token.ExpiresAtUtc,
+                refreshToken.RefreshToken,
+                refreshToken.ExpiresAtUtc));
     }
 
     private static LoginStaffResult InvalidCredentials() =>

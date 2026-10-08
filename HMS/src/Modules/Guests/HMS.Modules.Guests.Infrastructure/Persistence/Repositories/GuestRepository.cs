@@ -16,14 +16,14 @@ public sealed class GuestRepository(IGuestsDbConnectionFactory connectionFactory
             (
                 uid, organization_id, guest_type, title, first_name, last_name,
                 display_name, phone, alternate_phone, email, nationality_code,
-                date_of_birth, preferred_language, address, city, country_code,
+                date_of_birth, preferred_language, address, city, country_code, identity_number,
                 notes, is_active, is_archived, creation_date, created_by
             )
             VALUES
             (
                 @Uid, @OrganizationId, @GuestType, @Title, @FirstName, @LastName,
                 @DisplayName, @Phone, @AlternatePhone, @Email, @NationalityCode,
-                @DateOfBirth, @PreferredLanguage, @Address, @City, @CountryCode,
+                @DateOfBirth, @PreferredLanguage, @Address, @City, @CountryCode, @IdentityNumber,
                 @Notes, @IsActive, @IsArchived, @CreationDate, @CreatedBy
             );
             """;
@@ -53,6 +53,7 @@ public sealed class GuestRepository(IGuestsDbConnectionFactory connectionFactory
                 address = @Address,
                 city = @City,
                 country_code = @CountryCode,
+                identity_number = @IdentityNumber,
                 notes = @Notes,
                 is_active = @IsActive,
                 modified_date = @ModifiedDate,
@@ -90,6 +91,7 @@ public sealed class GuestRepository(IGuestsDbConnectionFactory connectionFactory
                 g.address               AS "Address",
                 g.city                  AS "City",
                 rtrim(g.country_code)   AS "CountryCode",
+                g.identity_number       AS "IdentityNumber",
                 g.notes                 AS "Notes",
                 g.is_active             AS "IsActive",
                 g.is_archived           AS "IsArchived",
@@ -132,6 +134,7 @@ public sealed class GuestRepository(IGuestsDbConnectionFactory connectionFactory
                 g.address               AS "Address",
                 g.city                  AS "City",
                 rtrim(g.country_code)   AS "CountryCode",
+                g.identity_number       AS "IdentityNumber",
                 g.notes                 AS "Notes",
                 g.is_active             AS "IsActive",
                 g.creation_date         AS "CreationDate"
@@ -191,6 +194,7 @@ public sealed class GuestRepository(IGuestsDbConnectionFactory connectionFactory
                 g.address               AS "Address",
                 g.city                  AS "City",
                 rtrim(g.country_code)   AS "CountryCode",
+                g.identity_number       AS "IdentityNumber",
                 g.notes                 AS "Notes",
                 g.is_active             AS "IsActive",
                 g.creation_date         AS "CreationDate"
@@ -299,6 +303,7 @@ public sealed class GuestRepository(IGuestsDbConnectionFactory connectionFactory
         guest.Address,
         guest.City,
         guest.CountryCode,
+        guest.IdentityNumber,
         guest.Notes,
         guest.IsActive,
         guest.IsArchived,
@@ -328,6 +333,7 @@ public sealed class GuestRepository(IGuestsDbConnectionFactory connectionFactory
         row.City,
         row.CountryCode,
         row.Notes,
+        row.IdentityNumber,
         row.IsActive,
         row.IsArchived,
         ToDateTimeOffset(row.CreationDate),
@@ -354,7 +360,8 @@ public sealed class GuestRepository(IGuestsDbConnectionFactory connectionFactory
         row.CountryCode,
         row.Notes,
         row.IsActive,
-        ToDateTimeOffset(row.CreationDate));
+        ToDateTimeOffset(row.CreationDate),
+        row.IdentityNumber);
 
     private static GuestBookingHistoryDto ToDto(GuestBookingHistoryRow row) => new(
         row.BookingUid,
@@ -402,6 +409,7 @@ public sealed class GuestRepository(IGuestsDbConnectionFactory connectionFactory
         public string? Address { get; init; }
         public string? City { get; init; }
         public string? CountryCode { get; init; }
+        public string? IdentityNumber { get; init; }
         public string? Notes { get; init; }
         public bool IsActive { get; init; }
         public bool IsArchived { get; init; }
@@ -429,6 +437,7 @@ public sealed class GuestRepository(IGuestsDbConnectionFactory connectionFactory
         public string? Address { get; init; }
         public string? City { get; init; }
         public string? CountryCode { get; init; }
+        public string? IdentityNumber { get; init; }
         public string? Notes { get; init; }
         public bool IsActive { get; init; }
         public DateTime CreationDate { get; init; }

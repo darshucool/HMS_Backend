@@ -300,6 +300,123 @@
           "bin/placeholder/HMS.Infrastructure.dll": {}
         }
       },
+      "HMS.Modules.Booking.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Booking.Application": "1.0.0",
+          "HMS.Modules.Booking.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Booking.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Booking.Api.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "HMS.Modules.Booking.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Modules.Booking.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Booking.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Booking.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Booking.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/HMS.Modules.Booking.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Booking.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Booking.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Booking.Application": "1.0.0",
+          "HMS.Modules.Booking.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Booking.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Booking.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Finance.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Finance.Application": "1.0.0",
+          "HMS.Modules.Finance.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Finance.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Finance.Api.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "HMS.Modules.Finance.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Finance.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Finance.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Finance.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Finance.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/HMS.Modules.Finance.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Finance.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Finance.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Finance.Application": "1.0.0",
+          "HMS.Modules.Finance.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Finance.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Finance.Infrastructure.dll": {}
+        }
+      },
       "HMS.Modules.Folios.Api/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -908,14 +1025,18 @@
         "dependencies": {
           "HMS.Contracts": "1.0.0",
           "HMS.Modules.Payments.Application": "1.0.0",
-          "HMS.Modules.Payments.Infrastructure": "1.0.0"
+          "HMS.Modules.Payments.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
         },
         "compile": {
           "bin/placeholder/HMS.Modules.Payments.Api.dll": {}
         },
         "runtime": {
           "bin/placeholder/HMS.Modules.Payments.Api.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "HMS.Modules.Payments.Application/1.0.0": {
         "type": "project",
@@ -923,7 +1044,8 @@
         "dependencies": {
           "HMS.Application.Abstractions": "1.0.0",
           "HMS.Contracts": "1.0.0",
-          "HMS.Modules.Payments.Domain": "1.0.0"
+          "HMS.Modules.Payments.Domain": "1.0.0",
+          "MediatR": "14.2.0"
         },
         "compile": {
           "bin/placeholder/HMS.Modules.Payments.Application.dll": {}
@@ -949,9 +1071,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "Dapper": "2.1.86",
           "HMS.Infrastructure": "1.0.0",
           "HMS.Modules.Payments.Application": "1.0.0",
-          "HMS.Modules.Payments.Domain": "1.0.0"
+          "HMS.Modules.Payments.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
         },
         "compile": {
           "bin/placeholder/HMS.Modules.Payments.Infrastructure.dll": {}
@@ -1076,6 +1200,64 @@
           "bin/placeholder/HMS.Modules.Reporting.Infrastructure.dll": {}
         }
       },
+      "HMS.Modules.Reports.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Reports.Application": "1.0.0",
+          "HMS.Modules.Reports.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reports.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reports.Api.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "HMS.Modules.Reports.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Reports.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reports.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reports.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Reports.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reports.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reports.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Reports.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Reports.Application": "1.0.0",
+          "HMS.Modules.Reports.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Reports.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Reports.Infrastructure.dll": {}
+        }
+      },
       "HMS.Modules.Reservations.Api/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -1132,6 +1314,64 @@
         },
         "runtime": {
           "bin/placeholder/HMS.Modules.Reservations.Infrastructure.dll": {}
+        }
+      },
+      "HMS.Modules.Staff.Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Staff.Application": "1.0.0",
+          "HMS.Modules.Staff.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Staff.Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Staff.Api.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "HMS.Modules.Staff.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "HMS.Modules.Staff.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Staff.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Staff.Application.dll": {}
+        }
+      },
+      "HMS.Modules.Staff.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/HMS.Modules.Staff.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Staff.Domain.dll": {}
+        }
+      },
+      "HMS.Modules.Staff.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Staff.Application": "1.0.0",
+          "HMS.Modules.Staff.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "compile": {
+          "bin/placeholder/HMS.Modules.Staff.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HMS.Modules.Staff.Infrastructure.dll": {}
         }
       },
       "HMS.Modules.WifiAccess.Api/1.0.0": {
@@ -1662,6 +1902,46 @@
       "path": "../src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj",
       "msbuildProject": "../src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj"
     },
+    "HMS.Modules.Booking.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Booking/HMS.Modules.Booking.Api/HMS.Modules.Booking.Api.csproj",
+      "msbuildProject": "../src/Modules/Booking/HMS.Modules.Booking.Api/HMS.Modules.Booking.Api.csproj"
+    },
+    "HMS.Modules.Booking.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Booking/HMS.Modules.Booking.Application/HMS.Modules.Booking.Application.csproj",
+      "msbuildProject": "../src/Modules/Booking/HMS.Modules.Booking.Application/HMS.Modules.Booking.Application.csproj"
+    },
+    "HMS.Modules.Booking.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Booking/HMS.Modules.Booking.Domain/HMS.Modules.Booking.Domain.csproj",
+      "msbuildProject": "../src/Modules/Booking/HMS.Modules.Booking.Domain/HMS.Modules.Booking.Domain.csproj"
+    },
+    "HMS.Modules.Booking.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Booking/HMS.Modules.Booking.Infrastructure/HMS.Modules.Booking.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Booking/HMS.Modules.Booking.Infrastructure/HMS.Modules.Booking.Infrastructure.csproj"
+    },
+    "HMS.Modules.Finance.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Finance/HMS.Modules.Finance.Api/HMS.Modules.Finance.Api.csproj",
+      "msbuildProject": "../src/Modules/Finance/HMS.Modules.Finance.Api/HMS.Modules.Finance.Api.csproj"
+    },
+    "HMS.Modules.Finance.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Finance/HMS.Modules.Finance.Application/HMS.Modules.Finance.Application.csproj",
+      "msbuildProject": "../src/Modules/Finance/HMS.Modules.Finance.Application/HMS.Modules.Finance.Application.csproj"
+    },
+    "HMS.Modules.Finance.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Finance/HMS.Modules.Finance.Domain/HMS.Modules.Finance.Domain.csproj",
+      "msbuildProject": "../src/Modules/Finance/HMS.Modules.Finance.Domain/HMS.Modules.Finance.Domain.csproj"
+    },
+    "HMS.Modules.Finance.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Finance/HMS.Modules.Finance.Infrastructure/HMS.Modules.Finance.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Finance/HMS.Modules.Finance.Infrastructure/HMS.Modules.Finance.Infrastructure.csproj"
+    },
     "HMS.Modules.Folios.Api/1.0.0": {
       "type": "project",
       "path": "../src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj",
@@ -1922,6 +2202,26 @@
       "path": "../src/Modules/Reporting/HMS.Modules.Reporting.Infrastructure/HMS.Modules.Reporting.Infrastructure.csproj",
       "msbuildProject": "../src/Modules/Reporting/HMS.Modules.Reporting.Infrastructure/HMS.Modules.Reporting.Infrastructure.csproj"
     },
+    "HMS.Modules.Reports.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reports/HMS.Modules.Reports.Api/HMS.Modules.Reports.Api.csproj",
+      "msbuildProject": "../src/Modules/Reports/HMS.Modules.Reports.Api/HMS.Modules.Reports.Api.csproj"
+    },
+    "HMS.Modules.Reports.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reports/HMS.Modules.Reports.Application/HMS.Modules.Reports.Application.csproj",
+      "msbuildProject": "../src/Modules/Reports/HMS.Modules.Reports.Application/HMS.Modules.Reports.Application.csproj"
+    },
+    "HMS.Modules.Reports.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reports/HMS.Modules.Reports.Domain/HMS.Modules.Reports.Domain.csproj",
+      "msbuildProject": "../src/Modules/Reports/HMS.Modules.Reports.Domain/HMS.Modules.Reports.Domain.csproj"
+    },
+    "HMS.Modules.Reports.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Reports/HMS.Modules.Reports.Infrastructure/HMS.Modules.Reports.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Reports/HMS.Modules.Reports.Infrastructure/HMS.Modules.Reports.Infrastructure.csproj"
+    },
     "HMS.Modules.Reservations.Api/1.0.0": {
       "type": "project",
       "path": "../src/Modules/Reservations/HMS.Modules.Reservations.Api/HMS.Modules.Reservations.Api.csproj",
@@ -1941,6 +2241,26 @@
       "type": "project",
       "path": "../src/Modules/Reservations/HMS.Modules.Reservations.Infrastructure/HMS.Modules.Reservations.Infrastructure.csproj",
       "msbuildProject": "../src/Modules/Reservations/HMS.Modules.Reservations.Infrastructure/HMS.Modules.Reservations.Infrastructure.csproj"
+    },
+    "HMS.Modules.Staff.Api/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Staff/HMS.Modules.Staff.Api/HMS.Modules.Staff.Api.csproj",
+      "msbuildProject": "../src/Modules/Staff/HMS.Modules.Staff.Api/HMS.Modules.Staff.Api.csproj"
+    },
+    "HMS.Modules.Staff.Application/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Staff/HMS.Modules.Staff.Application/HMS.Modules.Staff.Application.csproj",
+      "msbuildProject": "../src/Modules/Staff/HMS.Modules.Staff.Application/HMS.Modules.Staff.Application.csproj"
+    },
+    "HMS.Modules.Staff.Domain/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Staff/HMS.Modules.Staff.Domain/HMS.Modules.Staff.Domain.csproj",
+      "msbuildProject": "../src/Modules/Staff/HMS.Modules.Staff.Domain/HMS.Modules.Staff.Domain.csproj"
+    },
+    "HMS.Modules.Staff.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../src/Modules/Staff/HMS.Modules.Staff.Infrastructure/HMS.Modules.Staff.Infrastructure.csproj",
+      "msbuildProject": "../src/Modules/Staff/HMS.Modules.Staff.Infrastructure/HMS.Modules.Staff.Infrastructure.csproj"
     },
     "HMS.Modules.WifiAccess.Api/1.0.0": {
       "type": "project",
@@ -1971,6 +2291,8 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "HMS.Infrastructure >= 1.0.0",
+      "HMS.Modules.Booking.Api >= 1.0.0",
+      "HMS.Modules.Finance.Api >= 1.0.0",
       "HMS.Modules.Folios.Api >= 1.0.0",
       "HMS.Modules.FrontDesk.Api >= 1.0.0",
       "HMS.Modules.GuestServices.Api >= 1.0.0",
@@ -1984,7 +2306,9 @@
       "HMS.Modules.Payments.Api >= 1.0.0",
       "HMS.Modules.PointOfSale.Api >= 1.0.0",
       "HMS.Modules.Reporting.Api >= 1.0.0",
+      "HMS.Modules.Reports.Api >= 1.0.0",
       "HMS.Modules.Reservations.Api >= 1.0.0",
+      "HMS.Modules.Staff.Api >= 1.0.0",
       "HMS.Modules.WifiAccess.Api >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.12",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.24.1-preview.1",
@@ -1992,7 +2316,7 @@
     ]
   },
   "packageFolders": {
-    "/Users/jananiwithana/.nuget/packages/": {}
+    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2000,7 +2324,7 @@
       "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/HMS.Api.csproj",
       "projectName": "HMS.Api",
       "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/HMS.Api.csproj",
-      "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
       "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
@@ -2019,6 +2343,12 @@
           "projectReferences": {
             "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj": {
               "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj"
+            },
+            "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Api/HMS.Modules.Booking.Api.csproj": {
+              "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Api/HMS.Modules.Booking.Api.csproj"
+            },
+            "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Api/HMS.Modules.Finance.Api.csproj": {
+              "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Api/HMS.Modules.Finance.Api.csproj"
             },
             "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj": {
               "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj"
@@ -2059,8 +2389,14 @@
             "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Api/HMS.Modules.Reporting.Api.csproj": {
               "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Api/HMS.Modules.Reporting.Api.csproj"
             },
+            "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Api/HMS.Modules.Reports.Api.csproj": {
+              "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Api/HMS.Modules.Reports.Api.csproj"
+            },
             "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Api/HMS.Modules.Reservations.Api.csproj": {
               "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Api/HMS.Modules.Reservations.Api.csproj"
+            },
+            "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Api/HMS.Modules.Staff.Api.csproj": {
+              "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Api/HMS.Modules.Staff.Api.csproj"
             },
             "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/HMS.Modules.WifiAccess.Api.csproj": {
               "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/HMS.Modules.WifiAccess.Api.csproj"

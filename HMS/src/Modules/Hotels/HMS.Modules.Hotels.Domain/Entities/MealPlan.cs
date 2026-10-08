@@ -100,6 +100,33 @@ public sealed class MealPlan : AuditableEntity
         return trimmed;
     }
 
+    public void Update(
+        string code,
+        string name,
+        string? description,
+        bool includesBreakfast,
+        bool includesLunch,
+        bool includesDinner,
+        bool allowByo,
+        string actorSubject)
+    {
+        Code = Required(code, nameof(code), 30).ToUpperInvariant();
+        Name = Required(name, nameof(name), 100);
+        Description = Clean(description);
+        IncludesBreakfast = includesBreakfast;
+        IncludesLunch = includesLunch;
+        IncludesDinner = includesDinner;
+        AllowByo = allowByo;
+        MarkModified(actorSubject);
+    }
+
+    public void Archive(string actorSubject)
+    {
+        IsActive = false;
+        IsArchived = true;
+        MarkModified(actorSubject);
+    }
+
     private static string? Clean(string? value) =>
         string.IsNullOrWhiteSpace(value) ? null : value.Trim();
 }

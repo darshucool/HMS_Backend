@@ -79,4 +79,35 @@ public interface IStaffRepository
         string hotelAccessRoleCode,
         Guid? createdBy,
         CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<PropertyAdminRecord>> GetPropertyAdminsAsync(
+        Guid propertyUid,
+        CancellationToken cancellationToken);
+
+    Task<PropertyAdminRecord?> GetPropertyAdminAsync(
+        Guid propertyUid,
+        Guid adminId,
+        CancellationToken cancellationToken);
+
+    Task<bool> UpdatePropertyAdminAsync(
+        Guid propertyUid,
+        Guid adminId,
+        string firstName,
+        string? lastName,
+        bool isActive,
+        CancellationToken cancellationToken);
+
+    Task<bool> RemovePropertyAdminAsync(
+        Guid propertyUid,
+        Guid adminId,
+        CancellationToken cancellationToken);
 }
+
+public sealed record PropertyAdminRecord(
+    Guid AdminId,
+    Guid PropertyUid,
+    string? Email,
+    string FirstName,
+    string? LastName,
+    bool IsActive,
+    DateTimeOffset AssignedAt);

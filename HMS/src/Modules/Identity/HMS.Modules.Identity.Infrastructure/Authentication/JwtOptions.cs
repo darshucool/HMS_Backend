@@ -15,5 +15,7 @@ namespace HMS.Modules.Identity.Infrastructure.Authentication
         public string SecretKey { get; init; } = string.Empty;
 
         public int AccessTokenMinutes { get; init; } = 30;
+
+        public int RefreshTokenDays { get; init; } = 14;
     }
 }

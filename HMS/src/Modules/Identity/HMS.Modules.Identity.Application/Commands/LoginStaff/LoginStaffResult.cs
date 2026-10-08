@@ -40,4 +40,6 @@ public sealed record StaffLoginResponse(
     string FullName,
     string[] Roles,
     string AccessToken,
-    DateTimeOffset ExpiresAtUtc);
+    DateTimeOffset ExpiresAtUtc,
+    string RefreshToken,
+    DateTimeOffset RefreshTokenExpiresAtUtc);

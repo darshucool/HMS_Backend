@@ -9,9 +9,12 @@ public interface IMealPlanRepository
     Task<bool> CodeExistsAsync(
         long propertyId,
         string code,
+        Guid? excludeUid,
         CancellationToken cancellationToken);
 
     Task InsertAsync(MealPlan mealPlan, CancellationToken cancellationToken);
+    Task UpdateAsync(MealPlan mealPlan, CancellationToken cancellationToken);
+    Task ArchiveAsync(MealPlan mealPlan, CancellationToken cancellationToken);
 
     Task<IReadOnlyList<MealPlanDto>> GetByPropertyUidAsync(
         Guid propertyUid,

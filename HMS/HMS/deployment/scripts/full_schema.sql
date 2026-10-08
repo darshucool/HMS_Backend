@@ -378,6 +378,7 @@ CREATE TABLE hotel.guests
     preferred_language  varchar(10),
     address             text,
     city                varchar(100),
+    identity_number     varchar(100),
     country_code        char(2),
     notes               text,
     is_active           boolean NOT NULL DEFAULT true,
@@ -421,29 +422,6 @@ CREATE TABLE hotel.guest_documents
         (expiry_date IS NULL OR issued_date IS NULL OR expiry_date >= issued_date)
 );
 
-CREATE TABLE hotel.guest_preferences
-(
-    id                  bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    uid                 uuid NOT NULL DEFAULT gen_random_uuid(),
-    organization_id     bigint NOT NULL,
-    guest_id            bigint NOT NULL,
-    preference_type     varchar(30) NOT NULL,
-    preference_key      varchar(50) NOT NULL,
-    preference_value    varchar(250) NOT NULL,
-    notes               text,
-    is_active           boolean NOT NULL DEFAULT true,
-    is_archived         boolean NOT NULL DEFAULT false,
-    creation_date       timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    created_by          varchar(100),
-    modified_date       timestamptz,
-    modified_by         varchar(100),
-    CONSTRAINT fk_guest_preferences_guest FOREIGN KEY (guest_id, organization_id)
-        REFERENCES hotel.guests(id, organization_id),
-    CONSTRAINT uq_guest_preferences_uid UNIQUE (uid),
-    CONSTRAINT ck_guest_preferences_type CHECK
-        (preference_type IN ('ROOM', 'DIETARY', 'ACCESSIBILITY', 'COMMUNICATION', 'OTHER'))
-);
-
 -- =============================================================
 -- BOOKINGS, ROOM ALLOCATION, CHARGES AND PAYMENTS
 -- =============================================================
@@ -469,6 +447,8 @@ CREATE TABLE hotel.bookings
     discount_amount     numeric(18,2) NOT NULL DEFAULT 0,
     tax_amount          numeric(18,2) NOT NULL DEFAULT 0,
     service_charge      numeric(18,2) NOT NULL DEFAULT 0,
+    cooking_charges     numeric(18,2) NOT NULL DEFAULT 0,
+    extra_charges       numeric(18,2) NOT NULL DEFAULT 0,
     quoted_total        numeric(18,2),
     arrival_time        time,
     departure_time      time,
@@ -495,7 +475,8 @@ CREATE TABLE hotel.bookings
     CONSTRAINT ck_bookings_dates CHECK (check_out_date > check_in_date),
     CONSTRAINT ck_bookings_guests CHECK (adults > 0 AND children >= 0 AND infants >= 0),
     CONSTRAINT ck_bookings_amounts CHECK
-        (discount_amount >= 0 AND tax_amount >= 0 AND service_charge >= 0 AND COALESCE(quoted_total, 0) >= 0),
+        (discount_amount >= 0 AND tax_amount >= 0 AND service_charge >= 0
+         AND cooking_charges >= 0 AND extra_charges >= 0 AND COALESCE(quoted_total, 0) >= 0),
     CONSTRAINT ck_bookings_status CHECK
         (status IN ('INQUIRY', 'PENDING', 'TENTATIVE', 'CONFIRMED', 'CHECKED_IN',
                     'CHECKED_OUT', 'COMPLETED', 'CANCELLED', 'NO_SHOW')),
@@ -691,7 +672,7 @@ CREATE TABLE hotel.booking_payments
         (payment_method IN ('CASH', 'BANK_TRANSFER', 'CARD', 'ONLINE_GATEWAY', 'CHEQUE', 'OTHER')),
     CONSTRAINT ck_booking_payments_type CHECK (payment_type IN ('DEPOSIT', 'PAYMENT', 'ADJUSTMENT')),
     CONSTRAINT ck_booking_payments_status CHECK
-        (status IN ('PENDING', 'COMPLETED', 'FAILED', 'CANCELLED'))
+        (status IN ('PENDING', 'COMPLETED', 'PARTIALLY_REFUNDED', 'REFUNDED', 'FAILED', 'CANCELLED'))
 );
 
 CREATE TABLE hotel.booking_refunds
@@ -1147,7 +1128,6 @@ CREATE INDEX ix_rate_plan_prices_dates ON hotel.rate_plan_prices (rate_plan_id, 
 CREATE INDEX ix_unit_blocks_dates ON hotel.unit_blocks (unit_id, start_date, end_date) WHERE is_active = true AND is_archived = false;
 CREATE INDEX ix_guests_search_name ON hotel.guests (organization_id, lower(display_name)) WHERE is_archived = false;
 CREATE INDEX ix_guests_phone ON hotel.guests (organization_id, phone) WHERE phone IS NOT NULL AND is_archived = false;
-CREATE INDEX ix_guest_preferences_guest ON hotel.guest_preferences (organization_id, guest_id) WHERE is_archived = false;
 CREATE INDEX ix_bookings_property_dates ON hotel.bookings (organization_id, property_id, check_in_date, check_out_date) WHERE is_archived = false;
 CREATE INDEX ix_bookings_property_status ON hotel.bookings (organization_id, property_id, status) WHERE is_archived = false;
 CREATE INDEX ix_bookings_lead_guest ON hotel.bookings (organization_id, lead_guest_id) WHERE lead_guest_id IS NOT NULL AND is_archived = false;
@@ -1173,7 +1153,7 @@ BEGIN
         'organizations', 'properties', 'property_settings', 'app_users',
         'user_property_access', 'accommodation_types', 'accommodation_units',
         'meal_plans', 'rate_plans', 'rate_plan_prices', 'unit_blocks',
-        'guests', 'guest_documents', 'guest_preferences', 'bookings', 'booking_units',
+        'guests', 'guest_documents', 'bookings', 'booking_units',
         'booking_guests', 'booking_charge_types', 'booking_charges',
         'booking_payments', 'booking_refunds', 'booking_status_history',
         'expense_categories', 'suppliers', 'expenses', 'utility_types',
@@ -1219,7 +1199,9 @@ payment_totals AS
 (
     SELECT
         booking_id,
-        SUM(amount) FILTER (WHERE status = 'COMPLETED') AS payments_received
+        SUM(amount) FILTER (
+            WHERE status IN ('COMPLETED', 'PARTIALLY_REFUNDED', 'REFUNDED')
+        ) AS payments_received
     FROM hotel.booking_payments
     WHERE is_active = true AND is_archived = false
     GROUP BY booking_id

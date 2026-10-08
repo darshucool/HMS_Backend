@@ -59,6 +59,31 @@ public sealed class RatePlan : AuditableEntity
         return ratePlan;
     }
 
+    public void Update(
+        string code,
+        string name,
+        PricingBasis pricingBasis,
+        string currency,
+        string? description,
+        bool isRefundable,
+        string actorSubject)
+    {
+        Code = Required(code, nameof(code), 30).ToUpperInvariant();
+        Name = Required(name, nameof(name), 150);
+        PricingBasis = pricingBasis;
+        Currency = RequiredCurrency(currency);
+        Description = Clean(description);
+        IsRefundable = isRefundable;
+        MarkModified(actorSubject);
+    }
+
+    public void Archive(string actorSubject)
+    {
+        IsActive = false;
+        IsArchived = true;
+        MarkModified(actorSubject);
+    }
+
     public static RatePlan Rehydrate(
         long id,
         Guid uid,

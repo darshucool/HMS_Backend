@@ -15,8 +15,16 @@ public sealed record InvitePropertyAdminRequest(
     string FirstName,
     string? LastName = null);
 
+public sealed record UpdatePropertyAdminRequest(
+    string FirstName,
+    string? LastName = null,
+    bool IsActive = true);
+
 public sealed record ResetAdminCredentialsRequest(
     string Password);
+
+public sealed record RefreshTokenRequest(
+    string RefreshToken);
 
 public sealed record RegisterAdminRequest(
     Guid PropertyUid,

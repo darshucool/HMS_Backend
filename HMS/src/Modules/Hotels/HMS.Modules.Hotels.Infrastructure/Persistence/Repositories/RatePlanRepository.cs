@@ -13,27 +13,27 @@ public sealed class RatePlanRepository(IHotelsDbConnectionFactory connectionFact
     {
         const string sql = """
             SELECT
-                rp.id                       AS Id,
-                rp.uid                      AS Uid,
-                rp.organization_id          AS OrganizationId,
-                rp.property_id              AS PropertyId,
-                p.uid                       AS PropertyUid,
-                rp.accommodation_type_id    AS AccommodationTypeId,
-                at.uid                      AS AccommodationTypeUid,
-                rp.meal_plan_id             AS MealPlanId,
-                mp.uid                      AS MealPlanUid,
-                rp.code                     AS Code,
-                rp.name                     AS Name,
-                rp.pricing_basis            AS PricingBasis,
-                rp.currency                 AS Currency,
-                rp.description              AS Description,
-                rp.is_refundable            AS IsRefundable,
-                rp.is_active                AS IsActive,
-                rp.is_archived              AS IsArchived,
-                rp.creation_date            AS CreationDate,
-                rp.created_by               AS CreatedBy,
-                rp.modified_date            AS ModifiedDate,
-                rp.modified_by              AS ModifiedBy
+                rp.id                       AS "Id",
+                rp.uid                      AS "Uid",
+                rp.organization_id          AS "OrganizationId",
+                rp.property_id              AS "PropertyId",
+                p.uid                       AS "PropertyUid",
+                rp.accommodation_type_id    AS "AccommodationTypeId",
+                at.uid                      AS "AccommodationTypeUid",
+                rp.meal_plan_id             AS "MealPlanId",
+                mp.uid                      AS "MealPlanUid",
+                rp.code                     AS "Code",
+                rp.name                     AS "Name",
+                rp.pricing_basis            AS "PricingBasis",
+                rtrim(rp.currency)          AS "Currency",
+                rp.description              AS "Description",
+                rp.is_refundable            AS "IsRefundable",
+                rp.is_active                AS "IsActive",
+                rp.is_archived              AS "IsArchived",
+                rp.creation_date            AS "CreationDate",
+                rp.created_by               AS "CreatedBy",
+                rp.modified_date            AS "ModifiedDate",
+                rp.modified_by              AS "ModifiedBy"
             FROM hotel.rate_plans rp
             JOIN hotel.properties p ON p.id = rp.property_id
             JOIN hotel.accommodation_types at ON at.id = rp.accommodation_type_id
@@ -51,6 +51,7 @@ public sealed class RatePlanRepository(IHotelsDbConnectionFactory connectionFact
     public async Task<bool> CodeExistsAsync(
         long propertyId,
         string code,
+        Guid? excludeUid,
         CancellationToken cancellationToken)
     {
         const string sql = """
@@ -60,13 +61,19 @@ public sealed class RatePlanRepository(IHotelsDbConnectionFactory connectionFact
                 FROM hotel.rate_plans
                 WHERE property_id = @PropertyId
                   AND code = @Code
+                  AND (@ExcludeUid IS NULL OR uid <> @ExcludeUid)
             );
             """;
 
         await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
         return await connection.ExecuteScalarAsync<bool>(new CommandDefinition(
             sql,
-            new { PropertyId = propertyId, Code = code.Trim().ToUpperInvariant() },
+            new
+            {
+                PropertyId = propertyId,
+                Code = code.Trim().ToUpperInvariant(),
+                ExcludeUid = excludeUid
+            },
             cancellationToken: cancellationToken));
     }
 
@@ -111,24 +118,82 @@ public sealed class RatePlanRepository(IHotelsDbConnectionFactory connectionFact
             cancellationToken: cancellationToken));
     }
 
+    public async Task UpdateAsync(RatePlan ratePlan, CancellationToken cancellationToken)
+    {
+        const string sql = """
+            UPDATE hotel.rate_plans
+            SET code = @Code,
+                name = @Name,
+                pricing_basis = @PricingBasis,
+                currency = @Currency,
+                description = @Description,
+                is_refundable = @IsRefundable,
+                modified_date = @ModifiedDate,
+                modified_by = @ModifiedBy
+            WHERE id = @Id
+              AND is_archived = false;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        await connection.ExecuteAsync(new CommandDefinition(
+            sql,
+            new
+            {
+                ratePlan.Id,
+                ratePlan.Code,
+                ratePlan.Name,
+                PricingBasis = ratePlan.PricingBasis.ToDatabaseValue(),
+                ratePlan.Currency,
+                ratePlan.Description,
+                ratePlan.IsRefundable,
+                ratePlan.ModifiedDate,
+                ratePlan.ModifiedBy
+            },
+            cancellationToken: cancellationToken));
+    }
+
+    public async Task ArchiveAsync(RatePlan ratePlan, CancellationToken cancellationToken)
+    {
+        const string sql = """
+            UPDATE hotel.rate_plans
+            SET is_active = false,
+                is_archived = true,
+                modified_date = @ModifiedDate,
+                modified_by = @ModifiedBy
+            WHERE id = @Id
+              AND is_archived = false;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        await connection.ExecuteAsync(new CommandDefinition(
+            sql,
+            new
+            {
+                ratePlan.Id,
+                ratePlan.ModifiedDate,
+                ratePlan.ModifiedBy
+            },
+            cancellationToken: cancellationToken));
+    }
+
     public async Task<IReadOnlyList<RatePlanDto>> GetByPropertyUidAsync(
         Guid propertyUid,
         CancellationToken cancellationToken)
     {
         const string sql = """
             SELECT
-                rp.uid                  AS Uid,
-                p.uid                   AS PropertyUid,
-                at.uid                  AS AccommodationTypeUid,
-                mp.uid                  AS MealPlanUid,
-                rp.code                 AS Code,
-                rp.name                 AS Name,
-                rp.pricing_basis        AS PricingBasis,
-                rp.currency             AS Currency,
-                rp.description          AS Description,
-                rp.is_refundable        AS IsRefundable,
-                rp.is_active            AS IsActive,
-                rp.creation_date        AS CreationDate
+                rp.uid                  AS "Uid",
+                p.uid                   AS "PropertyUid",
+                at.uid                  AS "AccommodationTypeUid",
+                mp.uid                  AS "MealPlanUid",
+                rp.code                 AS "Code",
+                rp.name                 AS "Name",
+                rp.pricing_basis        AS "PricingBasis",
+                rtrim(rp.currency)      AS "Currency",
+                rp.description          AS "Description",
+                rp.is_refundable        AS "IsRefundable",
+                rp.is_active            AS "IsActive",
+                rp.creation_date        AS "CreationDate"
             FROM hotel.rate_plans rp
             JOIN hotel.properties p ON p.id = rp.property_id
             JOIN hotel.accommodation_types at ON at.id = rp.accommodation_type_id
@@ -139,13 +204,27 @@ public sealed class RatePlanRepository(IHotelsDbConnectionFactory connectionFact
             """;
 
         await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
-        var items = await connection.QueryAsync<RatePlanDto>(new CommandDefinition(
+        var rows = await connection.QueryAsync<RatePlanListRow>(new CommandDefinition(
             sql,
             new { PropertyUid = propertyUid },
             cancellationToken: cancellationToken));
 
-        return items.AsList();
+        return rows.Select(ToDto).ToList();
     }
+
+    private static RatePlanDto ToDto(RatePlanListRow row) => new(
+        row.Uid,
+        row.PropertyUid,
+        row.AccommodationTypeUid,
+        row.MealPlanUid,
+        row.Code,
+        row.Name,
+        row.PricingBasis,
+        row.Currency,
+        row.Description,
+        row.IsRefundable,
+        row.IsActive,
+        ToDateTimeOffset(row.CreationDate));
 
     private static RatePlan ToDomain(RatePlanRow row) => RatePlan.Rehydrate(
         row.Id,
@@ -165,31 +244,57 @@ public sealed class RatePlanRepository(IHotelsDbConnectionFactory connectionFact
         row.IsRefundable,
         row.IsActive,
         row.IsArchived,
-        row.CreationDate,
+        ToDateTimeOffset(row.CreationDate),
         row.CreatedBy,
-        row.ModifiedDate,
+        ToDateTimeOffset(row.ModifiedDate),
         row.ModifiedBy);
 
-    private sealed record RatePlanRow(
-        long Id,
-        Guid Uid,
-        long OrganizationId,
-        long PropertyId,
-        Guid PropertyUid,
-        long AccommodationTypeId,
-        Guid AccommodationTypeUid,
-        long? MealPlanId,
-        Guid? MealPlanUid,
-        string Code,
-        string Name,
-        string PricingBasis,
-        string Currency,
-        string? Description,
-        bool IsRefundable,
-        bool IsActive,
-        bool IsArchived,
-        DateTimeOffset CreationDate,
-        string? CreatedBy,
-        DateTimeOffset? ModifiedDate,
-        string? ModifiedBy);
+    private static DateTimeOffset ToDateTimeOffset(DateTime value) =>
+        value.Kind == DateTimeKind.Unspecified
+            ? new DateTimeOffset(DateTime.SpecifyKind(value, DateTimeKind.Utc))
+            : new DateTimeOffset(value);
+
+    private static DateTimeOffset? ToDateTimeOffset(DateTime? value) =>
+        value is null ? null : ToDateTimeOffset(value.Value);
+
+    private sealed class RatePlanRow
+    {
+        public long Id { get; init; }
+        public Guid Uid { get; init; }
+        public long OrganizationId { get; init; }
+        public long PropertyId { get; init; }
+        public Guid PropertyUid { get; init; }
+        public long AccommodationTypeId { get; init; }
+        public Guid AccommodationTypeUid { get; init; }
+        public long? MealPlanId { get; init; }
+        public Guid? MealPlanUid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string PricingBasis { get; init; } = string.Empty;
+        public string Currency { get; init; } = string.Empty;
+        public string? Description { get; init; }
+        public bool IsRefundable { get; init; }
+        public bool IsActive { get; init; }
+        public bool IsArchived { get; init; }
+        public DateTime CreationDate { get; init; }
+        public string? CreatedBy { get; init; }
+        public DateTime? ModifiedDate { get; init; }
+        public string? ModifiedBy { get; init; }
+    }
+
+    private sealed class RatePlanListRow
+    {
+        public Guid Uid { get; init; }
+        public Guid PropertyUid { get; init; }
+        public Guid AccommodationTypeUid { get; init; }
+        public Guid? MealPlanUid { get; init; }
+        public string Code { get; init; } = string.Empty;
+        public string Name { get; init; } = string.Empty;
+        public string PricingBasis { get; init; } = string.Empty;
+        public string Currency { get; init; } = string.Empty;
+        public string? Description { get; init; }
+        public bool IsRefundable { get; init; }
+        public bool IsActive { get; init; }
+        public DateTime CreationDate { get; init; }
+    }
 }

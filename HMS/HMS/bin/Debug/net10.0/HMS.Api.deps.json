@@ -9,6 +9,8 @@
       "HMS.Api/1.0.0": {
         "dependencies": {
           "HMS.Infrastructure": "1.0.0",
+          "HMS.Modules.Booking.Api": "1.0.0",
+          "HMS.Modules.Finance.Api": "1.0.0",
           "HMS.Modules.Folios.Api": "1.0.0",
           "HMS.Modules.FrontDesk.Api": "1.0.0",
           "HMS.Modules.GuestServices.Api": "1.0.0",
@@ -22,7 +24,9 @@
           "HMS.Modules.Payments.Api": "1.0.0",
           "HMS.Modules.PointOfSale.Api": "1.0.0",
           "HMS.Modules.Reporting.Api": "1.0.0",
+          "HMS.Modules.Reports.Api": "1.0.0",
           "HMS.Modules.Reservations.Api": "1.0.0",
+          "HMS.Modules.Staff.Api": "1.0.0",
           "HMS.Modules.WifiAccess.Api": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.12",
           "Scalar.AspNetCore": "2.17.3"
@@ -216,6 +220,101 @@
         },
         "runtime": {
           "HMS.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Booking.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Modules.Booking.Application": "1.0.0",
+          "HMS.Modules.Booking.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "runtime": {
+          "HMS.Modules.Booking.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Booking.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Application.Abstractions": "1.0.0",
+          "HMS.Modules.Booking.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "runtime": {
+          "HMS.Modules.Booking.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Booking.Domain/1.0.0": {
+        "runtime": {
+          "HMS.Modules.Booking.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Booking.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Booking.Application": "1.0.0",
+          "HMS.Modules.Booking.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "runtime": {
+          "HMS.Modules.Booking.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Finance.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Modules.Finance.Application": "1.0.0",
+          "HMS.Modules.Finance.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "runtime": {
+          "HMS.Modules.Finance.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Finance.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Modules.Finance.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "runtime": {
+          "HMS.Modules.Finance.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Finance.Domain/1.0.0": {
+        "runtime": {
+          "HMS.Modules.Finance.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Finance.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Finance.Application": "1.0.0",
+          "HMS.Modules.Finance.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "runtime": {
+          "HMS.Modules.Finance.Infrastructure.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -738,7 +837,8 @@
         "dependencies": {
           "HMS.Contracts": "1.0.0",
           "HMS.Modules.Payments.Application": "1.0.0",
-          "HMS.Modules.Payments.Infrastructure": "1.0.0"
+          "HMS.Modules.Payments.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
         },
         "runtime": {
           "HMS.Modules.Payments.Api.dll": {
@@ -751,7 +851,8 @@
         "dependencies": {
           "HMS.Application.Abstractions": "1.0.0",
           "HMS.Contracts": "1.0.0",
-          "HMS.Modules.Payments.Domain": "1.0.0"
+          "HMS.Modules.Payments.Domain": "1.0.0",
+          "MediatR": "14.2.0"
         },
         "runtime": {
           "HMS.Modules.Payments.Application.dll": {
@@ -773,9 +874,11 @@
       },
       "HMS.Modules.Payments.Infrastructure/1.0.0": {
         "dependencies": {
+          "Dapper": "2.1.86",
           "HMS.Infrastructure": "1.0.0",
           "HMS.Modules.Payments.Application": "1.0.0",
-          "HMS.Modules.Payments.Domain": "1.0.0"
+          "HMS.Modules.Payments.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
         },
         "runtime": {
           "HMS.Modules.Payments.Infrastructure.dll": {
@@ -884,6 +987,53 @@
           }
         }
       },
+      "HMS.Modules.Reports.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Modules.Reports.Application": "1.0.0",
+          "HMS.Modules.Reports.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reports.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reports.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Modules.Reports.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "runtime": {
+          "HMS.Modules.Reports.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reports.Domain/1.0.0": {
+        "runtime": {
+          "HMS.Modules.Reports.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Reports.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Reports.Application": "1.0.0",
+          "HMS.Modules.Reports.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "runtime": {
+          "HMS.Modules.Reports.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "HMS.Modules.Reservations.Api/1.0.0": {
         "dependencies": {
           "HMS.Contracts": "1.0.0",
@@ -929,6 +1079,53 @@
         },
         "runtime": {
           "HMS.Modules.Reservations.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Staff.Api/1.0.0": {
+        "dependencies": {
+          "HMS.Modules.Staff.Application": "1.0.0",
+          "HMS.Modules.Staff.Infrastructure": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "runtime": {
+          "HMS.Modules.Staff.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Staff.Application/1.0.0": {
+        "dependencies": {
+          "HMS.Modules.Staff.Domain": "1.0.0",
+          "MediatR": "14.2.0"
+        },
+        "runtime": {
+          "HMS.Modules.Staff.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Staff.Domain/1.0.0": {
+        "runtime": {
+          "HMS.Modules.Staff.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "HMS.Modules.Staff.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.1.86",
+          "HMS.Modules.Staff.Application": "1.0.0",
+          "HMS.Modules.Staff.Domain": "1.0.0",
+          "Npgsql": "10.0.3"
+        },
+        "runtime": {
+          "HMS.Modules.Staff.Infrastructure.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1123,6 +1320,46 @@
       "sha512": ""
     },
     "HMS.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Booking.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Booking.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Booking.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Booking.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Finance.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Finance.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Finance.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Finance.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1387,6 +1624,26 @@
       "serviceable": false,
       "sha512": ""
     },
+    "HMS.Modules.Reports.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reports.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reports.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Reports.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "HMS.Modules.Reservations.Api/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1403,6 +1660,26 @@
       "sha512": ""
     },
     "HMS.Modules.Reservations.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Staff.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Staff.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Staff.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HMS.Modules.Staff.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -24,7 +24,8 @@ internal static class GuestMapper
         item.CountryCode,
         item.Notes,
         item.IsActive,
-        item.CreationDate);
+        item.CreationDate,
+        item.IdentityNumber);
 
     public static GuestDocumentDto ToDto(GuestDocument item) => new(
         item.Uid,

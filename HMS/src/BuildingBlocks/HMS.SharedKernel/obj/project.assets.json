@@ -8,7 +8,7 @@
     "net10.0": []
   },
   "packageFolders": {
-    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/36e04a6142adc3de7053ccda44c2d2ab/nuget": {}
+    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget": {}
   },
   "project": {
     "version": "1.0.0",
@@ -16,7 +16,7 @@
       "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
       "projectName": "HMS.SharedKernel",
       "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
-      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/36e04a6142adc3de7053ccda44c2d2ab/nuget",
+      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
       "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
