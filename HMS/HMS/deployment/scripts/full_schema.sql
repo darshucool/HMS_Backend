@@ -447,6 +447,8 @@ CREATE TABLE hotel.bookings
     discount_amount     numeric(18,2) NOT NULL DEFAULT 0,
     tax_amount          numeric(18,2) NOT NULL DEFAULT 0,
     service_charge      numeric(18,2) NOT NULL DEFAULT 0,
+    cooking_charges     numeric(18,2) NOT NULL DEFAULT 0,
+    extra_charges       numeric(18,2) NOT NULL DEFAULT 0,
     quoted_total        numeric(18,2),
     arrival_time        time,
     departure_time      time,
@@ -473,7 +475,8 @@ CREATE TABLE hotel.bookings
     CONSTRAINT ck_bookings_dates CHECK (check_out_date > check_in_date),
     CONSTRAINT ck_bookings_guests CHECK (adults > 0 AND children >= 0 AND infants >= 0),
     CONSTRAINT ck_bookings_amounts CHECK
-        (discount_amount >= 0 AND tax_amount >= 0 AND service_charge >= 0 AND COALESCE(quoted_total, 0) >= 0),
+        (discount_amount >= 0 AND tax_amount >= 0 AND service_charge >= 0
+         AND cooking_charges >= 0 AND extra_charges >= 0 AND COALESCE(quoted_total, 0) >= 0),
     CONSTRAINT ck_bookings_status CHECK
         (status IN ('INQUIRY', 'PENDING', 'TENTATIVE', 'CONFIRMED', 'CHECKED_IN',
                     'CHECKED_OUT', 'COMPLETED', 'CANCELLED', 'NO_SHOW')),
@@ -669,7 +672,7 @@ CREATE TABLE hotel.booking_payments
         (payment_method IN ('CASH', 'BANK_TRANSFER', 'CARD', 'ONLINE_GATEWAY', 'CHEQUE', 'OTHER')),
     CONSTRAINT ck_booking_payments_type CHECK (payment_type IN ('DEPOSIT', 'PAYMENT', 'ADJUSTMENT')),
     CONSTRAINT ck_booking_payments_status CHECK
-        (status IN ('PENDING', 'COMPLETED', 'FAILED', 'CANCELLED'))
+        (status IN ('PENDING', 'COMPLETED', 'PARTIALLY_REFUNDED', 'REFUNDED', 'FAILED', 'CANCELLED'))
 );
 
 CREATE TABLE hotel.booking_refunds
@@ -1196,7 +1199,9 @@ payment_totals AS
 (
     SELECT
         booking_id,
-        SUM(amount) FILTER (WHERE status = 'COMPLETED') AS payments_received
+        SUM(amount) FILTER (
+            WHERE status IN ('COMPLETED', 'PARTIALLY_REFUNDED', 'REFUNDED')
+        ) AS payments_received
     FROM hotel.booking_payments
     WHERE is_active = true AND is_archived = false
     GROUP BY booking_id

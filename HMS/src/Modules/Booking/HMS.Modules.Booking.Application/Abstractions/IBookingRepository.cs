@@ -13,6 +13,20 @@ public sealed record GuestBookingContext(long Id, long OrganizationId);
 
 public sealed record AccommodationTypeBookingContext(long Id);
 
+public sealed record RatePlanBookingContext(
+    long Id,
+    long AccommodationTypeId,
+    string PricingBasis);
+
+public sealed record RatePlanPriceRow(
+    DateOnly StartDate,
+    DateOnly EndDate,
+    int? DayOfWeek,
+    decimal UnitRate,
+    decimal? AdultRate,
+    decimal? ChildRate,
+    int MinimumStay);
+
 public sealed record BookingUnitContext(
     long Id,
     long AccommodationTypeId,
@@ -23,7 +37,6 @@ public sealed record BookingUnitLine(
     long AccommodationTypeId,
     long? UnitId,
     long? RatePlanId,
-    long? MealPlanId,
     DateOnly CheckInDate,
     DateOnly CheckOutDate,
     int Adults,
@@ -77,8 +90,16 @@ public interface IBookingRepository
         long propertyId,
         long accommodationTypeId,
         CancellationToken cancellationToken);
-    Task<long?> GetRatePlanIdAsync(Guid ratePlanUid, long propertyId, CancellationToken cancellationToken);
-    Task<long?> GetMealPlanIdAsync(Guid mealPlanUid, long propertyId, CancellationToken cancellationToken);
+    Task<RatePlanBookingContext?> GetRatePlanAsync(
+        Guid ratePlanUid,
+        long propertyId,
+        long accommodationTypeId,
+        CancellationToken cancellationToken);
+    Task<IReadOnlyList<RatePlanPriceRow>> GetRatePlanPricesAsync(
+        long ratePlanId,
+        DateOnly checkInDate,
+        DateOnly checkOutDate,
+        CancellationToken cancellationToken);
     Task<BookingUnitContext?> GetBookingUnitAsync(
         long bookingId,
         Guid bookingUnitUid,

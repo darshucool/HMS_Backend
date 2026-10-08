@@ -24,6 +24,8 @@ public sealed class Booking : AuditableEntity
     public decimal DiscountAmount { get; private set; }
     public decimal TaxAmount { get; private set; }
     public decimal ServiceCharge { get; private set; }
+    public decimal CookingCharges { get; private set; }
+    public decimal ExtraCharges { get; private set; }
     public decimal? QuotedTotal { get; private set; }
     public TimeOnly? ArrivalTime { get; private set; }
     public TimeOnly? DepartureTime { get; private set; }
@@ -55,6 +57,8 @@ public sealed class Booking : AuditableEntity
         decimal discountAmount,
         decimal taxAmount,
         decimal serviceCharge,
+        decimal cookingCharges,
+        decimal extraCharges,
         decimal? quotedTotal,
         TimeOnly? arrivalTime,
         TimeOnly? departureTime,
@@ -68,7 +72,7 @@ public sealed class Booking : AuditableEntity
         if (adults <= 0 || children < 0 || infants < 0)
             throw new ArgumentException("Adults must be greater than zero and children/infants cannot be negative.");
 
-        if (discountAmount < 0 || taxAmount < 0 || serviceCharge < 0 || (quotedTotal ?? 0) < 0)
+        if (discountAmount < 0 || taxAmount < 0 || serviceCharge < 0 || cookingCharges < 0 || extraCharges < 0 || (quotedTotal ?? 0) < 0)
             throw new ArgumentException("Booking amounts cannot be negative.");
 
         var cleanedCurrency = string.IsNullOrWhiteSpace(currency) ? "LKR" : currency.Trim().ToUpperInvariant();
@@ -95,6 +99,8 @@ public sealed class Booking : AuditableEntity
             DiscountAmount = discountAmount,
             TaxAmount = taxAmount,
             ServiceCharge = serviceCharge,
+            CookingCharges = cookingCharges,
+            ExtraCharges = extraCharges,
             QuotedTotal = quotedTotal,
             ArrivalTime = arrivalTime,
             DepartureTime = departureTime,
@@ -121,6 +127,8 @@ public sealed class Booking : AuditableEntity
         decimal discountAmount,
         decimal taxAmount,
         decimal serviceCharge,
+        decimal cookingCharges,
+        decimal extraCharges,
         decimal? quotedTotal,
         TimeOnly? arrivalTime,
         TimeOnly? departureTime,
@@ -135,7 +143,7 @@ public sealed class Booking : AuditableEntity
         if (adults <= 0 || children < 0 || infants < 0)
             throw new ArgumentException("Adults must be greater than zero and children/infants cannot be negative.");
 
-        if (discountAmount < 0 || taxAmount < 0 || serviceCharge < 0 || (quotedTotal ?? 0) < 0)
+        if (discountAmount < 0 || taxAmount < 0 || serviceCharge < 0 || cookingCharges < 0 || extraCharges < 0 || (quotedTotal ?? 0) < 0)
             throw new ArgumentException("Booking amounts cannot be negative.");
 
         if (status == BookingStatus.Cancelled && string.IsNullOrWhiteSpace(cancellationReason))
@@ -174,6 +182,8 @@ public sealed class Booking : AuditableEntity
         DiscountAmount = discountAmount;
         TaxAmount = taxAmount;
         ServiceCharge = serviceCharge;
+        CookingCharges = cookingCharges;
+        ExtraCharges = extraCharges;
         QuotedTotal = quotedTotal;
         ArrivalTime = arrivalTime;
         DepartureTime = departureTime;
@@ -267,6 +277,8 @@ public sealed class Booking : AuditableEntity
         decimal discountAmount,
         decimal taxAmount,
         decimal serviceCharge,
+        decimal cookingCharges,
+        decimal extraCharges,
         decimal? quotedTotal,
         TimeOnly? arrivalTime,
         TimeOnly? departureTime,
@@ -305,6 +317,8 @@ public sealed class Booking : AuditableEntity
             DiscountAmount = discountAmount,
             TaxAmount = taxAmount,
             ServiceCharge = serviceCharge,
+            CookingCharges = cookingCharges,
+            ExtraCharges = extraCharges,
             QuotedTotal = quotedTotal,
             ArrivalTime = arrivalTime,
             DepartureTime = departureTime,

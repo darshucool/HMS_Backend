@@ -37,8 +37,12 @@ public sealed class RefundBookingPaymentCommandHandler(
             return PaymentResult<BookingRefundDto>.Forbidden("You cannot refund this payment.");
         }
 
-        if (!string.Equals(payment.Status, "COMPLETED", StringComparison.OrdinalIgnoreCase))
-            return PaymentResult<BookingRefundDto>.Validation("Only a completed payment can be refunded.");
+        if (!string.Equals(payment.Status, "COMPLETED", StringComparison.OrdinalIgnoreCase) &&
+            !string.Equals(payment.Status, "PARTIALLY_REFUNDED", StringComparison.OrdinalIgnoreCase))
+        {
+            return PaymentResult<BookingRefundDto>.Validation(
+                "Only a completed or partially refunded payment can be refunded.");
+        }
 
         var alreadyRefunded = await paymentRepository.GetRefundedAmountAsync(payment.Id, cancellationToken);
         if (request.Amount > payment.Amount - alreadyRefunded)

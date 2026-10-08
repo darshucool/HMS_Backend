@@ -26,3 +26,11 @@ public sealed record CreateBookingPaymentRequest(
 public sealed record RefundBookingPaymentRequest(
     decimal Amount,
     string Reason);
+
+public sealed record UpsertBookingChargeTypeRequest(
+    string Code,
+    string Name,
+    BookingChargeCategory Category,
+    bool IsTaxable = false,
+    decimal? DefaultPrice = null,
+    bool IsActive = true);

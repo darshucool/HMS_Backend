@@ -18,6 +18,7 @@ public sealed class BookingPaymentRepository(IPaymentsDbConnectionFactory connec
                 p.payment_method    AS "PaymentMethod",
                 p.payment_type      AS "PaymentType",
                 p.amount            AS "Amount",
+                COALESCE(r.refunded_amount, 0) AS "RefundedAmount",
                 rtrim(p.currency)   AS "Currency",
                 p.status            AS "Status",
                 p.reference_number  AS "ReferenceNumber",
@@ -26,6 +27,13 @@ public sealed class BookingPaymentRepository(IPaymentsDbConnectionFactory connec
                 p.creation_date     AS "CreationDate"
             FROM hotel.booking_payments p
             JOIN hotel.bookings b ON b.id = p.booking_id
+            LEFT JOIN LATERAL (
+                SELECT COALESCE(SUM(br.amount), 0) AS refunded_amount
+                FROM hotel.booking_refunds br
+                WHERE br.payment_id = p.id
+                  AND br.is_archived = false
+                  AND br.status IN ('PENDING', 'COMPLETED')
+            ) r ON true
             WHERE p.booking_id = @BookingId
               AND p.is_archived = false
             ORDER BY p.paid_at DESC, p.creation_date DESC;
@@ -142,7 +150,12 @@ public sealed class BookingPaymentRepository(IPaymentsDbConnectionFactory connec
     {
         var uid = Guid.NewGuid();
         var refundedAt = DateTimeOffset.UtcNow;
-        const string sql = """
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        await using var transaction = await connection.BeginTransactionAsync(cancellationToken);
+
+        await connection.ExecuteAsync(new CommandDefinition(
+            """
             INSERT INTO hotel.booking_refunds
             (
                 uid, organization_id, property_id, booking_id, payment_id,
@@ -155,11 +168,7 @@ public sealed class BookingPaymentRepository(IPaymentsDbConnectionFactory connec
                 @Amount, 'COMPLETED', @Reason, @RefundedAt, true, false,
                 @RefundedAt, @CreatedBy
             );
-            """;
-
-        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
-        await connection.ExecuteAsync(new CommandDefinition(
-            sql,
+            """,
             new
             {
                 Uid = uid,
@@ -172,8 +181,47 @@ public sealed class BookingPaymentRepository(IPaymentsDbConnectionFactory connec
                 RefundedAt = refundedAt,
                 CreatedBy = actorSubject
             },
+            transaction,
             cancellationToken: cancellationToken));
 
+        var refundedTotal = await connection.ExecuteScalarAsync<decimal>(new CommandDefinition(
+            """
+            SELECT COALESCE(SUM(amount), 0)
+            FROM hotel.booking_refunds
+            WHERE payment_id = @PaymentId
+              AND is_archived = false
+              AND status IN ('PENDING', 'COMPLETED');
+            """,
+            new { PaymentId = payment.Id },
+            transaction,
+            cancellationToken: cancellationToken));
+
+        var paymentStatus = refundedTotal >= payment.Amount
+            ? "REFUNDED"
+            : refundedTotal > 0
+                ? "PARTIALLY_REFUNDED"
+                : "COMPLETED";
+
+        await connection.ExecuteAsync(new CommandDefinition(
+            """
+            UPDATE hotel.booking_payments
+            SET status = @Status,
+                modified_date = @RefundedAt,
+                modified_by = @CreatedBy
+            WHERE id = @PaymentId
+              AND is_archived = false;
+            """,
+            new
+            {
+                Status = paymentStatus,
+                RefundedAt = refundedAt,
+                CreatedBy = actorSubject,
+                PaymentId = payment.Id
+            },
+            transaction,
+            cancellationToken: cancellationToken));
+
+        await transaction.CommitAsync(cancellationToken);
         return new BookingRefundDto(uid, payment.Uid, payment.BookingUid, amount, "COMPLETED", reason, refundedAt);
     }
 
@@ -183,6 +231,7 @@ public sealed class BookingPaymentRepository(IPaymentsDbConnectionFactory connec
         row.PaymentMethod,
         row.PaymentType,
         row.Amount,
+        row.RefundedAmount,
         row.Currency,
         row.Status,
         row.ReferenceNumber,
@@ -202,6 +251,7 @@ public sealed class BookingPaymentRepository(IPaymentsDbConnectionFactory connec
         public string PaymentMethod { get; init; } = string.Empty;
         public string PaymentType { get; init; } = string.Empty;
         public decimal Amount { get; init; }
+        public decimal RefundedAmount { get; init; }
         public string Currency { get; init; } = string.Empty;
         public string Status { get; init; } = string.Empty;
         public string? ReferenceNumber { get; init; }

@@ -21,4 +21,7 @@ public sealed record PaymentResult<T>(
     public static PaymentResult<T> NotFound(string error) => new(PaymentResultStatus.NotFound, default, error);
     public static PaymentResult<T> Conflict(string error) => new(PaymentResultStatus.Conflict, default, error);
     public static PaymentResult<T> Forbidden(string error) => new(PaymentResultStatus.Forbidden, default, error);
+
+    public static PaymentResult<T> From(PaymentResult<object> source) =>
+        new(source.Status, default, source.Error);
 }

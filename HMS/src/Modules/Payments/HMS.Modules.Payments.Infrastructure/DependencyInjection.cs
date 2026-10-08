@@ -16,6 +16,7 @@ public static class DependencyInjection
         services.AddScoped<IPaymentPropertyAccess, PaymentPropertyAccessRepository>();
         services.AddScoped<IPaymentBookingLookup, PaymentBookingLookup>();
         services.AddScoped<IBookingChargeRepository, BookingChargeRepository>();
+        services.AddScoped<IBookingChargeTypeRepository, BookingChargeTypeRepository>();
         services.AddScoped<IBookingPaymentRepository, BookingPaymentRepository>();
         services.AddScoped<IBookingFinancialRepository, BookingFinancialRepository>();
         return services;

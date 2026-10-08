@@ -10,7 +10,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/HMS.Api.csproj",
         "projectName": "HMS.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/HMS.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/HMS/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -563,7 +563,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj",
         "projectName": "HMS.Application.Abstractions",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/HMS.Application.Abstractions.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Application.Abstractions/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -902,7 +902,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj",
         "projectName": "HMS.Contracts",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/HMS.Contracts.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Contracts/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -1237,7 +1237,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj",
         "projectName": "HMS.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/HMS.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -1579,7 +1579,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
         "projectName": "HMS.SharedKernel",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/HMS.SharedKernel.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/BuildingBlocks/HMS.SharedKernel/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -1914,7 +1914,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Api/HMS.Modules.Booking.Api.csproj",
         "projectName": "HMS.Modules.Booking.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Api/HMS.Modules.Booking.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -2405,7 +2405,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Application/HMS.Modules.Booking.Application.csproj",
         "projectName": "HMS.Modules.Booking.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Application/HMS.Modules.Booking.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -2757,7 +2757,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Domain/HMS.Modules.Booking.Domain.csproj",
         "projectName": "HMS.Modules.Booking.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Domain/HMS.Modules.Booking.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -3092,7 +3092,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Infrastructure/HMS.Modules.Booking.Infrastructure.csproj",
         "projectName": "HMS.Modules.Booking.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Infrastructure/HMS.Modules.Booking.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Booking/HMS.Modules.Booking.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -3452,7 +3452,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Api/HMS.Modules.Finance.Api.csproj",
         "projectName": "HMS.Modules.Finance.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Api/HMS.Modules.Finance.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -3943,7 +3943,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Application/HMS.Modules.Finance.Application.csproj",
         "projectName": "HMS.Modules.Finance.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Application/HMS.Modules.Finance.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -4292,7 +4292,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Domain/HMS.Modules.Finance.Domain.csproj",
         "projectName": "HMS.Modules.Finance.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Domain/HMS.Modules.Finance.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -4627,7 +4627,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Infrastructure/HMS.Modules.Finance.Infrastructure.csproj",
         "projectName": "HMS.Modules.Finance.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Infrastructure/HMS.Modules.Finance.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Finance/HMS.Modules.Finance.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -4987,7 +4987,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj",
         "projectName": "HMS.Modules.Folios.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Api/HMS.Modules.Folios.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -5332,7 +5332,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Application/HMS.Modules.Folios.Application.csproj",
         "projectName": "HMS.Modules.Folios.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Application/HMS.Modules.Folios.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -5677,7 +5677,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/HMS.Modules.Folios.Domain.csproj",
         "projectName": "HMS.Modules.Folios.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/HMS.Modules.Folios.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -6016,7 +6016,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Infrastructure/HMS.Modules.Folios.Infrastructure.csproj",
         "projectName": "HMS.Modules.Folios.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Infrastructure/HMS.Modules.Folios.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Folios/HMS.Modules.Folios.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -6361,7 +6361,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Api/HMS.Modules.FrontDesk.Api.csproj",
         "projectName": "HMS.Modules.FrontDesk.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Api/HMS.Modules.FrontDesk.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -6706,7 +6706,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Application/HMS.Modules.FrontDesk.Application.csproj",
         "projectName": "HMS.Modules.FrontDesk.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Application/HMS.Modules.FrontDesk.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -7051,7 +7051,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Domain/HMS.Modules.FrontDesk.Domain.csproj",
         "projectName": "HMS.Modules.FrontDesk.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Domain/HMS.Modules.FrontDesk.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -7390,7 +7390,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Infrastructure/HMS.Modules.FrontDesk.Infrastructure.csproj",
         "projectName": "HMS.Modules.FrontDesk.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Infrastructure/HMS.Modules.FrontDesk.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/FrontDesk/HMS.Modules.FrontDesk.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -7735,7 +7735,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Api/HMS.Modules.Guests.Api.csproj",
         "projectName": "HMS.Modules.Guests.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Api/HMS.Modules.Guests.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -8229,7 +8229,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Application/HMS.Modules.Guests.Application.csproj",
         "projectName": "HMS.Modules.Guests.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Application/HMS.Modules.Guests.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -8584,7 +8584,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Domain/HMS.Modules.Guests.Domain.csproj",
         "projectName": "HMS.Modules.Guests.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Domain/HMS.Modules.Guests.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -8923,7 +8923,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Infrastructure/HMS.Modules.Guests.Infrastructure.csproj",
         "projectName": "HMS.Modules.Guests.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Infrastructure/HMS.Modules.Guests.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Guests/HMS.Modules.Guests.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -9286,7 +9286,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Api/HMS.Modules.GuestServices.Api.csproj",
         "projectName": "HMS.Modules.GuestServices.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Api/HMS.Modules.GuestServices.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -9631,7 +9631,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Application/HMS.Modules.GuestServices.Application.csproj",
         "projectName": "HMS.Modules.GuestServices.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Application/HMS.Modules.GuestServices.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -9976,7 +9976,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Domain/HMS.Modules.GuestServices.Domain.csproj",
         "projectName": "HMS.Modules.GuestServices.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Domain/HMS.Modules.GuestServices.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -10315,7 +10315,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Infrastructure/HMS.Modules.GuestServices.Infrastructure.csproj",
         "projectName": "HMS.Modules.GuestServices.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Infrastructure/HMS.Modules.GuestServices.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/GuestServices/HMS.Modules.GuestServices.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -10660,7 +10660,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Api/HMS.Modules.Hotels.Api.csproj",
         "projectName": "HMS.Modules.Hotels.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Api/HMS.Modules.Hotels.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -11154,7 +11154,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj",
         "projectName": "HMS.Modules.Hotels.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/HMS.Modules.Hotels.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -11506,7 +11506,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Domain/HMS.Modules.Hotels.Domain.csproj",
         "projectName": "HMS.Modules.Hotels.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Domain/HMS.Modules.Hotels.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -11845,7 +11845,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Infrastructure/HMS.Modules.Hotels.Infrastructure.csproj",
         "projectName": "HMS.Modules.Hotels.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Infrastructure/HMS.Modules.Hotels.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Hotels/HMS.Modules.Hotels.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -12208,7 +12208,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Api/HMS.Modules.Housekeeping.Api.csproj",
         "projectName": "HMS.Modules.Housekeeping.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Api/HMS.Modules.Housekeeping.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -12553,7 +12553,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Application/HMS.Modules.Housekeeping.Application.csproj",
         "projectName": "HMS.Modules.Housekeeping.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Application/HMS.Modules.Housekeeping.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -12898,7 +12898,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/HMS.Modules.Housekeeping.Domain.csproj",
         "projectName": "HMS.Modules.Housekeeping.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/HMS.Modules.Housekeeping.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -13237,7 +13237,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Infrastructure/HMS.Modules.Housekeeping.Infrastructure.csproj",
         "projectName": "HMS.Modules.Housekeeping.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Infrastructure/HMS.Modules.Housekeeping.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Housekeeping/HMS.Modules.Housekeeping.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -13582,7 +13582,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Api/HMS.Modules.Identity.Api.csproj",
         "projectName": "HMS.Modules.Identity.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Api/HMS.Modules.Identity.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -14076,7 +14076,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Application/HMS.Modules.Identity.Application.csproj",
         "projectName": "HMS.Modules.Identity.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Application/HMS.Modules.Identity.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -14431,7 +14431,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Domain/HMS.Modules.Identity.Domain.csproj",
         "projectName": "HMS.Modules.Identity.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Domain/HMS.Modules.Identity.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -14770,7 +14770,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Infrastructure/HMS.Modules.Identity.Infrastructure.csproj",
         "projectName": "HMS.Modules.Identity.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Infrastructure/HMS.Modules.Identity.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Identity/HMS.Modules.Identity.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -15137,7 +15137,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Api/HMS.Modules.Inventory.Api.csproj",
         "projectName": "HMS.Modules.Inventory.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Api/HMS.Modules.Inventory.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -15482,7 +15482,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Application/HMS.Modules.Inventory.Application.csproj",
         "projectName": "HMS.Modules.Inventory.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Application/HMS.Modules.Inventory.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -15827,7 +15827,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Domain/HMS.Modules.Inventory.Domain.csproj",
         "projectName": "HMS.Modules.Inventory.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Domain/HMS.Modules.Inventory.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -16166,7 +16166,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Infrastructure/HMS.Modules.Inventory.Infrastructure.csproj",
         "projectName": "HMS.Modules.Inventory.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Infrastructure/HMS.Modules.Inventory.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Inventory/HMS.Modules.Inventory.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -16511,7 +16511,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Api/HMS.Modules.Maintenance.Api.csproj",
         "projectName": "HMS.Modules.Maintenance.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Api/HMS.Modules.Maintenance.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -16856,7 +16856,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Application/HMS.Modules.Maintenance.Application.csproj",
         "projectName": "HMS.Modules.Maintenance.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Application/HMS.Modules.Maintenance.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -17201,7 +17201,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/HMS.Modules.Maintenance.Domain.csproj",
         "projectName": "HMS.Modules.Maintenance.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/HMS.Modules.Maintenance.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -17540,7 +17540,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Infrastructure/HMS.Modules.Maintenance.Infrastructure.csproj",
         "projectName": "HMS.Modules.Maintenance.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Infrastructure/HMS.Modules.Maintenance.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Maintenance/HMS.Modules.Maintenance.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -17885,7 +17885,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Api/HMS.Modules.Notifications.Api.csproj",
         "projectName": "HMS.Modules.Notifications.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Api/HMS.Modules.Notifications.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -18230,7 +18230,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Application/HMS.Modules.Notifications.Application.csproj",
         "projectName": "HMS.Modules.Notifications.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Application/HMS.Modules.Notifications.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -18575,7 +18575,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Domain/HMS.Modules.Notifications.Domain.csproj",
         "projectName": "HMS.Modules.Notifications.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Domain/HMS.Modules.Notifications.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -18914,7 +18914,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Infrastructure/HMS.Modules.Notifications.Infrastructure.csproj",
         "projectName": "HMS.Modules.Notifications.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Infrastructure/HMS.Modules.Notifications.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -19259,7 +19259,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Api/HMS.Modules.Payments.Api.csproj",
         "projectName": "HMS.Modules.Payments.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Api/HMS.Modules.Payments.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -19753,7 +19753,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Application/HMS.Modules.Payments.Application.csproj",
         "projectName": "HMS.Modules.Payments.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Application/HMS.Modules.Payments.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -20108,7 +20108,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Domain/HMS.Modules.Payments.Domain.csproj",
         "projectName": "HMS.Modules.Payments.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Domain/HMS.Modules.Payments.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -20447,7 +20447,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Infrastructure/HMS.Modules.Payments.Infrastructure.csproj",
         "projectName": "HMS.Modules.Payments.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Infrastructure/HMS.Modules.Payments.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Payments/HMS.Modules.Payments.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -20810,7 +20810,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Api/HMS.Modules.PointOfSale.Api.csproj",
         "projectName": "HMS.Modules.PointOfSale.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Api/HMS.Modules.PointOfSale.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -21155,7 +21155,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Application/HMS.Modules.PointOfSale.Application.csproj",
         "projectName": "HMS.Modules.PointOfSale.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Application/HMS.Modules.PointOfSale.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -21500,7 +21500,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Domain/HMS.Modules.PointOfSale.Domain.csproj",
         "projectName": "HMS.Modules.PointOfSale.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Domain/HMS.Modules.PointOfSale.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -21839,7 +21839,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Infrastructure/HMS.Modules.PointOfSale.Infrastructure.csproj",
         "projectName": "HMS.Modules.PointOfSale.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Infrastructure/HMS.Modules.PointOfSale.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/PointOfSale/HMS.Modules.PointOfSale.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -22184,7 +22184,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Api/HMS.Modules.Reporting.Api.csproj",
         "projectName": "HMS.Modules.Reporting.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Api/HMS.Modules.Reporting.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -22529,7 +22529,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Application/HMS.Modules.Reporting.Application.csproj",
         "projectName": "HMS.Modules.Reporting.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Application/HMS.Modules.Reporting.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -22874,7 +22874,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Domain/HMS.Modules.Reporting.Domain.csproj",
         "projectName": "HMS.Modules.Reporting.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Domain/HMS.Modules.Reporting.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -23213,7 +23213,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Infrastructure/HMS.Modules.Reporting.Infrastructure.csproj",
         "projectName": "HMS.Modules.Reporting.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Infrastructure/HMS.Modules.Reporting.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reporting/HMS.Modules.Reporting.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -23558,7 +23558,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Api/HMS.Modules.Reports.Api.csproj",
         "projectName": "HMS.Modules.Reports.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Api/HMS.Modules.Reports.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -24049,7 +24049,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Application/HMS.Modules.Reports.Application.csproj",
         "projectName": "HMS.Modules.Reports.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Application/HMS.Modules.Reports.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -24398,7 +24398,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Domain/HMS.Modules.Reports.Domain.csproj",
         "projectName": "HMS.Modules.Reports.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Domain/HMS.Modules.Reports.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -24733,7 +24733,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Infrastructure/HMS.Modules.Reports.Infrastructure.csproj",
         "projectName": "HMS.Modules.Reports.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Infrastructure/HMS.Modules.Reports.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reports/HMS.Modules.Reports.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -25093,7 +25093,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Api/HMS.Modules.Reservations.Api.csproj",
         "projectName": "HMS.Modules.Reservations.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Api/HMS.Modules.Reservations.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -25438,7 +25438,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Application/HMS.Modules.Reservations.Application.csproj",
         "projectName": "HMS.Modules.Reservations.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Application/HMS.Modules.Reservations.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -25783,7 +25783,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Domain/HMS.Modules.Reservations.Domain.csproj",
         "projectName": "HMS.Modules.Reservations.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Domain/HMS.Modules.Reservations.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -26122,7 +26122,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Infrastructure/HMS.Modules.Reservations.Infrastructure.csproj",
         "projectName": "HMS.Modules.Reservations.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Infrastructure/HMS.Modules.Reservations.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Reservations/HMS.Modules.Reservations.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -26467,7 +26467,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Api/HMS.Modules.Staff.Api.csproj",
         "projectName": "HMS.Modules.Staff.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Api/HMS.Modules.Staff.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -26958,7 +26958,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Application/HMS.Modules.Staff.Application.csproj",
         "projectName": "HMS.Modules.Staff.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Application/HMS.Modules.Staff.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -27307,7 +27307,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Domain/HMS.Modules.Staff.Domain.csproj",
         "projectName": "HMS.Modules.Staff.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Domain/HMS.Modules.Staff.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -27642,7 +27642,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Infrastructure/HMS.Modules.Staff.Infrastructure.csproj",
         "projectName": "HMS.Modules.Staff.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Infrastructure/HMS.Modules.Staff.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Staff/HMS.Modules.Staff.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -28002,7 +28002,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/HMS.Modules.WifiAccess.Api.csproj",
         "projectName": "HMS.Modules.WifiAccess.Api",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/HMS.Modules.WifiAccess.Api.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -28347,7 +28347,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Application/HMS.Modules.WifiAccess.Application.csproj",
         "projectName": "HMS.Modules.WifiAccess.Application",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Application/HMS.Modules.WifiAccess.Application.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -28692,7 +28692,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/HMS.Modules.WifiAccess.Domain.csproj",
         "projectName": "HMS.Modules.WifiAccess.Domain",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/HMS.Modules.WifiAccess.Domain.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -29031,7 +29031,7 @@
         "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Infrastructure/HMS.Modules.WifiAccess.Infrastructure.csproj",
         "projectName": "HMS.Modules.WifiAccess.Infrastructure",
         "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Infrastructure/HMS.Modules.WifiAccess.Infrastructure.csproj",
-        "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+        "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
         "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/WifiAccess/HMS.Modules.WifiAccess.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [

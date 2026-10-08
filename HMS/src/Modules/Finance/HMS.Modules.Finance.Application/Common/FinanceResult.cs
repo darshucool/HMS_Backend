@@ -21,4 +21,7 @@ public sealed record FinanceResult<T>(
     public static FinanceResult<T> NotFound(string error) => new(FinanceResultStatus.NotFound, default, error);
     public static FinanceResult<T> Conflict(string error) => new(FinanceResultStatus.Conflict, default, error);
     public static FinanceResult<T> Forbidden(string error) => new(FinanceResultStatus.Forbidden, default, error);
+
+    public static FinanceResult<T> From(FinanceResult<object> source) =>
+        new(source.Status, default, source.Error);
 }

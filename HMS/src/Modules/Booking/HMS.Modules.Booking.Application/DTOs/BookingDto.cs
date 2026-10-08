@@ -7,6 +7,8 @@ public sealed record BookingDto(
     Guid? LeadGuestUid,
     string? LeadGuestName,
     string? GuestType,
+    decimal CookingCharges,
+    decimal ExtraCharges,
     string BookingSource,
     string Status,
     DateOnly CheckInDate,
@@ -24,6 +26,7 @@ public sealed record BookingDto(
 public sealed record BookingUnitDto(
     Guid Uid,
     Guid AccommodationTypeUid,
+    Guid? RatePlanUid,
     Guid? UnitUid,
     DateOnly CheckInDate,
     DateOnly CheckOutDate,
@@ -40,6 +43,21 @@ public sealed record BookingGuestDto(
     Guid GuestUid,
     string DisplayName,
     bool IsLeadGuest);
+
+public sealed record BookingChargeItemDto(
+    Guid Uid,
+    Guid? BookingUnitUid,
+    Guid ChargeTypeUid,
+    string ChargeTypeName,
+    DateOnly ServiceDate,
+    string Description,
+    decimal Quantity,
+    decimal UnitPrice,
+    decimal DiscountAmount,
+    decimal TaxAmount,
+    decimal TotalAmount,
+    string? Notes,
+    DateTimeOffset CreationDate);
 
 public sealed record BookingStatusHistoryDto(
     Guid Uid,
@@ -77,6 +95,8 @@ public sealed record BookingDetailDto(
     decimal DiscountAmount,
     decimal TaxAmount,
     decimal ServiceCharge,
+    decimal CookingCharges,
+    decimal ExtraCharges,
     decimal? QuotedTotal,
     TimeOnly? ArrivalTime,
     TimeOnly? DepartureTime,
@@ -90,6 +110,7 @@ public sealed record BookingDetailDto(
     DateTimeOffset CreationDate,
     IReadOnlyList<BookingUnitDto> Units,
     IReadOnlyList<BookingGuestDto> Guests,
+    IReadOnlyList<BookingChargeItemDto> Charges,
     BookingSummaryDto Summary);
 
 public sealed record BookingSummaryDto(
@@ -100,13 +121,17 @@ public sealed record BookingSummaryDto(
     DateOnly CheckOutDate,
     int NumberOfPeople,
     int Nights,
-    string? BookingType,
     decimal? RoomRatePerNight,
     decimal TotalRoomRevenue,
+    decimal ExtraIncome,
+    decimal DiscountAmount,
+    decimal TaxAmount,
+    decimal ServiceCharge,
     string? PaymentMethod,
-    decimal CookingCharges,
-    decimal ExtraCharges,
     decimal TotalBookingValue,
+    decimal PaymentsReceived,
+    decimal RefundsPaid,
+    decimal NetPaid,
+    decimal OutstandingBalance,
     decimal? AveragePerPerson,
     string? Notes);
-

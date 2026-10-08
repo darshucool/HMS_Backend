@@ -19,8 +19,12 @@ public interface IPaymentBookingLookup
         CancellationToken cancellationToken);
 }
 
+public sealed record PaymentPropertyContext(long Id, long OrganizationId, Guid Uid, bool IsArchived);
+
 public interface IPaymentPropertyAccess
 {
+    Task<PaymentPropertyContext?> GetByUidAsync(Guid propertyUid, CancellationToken cancellationToken);
+
     Task<bool> HasAccessAsync(
         string actorSubject,
         Guid propertyUid,

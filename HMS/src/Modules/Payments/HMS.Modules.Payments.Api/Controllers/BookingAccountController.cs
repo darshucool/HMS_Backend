@@ -1,7 +1,12 @@
 using HMS.Modules.Payments.Api.Contracts;
 using HMS.Modules.Payments.Application.Commands.CreateBookingCharge;
+using HMS.Modules.Payments.Application.Commands.CreateBookingChargeType;
 using HMS.Modules.Payments.Application.Commands.CreateBookingPayment;
+using HMS.Modules.Payments.Application.Commands.DeleteBookingChargeType;
+using HMS.Modules.Payments.Application.Commands.UpdateBookingChargeType;
 using HMS.Modules.Payments.Application.Queries.GetBookingCharges;
+using HMS.Modules.Payments.Application.Queries.GetBookingChargeType;
+using HMS.Modules.Payments.Application.Queries.GetBookingChargeTypes;
 using HMS.Modules.Payments.Application.Queries.GetBookingFinancialSummary;
 using HMS.Modules.Payments.Application.Queries.GetBookingInvoice;
 using HMS.Modules.Payments.Application.Queries.GetBookingPayments;
@@ -78,6 +83,95 @@ public sealed class BookingAccountController(ISender sender) : ControllerBase
 
         return result.IsSuccess
             ? StatusCode(StatusCodes.Status201Created, result.Value)
+            : this.ToActionResult(result);
+    }
+
+    [HttpGet("/api/v1/properties/{propertyUid:guid}/booking-charge-types")]
+    public async Task<IActionResult> GetChargeTypes(
+        Guid propertyUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new GetBookingChargeTypesQuery(
+            propertyUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return this.ToActionResult(result);
+    }
+
+    [HttpPost("/api/v1/properties/{propertyUid:guid}/booking-charge-types")]
+    public async Task<IActionResult> CreateChargeType(
+        Guid propertyUid,
+        [FromBody] UpsertBookingChargeTypeRequest request,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new CreateBookingChargeTypeCommand(
+            propertyUid,
+            request.Code,
+            request.Name,
+            request.Category,
+            request.IsTaxable,
+            request.DefaultPrice,
+            request.IsActive,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return result.IsSuccess
+            ? StatusCode(StatusCodes.Status201Created, result.Value)
+            : this.ToActionResult(result);
+    }
+
+    [HttpGet("/api/v1/properties/{propertyUid:guid}/booking-charge-types/{chargeTypeUid:guid}")]
+    public async Task<IActionResult> GetChargeType(
+        Guid propertyUid,
+        Guid chargeTypeUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new GetBookingChargeTypeQuery(
+            propertyUid,
+            chargeTypeUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return this.ToActionResult(result);
+    }
+
+    [HttpPut("/api/v1/properties/{propertyUid:guid}/booking-charge-types/{chargeTypeUid:guid}")]
+    public async Task<IActionResult> UpdateChargeType(
+        Guid propertyUid,
+        Guid chargeTypeUid,
+        [FromBody] UpsertBookingChargeTypeRequest request,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new UpdateBookingChargeTypeCommand(
+            propertyUid,
+            chargeTypeUid,
+            request.Code,
+            request.Name,
+            request.Category,
+            request.IsTaxable,
+            request.DefaultPrice,
+            request.IsActive,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return this.ToActionResult(result);
+    }
+
+    [HttpDelete("/api/v1/properties/{propertyUid:guid}/booking-charge-types/{chargeTypeUid:guid}")]
+    public async Task<IActionResult> DeleteChargeType(
+        Guid propertyUid,
+        Guid chargeTypeUid,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(new DeleteBookingChargeTypeCommand(
+            propertyUid,
+            chargeTypeUid,
+            User.GetRequiredSubject(),
+            User.IsPlatformAdmin()), cancellationToken);
+
+        return result.IsSuccess
+            ? NoContent()
             : this.ToActionResult(result);
     }
 

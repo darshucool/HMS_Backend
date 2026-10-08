@@ -26,7 +26,9 @@ payment_totals AS
 (
     SELECT
         booking_id,
-        SUM(amount) FILTER (WHERE status = 'COMPLETED') AS payments_received
+        SUM(amount) FILTER (
+            WHERE status IN ('COMPLETED', 'PARTIALLY_REFUNDED', 'REFUNDED')
+        ) AS payments_received
     FROM hotel.booking_payments
     WHERE is_active = true AND is_archived = false
     GROUP BY booking_id

@@ -1,4 +1,16 @@
+using HMS.Modules.Payments.Domain.Enums;
+
 namespace HMS.Modules.Payments.Application.DTOs;
+
+public sealed record BookingChargeTypeDto(
+    Guid Uid,
+    Guid PropertyUid,
+    string Code,
+    string Name,
+    BookingChargeCategory Category,
+    bool IsTaxable,
+    decimal? DefaultPrice,
+    bool IsActive);
 
 public sealed record BookingChargeDto(
     Guid Uid,
@@ -22,6 +34,7 @@ public sealed record BookingPaymentDto(
     string PaymentMethod,
     string PaymentType,
     decimal Amount,
+    decimal RefundedAmount,
     string Currency,
     string Status,
     string? ReferenceNumber,

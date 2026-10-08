@@ -28,6 +28,8 @@ public sealed record UpdateBookingCommand(
     string? ExternalReference,
     string? CancellationReason,
     string? GuestType,
+    decimal? CookingCharges,
+    decimal? ExtraCharges,
     string ActorSubject,
     bool IsPlatformAdmin) : IRequest<BookingResult<BookingDetailDto>>;
 
@@ -86,6 +88,8 @@ public sealed class UpdateBookingCommandHandler(
                 request.DiscountAmount,
                 request.TaxAmount,
                 request.ServiceCharge,
+                request.CookingCharges ?? booking.CookingCharges,
+                request.ExtraCharges ?? booking.ExtraCharges,
                 request.QuotedTotal,
                 request.ArrivalTime,
                 request.DepartureTime,

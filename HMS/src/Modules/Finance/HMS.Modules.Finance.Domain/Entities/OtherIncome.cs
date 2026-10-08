@@ -73,6 +73,79 @@ public sealed class OtherIncome : AuditableEntity
         return income;
     }
 
+    public void Update(
+        long incomeCategoryId,
+        Guid incomeCategoryUid,
+        long? bookingId,
+        Guid? bookingUid,
+        DateOnly incomeDate,
+        string description,
+        decimal amount,
+        string currency,
+        FinancePaymentMethod? paymentMethod,
+        string? referenceNumber,
+        string? notes,
+        string actorSubject)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(description);
+        if (description.Trim().Length > 300)
+            throw new ArgumentException("Description cannot exceed 300 characters.", nameof(description));
+
+        if (amount <= 0)
+            throw new ArgumentException("Amount must be greater than zero.", nameof(amount));
+
+        var cleanedCurrency = string.IsNullOrWhiteSpace(currency) ? "LKR" : currency.Trim().ToUpperInvariant();
+        if (cleanedCurrency.Length != 3)
+            throw new ArgumentException("Currency must be a 3-letter code.", nameof(currency));
+
+        IncomeCategoryId = incomeCategoryId;
+        IncomeCategoryUid = incomeCategoryUid;
+        BookingId = bookingId;
+        BookingUid = bookingUid;
+        IncomeDate = incomeDate;
+        Description = description.Trim();
+        Amount = amount;
+        Currency = cleanedCurrency;
+        PaymentMethod = paymentMethod;
+        ReferenceNumber = Optional(referenceNumber, 150);
+        Notes = Optional(notes, 4000);
+        MarkModified(actorSubject);
+    }
+
+    public void Archive(string actorSubject)
+    {
+        IsArchived = true;
+        IsActive = false;
+        MarkModified(actorSubject);
+    }
+
+    public static OtherIncome Rehydrate(
+        long id,
+        Guid uid,
+        long organizationId,
+        long propertyId,
+        Guid propertyUid,
+        bool isActive,
+        bool isArchived,
+        DateTimeOffset creationDate,
+        string? createdBy)
+    {
+        var income = new OtherIncome
+        {
+            Id = id,
+            Uid = uid,
+            OrganizationId = organizationId,
+            PropertyId = propertyId,
+            PropertyUid = propertyUid,
+            IsActive = isActive,
+            IsArchived = isArchived,
+            CreationDate = creationDate,
+            CreatedBy = createdBy
+        };
+
+        return income;
+    }
+
     private static string? Optional(string? value, int maxLength)
     {
         if (string.IsNullOrWhiteSpace(value))

@@ -18,6 +18,7 @@ public static class DependencyInjection
         services.AddScoped<IUtilityBillRepository, UtilityBillRepository>();
         services.AddScoped<IOtherIncomeRepository, OtherIncomeRepository>();
         services.AddScoped<IExpenseCategoryRepository, ExpenseCategoryRepository>();
+        services.AddScoped<IIncomeCategoryRepository, IncomeCategoryRepository>();
         services.AddScoped<IUtilityTypeRepository, UtilityTypeRepository>();
         return services;
     }

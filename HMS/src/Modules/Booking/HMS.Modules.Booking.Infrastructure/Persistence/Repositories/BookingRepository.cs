@@ -95,46 +95,82 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 cancellationToken: cancellationToken));
     }
 
-    public async Task<long?> GetRatePlanIdAsync(
+    public async Task<RatePlanBookingContext?> GetRatePlanAsync(
         Guid ratePlanUid,
         long propertyId,
+        long accommodationTypeId,
         CancellationToken cancellationToken)
     {
         const string sql = """
-            SELECT id
+            SELECT
+                id                      AS "Id",
+                accommodation_type_id   AS "AccommodationTypeId",
+                pricing_basis           AS "PricingBasis"
             FROM hotel.rate_plans
             WHERE uid = @RatePlanUid
               AND property_id = @PropertyId
+              AND accommodation_type_id = @AccommodationTypeId
+              AND is_active = true
               AND is_archived = false;
             """;
 
         await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
-        return await connection.QuerySingleOrDefaultAsync<long?>(
+        return await connection.QuerySingleOrDefaultAsync<RatePlanBookingContext>(
             new CommandDefinition(
                 sql,
-                new { RatePlanUid = ratePlanUid, PropertyId = propertyId },
+                new
+                {
+                    RatePlanUid = ratePlanUid,
+                    PropertyId = propertyId,
+                    AccommodationTypeId = accommodationTypeId
+                },
                 cancellationToken: cancellationToken));
     }
 
-    public async Task<long?> GetMealPlanIdAsync(
-        Guid mealPlanUid,
-        long propertyId,
+    public async Task<IReadOnlyList<RatePlanPriceRow>> GetRatePlanPricesAsync(
+        long ratePlanId,
+        DateOnly checkInDate,
+        DateOnly checkOutDate,
         CancellationToken cancellationToken)
     {
         const string sql = """
-            SELECT id
-            FROM hotel.meal_plans
-            WHERE uid = @MealPlanUid
-              AND property_id = @PropertyId
-              AND is_archived = false;
+            SELECT
+                start_date::date    AS "StartDate",
+                end_date::date      AS "EndDate",
+                day_of_week         AS "DayOfWeek",
+                unit_rate           AS "UnitRate",
+                adult_rate          AS "AdultRate",
+                child_rate          AS "ChildRate",
+                minimum_stay        AS "MinimumStay"
+            FROM hotel.rate_plan_prices
+            WHERE rate_plan_id = @RatePlanId
+              AND is_active = true
+              AND is_archived = false
+              AND start_date < @CheckOutDate::date
+              AND end_date >= @CheckInDate::date
+            ORDER BY start_date, day_of_week NULLS LAST;
             """;
 
         await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
-        return await connection.QuerySingleOrDefaultAsync<long?>(
+        var rows = await connection.QueryAsync<RatePlanPriceDbRow>(
             new CommandDefinition(
                 sql,
-                new { MealPlanUid = mealPlanUid, PropertyId = propertyId },
+                new
+                {
+                    RatePlanId = ratePlanId,
+                    CheckInDate = checkInDate.ToDateTime(TimeOnly.MinValue),
+                    CheckOutDate = checkOutDate.ToDateTime(TimeOnly.MinValue)
+                },
                 cancellationToken: cancellationToken));
+
+        return rows.Select(row => new RatePlanPriceRow(
+            DateOnly.FromDateTime(row.StartDate),
+            DateOnly.FromDateTime(row.EndDate),
+            row.DayOfWeek,
+            row.UnitRate,
+            row.AdultRate,
+            row.ChildRate,
+            row.MinimumStay)).ToList();
     }
 
     public async Task InsertAsync(
@@ -149,8 +185,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 booking_source, external_reference, status, check_in_date, check_out_date,
                 adults, children, infants, currency, discount_amount, tax_amount,
                 service_charge, quoted_total, arrival_time, departure_time,
-                special_requests, internal_notes, is_active, is_archived,
-                creation_date, created_by
+                special_requests, internal_notes, cooking_charges, extra_charges,
+                is_active, is_archived, creation_date, created_by
             )
             VALUES
             (
@@ -158,8 +194,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 @BookingSource, @ExternalReference, 'PENDING', @CheckInDate, @CheckOutDate,
                 @Adults, @Children, @Infants, @Currency, @DiscountAmount, @TaxAmount,
                 @ServiceCharge, @QuotedTotal, @ArrivalTime, @DepartureTime,
-                @SpecialRequests, @InternalNotes, @IsActive, @IsArchived,
-                @CreationDate, @CreatedBy
+                @SpecialRequests, @InternalNotes, @CookingCharges, @ExtraCharges,
+                @IsActive, @IsArchived, @CreationDate, @CreatedBy
             )
             RETURNING id;
             """;
@@ -194,6 +230,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                     booking.DepartureTime,
                     booking.SpecialRequests,
                     booking.InternalNotes,
+                    booking.CookingCharges,
+                    booking.ExtraCharges,
                     booking.IsActive,
                     booking.IsArchived,
                     booking.CreationDate,
@@ -261,7 +299,7 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                         unit.AccommodationTypeId,
                         unit.UnitId,
                         unit.RatePlanId,
-                        unit.MealPlanId,
+                        MealPlanId = (long?)null,
                         unit.CheckInDate,
                         unit.CheckOutDate,
                         unit.Adults,
@@ -318,29 +356,27 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 b.creation_date         AS "CreationDate",
                 g.guest_type            AS "GuestType",
                 g.phone                 AS "ContactNumber",
-                summary.booking_type    AS "BookingType",
+                b.cooking_charges       AS "CookingCharges",
+                b.extra_charges         AS "ExtraCharges",
                 summary.room_rate       AS "RoomRatePerNight",
                 COALESCE(f.room_revenue, 0) AS "TotalRoomRevenue",
+                COALESCE(f.extra_income, 0) AS "ExtraIncome",
+                COALESCE(f.discount_amount, b.discount_amount, 0) AS "DiscountAmount",
+                COALESCE(f.tax_amount, b.tax_amount, 0) AS "TaxAmount",
+                COALESCE(f.service_charge, b.service_charge, 0) AS "ServiceCharge",
                 pay.payment_method      AS "PaymentMethod",
-                COALESCE(charges.cooking_charges, 0) AS "CookingCharges",
-                COALESCE(charges.extra_charges, 0) AS "ExtraCharges",
-                COALESCE(f.total_booking_value, 0) AS "TotalBookingValue"
+                COALESCE(f.total_booking_value, 0) AS "TotalBookingValue",
+                COALESCE(f.payments_received, 0) AS "PaymentsReceived",
+                COALESCE(f.refunds_paid, 0) AS "RefundsPaid",
+                COALESCE(f.net_paid, 0) AS "NetPaid",
+                COALESCE(f.outstanding_balance, 0) AS "OutstandingBalance"
             FROM hotel.bookings b
             JOIN hotel.properties p ON p.id = b.property_id
             LEFT JOIN hotel.guests g ON g.id = b.lead_guest_id
             LEFT JOIN hotel.vw_booking_financial_summary f ON f.booking_id = b.id
             LEFT JOIN LATERAL (
-                SELECT
-                    bu.unit_rate AS room_rate,
-                    CASE
-                        WHEN mp.allow_byo THEN 'BYO'
-                        WHEN mp.includes_breakfast AND mp.includes_lunch AND mp.includes_dinner THEN 'FULL_BOARD'
-                        WHEN (mp.includes_breakfast::int + mp.includes_lunch::int + mp.includes_dinner::int) = 2 THEN 'HALF_BOARD'
-                        WHEN mp.id IS NOT NULL THEN mp.name
-                        ELSE NULL
-                    END AS booking_type
+                SELECT bu.unit_rate AS room_rate
                 FROM hotel.booking_units bu
-                LEFT JOIN hotel.meal_plans mp ON mp.id = bu.meal_plan_id
                 WHERE bu.booking_id = b.id
                   AND bu.is_archived = false
                   AND bu.allocation_status <> 'CANCELLED'
@@ -348,21 +384,11 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 LIMIT 1
             ) summary ON true
             LEFT JOIN LATERAL (
-                SELECT
-                    COALESCE(SUM(c.total_amount) FILTER (WHERE ct.category = 'COOKING'), 0) AS cooking_charges,
-                    COALESCE(SUM(c.total_amount) FILTER (WHERE ct.category <> 'COOKING'), 0) AS extra_charges
-                FROM hotel.booking_charges c
-                JOIN hotel.booking_charge_types ct ON ct.id = c.charge_type_id
-                WHERE c.booking_id = b.id
-                  AND c.is_archived = false
-                  AND c.is_active = true
-            ) charges ON true
-            LEFT JOIN LATERAL (
                 SELECT payment_method
                 FROM hotel.booking_payments
                 WHERE booking_id = b.id
                   AND is_archived = false
-                  AND status = 'COMPLETED'
+                  AND status IN ('COMPLETED', 'PARTIALLY_REFUNDED', 'REFUNDED')
                 ORDER BY paid_at DESC
                 LIMIT 1
             ) pay ON true
@@ -530,6 +556,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 b.discount_amount       AS "DiscountAmount",
                 b.tax_amount            AS "TaxAmount",
                 b.service_charge        AS "ServiceCharge",
+                b.cooking_charges       AS "CookingCharges",
+                b.extra_charges         AS "ExtraCharges",
                 b.quoted_total          AS "QuotedTotal",
                 b.arrival_time          AS "ArrivalTime",
                 b.departure_time        AS "DepartureTime",
@@ -582,6 +610,7 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
             SELECT
                 bu.uid                  AS "Uid",
                 at.uid                  AS "AccommodationTypeUid",
+                rp.uid                  AS "RatePlanUid",
                 u.uid                   AS "UnitUid",
                 bu.check_in_date        AS "CheckInDate",
                 bu.check_out_date       AS "CheckOutDate",
@@ -595,6 +624,7 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 bu.allocation_status    AS "AllocationStatus"
             FROM hotel.booking_units bu
             JOIN hotel.accommodation_types at ON at.id = bu.accommodation_type_id
+            LEFT JOIN hotel.rate_plans rp ON rp.id = bu.rate_plan_id
             LEFT JOIN hotel.accommodation_units u ON u.id = bu.unit_id
             WHERE bu.booking_id = @BookingId
               AND bu.is_archived = false
@@ -614,6 +644,32 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
             WHERE bg.booking_id = @BookingId
               AND bg.is_archived = false
             ORDER BY bg.is_lead_guest DESC, g.display_name;
+            """,
+            new { BookingId = booking.Id },
+            cancellationToken: cancellationToken))).AsList();
+
+        var charges = (await connection.QueryAsync<BookingChargeRow>(new CommandDefinition(
+            """
+            SELECT
+                c.uid               AS "Uid",
+                bu.uid              AS "BookingUnitUid",
+                ct.uid              AS "ChargeTypeUid",
+                ct.name             AS "ChargeTypeName",
+                c.service_date      AS "ServiceDate",
+                c.description       AS "Description",
+                c.quantity          AS "Quantity",
+                c.unit_price        AS "UnitPrice",
+                c.discount_amount   AS "DiscountAmount",
+                c.tax_amount        AS "TaxAmount",
+                c.total_amount      AS "TotalAmount",
+                c.notes             AS "Notes",
+                c.creation_date     AS "CreationDate"
+            FROM hotel.booking_charges c
+            JOIN hotel.booking_charge_types ct ON ct.id = c.charge_type_id
+            LEFT JOIN hotel.booking_units bu ON bu.id = c.booking_unit_id
+            WHERE c.booking_id = @BookingId
+              AND c.is_archived = false
+            ORDER BY c.service_date DESC, c.creation_date DESC;
             """,
             new { BookingId = booking.Id },
             cancellationToken: cancellationToken))).AsList();
@@ -641,6 +697,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
             booking.DiscountAmount,
             booking.TaxAmount,
             booking.ServiceCharge,
+            booking.CookingCharges,
+            booking.ExtraCharges,
             booking.QuotedTotal,
             booking.ArrivalTime,
             booking.DepartureTime,
@@ -655,6 +713,7 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
             units.Select(unit => new BookingUnitDto(
                 unit.Uid,
                 unit.AccommodationTypeUid,
+                unit.RatePlanUid,
                 unit.UnitUid,
                 unit.CheckInDate,
                 unit.CheckOutDate,
@@ -670,6 +729,20 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 guest.GuestUid,
                 guest.DisplayName,
                 guest.IsLeadGuest)).ToList(),
+            charges.Select(charge => new BookingChargeItemDto(
+                charge.Uid,
+                charge.BookingUnitUid,
+                charge.ChargeTypeUid,
+                charge.ChargeTypeName,
+                charge.ServiceDate,
+                charge.Description,
+                charge.Quantity,
+                charge.UnitPrice,
+                charge.DiscountAmount,
+                charge.TaxAmount,
+                charge.TotalAmount,
+                charge.Notes,
+                ToDateTimeOffset(charge.CreationDate))).ToList(),
             summary);
     }
 
@@ -971,6 +1044,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                     special_requests = @SpecialRequests,
                     internal_notes = @InternalNotes,
                     cancellation_reason = @CancellationReason,
+                    cooking_charges = @CookingCharges,
+                    extra_charges = @ExtraCharges,
                     confirmed_at = @ConfirmedAt,
                     checked_in_at = @CheckedInAt,
                     checked_out_at = @CheckedOutAt,
@@ -1002,6 +1077,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                     booking.SpecialRequests,
                     booking.InternalNotes,
                     booking.CancellationReason,
+                    booking.CookingCharges,
+                    booking.ExtraCharges,
                     booking.ConfirmedAt,
                     booking.CheckedInAt,
                     booking.CheckedOutAt,
@@ -1225,6 +1302,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         row.LeadGuestUid,
         row.LeadGuestName,
         BookingGuestType.ToDisplay(row.GuestType),
+        row.CookingCharges,
+        row.ExtraCharges,
         row.BookingSource,
         row.Status,
         row.CheckInDate,
@@ -1256,28 +1335,24 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 b.children              AS "Children",
                 b.infants               AS "Infants",
                 b.special_requests      AS "SpecialRequests",
-                summary.booking_type    AS "BookingType",
                 summary.room_rate       AS "RoomRatePerNight",
                 COALESCE(f.room_revenue, 0) AS "TotalRoomRevenue",
+                COALESCE(f.extra_income, 0) AS "ExtraIncome",
+                COALESCE(f.discount_amount, b.discount_amount, 0) AS "DiscountAmount",
+                COALESCE(f.tax_amount, b.tax_amount, 0) AS "TaxAmount",
+                COALESCE(f.service_charge, b.service_charge, 0) AS "ServiceCharge",
                 pay.payment_method      AS "PaymentMethod",
-                COALESCE(charges.cooking_charges, 0) AS "CookingCharges",
-                COALESCE(charges.extra_charges, 0) AS "ExtraCharges",
-                COALESCE(f.total_booking_value, 0) AS "TotalBookingValue"
+                COALESCE(f.total_booking_value, 0) AS "TotalBookingValue",
+                COALESCE(f.payments_received, 0) AS "PaymentsReceived",
+                COALESCE(f.refunds_paid, 0) AS "RefundsPaid",
+                COALESCE(f.net_paid, 0) AS "NetPaid",
+                COALESCE(f.outstanding_balance, 0) AS "OutstandingBalance"
             FROM hotel.bookings b
             LEFT JOIN hotel.guests g ON g.id = b.lead_guest_id
             LEFT JOIN hotel.vw_booking_financial_summary f ON f.booking_id = b.id
             LEFT JOIN LATERAL (
-                SELECT
-                    bu.unit_rate AS room_rate,
-                    CASE
-                        WHEN mp.allow_byo THEN 'BYO'
-                        WHEN mp.includes_breakfast AND mp.includes_lunch AND mp.includes_dinner THEN 'FULL_BOARD'
-                        WHEN (mp.includes_breakfast::int + mp.includes_lunch::int + mp.includes_dinner::int) = 2 THEN 'HALF_BOARD'
-                        WHEN mp.id IS NOT NULL THEN mp.name
-                        ELSE NULL
-                    END AS booking_type
+                SELECT bu.unit_rate AS room_rate
                 FROM hotel.booking_units bu
-                LEFT JOIN hotel.meal_plans mp ON mp.id = bu.meal_plan_id
                 WHERE bu.booking_id = b.id
                   AND bu.is_archived = false
                   AND bu.allocation_status <> 'CANCELLED'
@@ -1285,21 +1360,11 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
                 LIMIT 1
             ) summary ON true
             LEFT JOIN LATERAL (
-                SELECT
-                    COALESCE(SUM(c.total_amount) FILTER (WHERE ct.category = 'COOKING'), 0) AS cooking_charges,
-                    COALESCE(SUM(c.total_amount) FILTER (WHERE ct.category <> 'COOKING'), 0) AS extra_charges
-                FROM hotel.booking_charges c
-                JOIN hotel.booking_charge_types ct ON ct.id = c.charge_type_id
-                WHERE c.booking_id = b.id
-                  AND c.is_archived = false
-                  AND c.is_active = true
-            ) charges ON true
-            LEFT JOIN LATERAL (
                 SELECT payment_method
                 FROM hotel.booking_payments
                 WHERE booking_id = b.id
                   AND is_archived = false
-                  AND status = 'COMPLETED'
+                  AND status IN ('COMPLETED', 'PARTIALLY_REFUNDED', 'REFUNDED')
                 ORDER BY paid_at DESC
                 LIMIT 1
             ) pay ON true
@@ -1322,34 +1387,56 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
             row.CheckOutDate,
             people,
             row.Nights,
-            row.BookingType,
             row.RoomRatePerNight,
             row.TotalRoomRevenue,
+            row.ExtraIncome,
+            row.DiscountAmount,
+            row.TaxAmount,
+            row.ServiceCharge,
             row.PaymentMethod,
-            row.CookingCharges,
-            row.ExtraCharges,
             row.TotalBookingValue,
+            row.PaymentsReceived,
+            row.RefundsPaid,
+            row.NetPaid,
+            row.OutstandingBalance,
             people > 0 ? Math.Round(row.TotalBookingValue / people, 2) : null,
             row.SpecialRequests);
     }
 
-    private static BookingSummaryDto EmptySummary(HotelBooking booking, string? guestName) => new(
-        guestName,
-        null,
-        null,
-        booking.CheckInDate,
-        booking.CheckOutDate,
-        booking.Adults + booking.Children + booking.Infants,
-        booking.CheckOutDate.DayNumber - booking.CheckInDate.DayNumber,
-        null,
-        null,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        booking.SpecialRequests);
+    private static BookingSummaryDto EmptySummary(HotelBooking booking, string? guestName)
+    {
+        var people = booking.Adults + booking.Children + booking.Infants;
+        var roomRevenue = booking.QuotedTotal ?? 0;
+        var total = roomRevenue
+            + booking.CookingCharges
+            + booking.ExtraCharges
+            - booking.DiscountAmount
+            + booking.TaxAmount
+            + booking.ServiceCharge;
+
+        return new(
+            guestName,
+            null,
+            null,
+            booking.CheckInDate,
+            booking.CheckOutDate,
+            people,
+            booking.CheckOutDate.DayNumber - booking.CheckInDate.DayNumber,
+            null,
+            roomRevenue,
+            booking.CookingCharges + booking.ExtraCharges,
+            booking.DiscountAmount,
+            booking.TaxAmount,
+            booking.ServiceCharge,
+            null,
+            total,
+            0,
+            0,
+            0,
+            total,
+            people > 0 ? Math.Round(total / people, 2) : null,
+            booking.SpecialRequests);
+    }
 
     private static string? ToGuestType(string? guestType) => BookingGuestType.ToDisplay(guestType);
 
@@ -1379,13 +1466,20 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         public DateTime CreationDate { get; init; }
         public string? GuestType { get; init; }
         public string? ContactNumber { get; init; }
-        public string? BookingType { get; init; }
-        public decimal? RoomRatePerNight { get; init; }
-        public decimal TotalRoomRevenue { get; init; }
-        public string? PaymentMethod { get; init; }
         public decimal CookingCharges { get; init; }
         public decimal ExtraCharges { get; init; }
+        public decimal? RoomRatePerNight { get; init; }
+        public decimal TotalRoomRevenue { get; init; }
+        public decimal ExtraIncome { get; init; }
+        public decimal DiscountAmount { get; init; }
+        public decimal TaxAmount { get; init; }
+        public decimal ServiceCharge { get; init; }
+        public string? PaymentMethod { get; init; }
         public decimal TotalBookingValue { get; init; }
+        public decimal PaymentsReceived { get; init; }
+        public decimal RefundsPaid { get; init; }
+        public decimal NetPaid { get; init; }
+        public decimal OutstandingBalance { get; init; }
     }
 
     private static DateTimeOffset? ToDateTimeOffset(DateTime? value) =>
@@ -1412,6 +1506,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         row.DiscountAmount,
         row.TaxAmount,
         row.ServiceCharge,
+        row.CookingCharges,
+        row.ExtraCharges,
         row.QuotedTotal,
         row.ArrivalTime,
         row.DepartureTime,
@@ -1451,6 +1547,8 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         public decimal DiscountAmount { get; init; }
         public decimal TaxAmount { get; init; }
         public decimal ServiceCharge { get; init; }
+        public decimal CookingCharges { get; init; }
+        public decimal ExtraCharges { get; init; }
         public decimal? QuotedTotal { get; init; }
         public TimeOnly? ArrivalTime { get; init; }
         public TimeOnly? DepartureTime { get; init; }
@@ -1469,10 +1567,22 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         public string? ModifiedBy { get; init; }
     }
 
+    private sealed class RatePlanPriceDbRow
+    {
+        public DateTime StartDate { get; init; }
+        public DateTime EndDate { get; init; }
+        public int? DayOfWeek { get; init; }
+        public decimal UnitRate { get; init; }
+        public decimal? AdultRate { get; init; }
+        public decimal? ChildRate { get; init; }
+        public int MinimumStay { get; init; }
+    }
+
     private sealed class BookingUnitRow
     {
         public Guid Uid { get; init; }
         public Guid AccommodationTypeUid { get; init; }
+        public Guid? RatePlanUid { get; init; }
         public Guid? UnitUid { get; init; }
         public DateOnly CheckInDate { get; init; }
         public DateOnly CheckOutDate { get; init; }
@@ -1491,6 +1601,23 @@ public sealed class BookingRepository(IBookingDbConnectionFactory connectionFact
         public Guid GuestUid { get; init; }
         public string DisplayName { get; init; } = string.Empty;
         public bool IsLeadGuest { get; init; }
+    }
+
+    private sealed class BookingChargeRow
+    {
+        public Guid Uid { get; init; }
+        public Guid? BookingUnitUid { get; init; }
+        public Guid ChargeTypeUid { get; init; }
+        public string ChargeTypeName { get; init; } = string.Empty;
+        public DateOnly ServiceDate { get; init; }
+        public string Description { get; init; } = string.Empty;
+        public decimal Quantity { get; init; }
+        public decimal UnitPrice { get; init; }
+        public decimal DiscountAmount { get; init; }
+        public decimal TaxAmount { get; init; }
+        public decimal TotalAmount { get; init; }
+        public string? Notes { get; init; }
+        public DateTime CreationDate { get; init; }
     }
 
     private sealed class BookingStatusHistoryRow

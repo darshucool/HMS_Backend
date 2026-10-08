@@ -139,7 +139,7 @@
     ]
   },
   "packageFolders": {
-    "/Users/jananiwithana/.nuget/packages/": {}
+    "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget": {}
   },
   "project": {
     "version": "1.0.0",
@@ -147,7 +147,7 @@
       "projectUniqueName": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Api/HMS.Modules.Notifications.Api.csproj",
       "projectName": "HMS.Modules.Notifications.Api",
       "projectPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Api/HMS.Modules.Notifications.Api.csproj",
-      "packagesPath": "/Users/jananiwithana/.nuget/packages/",
+      "packagesPath": "/var/folders/hj/xm648tmn44q0xnhxckgrz_xc0000gn/T/cursor-sandbox-cache/b946aa0b518bacec56a0ee98e8ec53b2/nuget",
       "outputPath": "/Users/jananiwithana/Documents/GitHub/HMS_Backend/HMS/src/Modules/Notifications/HMS.Modules.Notifications.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [

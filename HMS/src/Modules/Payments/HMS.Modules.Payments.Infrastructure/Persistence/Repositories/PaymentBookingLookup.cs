@@ -51,6 +51,29 @@ public sealed class PaymentBookingLookup(IPaymentsDbConnectionFactory connection
 public sealed class PaymentPropertyAccessRepository(IPaymentsDbConnectionFactory connectionFactory)
     : IPaymentPropertyAccess
 {
+    public async Task<PaymentPropertyContext?> GetByUidAsync(
+        Guid propertyUid,
+        CancellationToken cancellationToken)
+    {
+        const string sql = """
+            SELECT
+                id              AS "Id",
+                organization_id AS "OrganizationId",
+                uid             AS "Uid",
+                is_archived     AS "IsArchived"
+            FROM hotel.properties
+            WHERE uid = @PropertyUid;
+            """;
+
+        await using var connection = await connectionFactory.OpenConnectionAsync(cancellationToken);
+        var row = await connection.QuerySingleOrDefaultAsync<PropertyAccessRow>(
+            new CommandDefinition(sql, new { PropertyUid = propertyUid }, cancellationToken: cancellationToken));
+
+        return row is null
+            ? null
+            : new PaymentPropertyContext(row.Id, row.OrganizationId, row.Uid, row.IsArchived);
+    }
+
     public async Task<bool> HasAccessAsync(
         string actorSubject,
         Guid propertyUid,
@@ -91,5 +114,13 @@ public sealed class PaymentPropertyAccessRepository(IPaymentsDbConnectionFactory
                 RequireManager = requireManager
             },
             cancellationToken: cancellationToken));
+    }
+
+    private sealed class PropertyAccessRow
+    {
+        public long Id { get; init; }
+        public long OrganizationId { get; init; }
+        public Guid Uid { get; init; }
+        public bool IsArchived { get; init; }
     }
 }

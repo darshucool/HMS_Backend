@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HMS.Modules.Reservations.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef4ca3dee6a3eb2e88268d307ed62479926bb3c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ceea5108047cec3abfd090d9bb59649d143fad26")]
 [assembly: System.Reflection.AssemblyProductAttribute("HMS.Modules.Reservations.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HMS.Modules.Reservations.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
